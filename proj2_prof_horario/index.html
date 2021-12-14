@@ -5,19 +5,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style rel="stylesheet" type="text/css" href="_css/estilo.css"></style>
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
     <title>Horário Escolar</title>
 </head>
 
 <body>
     <div id="tudo">
-        <h1>Construçaõ de horário dinâmico</h1>
+        <header>
+            <a target="blanck" href="https://sites.google.com/view/missaofilosofica/in%C3%ADcio">
+                <img id="imgprinc" src="_imagens/Principal2_MF_EBD.jpg">
+                </a>  
+            <h1>HORÁRIO DINÂMICO</h1>
+        </header>
+        <section>
+            <h2>DESCRIÇÃO E REGRAS</h2>
+                <p>Esta aplicação foi criada visando facilitar a alocação dos professores na grade de horários, considerando a prioridade na escolha. </p>
+                <p>Nestes termos, a aplicação possui duas instancias: Adiministração e Professores</p>
+            <h3>Administração</h3>
+                <p>É privilegio da administração:</p>
+                <ol type="1">
+                    <li>Cadastrar, modificar e excluir turmas;</li>
+                    <li>Cadastrar, modificar e excluir tempos de aulas e dias de aulas;</li>
+                    <li>Cadastrar, modificar e excluir prioridades na escolha do horário;</li>
+                    <li>Efetuar consultas globais.</li>
+                </ol>
 
+            <h3>Professores</h3>
+            <p>É privilegio do Professor:</p>
+            <ol type="1">
+                <li>Escolher seu horário conforme regras de prioridade.</li>
+            </ol>
+            <h3>Regras globais</h3>
+                <p>O professor deve observar as regras globais para escolha de alocação:</p>
+                <ol type="1">
+                    <li>Carga horária semanal da disciplina;</li>
+                    <li>Carga horária diária da disciplina;</li>
+                    <li>Tempos de aulas seguidas em uma mesma turma;</li>
+                    <li>Número de dias mínimo para sua carga horária.</li>
+                </ol>
 
-
-
-
-
+        </section>
+        
+        <aside>
+            <form action="">
+                <fieldset> <legend>Administração</legend> 
+                    <label for="logina">Login: <input type="number" id="logina" name="loginadm" min="11" max="11" >
+                    </label>
+                    <label for="senhaa">Senha: <input type="number" id="senhaa" name="senhaadm" min="11" max="11" >
+                    </label>
+                </fieldset>
+                <br>
+                <fieldset> <legend>Professor</legend>
+                    <label for="loginp">Login: <input type="number" id="loginp" name="loginprof" min="11" max="11" >
+                    </label>
+                    <label for="senhap">Senha: <input type="number" id="senhap" name="senhaprof" min="11" max="11" >
+                    </label>
+                </fieldset>
+            </form>
+            
+        </aside>
+    
+        <footer>
+            <h6>&copy; &reg; by OliveiraJPE</h6>
+        </footer>
     </div>
     <script type="text/javascript" src="_js/index.js"></script>
 </body>
