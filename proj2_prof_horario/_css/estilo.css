@@ -19,13 +19,16 @@ h1{
     color:rgb(89, 0, 255);
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
-h1#MF{
+#titulo2{
+    text-align: center;
+    background-color: darkgray;
     color:rgb(89, 0, 255);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 #MF{
-    background-image:url("_imagens/principal.jpg");
-    
+    color:rgb(89, 0, 255);
 }
+
 a:link{
     text-decoration: none;
 }
