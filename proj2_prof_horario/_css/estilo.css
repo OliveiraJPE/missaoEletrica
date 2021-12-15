@@ -19,6 +19,19 @@ h1{
     color:rgb(89, 0, 255);
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
+h4{
+    text-align: center;
+    background-color: darkgray;
+    color:blue;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+	width:auto;
+	float:left;
+	margin:20px;
+	padding:20px;
+}
+#cad:hover{   
+   color:rgb(8, 107, 57);  
+}
 #titulo2{
     text-align: center;
     background-color: darkgray;
@@ -28,13 +41,11 @@ h1{
 #MF{
     color:rgb(89, 0, 255);
 }
-
 a:link{
     text-decoration: none;
 }
 #MF:hover{   
-   color:rgb(8, 107, 57);
-  
+   color:rgb(8, 107, 57);  
 }
 p#p{
     text-indent: 40px;;

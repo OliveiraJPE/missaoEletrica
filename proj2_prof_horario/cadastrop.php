@@ -1,6 +1,0 @@
-<?php
-function(){
-echo "cadastrar";
-
-}
-?>

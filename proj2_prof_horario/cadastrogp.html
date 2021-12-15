@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+    <title>Horário Escolar</title>
+</head>
+
+<body>
+    <div id="tudo">
+        <header>
+            <a target="blanck" href="https://sites.google.com/view/missaofilosofica/in%C3%ADcio">
+            <h1 id="MF">MISSÃO FILOSÓFICA: EM BUSCA DE DEUS</h1>
+            </a>  
+            <h1 id="titulo">Projeto: Horário dinâmico</h1>
+            <h2 id="titulo2">Cadastro de Professores por prioridade</h2>
+        </header>
+        
+        <form action="cadadmin.php" method="post">
+            <fieldset> <legend>Cadastrar</legend> 
+                <label for="matricula"><input type="number" id="matr" name="matr"/> Matricula</label>
+                <br>
+                <label for="nome"><input type="text" id="nome" name="nome"/> Nome</label>
+                <br>
+                <label for="cargo"><input type="text" id="cargo" name="nome"/> Disciplina</label>
+                <br>
+                <label for="prioridade"><input type="number" id="prior" name="prior"/> Prioridade</label>
+                <br>
+                <label for="ts"><input type="number" id="ts" name="ts"/> Tempos semanais</label>
+                <br>
+                <label for="max"><input type="number" id="max" name="max"/> Máximo de tempos seguidos</label>
+                <br>
+                <label for="login"><input type="number" id="login" name="login"/> Login</label>
+                <br>
+                <label for="senha"><input type="number" id="senha" name="senha"/> Senha</label>
+                <br>
+                
+            </fieldset>
+            <p id="botom"><input type="submit" value="Enviar" id="botao"/></p>
+            <p id="botom"><input type="reset" value="Apagar" id="botao"/></p>
+        </form>
+            <a target='_self' href='index.html'><h4 id='cad'>Voltar</h4></a>
+             
+        <footer>
+            <h6>&copy; &reg; by OliveiraJPE</h6>
+        </footer>
+    </div>
+    <script type="text/javascript" src="_js/index.js"></script>
+</body>
+
+</html>
