@@ -1,0 +1,26 @@
+@charset "UTF-08";
+
+body{
+background-color: rgb(78, 40, 40);
+font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    background-color: rgb(19, 5, 68);
+    width: 100%;
+    color: cornsilk;
+    text-align: left;
+    border-color: blanchedalmond;
+}
+#tudo{
+    background-color: rgb(95, 160, 127);
+    color:black;
+    text-align: left;
+    width: 400px;
+    height: 400px;
+    margin:auto;
+    border-color: rgb(245, 243, 243);
+    border-width: 5px;
+    border-style: groove;
+    overflow-y: scroll;
+
+}
