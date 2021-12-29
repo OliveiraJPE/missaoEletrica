@@ -1,37 +1,17 @@
 <?php
-    $id= isset($_POST["matr"])?$_POST["matr"]:0;
-    $nome=isset($_POST['nome'])?$_POST['nome']:0;
+// matricula administrador name=amatr
+$amatr=isset($_POST["amatr"])?$_POST["amatr"]:0;
+// nome administrador name=anome
+$anome=isset($_POST["anome"])?$_POST["anome"]:0;
+// cargo administrador name=acargo
+$acargo=isset($_POST["acargo"])?$_POST["acargo"]:0;
+// login administrador name=alogin
+$alogin=isset($_POST["alogin"])?$_POST["alogin"]:0;
+// senha administrador name=asenha
+$asenha=isset($_POST["asenha"])?$_POST["asenha"]:0;
 
-    $host="localhost";
-    $user="root";
-    $password="";
-    $dbname="cadastroesc";
+//echo ": $amatr,  $anome,  $acargo,  $asenha,  $alogin";
 
 
-    //MYSQLI PROCEDURAL
-    $conexao=mysqli_connect($host, $user, $password, $dbname);
 
-    if(mysqli_connect_errno()!=0) {
-        // para confirmar a conexao
-        // ou  if(!$conn) {
-            echo "Não foi possível conectar ao MySQL. Erro #" . mysqli_connect_errno(). " : " . mysqli_connect_error(); 
-            exit;
-        }
-    $consulta="INSERT INTO adm (`id`, `nome`) values ('$id', '$nome');";
-    mysqli_close($conexao);
-
-    //MYSQLI DIRECIONADO A OBJETOS
-    $conexao=new mysqli($host, $user, $password , $dbname);
-    if(!$conexao){
-        // para confirmar a conexao
-        // ou  if(!$conn) {
-            //echo "Não foi possível conectar ao MySQL. Erro #" . mysqli_connect_errno(). " : " . mysqli_connect_error(); 
-            //exit;
-        }
-   $conexao->close();
-
-    
-    
 ?>
-               
-

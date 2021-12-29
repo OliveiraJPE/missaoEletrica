@@ -4,7 +4,7 @@
             $senha=isset($_POST["senha"])?$_POST["senha"]:0;
 //echo "$selecao, $login, $senha";
             if($selecao==1){
-                if($login=="12345678910" && $senha=="12345678910"){
+                if($login=="1" && $senha=="1"){
                     //echo "Administrador"; Validar senha no SGBD
                     header('Location: '.$new="cadastrog.html");
                 }else{
@@ -13,7 +13,7 @@
                 }
             }
             if($selecao==2){
-                if($login=="12345678910" && $senha=="12345678910"){
+                if($login=="2" && $senha=="2"){
                     //echo "Professor"; Validar senha no SGBD
                 header('Location: '.$new="cadastrop.html");
                 }else{
