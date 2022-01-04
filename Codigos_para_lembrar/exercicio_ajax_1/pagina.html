@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>AJAX</title>
+        <meta http-equiv="Content-Type" content="text/html; charset= UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--<link href="style.css" rel="stylesheet">-->
+       
+        <!--JAVA SCRIP / AJAX-->
+        <script type="text/javascript" src="ajax.js"></script>
+  
+        <!--Estilo Cascata-->
+        <style type="text/css" rel="stylesheet">
+            div{
+                width:500px;
+                height: 600px;
+                background-color: #CECECE;
+                border-style: solid;
+                border-width: 1px;
+                border-color: #000000;
+            }
+            p{
+                text-align: justify;
+                text-indent: 50px;
+                color:rgb(27, 27, 27);
+            }
+        </style>    
+    </head>
+
+        <!--Corpo-->
+    <body>
+        <h3>Requisição Assincrona Ajax</h3>
+        <p>
+            <input type="submit" onclick="requisicao('conteudo.html', 'conteudo')" value="Requisição"/>
+            <!--<a href="#" onclick="requisicao('conteudo.html', 'conteudo')">
+            Clique aqui para fazer uma requisição com a metologia AJAX
+            </a> -->
+        </p>
+        <h3>Resposta da requisição Assincrona Ajax</h3>
+        <div id="conteudo">
+
+        </div>
+        <!--<script type="text/javascript" src="index.js"></script>-->
+    </body>
+</html>

@@ -13,16 +13,16 @@
     <div id="tudo">
         <header>
             <a target="blanck" href="https://sites.google.com/view/missaofilosofica/in%C3%ADcio">
-                <img id="imgprinc" src="_imagens/Principal2_MF_EBD.jpg">
-                </a>  
-            <h1>HORÁRIO DINÂMICO</h1>
+            <h1 id="MF">MISSÃO FILOSÓFICA: EM BUSCA DE DEUS</h1>
+            </a>  
+            <h1 id="titulo">Projeto: Horário dinâmico</h1>
         </header>
         <section>
             <h2>DESCRIÇÃO E REGRAS</h2>
-                <p>Esta aplicação foi criada visando facilitar a alocação dos professores na grade de horários, considerando a prioridade na escolha. </p>
-                <p>Nestes termos, a aplicação possui duas instancias: Adiministração e Professores</p>
+                <p id="p">Esta aplicação foi criada visando facilitar a alocação dos professores na grade de horários, considerando a prioridade na escolha. </p>
+                <p id="p">Nestes termos, a aplicação possui duas instancias: Adiministração e Professores.</p>
             <h3>Administração</h3>
-                <p>É privilegio da administração:</p>
+                <p id="p">É privilegio da administração:</p>
                 <ol type="1">
                     <li>Cadastrar, modificar e excluir turmas;</li>
                     <li>Cadastrar, modificar e excluir tempos de aulas e dias de aulas;</li>
@@ -31,12 +31,12 @@
                 </ol>
 
             <h3>Professores</h3>
-            <p>É privilegio do Professor:</p>
+            <p id="p">É privilegio do Professor:</p>
             <ol type="1">
                 <li>Escolher seu horário conforme regras de prioridade.</li>
             </ol>
             <h3>Regras globais</h3>
-                <p>O professor deve observar as regras globais para escolha de alocação:</p>
+                <p id="p">O professor deve observar as regras globais para escolha de alocação:</p>
                 <ol type="1">
                     <li>Carga horária semanal da disciplina;</li>
                     <li>Carga horária diária da disciplina;</li>
@@ -47,20 +47,24 @@
         </section>
         
         <aside>
-            <form action="">
-                <fieldset> <legend>Administração</legend> 
-                    <label for="logina">Login: <input type="number" id="logina" name="loginadm" min="11" max="11" >
-                    </label>
-                    <label for="senhaa">Senha: <input type="number" id="senhaa" name="senhaadm" min="11" max="11" >
-                    </label>
-                </fieldset>
+            <form action="_conexao_php/processa.php" method="post">
+                <fieldset> <legend>Selecione seu status</legend> 
+                    <label><input type="radio" name="selecao" value="1" checked/>
+                    Administração</label> <br> 
+                    <label><input type="radio" name="selecao" value="2">
+                    Professor</label> <br>
+                 </fieldset>
                 <br>
-                <fieldset> <legend>Professor</legend>
-                    <label for="loginp">Login: <input type="number" id="loginp" name="loginprof" min="11" max="11" >
+                <fieldset> <legend>Validação</legend>
+                    <label for="login"><input type="number" id="login" name="login"/> Login
                     </label>
-                    <label for="senhap">Senha: <input type="number" id="senhap" name="senhaprof" min="11" max="11" >
+                    <br>
+                    <label for="senha"><input type="number" id="senha" name="senha"/> Senha
                     </label>
+                    <br></br>
+                    
                 </fieldset>
+               <p id="botom"><input type="submit" value="Entrar" id="botao"/></p>
             </form>
             
         </aside>
@@ -70,6 +74,7 @@
         </footer>
     </div>
     <script type="text/javascript" src="_js/index.js"></script>
+   
 </body>
 
 </html>

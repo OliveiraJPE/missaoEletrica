@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="_css/estil.css">
+        <title>Form Guanabara cores</title>
+</head>
+<body>
+    <div id="tudo">
+        <br/>
+        <br/>
+      
+        
+    <form method="get" action="index.php">
+        <label for="itxt" >Texto</label>
+        <input type="text" name="txt" id="itxt"/>
+        <br/>
+        <br/>
+        <label for="idtam">Tamanho</label>
+        <br/>
+        <select name="tam1" id="idtam">
+            <option value=""> </option> 
+            <option value="8pt"> 8</option>
+                <option value="10pt"> 10</option>
+                <option value="12pt" selected> 12</option>
+                <option value="16pt"> 16</option>
+                <option value="40pt"> 40</option>
+                <option value="60pt"> 60</option>
+        </select>
+            <br/>
+            <label for="icor">Cor: </label>
+            <input type="color" id="icor" name="cor"/>
+            <br/>
+        <input type="submit" id="enviar" name="enviar" value="Gerar"/>
+        <br/>
+        <input type="reset" id="limpar" name="limpar" value="Limpar"/>
+        <br/>
+    </form>
+       
+    </div>
+    
+    
+    
+    <body>
+</html>

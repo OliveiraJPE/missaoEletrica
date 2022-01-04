@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Festa</title>
+    <style type="text/css">
+        header{
+            background-color: rgb(101, 33, 209);
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FESTA.HTML</h1>
+    </header>
+    <div id="tudo">
+        <form name="festa" method="post" action="inserefesta2.php" enctype="multipart/form-data">
+            <fieldset><legend><h1>Cadastro da festa</h1></legend>
+                <legend for="nome">
+                    Nome:&nbsp;<input name="nome" id="nome" type="text" placeholder="Escreva seu nome."/>
+                </legend>
+                <br/>
+                <legend for="endereco">
+                    Endereço:&nbsp;<input name="endereco" id="endereco" type="text" placeholder="Escreva seu endereço."/>
+                </legend>
+                <br/>
+                <legend for="data">
+                    Data:&nbsp;<input name="data" id="data" type="date" />
+                </legend>
+                <br/>
+                <input name="botao" id="botao" type="submit" value="Cadastrar"/>
+                
+            </fieldset>
+        </form>
+        <form name="festa" method="post" action="inserefesta.php" enctype="multipart/form-data">
+            <fieldset><legend><h1>Consultar Cadastro</h1></legend>
+               <select name="selecao">
+                   <option value="nome">Nome</option>
+                   <option value="endereco">Endereço</option>
+                   <option value="data">data</option>
+               </select>
+                <input name="botao" id="botao" type="submit" value="Consultar"/>
+                
+            </fieldset>
+        </form>
+        <div  id="conteudo">
+
+        </div>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+</html>
