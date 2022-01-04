@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>AJAX</title>
+        <meta http-equiv="Content-Type" content="text/html; charset= UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" href="_css/style.css" rel="stylesheet">
+       
+        <!--JAVA SCRIP / AJAX-->
+        <script type="text/javascript" src="_js_ajax/ajax.js"></script>
+         
+    </head>
+
+        <!--Corpo-->
+    <body>
+        <h3>Requisição Assincrona Ajax</h3>
+        <ul>
+            <li><a href="#" onclick="requisicao('pages/pagina1.html', 'conteudo')">
+            Página 01</a></li>
+            <li><a href="#" onclick="requisicao('pages/pagina2.html', 'conteudo')">
+            Página 02</a></li>
+            <li><a href="#" onclick="requisicao('pages/pagina3.html', 'conteudo')">
+            Página 03</a></li>
+            <li><a href="#" onclick="requisicao('pages/pagina5.html', 'conteudo')">
+            Página 04</a></li>
+                       
+        </ul>
+        <br/>
+        <p class="img"><img  src="_images/back.jpg" onmouseover="requisicao('pages/pagina4.html', 'conteudo')" onmouseout="limpar()">
+        </P>
+        <br/>
+        
+        <h3>Resposta da requisição Assincrona Ajax</h3>
+        <div id="conteudo">
+
+        </div>
+    </body>
+</html>
