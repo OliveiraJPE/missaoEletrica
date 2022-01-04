@@ -1,2 +1,2 @@
 # Repositorio_Git
- Repositório no HTDOCS
+Conjunto de exercicios e codigos para treinar: Organizar, desenvolver, implementar, encontrar erros, debbugar....
