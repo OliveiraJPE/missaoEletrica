@@ -1,0 +1,238 @@
+GIT RESET - NÃO USAR NO DIRETÓRIO PUBLICO, PODE APAGAR TUDO DOS COLABORADORES
+
+DESCARTAR COMMIT NO BRANCH PRIVADO
+DESCARTAR ALTERAÇÕES NÃO COMMITADA
+RETIRAR ARQUIVOS DO STAGE AREA
+
+
+CRIAR ARQ3, MODIFICAR E DAR RESET PARA RETIRAR DA STAGING AREA
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ start notepad++ arq3
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git add arq3
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   arq3
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   arq3.bak
+
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git add .
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   arq3
+        modified:   arq3.bak
+
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git reset --mixed arq3
+warning: --mixed with paths is deprecated; use 'git reset -- <paths>' instead.
+Unstaged changes after reset:
+M       arq3
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   arq3.bak
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   arq3                                                                          <--------------------------- RETIRADO DO STAGING AREA
+
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ cat arq3
+usadndo para teste ana aula 11
+Modificando arq 3 para teste de git reset
+
+
+
+READICIONAR ARQ3 E VERIFICAR COM "GIT LOG --ONELINE"
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git log --oneline
+abb9f2a (HEAD -> master) arq3 e arq4 foram criados
+c463ad0 Adicionei alua 10 boson treinamento
+08cc45b Revert "trocar h2 por h1"
+21c7e99 Revert "adicionado quebra de linha"
+80a9bbf adicionado quebra de linha
+49c4acb trocar h2 por h1
+8205424 Criar arquivo index
+84d3050 Adicionei as aulas 8 e 9 da boson treinamentos
+5a42aa8 Arquivo recuperado
+7017fb5 exclusão de arq3
+67cebdc commit final
+4681c38 Commit após verificar co git diff
+f9e36d0 criação dos arquivos arq1 e arq2
+a919c49 Verificando usuário
+f1a2a2b teste 2
+579ea0b teste com outro usuário peoj
+c2ffa18 Adicionei a aul 07 da boson treinamentos
+4702e7a Commit da aula 06 da boson treinamentos
+aecd8e0 inseri endereço da pasta que contem os html de help:C:\Program Files\Git\mingw64\share\doc\git-doc
+516a8d2 Inseri aula 5: git help. descobri que a documentação do git esta na pasta git na máquina, logo não preciso do livro Progit.
+253d4ba Adicionei o txt desta aula para consultas no futuro.
+bb7762f Inseri codigo C
+e3ffad3 Tetse com bash
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git add .
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   arq3
+        modified:   arq3.bak
+
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git commit -m "modificado arq3 novamente"
+[master 6f3671e] modificado arq3 novamente
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git log --oneline
+6f3671e (HEAD -> master) modificado arq3 novamente           <------------------ SIM
+abb9f2a arq3 e arq4 foram criados
+c463ad0 Adicionei alua 10 boson treinamento
+08cc45b Revert "trocar h2 por h1"
+21c7e99 Revert "adicionado quebra de linha"
+80a9bbf adicionado quebra de linha
+49c4acb trocar h2 por h1
+8205424 Criar arquivo index
+84d3050 Adicionei as aulas 8 e 9 da boson treinamentos
+5a42aa8 Arquivo recuperado
+7017fb5 exclusão de arq3
+67cebdc commit final
+4681c38 Commit após verificar co git diff
+f9e36d0 criação dos arquivos arq1 e arq2
+a919c49 Verificando usuário
+f1a2a2b teste 2
+579ea0b teste com outro usuário peoj
+c2ffa18 Adicionei a aul 07 da boson treinamentos
+4702e7a Commit da aula 06 da boson treinamentos
+aecd8e0 inseri endereço da pasta que contem os html de help:C:\Program Files\Git\mingw64\share\doc\git-doc
+516a8d2 Inseri aula 5: git help. descobri que a documentação do git esta na pasta git na máquina, logo não preciso do livro Progit.
+253d4ba Adicionei o txt desta aula para consultas no futuro.
+bb7762f Inseri codigo C
+e3ffad3 Tetse com bash
+
+
+
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git reset --hard 08cc
+HEAD is now at 08cc45b Revert "trocar h2 por h1"
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git log --oneline
+08cc45b (HEAD -> master) Revert "trocar h2 por h1"
+21c7e99 Revert "adicionado quebra de linha"
+80a9bbf adicionado quebra de linha
+49c4acb trocar h2 por h1
+8205424 Criar arquivo index
+84d3050 Adicionei as aulas 8 e 9 da boson treinamentos
+5a42aa8 Arquivo recuperado
+7017fb5 exclusão de arq3
+67cebdc commit final
+4681c38 Commit após verificar co git diff
+f9e36d0 criação dos arquivos arq1 e arq2
+a919c49 Verificando usuário
+f1a2a2b teste 2
+579ea0b teste com outro usuário peoj
+c2ffa18 Adicionei a aul 07 da boson treinamentos
+4702e7a Commit da aula 06 da boson treinamentos
+aecd8e0 inseri endereço da pasta que contem os html de help:C:\Program Files\Git\mingw64\share\doc\git-doc
+516a8d2 Inseri aula 5: git help. descobri que a documentação do git esta na pasta git na máquina, logo não preciso do livro Progit.
+253d4ba Adicionei o txt desta aula para consultas no futuro.
+bb7762f Inseri codigo C
+e3ffad3 Tetse com bash
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ ls
+arq1.txt  arq1.txt.bak  arq2.txt  arq2.txt.bak  exercicios_boson/  index.html  index.html.bak
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ cat arq3
+cat: arq3: No such file or directory
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git log --oneline
+08cc45b (HEAD -> master) Revert "trocar h2 por h1"
+21c7e99 Revert "adicionado quebra de linha"
+80a9bbf adicionado quebra de linha
+49c4acb trocar h2 por h1
+8205424 Criar arquivo index
+84d3050 Adicionei as aulas 8 e 9 da boson treinamentos
+5a42aa8 Arquivo recuperado
+7017fb5 exclusão de arq3
+67cebdc commit final
+4681c38 Commit após verificar co git diff
+f9e36d0 criação dos arquivos arq1 e arq2
+a919c49 Verificando usuário
+f1a2a2b teste 2
+579ea0b teste com outro usuário peoj
+c2ffa18 Adicionei a aul 07 da boson treinamentos
+4702e7a Commit da aula 06 da boson treinamentos
+aecd8e0 inseri endereço da pasta que contem os html de help:C:\Program Files\Git\mingw64\share\doc\git-doc
+516a8d2 Inseri aula 5: git help. descobri que a documentação do git esta na pasta git na máquina, logo não preciso do livro Progit.
+253d4ba Adicionei o txt desta aula para consultas no futuro.
+bb7762f Inseri codigo C
+e3ffad3 Tetse com bash
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git reset --hard 21c7
+HEAD is now at 21c7e99 Revert "adicionado quebra de linha"
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ ls
+arq1.txt  arq1.txt.bak  arq2.txt  arq2.txt.bak  exercicios_boson/  index.html  index.html.bak
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git log --oneline
+21c7e99 (HEAD -> master) Revert "adicionado quebra de linha"
+80a9bbf adicionado quebra de linha
+49c4acb trocar h2 por h1
+8205424 Criar arquivo index
+84d3050 Adicionei as aulas 8 e 9 da boson treinamentos
+5a42aa8 Arquivo recuperado
+7017fb5 exclusão de arq3
+67cebdc commit final
+4681c38 Commit após verificar co git diff
+f9e36d0 criação dos arquivos arq1 e arq2
+a919c49 Verificando usuário
+f1a2a2b teste 2
+579ea0b teste com outro usuário peoj
+c2ffa18 Adicionei a aul 07 da boson treinamentos
+4702e7a Commit da aula 06 da boson treinamentos
+aecd8e0 inseri endereço da pasta que contem os html de help:C:\Program Files\Git\mingw64\share\doc\git-doc
+516a8d2 Inseri aula 5: git help. descobri que a documentação do git esta na pasta git na máquina, logo não preciso do livro Progit.
+253d4ba Adicionei o txt desta aula para consultas no futuro.
+bb7762f Inseri codigo C
+e3ffad3 Tetse com bash
+
+

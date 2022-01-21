@@ -1,0 +1,317 @@
+CRIAR RAMIFICAÇÕES
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git ((b5f1817...))
+$ git branch                                                                                                       //VER ONDE ESTA NO RAMO
+* (HEAD detached at b5f1817)
+  master
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git ((b5f1817...))
+$ git log --oneline
+b5f1817 (HEAD) restabelecendo exercicios 11 e 12
+ede5c89  recuperando a aula 10
+c463ad0 Adicionei alua 10 boson treinamento
+08cc45b Revert "trocar h2 por h1"
+21c7e99 Revert "adicionado quebra de linha"
+80a9bbf adicionado quebra de linha
+49c4acb trocar h2 por h1
+8205424 Criar arquivo index
+84d3050 Adicionei as aulas 8 e 9 da boson treinamentos
+5a42aa8 Arquivo recuperado
+7017fb5 exclusão de arq3
+67cebdc commit final
+4681c38 Commit após verificar co git diff
+f9e36d0 criação dos arquivos arq1 e arq2
+a919c49 Verificando usuário
+f1a2a2b teste 2
+579ea0b teste com outro usuário peoj
+c2ffa18 Adicionei a aul 07 da boson treinamentos
+4702e7a Commit da aula 06 da boson treinamentos
+aecd8e0 inseri endereço da pasta que contem os html de help:C:\Program Files\Git\mingw64\share\doc\git-doc
+516a8d2 Inseri aula 5: git help. descobri que a documentação do git esta na pasta git na máquina, logo não preciso do livro Progit.
+253d4ba Adicionei o txt desta aula para consultas no futuro.
+bb7762f Inseri codigo C
+e3ffad3 Tetse com bash
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git ((b5f1817...))
+$ git checkout -b teste                                                                        //CRIAR NOVO RAMO (BRANCH) COM NOME TESTE
+Switched to a new branch 'teste'
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (teste)               // AGORA ESTAMOS NO BRANCH TESTE
+$ git log --oneline
+b5f1817 (HEAD -> teste) restabelecendo exercicios 11 e 12
+ede5c89  recuperando a aula 10
+c463ad0 Adicionei alua 10 boson treinamento
+08cc45b Revert "trocar h2 por h1"
+21c7e99 Revert "adicionado quebra de linha"
+80a9bbf adicionado quebra de linha
+49c4acb trocar h2 por h1
+8205424 Criar arquivo index
+84d3050 Adicionei as aulas 8 e 9 da boson treinamentos
+5a42aa8 Arquivo recuperado
+7017fb5 exclusão de arq3
+67cebdc commit final
+4681c38 Commit após verificar co git diff
+f9e36d0 criação dos arquivos arq1 e arq2
+a919c49 Verificando usuário
+f1a2a2b teste 2
+579ea0b teste com outro usuário peoj
+c2ffa18 Adicionei a aul 07 da boson treinamentos
+4702e7a Commit da aula 06 da boson treinamentos
+aecd8e0 inseri endereço da pasta que contem os html de help:C:\Program Files\Git\mingw64\share\doc\git-doc
+516a8d2 Inseri aula 5: git help. descobri que a documentação do git esta na pasta git na máquina, logo não preciso do livro Progit.
+253d4ba Adicionei o txt desta aula para consultas no futuro.
+bb7762f Inseri codigo C
+e3ffad3 Tetse com bash
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (teste)
+$ git status
+On branch teste                                                                       // AGORA ESTAMOS NO BRANCH TESTE
+nothing to commit, working tree clean
+
+MODIFICANDO DOS ARQUIVOS E COMMITANDO NO NOVO BRANCH
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (teste)
+$ code .
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (teste)
+$ git status
+On branch teste
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   arq2.txt
+        modified:   arqign
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (teste)
+$ git add .
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (teste)
+$ git status
+On branch teste
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   arq2.txt
+        modified:   arqign
+
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (teste)
+$ git commit -m "modificações em arq2.txt e arqign no branch teste"
+
+[teste 942ad9a] modificações em arq2.txt e arqign no branch teste
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (teste)
+$ git log --oneline
+942ad9a (HEAD -> teste) modificações em arq2.txt e arqign no branch teste    //COMMIT EM BRANCH TESTE
+b5f1817 restabelecendo exercicios 11 e 12
+ede5c89  recuperando a aula 10
+
+
+
+CRIAR OUTRO ARQUIVO, MODIFICAR E COMMITAR
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (teste)
+$ touch teste2.txt
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (teste)
+$ git status
+On branch teste
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        teste2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (teste)
+$ git add .
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (teste)
+$ git commit -m "Criado arquivo teste2.txt"
+[teste 4374675] Criado arquivo teste2.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 teste2.txt
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (teste)
+$ git status
+On branch teste
+nothing to commit, working tree clean
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (teste)
+$ git log --oneline
+4374675 (HEAD -> teste) Criado arquivo teste2.txt                  <---------------------------------------------------
+942ad9a modificações em arq2.txt e arqign no branch teste
+b5f1817 restabelecendo exercicios 11 e 12
+
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (teste)
+$ git branch
+  master
+* teste                                                                                    <--------------------------------------------------------
+
+VOLTAR AO MASTER E MUDAR ARQUIVOS
+
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ code .
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   arq2.txt
+        modified:   arqign
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git commit -am " Modificações em arq2 e arqign"
+[master a7d30d4]  Modificações em arq2 e arqign
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git log --oneline
+a7d30d4 (HEAD -> master)  Modificações em arq2 e arqign
+89f92dd Revert "Revert "adicionado quebra de linha""
+462aef8 adicionei aula 11 e 12 boson treinamentos
+7fda95a teste com .gitignore
+
+
+
+VER MODIFICAÇÕES EM TODOS OS RAMOS
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git log --oneline --graph --all
+* a7d30d4 (HEAD -> master)  Modificações em arq2 e arqign    //MODIFICAÇÕES NO MASTER
+* 89f92dd Revert "Revert "adicionado quebra de linha""
+* 462aef8 adicionei aula 11 e 12 boson treinamentos
+* 7fda95a teste com .gitignore
+| * 4374675 (teste) Criado arquivo teste2.txt                                  //RAMIFICAÇÃO TESTE
+| * 942ad9a modificações em arq2.txt e arqign no branch teste
+| * b5f1817 restabelecendo exercicios 11 e 12
+| * ede5c89  recuperando a aula 10
+| * c463ad0 Adicionei alua 10 boson treinamento
+| * 08cc45b Revert "trocar h2 por h1"
+|/                                                                                                         //RAMIFICAÇÃO
+* 21c7e99 Revert "adicionado quebra de linha"
+* 80a9bbf adicionado quebra de linha
+* 49c4acb trocar h2 por h1
+* 8205424 Criar arquivo index
+* 84d3050 Adicionei as aulas 8 e 9 da boson treinamentos
+* 5a42aa8 Arquivo recuperado
+* 7017fb5 exclusão de arq3
+* 67cebdc commit final
+* 4681c38 Commit após verificar co git diff
+* f9e36d0 criação dos arquivos arq1 e arq2
+* a919c49 Verificando usuário
+* f1a2a2b teste 2
+* 579ea0b teste com outro usuário peoj
+* c2ffa18 Adicionei a aul 07 da boson treinamentos
+* 4702e7a Commit da aula 06 da boson treinamentos
+* aecd8e0 inseri endereço da pasta que contem os html de help:C:\Program Files\Git\mingw64\share\doc\git-doc
+* 516a8d2 Inseri aula 5: git help. descobri que a documentação do git esta na pasta git na máquina, logo não preciso do livro Progit.
+* 253d4ba Adicionei o txt desta aula para consultas no futuro.
+* bb7762f Inseri codigo C
+* e3ffad3 Tetse com bash
+
+
+FAZER UNIÃO DO TESTE E MASTER (DEVE ESTAR NO MASTER PARA ISSO)
+VISUAL CODE DEVE ESTAR ABERTO
+
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git branch
+* master                                             //VERIFICAR QUE ESTAR NO MASTER
+  teste
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git merge teste                                          //COMARDO DE FUSÃO (MERGE)
+Auto-merging arq2.txt
+CONFLICT (content): Merge conflict in arq2.txt                                          <<<-----------------------CONFLITOS IDENTIFICADOS
+Auto-merging arqign
+CONFLICT (add/add): Merge conflict in arqign                                             <<<-----------------------CONFLITOS IDENTIFICADOS
+Automatic merge failed; fix conflicts and then commit the result.
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master|MERGING)
+$ code .                                                                                                              <<<-----------------------ABRIR VSCODE  E ESCOLHER
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        new file:   arqign2
+        new file:   exercicios/aula10_git_revertercommit.txt
+        new file:   exercicios/aula12_git_ignore .txt
+        new file:   teste2.txt
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   arq2.txt
+        both added:      arqign
+
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master|MERGING)
+$ git add .                                                                                                            <<<-----------------------ADICIONAR A STAGE AREA
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master|MERGING)
+$ git commit -m "merge dos arquivos e resolução de conflito com vscode"           <<<-----------------------COMMITAR
+[master 0159a64] merge dos arquivos e resolução de conflito com vscode
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git log --oneline
+0159a64 (HEAD -> master) merge dos arquivos e resolução de conflito com vscode            <<<-----------------------VERIFICAR COMMIT
+a7d30d4  Modificações em arq2 e arqign
+
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git log --oneline --graph --all                                                               <<<-----------------------VERIFICAR  MERGE
+*   0159a64 (HEAD -> master) merge dos arquivos e resolução de conflito com vscode
+|\
+| * 4374675 (teste) Criado arquivo teste2.txt
+| * 942ad9a modificações em arq2.txt e arqign no branch teste
+| * b5f1817 restabelecendo exercicios 11 e 12
+| * ede5c89  recuperando a aula 10
+| * c463ad0 Adicionei alua 10 boson treinamento
+| * 08cc45b Revert "trocar h2 por h1"
+* | a7d30d4  Modificações em arq2 e arqign
+* | 89f92dd Revert "Revert "adicionado quebra de linha""
+* | 462aef8 adicionei aula 11 e 12 boson treinamentos
+* | 7fda95a teste com .gitignore
+|/                                                                                                 <<<-----------------------MERGE
+* 21c7e99 Revert "adicionado quebra de linha"
+* 80a9bbf adicionado quebra de linha
+* 49c4acb trocar h2 por h1
+* 8205424 Criar arquivo index
+* 84d3050 Adicionei as aulas 8 e 9 da boson treinamentos
+* 5a42aa8 Arquivo recuperado
+* 7017fb5 exclusão de arq3
+* 67cebdc commit final
+* 4681c38 Commit após verificar co git diff
+* f9e36d0 criação dos arquivos arq1 e arq2
+* a919c49 Verificando usuário
+* f1a2a2b teste 2
+* 579ea0b teste com outro usuário peoj
+* c2ffa18 Adicionei a aul 07 da boson treinamentos
+* 4702e7a Commit da aula 06 da boson treinamentos
+* aecd8e0 inseri endereço da pasta que contem os html de help:C:\Program Files\Git\mingw64\share\doc\git-doc
+* 516a8d2 Inseri aula 5: git help. descobri que a documentação do git esta na pasta git na máquina, logo não preciso do livro Progit.
+* 253d4ba Adicionei o txt desta aula para consultas no futuro.
+* bb7762f Inseri codigo C
+* e3ffad3 Tetse com bash
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git branch
+* master
+  teste
+
+
+
+

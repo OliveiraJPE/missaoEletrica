@@ -12,31 +12,35 @@ div#tudo{
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
     margin: 10px;
     padding: 30px;
+
 }
 h1{
     text-align: center;
-    background-color: darkgray;
+    background-color: rgb(217, 219, 221);
     color:rgb(89, 0, 255);
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
 }
 h4{
     text-align: center;
-    background-color: darkgray;
+    background-color: white;
     color:blue;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 	width:auto;
 	float:left;
-	margin:20px;
-	padding:20px;
+	margin:10px;
+	padding:10px;
+    border-radius: 10px;
 }
 #cad:hover{   
    color:rgb(8, 107, 57);  
 }
 #titulo2{
     text-align: center;
-    background-color: darkgray;
+    background-color: rgb(217, 219, 221);;
     color:rgb(89, 0, 255);
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
 }
 #MF{
     color:rgb(89, 0, 255);
@@ -56,23 +60,25 @@ img#imgprinc{
 
 section{
     display:block;
-    float: right;
+    float: left;
     position: relative;
-    margin:10px;
-    padding:0px 30px;
-    max-width:800px;
-    background-color: darkgray;
+    margin:30px;
+    padding:20px 30px;
+    max-width:750px;
+    background-color: rgb(217, 219, 221);;
     color:rgb(89, 0, 255);
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    border-radius: 30px;
 }
 aside{
     display:block;
-    float:left;
+    float:right;
     position: relative;    
-    padding: 30px 0px;
-    background-color: darkgray;
+    padding: 30px 10px;
+    background-color: rgb(217, 219, 221);
     color:rgb(89, 0, 255);
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    border-radius: 30px;
     margin:30px;
 
    
@@ -84,6 +90,7 @@ footer{
 	text-align: center;
 }
 #botom{
-    margin:10px auto;
-    text-align:center
+    text-align: center;
+    background-color: rgb(217, 219, 221);
+    color:rgb(89, 0, 255);
 }

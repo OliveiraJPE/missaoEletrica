@@ -1,0 +1,56 @@
+MINI CURSO
+
+HASTAG PROGRAMAÇÃO - PROF LIRA
+
+<https://pages.hashtagtreinamentos.com/minicurso-python-automacao?blog=1n4033rer&video=3ivfkigsf>
+ADD FAVORITOS DO MEU OPERA
+
+#Importar a base de dados: Arrasta da pasta de origem para cá, na mesma pasta deste arquivo.
+
+#Importar Biblioteca: pandas para ler o excell - import pandas as pd- apelido para colocar no código
+
+#Instalar a biblioteca pandas: Terminal: pip install pandas.
+
+#Instalar pacote para panda ler excell: pip install openpyxl.
+
+#Importar dados do excell
+
+#Visualizar a base de dados:pd.set_option(opção, valor)
+
+# Filtrar colunas pelo pandas:tabela_vendas[['coluna1', 'coluna2']]
+#metodo 01: tabela_vendas[['ID Loja', 'Valor Final']]  -  seleciona as colunas
+#metodo 01: tabela_vendas.groupby ('ID Loja').sum()  -  agrupa as lojas e soma todas as demais colunas.
+
+#Faturamento por loja.
+
+#Quantidade de produtos por loja.
+
+#Tiket médio por produto em cada loja: faturamento / qtde
+
+#para tranformas a serie de dados resultante da divisão em uma tabela
+
+#mudar o nome da coluna de 0 para Ticket_médio
+
+#Email: relatório:importar biblioteca para integrar o python e o email. Instalar:  pip install pywin32
+#Importar biblioteca dco pywin32 - lá em cima
+
+#copiar código de Stackoverflow - 153
+#import win32com.client as win32
+#outlook = win32.Dispatch('outlook.application')
+#mail = outlook.CreateItem(0)
+#mail.to = "To address"
+#mail.Subject ='Message subject'
+#mail.HTMLBody = '<h2> HTML Message body</h2>'
+
+#mail.Send()
+
+#Mudar os parâmetros do código
+
+#03 três aspas permitem escrever em várias linha e
+# f é uma fstring onde me permite passar uma variáccvel dentro das chaves.
+# acrescentar   .to_html()   para transformar as tabelas em html.
+
+#Formatar número dentro das chaves: {ticket_medio.to_html(formatters={'Valor Final':'R${:,.2f}.format})}
+
+
+
