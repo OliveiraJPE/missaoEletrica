@@ -1,0 +1,78 @@
+EXCLUIR E RESTAURAR ARQUIVOS
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ cat arq2.txt                                                                     //MOSTRAR O CONTEÚDO DO ARQUIVO DIRETAMENTE NO GIT BASH
+Adicionei um alinha de codigo
+tambem foi edcitado novamente
+
+
+
+REMOVER ARQUIVO
+
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git rm arq2.txt                                                                        // rm - REMOVE
+rm 'arq2.txt'
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    arq2.txt
+
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git commit -m "exclusão de arq2"
+[master 7017fb5] exclusão de arq2
+ 1 file changed, 2 deletions(-)
+ delete mode 100644 arq2.txt
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ ls
+arq1.txt  arq1.txt.bak  arq2.txt.bak  exercicios_boson/
+
+
+RESTAURANDO ARQUIVO
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git log --diff-filter=D --summary                                                    //FILTRAR NUMERO DO LOG PARA REATAURAR
+commit 7017fb5d98428fd78b009482d162eade8b5361de (HEAD -> master)
+Author: OliveiraJPE <peoj2009@gmail.com>
+Date:   Tue Jan 18 09:38:10 2022 -0300
+
+    exclusão de arq2
+
+ delete mode 100644 arq2.txt
+
+commit f9e36d059d2b44f8d40d97fa5e49ffb0142aaa6e
+Author: OliveiraJPE <peoj2009@gmail.com>
+Date:   Tue Jan 18 09:04:25 2022 -0300
+
+    criação dos arquivos arq1 e arq2
+
+ delete mode 100644 teste.txt
+ delete mode 100644 teste2.txt
+ delete mode 100644 testepeoj.txt
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git checkout 7017~1 arq2.txt                                                  // RESTAURAR O ARQUIVO COM O NÚMERO DO LOG
+Updated 1 path from c1328f2
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git add .
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ git commit -m "Arquivo recuperado"
+[master 5a42aa8] Arquivo recuperado
+ 1 file changed, 2 insertions(+)
+ create mode 100644 arq2.txt
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ ls                                                                                          // VERIFICAR O ARQUIVO NA PASTA
+arq1.txt  arq1.txt.bak  arq2.txt  arq2.txt.bak  exercicios_boson/
+
+peoj2@LAPTOP-DRDIEMQ2 MINGW64 ~/pasta-git (master)
+$ cat arq2.txt                                                                                //VERIFICAR O CONTEÚDO
+Adicionei um alinha de codigo
+tambem foi edcitado novamente
