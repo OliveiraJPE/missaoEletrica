@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1650912710 source:c:\xampp\htdocs\github\repositorio_git\codigos_para_lembrar\c_cpp\prog_c1\hello word\helloword.c
+	<stdio.h>
+
+1584205420 source:c:\xampp\htdocs\github\repositorio_git\codigos_para_lembrar\c_cpp\prog_c1\hello word\main.c
+	<stdio.h>
+	<stdlib.h>
+
