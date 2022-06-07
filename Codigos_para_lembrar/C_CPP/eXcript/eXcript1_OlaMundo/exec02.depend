@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1644881826 source:c:\xampp\htdocs\github\repositorio_git\codigos_para_lembrar\c_cpp\excript1_olamundo\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1644881826 source:c:\xampp\htdocs\github\repositorio_git\codigos_para_lembrar\c_cpp\excript\excript1_olamundo\main.c
+	<stdio.h>
+	<stdlib.h>
+

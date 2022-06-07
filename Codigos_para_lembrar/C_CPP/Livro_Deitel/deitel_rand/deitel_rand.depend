@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1653748646 source:c:\xampp\htdocs\github\repositorio_git\codigos_para_lembrar\c_cpp\deitel_rand\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1653757673 source:c:\xampp\htdocs\github\repositorio_git\codigos_para_lembrar\c_cpp\livro_deitel\deitel_rand\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

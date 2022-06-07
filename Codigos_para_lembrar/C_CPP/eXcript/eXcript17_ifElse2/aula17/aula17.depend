@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1653745250 source:c:\xampp\htdocs\github\repositorio_git\codigos_para_lembrar\c_cpp\excript17_ifelse2\aula17\main.c
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+

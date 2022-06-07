@@ -5,51 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e97a64bf-ec22-4d0f-a0ea-a6f5b22ac4d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Aula04.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exerc02Aula4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/document.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exerc01aula4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exerc03Aula4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/.idea/pythonProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/.idea/runConfigurations/novoarq_py.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_email.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_email/Gabarito.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_email/Vendas.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_email/formatar_numero.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_email/integracao_email.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_email/vendas.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_email/vendas_email.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 0/abril.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 0/fevereiro.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 0/janeiro.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 0/junho.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 0/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 0/maio.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 0/março.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 0/novoarq.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 1/Apostila - Aula 1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 1/Arquivo Inicial - Aula 1.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 1/Aula 1 - Gabarito.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 1/Exportar/Vendas - Dez.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 2/Apostila - Aula 2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 2/Arquivo Inicial - Aula 2.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 2/Aula 2 - Gabarito.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 2/telecom_users.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 3/Apostila Intensivão de Python - Aula 3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 3/Arquivo Inicial - Aula 3.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 3/Gabarito - Aula 3.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 3/Produtos.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 4/Apostila - Aula 4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 4/Arquivo Inicial - Aula 4.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 4/Gabarito - Projeto Ciência de Dados.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 4/advertising.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_projeto/Aula 4/novos.csv" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../mesmo_cod_diferentes_ling/APROVACAO_EM_LICENCIACMENTO_CORRETORES/aprov_licenc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/default.workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../C_CPP/default.workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/default.workspace.layout" beforeDir="false" afterPath="$PROJECT_DIR$/../../C_CPP/default.workspace.layout" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript17_ifElse2/aula17/aula17.depend" beforeDir="false" afterPath="$PROJECT_DIR$/../../C_CPP/eXcript17_ifElse2/aula17/aula17.depend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript17_ifElse2/aula17/aula17.layout" beforeDir="false" afterPath="$PROJECT_DIR$/../../C_CPP/eXcript17_ifElse2/aula17/aula17.layout" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript17_ifElse2/aula17/bin/Debug/aula17.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../C_CPP/eXcript17_ifElse2/aula17/bin/Debug/aula17.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript17_ifElse2/aula17/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../C_CPP/eXcript17_ifElse2/aula17/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript17_ifElse2/aula17/obj/Debug/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../C_CPP/eXcript17_ifElse2/aula17/obj/Debug/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript18_media/aula18/aula18.layout" beforeDir="false" afterPath="$PROJECT_DIR$/../../C_CPP/eXcript18_media/aula18/aula18.layout" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript18_media/aula18/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../C_CPP/eXcript18_media/aula18/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript20_OP_relacionais/aula20/aula20.layout" beforeDir="false" afterPath="$PROJECT_DIR$/../../C_CPP/eXcript20_OP_relacionais/aula20/aula20.layout" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript20_OP_relacionais/aula20/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../C_CPP/eXcript20_OP_relacionais/aula20/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +46,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_email/formatar_numero.py" />
   </component>
   <component name="RunManager" selected="Python.exerc03Aula4">
     <configuration name="Aula04" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -216,16 +184,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

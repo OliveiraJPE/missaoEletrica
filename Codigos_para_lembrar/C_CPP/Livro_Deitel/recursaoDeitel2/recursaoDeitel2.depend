@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1653941518 source:c:\xampp\htdocs\github\repositorio_git\codigos_para_lembrar\c_cpp\livro_deitel\recursaodeitel2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

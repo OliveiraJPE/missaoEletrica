@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1653852792 source:c:\xampp\htdocs\github\repositorio_git\codigos_para_lembrar\c_cpp\excript30_\teste\main.c
+	<stdio.h>
+	<stdlib.h>
+
