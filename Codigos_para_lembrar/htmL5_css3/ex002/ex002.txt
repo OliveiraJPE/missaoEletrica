@@ -1,0 +1,6 @@
+Uso de:
+    <br> para quebra.
+    <hr> para inserir linha.
+    uso de Lorem ipsum entre <p> </P> para paragrafos.
+    Escrever os sinais de maior e menor  &tl;  &gt;
+    

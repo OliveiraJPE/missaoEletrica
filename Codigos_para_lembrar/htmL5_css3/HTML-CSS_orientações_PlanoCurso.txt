@@ -67,4 +67,82 @@ Para todos que desejam desenvolver Sites estáticos.
     Servidor DNS - Domain Name Server
     Relaciona  os domínios ao endereço IP.
 
-7-
+7- Domínio e hospedagem
+URL localizador de recurso uniforme
+    www.github.com/gustavoguanabara
+
+Sub domínio principal
+    www
+
+Dominio
+    github.com 
+
+TLD top level domain Domínio em alto nível
+    .com
+
+CCTLD  Country code
+    .br
+
+Caminho
+/gustavoguanabara
+
+8 - HTML CSS(Cascating Style Sheet) e JAVASCRIPT
+    html é focado em conteúdo: texto, imagens, vídeos, tabelas, listas.
+    CSS é focado em desing: Cor, tamanho, sombras, posicionamento.
+    JS  é focado na interatividade: menus interativos, popup, animações, validações.
+
+    8.1 WEB DEVOLEPER - Extensão do Chrome: web chrome store
+        Permite desativar JS CSS nas páginas locais e verificar o efeito.
+    
+    8.2 Conteúdo em html
+        tag: Abertura e fechamento
+        tag sem fechamento: <img src= "foto.png" alt="Exemplo de foto">
+                                    src e alt são parametros = valores
+    8.3 Estilo CSS
+        h1{ //seletor
+            font-family: arial; //declaração
+            //propriedade:valor;
+        }
+    
+    8.4 Estrutura básica HTML5
+        <!DOCTYPE html>
+        <html lang="pt-br>
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Título</title>
+            </head>
+            <body>
+
+            </body>
+        </html>
+    8.5 Como funciona A HTML e a CSS
+        Chama um cópia do servidor e abre no seu navegador browser.
+
+9 - Instalar navegador e editor de código.
+    9.1 Front-End  Beck-End e Full Stack
+        Front-end usa tecnologias para o lado do cliente (client-side): html_css_js. UX, tratamento de imagens.
+        Back-end usa tecnologias para o lado do servidor (server-side): interação do codigo com o servidor: php, js(NODE), C#, Python, JAVA.
+        Full-Stack - o Desenvolvedor que atua em Front e Back-end 9Devoleper Full-Stack).
+
+    Exemplo: Loja de camisas.
+        usa front e back-end, pois necessita do Banco de dados
+
+obs.: Pesquisar AppInventor do MIT.
+
+    google chrome e VisualStudioCode
+
+10 - Iniciar projeto: Primeiro código.
+    Continua nos TXT de cada exercício ex001, ex002, ex003....
+
+
+
+
+
+
+
+
+
+
+
