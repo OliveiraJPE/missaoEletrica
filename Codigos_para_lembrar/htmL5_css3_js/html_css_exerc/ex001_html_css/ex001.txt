@@ -1,0 +1,6 @@
+1 - Criar primeiro documento em HTML5
+2 - Criar estrutura básica: 
+    Mudar linguagem para: Lang="pt-br"
+    Atribuir title
+    Criar h1 e p
+    Inserir hr - linha horizontal

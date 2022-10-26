@@ -1,0 +1,9 @@
+è possívefl ter mais de um link:css 
+
+ex.
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style2.css">
+
+A primeira paccra todas as páginas e a segunda para especificamente a segunda. O CSS soma os dois estilos.
+
+Você pode usar o CSS inline para pontuais, o interno para outras configurações específicas. a ordem de prevalencia e esta: inline sobre interno e sobre externo.

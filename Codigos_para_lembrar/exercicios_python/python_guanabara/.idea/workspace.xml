@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e97a64bf-ec22-4d0f-a0ea-a6f5b22ac4d0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/.vscode/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Cpp/Primeiro_cod_cpp/Primeiro_cod_cpp.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Cpp/Primeiro_cod_cpp/Primeiro_cod_cpp.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Cpp/Primeiro_cod_cpp/bin/Debug/Primeiro_cod_cpp.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Cpp/Primeiro_cod_cpp/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Cpp/Primeiro_cod_cpp/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/.vscode/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel1.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel313" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel313.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel315" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel315.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel317" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel317.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel318" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel318.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel319" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel319.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel319.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel319.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel32di.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel33.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel34" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel34.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel35.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel36" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel36.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel37.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel3d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel509.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel509.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitel509.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/deitell32di.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/homeeletricamain.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/maior" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/produto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/produto.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/soma" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/soma.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/teste.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/teste.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/teste.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/teste2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/teste2.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/teste2.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/C_CPP_CVT/x33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/Exerc1_deitel/Exerc1_deitel.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/Exerc1_deitel/Exerc1_deitel.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/Exerc1_deitel/Exerc1_deitel.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/Exerc1_deitel/bin/Debug/Exerc1_deitel.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/Exerc1_deitel/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/Exerc1_deitel/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/deitel_rand/bin/Debug/deitel_rand.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/deitel_rand/deitel_rand.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/deitel_rand/deitel_rand.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/deitel_rand/deitel_rand.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/deitel_rand/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/deitel_rand/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/deitel_rand/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/deitel_rand/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/deitel_switch/bin/Debug/deitel_switch.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/deitel_switch/deitel_switch.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/deitel_switch/deitel_switch.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/deitel_switch/deitel_switch.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/deitel_switch/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/deitel_switch/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/escopoDeitel/escopoDeitel.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/escopoDeitel/escopoDeitel.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/escopoDeitel/escopoDeitel.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/escopoDeitel/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/escopoDeitel/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/recursaoDeitel/bin/Debug/recursaoDeitel.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/recursaoDeitel/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/recursaoDeitel/main2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/recursaoDeitel/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/recursaoDeitel/obj/Debug/main2.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/recursaoDeitel/recursaoDeitel.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/recursaoDeitel/recursaoDeitel.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/recursaoDeitel/recursaoDeitel.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/recursaoDeitel2/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/recursaoDeitel2/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/recursaoDeitel2/recursaoDeitel2.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/recursaoDeitel2/recursaoDeitel2.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/Livro_Deitel/recursaoDeitel2/recursaoDeitel2.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/default.workspace.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript10_variaveis/aula10/aula10.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript10_variaveis/aula10/aula10.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript10_variaveis/aula10/aula10.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript10_variaveis/aula10/bin/Debug/aula10.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript10_variaveis/aula10/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript10_variaveis/aula10/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript11_cauculadora/aula 12/aula13/aula13.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript11_cauculadora/aula 12/aula13/aula13.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript11_cauculadora/aula 12/aula13/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript11_operacoes_matematicas/aula11/aula11.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript11_operacoes_matematicas/aula11/aula11.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript11_operacoes_matematicas/aula11/bin/Debug/aula11.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript11_operacoes_matematicas/aula11/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript11_operacoes_matematicas/aula11/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript12_entrada_dados/aula 12/aula 12.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript12_entrada_dados/aula 12/aula 12.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript12_entrada_dados/aula 12/aula 12.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript12_entrada_dados/aula 12/bin/Debug/aula 12.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript12_entrada_dados/aula 12/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript12_entrada_dados/aula 12/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript13_calculadora/aula 13/aula13/aula13.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript13_calculadora/aula 13/aula13/aula13.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript13_calculadora/aula 13/aula13/aula13.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript13_calculadora/aula 13/aula13/bin/Debug/aula13.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript13_calculadora/aula 13/aula13/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript13_calculadora/aula 13/aula13/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript14_escap_sequence/aula 14/aula14/aula14.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript14_escap_sequence/aula 14/aula14/aula14.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript14_escap_sequence/aula 14/aula14/bin/Debug/aula14.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript14_escap_sequence/aula 14/aula14/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript14_escap_sequence/aula 14/aula14/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript15_resto_divisao/aula 15/aula15/aula15.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript15_resto_divisao/aula 15/aula15/aula15.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript15_resto_divisao/aula 15/aula15/bin/Debug/aula15.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript15_resto_divisao/aula 15/aula15/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript15_resto_divisao/aula 15/aula15/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript16_ifElse/aula16/aula16.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript16_ifElse/aula16/aula16.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript16_ifElse/aula16/aula16.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript16_ifElse/aula16/bin/Debug/aula16.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript16_ifElse/aula16/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript16_ifElse/aula16/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript17_cond_lib/aula17/aula17.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript17_cond_lib/aula17/aula17.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript17_cond_lib/aula17/aula17.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript17_cond_lib/aula17/bin/Debug/aula17.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript17_cond_lib/aula17/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript17_cond_lib/aula17/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript17_ifElse2/aula17/aula17.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript17_ifElse2/aula17/aula17.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript17_ifElse2/aula17/aula17.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript17_ifElse2/aula17/bin/Debug/aula17.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript17_ifElse2/aula17/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript17_ifElse2/aula17/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript18_media/aula18/aula18.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript18_media/aula18/aula18.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript18_media/aula18/aula18.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript18_media/aula18/bin/Debug/aula18.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript18_media/aula18/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript18_media/aula18/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript18_media/aula18/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript19_OP_toupper/aula19/aula19.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript19_OP_toupper/aula19/aula19.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript19_OP_toupper/aula19/aula19.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript19_OP_toupper/aula19/bin/Debug/aula19.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript19_OP_toupper/aula19/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript19_OP_toupper/aula19/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript1_OlaMundo/exec02.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript1_OlaMundo/exec02.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript1_OlaMundo/exec02.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript1_OlaMundo/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript1_OlaMundo/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript20_OP_relacionais/aula20/aula20.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript20_OP_relacionais/aula20/aula20.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript20_OP_relacionais/aula20/aula20.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript20_OP_relacionais/aula20/bin/Debug/aula20.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript20_OP_relacionais/aula20/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript20_OP_relacionais/aula20/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript20_OP_relacionais/aula20/obj/Release/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript21_modificador_tipo/aula21/aula21.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript21_modificador_tipo/aula21/aula21.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript21_modificador_tipo/aula21/bin/Debug/aula21.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript21_modificador_tipo/aula21/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript21_modificador_tipo/aula21/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript22_e_23lacos/aula22_e_23/aula22_e_23.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript22_e_23lacos/aula22_e_23/aula22_e_23.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript22_e_23lacos/aula22_e_23/aula22_e_23.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript22_e_23lacos/aula22_e_23/bin/Debug/aula22_e_23.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript22_e_23lacos/aula22_e_23/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript22_e_23lacos/aula22_e_23/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript24_/aula24/aula24.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript24_/aula24/aula24.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript24_/aula24/bin/Debug/aula24.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript24_/aula24/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript24_/aula24/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript24_/aula24/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript25_depuraao/aula25/aula25.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript25_depuraao/aula25/aula25.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript25_depuraao/aula25/bin/Debug/aula25.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript25_depuraao/aula25/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript25_depuraao/aula25/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_Calculadora/aula28/aula28.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_Calculadora/aula28/aula28.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_Calculadora/aula28/aula28.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_Calculadora/aula28/bin/Debug/aula28.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_Calculadora/aula28/bin/Release/aula28.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_Calculadora/aula28/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_Calculadora/aula28/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_Calculadora/aula28/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_Calculadora/aula28/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_Calculadora/aula28/obj/Release/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_DoWhile/aula27/aula27.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_DoWhile/aula27/aula27.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_DoWhile/aula27/aula27.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_DoWhile/aula27/bin/Debug/aula27.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_DoWhile/aula27/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_DoWhile/aula27/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_depuracaoII/aula26/aula26.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_depuracaoII/aula26/aula26.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_depuracaoII/aula26/aula26.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_depuracaoII/aula26/bin/Debug/aula26.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_depuracaoII/aula26/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_depuracaoII/aula26/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_depuracaoII/aula26/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript26_depuracaoII/aula26/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript29_/aula29/aula29.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript29_/aula29/aula29.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript29_/aula29/aula29.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript29_/aula29/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript29_/aula29/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript29_/aula29/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript29_/aula29/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript2_OlaMundo/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript2_OlaMundo/.vscode/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript2_OlaMundo/bin/Debug/exec01.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript2_OlaMundo/exec01.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript2_OlaMundo/exec01.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript2_OlaMundo/exec01.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript2_OlaMundo/hello.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript2_OlaMundo/hello.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript2_OlaMundo/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript2_OlaMundo/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript2_OlaMundo/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript30_/aula30/aula30.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript30_/aula30/aula30.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript30_/aula30/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript3_OlaMundo/Hello word.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript3_OlaMundo/Hello word.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript3_OlaMundo/Hello word.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript3_OlaMundo/aula3.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript3_OlaMundo/aula3.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript3_OlaMundo/aula3.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript3_OlaMundo/bin/Debug/Hello word.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript3_OlaMundo/helloword.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript3_OlaMundo/helloword1.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript3_OlaMundo/helloword1.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript3_OlaMundo/helloword1.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript3_OlaMundo/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript3_OlaMundo/obj/Debug/helloword.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript3_OlaMundo/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript3_OlaMundo/obj/Release/helloword.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript3_OlaMundo/obj/Release/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript5_Codeblock/aula5/aula5.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript5_Codeblock/aula5/aula5.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript5_Codeblock/aula5/aula5.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript5_Codeblock/aula5/bin/Debug/aula5.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript5_Codeblock/aula5/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript5_Codeblock/aula5/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript5_compilacao/Compilacao/Compilacao.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript5_compilacao/Compilacao/Compilacao.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript5_compilacao/Compilacao/bin/Debug/Compilacao.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript5_compilacao/Compilacao/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript5_compilacao/Compilacao/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript6_comentários/Aula6/Aula6.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript6_comentários/Aula6/Aula6.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript6_comentários/Aula6/bin/Debug/Aula6.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript6_comentários/Aula6/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript6_comentários/Aula6/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript7_variaveis/aula7/aula7.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript7_variaveis/aula7/aula7.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript7_variaveis/aula7/bin/Debug/aula7.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript7_variaveis/aula7/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript7_variaveis/aula7/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript8_variaveis/aula8/aula8.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript8_variaveis/aula8/aula8.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript8_variaveis/aula8/bin/Debug/aula8.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript8_variaveis/aula8/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript8_variaveis/aula8/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript9_tiposvariaveis/aula9/aula9.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript9_tiposvariaveis/aula9/aula9.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcript9_tiposvariaveis/aula9/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcriptteste/Xcriptteste.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcriptteste/Xcriptteste.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcriptteste/bin/Debug/Xcriptteste.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcriptteste/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript/eXcriptteste/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript30_/teste/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript30_/teste/obj/Debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript30_/teste/teste.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript30_/teste/teste.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/eXcript30_/teste/teste.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_CPP/exercicio_C/exec1.c" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="25OGsWJtdctFMH1VMPvaTiBTWeF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../pythonProject/Hastag_Lira_Python_email/formatar_numero.py" />
+  </component>
+  <component name="RunManager" selected="Python.exerc03Aula4">
+    <configuration name="Aula04" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python_guanabara" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\xampp\htdocs\GitHub\Repositorio_Git\Codigos_para_lembrar\exercicios_python\python_guanabara\Aula04.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Exerc02Aula4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python_guanabara" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Exerc02Aula4.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="exerc01aula4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python_guanabara" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\xampp\htdocs\GitHub\Repositorio_Git\Codigos_para_lembrar\exercicios_python\python_guanabara\exerc01aula4.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="exerc03Aula4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python_guanabara" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exerc03Aula4.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="python_guanabara" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.exerc03Aula4" />
+        <item itemvalue="Python.Exerc02Aula4" />
+        <item itemvalue="Python.exerc01aula4" />
+        <item itemvalue="Python.Aula04" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e97a64bf-ec22-4d0f-a0ea-a6f5b22ac4d0" name="Changes" comment="" />
+      <created>1645390925818</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1645390925818</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

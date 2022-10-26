@@ -1,0 +1,92 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'idroid';
+    src: url('fontes/idroid.otf') format('truetype');
+  }
+body{
+    background-color:rgb(241, 248, 248);
+    font-family:Arial, Helvetica, sans-serif;
+    color: black;
+    text-align: justify;
+}
+
+header{
+    margin: -15pt -10pt 0pt -10pt;
+    padding: 10pt;
+  
+    color: white;
+    border-radius: 10px;
+    border-style:ridge;
+    text-align: center;
+    /*Background Degradê linear 90deg horizontal, odeg vertical. O brawser entende degradê como imagem*/
+    /*background-image:linear-gradient(90deg, rgb(33, 61, 33), rgb(84, 160, 117), rgb(18, 50, 34));*/
+     /*Background Degradê Radial*/
+   background-image: radial-gradient(circle, rgb(114, 118, 114), rgb(61, 73, 64), rgb(33, 40, 33));
+    /*background: -webkit-gradient(linear, center center,  left top, from( rgb(18, 44, 25)),  to(#98a798)) no-repeat;*/
+}
+#cabecalho{
+    font-family: 'idroid';
+}
+#menu{
+    position:relative;
+    text-align:left;
+    display:flex;
+    list-style-type: none;
+    font-size: 5pt;
+    
+}
+a{
+    margin: 2px;
+    padding: 3pt;
+    text-decoration: none;
+    color:aliceblue;
+     
+}
+#corpo{
+    font-family: 'idroid';
+    background-image:linear-gradient(90deg, rgb(200, 243, 200), rgb(241, 248, 248));
+    color:green;
+    margin-right: -20px;
+}
+section{
+    margin: 0pt 50pt 0pt 50pt;
+    padding: 10pt;    
+    background-color: white;
+}
+h2{
+
+   font-family: 'idroid';
+   color:green;
+   font-size: 12pt;
+   margin-bottom: 0px;
+   margin-right: -20px;
+    /*Background Degradê linear 90deg horizontal, odeg vertical. O brawser entende degradê como imagem*/
+    background-image:linear-gradient(90deg, rgb(200, 243, 200), rgb(241, 248, 248));
+   /*background: -webkit-gradient(linear, left top, right top, from(rgb(212, 243, 243)), to(#f8f4f4)) no-repeat;
+   background: -moz-linear-gradient(left, #CCCCCC, #000000);
+   filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#CCCCCC', EndColorStr='#000000'); */       
+}
+#imagem{
+    text-align: center;
+}
+#video{
+ text-align: center;
+}
+#extra{
+    background-color: rgb(211, 244, 192);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 0px;
+    
+}
+#table{
+    list-style-type:none;    
+}
+footer{
+    margin: 0pt -10pt -10pt -10pt;
+    padding: 10pt;
+    background-color: rgb(5, 61, 19); 
+    font-size: 8pt;
+    text-align: center;
+    border-bottom: 10px;
+}

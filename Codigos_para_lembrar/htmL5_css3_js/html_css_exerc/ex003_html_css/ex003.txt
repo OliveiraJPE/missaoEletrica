@@ -1,0 +1,9 @@
+Inserir imagem na mesma pasta:
+    <img src=" | " alt=" ">
+Com  ursos entre as aspas e ctrl+ESpaço pressionado surgem as  listas de arquivos ana mesma pasta. Selecione e pronto.
+
+Coloque na pasta todas as  imagens CC e Transparentes (.png)
+
+Carregando imagens Externa
+
+Copiar localização da url e inserir na tag IMG.

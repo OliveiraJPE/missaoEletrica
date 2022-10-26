@@ -1,0 +1,18 @@
+Envelopar para acelerar a inserção de tags
+
+Selecione o texto
+depois: ctrl+shift+p
+depois: wrap  with abbreviation
+decpois: enter
+depois: q
+depois: enter
+
+Citações destacadas e ceccntralizadas
+<blockquote cite="https://www.youtube.com/watch?v=JlE0pzESf5g&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n&index=25">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, neque illum voluptates sed non minima quam minus omnis tempora. Deserunt quisquam non reiciendis praesentium possimus dolorem blanditiis iste illo ratione! </blockquote>
+
+Abreviações explicadas
+
+<h2><abbr title=""Hipertext Markup language>HTML</abbr></h2><!--Explica abreviações-->
+
+Texto invertido
+    <p><bdo dir="rtl">Texto invertido.</bdo></p>
