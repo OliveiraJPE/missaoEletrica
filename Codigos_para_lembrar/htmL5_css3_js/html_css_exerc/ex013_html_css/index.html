@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserindo vídeos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Inserindo videos hospedados localmente</h1>
+    <p>Hospedado no meu servidor</p>
+    
+    <!--<video src="_video/teste_video.mp4" width="500" poster="_imagens/teste_video.png" controls autoplay loop></video>-->
+
+    <video width="500" poster="_imagens/teste_video.png" controls>
+        <!--videos do maior para o menor-->
+        <source src="_video/teste_video.mp4" type="video/mp4">
+        <source src="_video/teste_video.m4v" type="video/m4v">
+        <source src="_video/teste_video.webm" type="video/webm">
+        <p>Seu Navegador não suporta os videos deste site. Abra outro navegador de sua preferência.</p>
+    </video>
+
+    <h2>Inserir videos sem gastar banda</h2>
+
+    <p>Hospedado no youtube ou Vimeo</p>
+    <iframe width="500" height="315" src="https://www.youtube.com/embed/3hSw25yIeFs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html>

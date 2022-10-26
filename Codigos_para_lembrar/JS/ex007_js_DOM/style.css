@@ -1,0 +1,15 @@
+body{
+    background-color:rgb(181, 169, 234);   
+    color: rgb(35, 46, 43);    
+    font-size: 1em; 
+}
+#area{
+    background:green;
+    color: white;
+    width: 200px;
+    height:200px;
+    line-height: 200px;
+    text-align: center;
+     
+
+}

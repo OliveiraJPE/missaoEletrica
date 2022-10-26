@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(231, 234, 234);
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+#amarelo{
+    background-color: rgb(212, 232, 65);
+    color: rgb(95, 25, 233);
+}
+#verde{
+    background-color: rgb(25, 116, 49);
+    color: rgb(142, 26, 18);
+}

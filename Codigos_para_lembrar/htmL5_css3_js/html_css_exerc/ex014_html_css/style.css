@@ -1,0 +1,21 @@
+/*Regras @....*/
+@charset "UTF-8";
+@font-face {
+    font-family:"idroid.otf" ;
+    src: url(fontes/idroid.otf);
+}
+body{
+    font-family: "idroid.otf";
+    background-color: lightblue;
+    font: size 20px;
+}
+h1{
+    color:darkblue;
+    background-color: antiquewhite;
+}
+h2{
+    color: lightcoral;
+}
+p{
+    text-align: justify;
+}

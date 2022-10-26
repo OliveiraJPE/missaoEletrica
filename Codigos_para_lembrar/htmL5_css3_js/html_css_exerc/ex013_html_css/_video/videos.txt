@@ -1,0 +1,49 @@
+Arquivos suportados por navegadores
+
+ver apostila do guanabara.
+
+MP4
+
+M4V
+
+webm - qualidade ruim
+
+ogv
+
+Para Hospedar os arquivos não podem ser muito grandes para nao comprometer os gastos com banda e tráfego(demora no carregamento).
+
+ex: arquivo de video de 11,5MB, visitado por 1000 pessoas: 11,5 x 1000 = 11500 MB ou 11500/1024 =11,2GB de consumo de banda - carrerrimo.
+
+Baixar HandBrake para tratar os vídeos.
+Não convert para ogv, buscar outro conversor, 
+para dacr opções para os browser´s.
+
+Nunca hospedar videos com grande qualidade 1080p ou 4k
+
+Uma possibilidade é mandar para youtube ou vimeo e incorporar com <iframe> </iframe>
+
+INSERIR DIRETO
+
+<video src="_video/teste_video.mp4" width="500" poster="_imagens/teste_video.png" controls autoplay loop></video>
+
+INSERIR COM OPÇÔES PARA o SITE 
+
+<video width="500" poster="_imagens/teste_video.png" controls>
+
+<!--videos do maior para o menor-->
+<!--width é o tamnho da janela do video-->
+<!--poster é a imagem de prévia do vídeo-->
+<!--controls apresenta o controle de play-->
+<!--autoplay toca automáticamente e loop repete- não funciona em tor=dos os browser´r-->
+        <source src="_video/teste_video.mp4" type="video/mp4">
+        <source src="_video/teste_video.m4v" type="video/m4v">
+        <source src="_video/teste_video.webm" type="video/webm">
+        <p>Seu Navegador não suporta os videos deste site. Abra outro navegador de sua preferência.</p>
+    </video>
+
+Videos auto hospedados ou Self Hosted é uma tendencia.
+
+
+    A incoporação no youtube economiza banda mais seu video é publico e apresenta outraas propagandas.
+
+    A incorporação do Vimeo é paga mais não tem os contratempos do Youtube.

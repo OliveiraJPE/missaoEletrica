@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens Flexiveis</title>
+</head>
+<body>
+    <h1>Imagens Flexiveis</h1>
+   <!-- <picture>
+        <source media="(min-width:1050px )" srcset="_imagens/imagem_G.png" type="image/png">
+        <source media="(min-width:750px )" srcset="_imagens/imagem_M.png" type="image/png">
+        <img src="_imagens/imagem_P.png" alt="Imagem grande">
+    </picture>
+    <br>-->
+    <picture>
+        <source media="(max-width:750px )" srcset="_imagens/imagem_P.png" type="image/png">
+        <source media="(max-width:1050px )" srcset="_imagens/imagem_M.png" type="image/png">
+        <img src="_imagens/imagem_G.png" alt="Imagem grande">
+    </picture>
+    
+    <h2>Incluindo Audio</h2>
+
+    <!--<audio src="_midia/Keep On Movin' - King Canyon.mp3"controls autoplay loop></audio>-->
+
+    <audio controls autoplay loop>
+        <source src="_midia/Keep On Movin' - King Canyon.mp3" type="audio/mpeg">
+        <source src="_midia/Keep On Movin' - King Canyon.ogg" type="audio/ogg">
+        <source src="_midia/Keep On Movin' - King Canyon.wav" type="audio/wav">
+    </audio>
+    <p><a href="_midia/Keep On Movin' - King Canyon.mp3" download="_midia/Keep On Movin' - King Canyon.mp3" type="audio/mpeg">Download da música</a></p>
+</body>
+</html>
