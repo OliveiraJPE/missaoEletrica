@@ -4,17 +4,31 @@
     font-family:"idroid.otf" ;
     src: url(fontes/idroid.otf);
 }
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
 body{
     font-family: "idroid.otf";
-    background-color: lightblue;
+    background-image: linear-gradient(to bottom ,#D06DF8,#955FD9, #8A75F0,#5F6CD9, #6DA0F8 );
     font: size 20px;
+    background-attachment: fixed;
+}
+main{
+    background-color: white;
+    padding: 10px;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 2px 5px 10px violet;
 }
 h1{
     color:darkblue;
-    background-color: antiquewhite;
+    background-image: linear-gradient(to left, #faebd7, #f2d6b1, #eeb66c ) ;
+    border-radius: 10px;
+    
 }
 h2{
-    color: lightcoral;
+    font-family: 'Fuzzy Bubbles', cursive;
+    color: rgb(186, 42, 28);
+    background-image: linear-gradient(to right,rgb(109, 172, 122),rgb(185, 217, 184), rgb(221, 236, 221));
+    border-radius: 10px;
 }
 p{
     text-align: justify;
