@@ -1,7 +1,0 @@
-1 Muitas tags ficaram obsoletas
-    ir a dev.w3c.org para verificar as tags obsoletas
-    no VS CODE as tags obsoletas ficarão vermelhas.
-
-No HTML5 as tags semanticas escct  ão em efncarg o do HTML.
-    A forma: Sublinhado, Negrito, Fundo, ficam a encarg  o do CSS.
-
