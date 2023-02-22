@@ -1,0 +1,139 @@
+class
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MF-EBD: Instalações Elétricas</title>
+    <link rel="stylesheet" type="text/css" href="_css/style.css" />
+    <link rel="shortcut icon" href="_imagens/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+    <div id="tudo">
+        <p id="topo"></p>
+        <table style="width:100%; padding:10px">
+            <tr>
+                <td>
+                    <p><a href="#" onclick="requisicao('_paginas/p8_energia.html', 'conteudo')" value="Requisição"
+                            style="float:left">Consumo de Energia Elétricas</a></p>
+                </td>
+                <td>
+                    <p><a href="#" onclick="requisicao('_paginas/p10_etica.html', 'conteudo')" value="Requisição"
+                            style="float:right">Ética Profissional</a></p>
+                </td>
+            </tr>
+        </table>
+        <h1>Fundamentos de Instalações Elétricas</h1>
+
+        <main>
+            <section>
+
+                <div id="corpo">
+                    <h1>Grandezas Elétricas</h1>
+                    <h2>Relações entre grandezas elétricas</h2>
+                    <h3>1. Primeira Lei de Ohm.</h3>
+                    <p class="txt">A intensidade de corrente elétrica é diretamente proporcional a tensão e inversamente
+                        proporcional a resistência elétrica. </p>
+
+                    <table max-width="400">
+                        <tr>
+                            <td>
+                                <p class="alignimg">
+                                    <picture>
+                                        <!-- <source media="(max-width: 1050px)" srcset="/_imagens/circuitoAmperimetros3.png" type="image/png">-->
+                                        <source media="(max-width: 600px)" srcset="/_imagens/trianguloOhm2.png"
+                                            type="image/png">
+                                        <img src="/_imagens/trianguloOhm.png" alt="Lei de Ohm">
+                                    </picture>
+                                </p>
+                                <!--<p id="algnimg"><img src="/_imagens/trianguloOhm.png" alt="Lei de Ohm"></p>-->
+                            </td>
+                            <td>
+                                <p class="txt">Neste triangulo temos representadas a unidades de tensão, corrente e
+                                    resistência. Ou seja, para encontrar o valor da corrente em amperes, observamos a
+                                    relação entre tensão e resistência ( Volt / ohm), logo, I = V/R, onde "I" é a
+                                    intensidade de corrente elétrica em ampére (A), "V" é a tensão elétrica em volt (V),
+                                    e "R" é a resistência elétrica em OHM (Ω). </p>
+                            </td>
+                        </tr>
+                    </table>
+                    <p class=" txt">A mesma inferência pode ser usada para determinar qualquer das grandezas, ou seja:
+                    </p>
+                    <p class="txt1"><em>Para achar a:</em></p>
+                    <ul>
+                        <li>Tensão: V= I x R;</li>
+                        <li>Resistência: R =V /I</li>
+                    </ul>
+                    <p class="txt1"><b>Exemplo 1:</b> Encontre o valor para um disjuntor, onde seu valor será igual ao da intensidade
+                        de corrente elétrica do circuito puramente resistivo, quando a tensão for igual a dez volts e a
+                        resistência elétrica for igual a dois ohms.</p>
+                    <p class="txt">Valor de disjuntores DIN comerciais: 2A, 3A, 6A, 10A, 16A...</p>
+                    <p class="txt1"><em>INTENSIDADE DE CORRENTE ELÉTRICA: I = V/R</em></p>
+                    <ul>
+                        <li>V=10V</li>
+                        <li>R= 2Ω</li>
+                        <li>I =V/R .... I=10V / 2Ω =5A (CINCO AMPÉRES).</li>
+                    </ul>
+                    <p class="txt">Considerando os valores comerciais apresentados, o disjuntor adequado para este
+                        circuito
+                        será de 6A.</p>
+
+
+                    <h3>2. Lei de potência</h3>
+                    <p class="txt">Outra relação importante no dimensionamento de circuitos elétricos é a relação que
+                        existe entre potência elétrica, tensão elétrica e intensidade de corrente elétrica. </p>
+                    <table>
+                        <tr>
+                            <td>
+                                <p class="alignimg">
+                                    <picture>
+                                        <!-- <source media="(max-width: 1050px)" srcset="/_imagens/circuitoAmperimetros3.png" type="image/png">-->
+                                        <source media="(max-width: 600px)" srcset="/_imagens/trianguloPotencia2.png"
+                                            type="image/png">
+                                        <img src="/_imagens/trianguloPotencia.png" alt="Lei de potência">
+                                    </picture>
+                                </p>
+                                <!--<p id="algnimg"><img src="/_imagens/trianguloPotencia.png" alt="Lei de Ohm"></p>-->
+                            </td>
+                            <td>
+                                <p class="txt">Neste triangulo temos representadas a unidades de tensão, corrente e
+                                    potência. Ou seja, para encontrar o valor da corrente em amperes, observamos a
+                                    relação entre tensão e potência ( watt /volt), logo, I = P / V, onde "I" é a
+                                    intensidade de corrente elétrica em ampére (A), "V" é a tensão elétrica em volt (V),
+                                    e "P" é a potência elétrica em watt (w). </p>
+                            </td>
+                        </tr>
+                    </table>
+                    <p class="txt">A mesma inferência pode ser usada para determinar qualquer das grandezas, ou seja:
+                    </p>
+                    <p class="txt1"><em>Para achar a:</em></p>
+                    <ul>
+                        <li>Tensão: V= P / I ;</li>
+                        <li>Potência: P =V x I</li>
+                    </ul>
+                    <p class="txt1"><b>Exemplo 1:</b> Encontre o valor para um disjuntor, onde seu valor será igual ao da intensidade
+                        de corrente elétrica do circuito puramente resistivo, quando a tensão for igual a 10 volts e a
+                        potência elétrica for igual a 50 watts.</p>
+                    <p class="txt">Valor de disjuntores DIN comerciais: 2A, 3A, 6A, 10A, 16A...</p>
+                    <p class="txt1"><em>INTENSIDADE DE CORRENTE ELÉTRICA: I = P / V</em></p>
+                    <ul>
+                        <li>V=10V</li>
+                        <li>P = 50w</li>
+                        <li>I =P / V .... I=50V / 10V =5A (CINCO AMPÉRES).</li>
+                    </ul>
+                    <p class="txt">Considerando os valores comerciais apresentados, o disjuntor adequado para este
+                        circuito
+                        será de 6 class="txt1"A.</p>
+
+
+                    <p><a href="#topo">Topo</a></p>
+                </div>
+            </section>
+        </main>
+</body>
+
+</html>

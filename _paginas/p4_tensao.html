@@ -1,0 +1,106 @@
+class<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MF-EBD: Instalações Elétricas</title>
+    <link rel="stylesheet" type="text/css" href="_css/style.css" />
+    <link rel="shortcut icon" href="_imagens/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+    <div id="tudo">
+        <p id="topo"></p>
+        <table style="width:100%; padding:10px">
+            <tr>
+                <td>
+                    <p><a href="#" onclick="requisicao('_paginas/p3_grandezas.html', 'conteudo')" value="Requisição"
+                            style="float:left">Grandezas Elétricas</a></p>
+                </td>
+                <td>
+                    <p><a href="#" onclick="requisicao('_paginas/p5_corrente.html', 'conteudo')" value="Requisição"
+                            style="float:right">Corrente Elétrica</a></p>
+                </td>
+            </tr>
+        </table>
+        <h1>Fundamentos de Instalações Elétricas</h1>
+
+        <main>
+            <section>
+                <div id="corpo">
+                    <h1> Grandezas Elétricas</h1>
+                    <h2>Tensão elétrica:</h2>
+                    <p class="txt">É a força necessária para mover elétrons, e sua unidade é o volt. Seus símbolos
+                        representativos são as letras "E, V ou U”.</p>
+                    <p class="txt"><strong>Semelhante a DDP, FEM, destacamos as seguintes características:</strong></p>
+                    <ul>
+                        <li>Quando existem potenciais diferentes próximos o suficiente, surgirá uma força capaz de mover
+                            elétrons, que chamamos de DDP.</li>
+                        <li>A soma de todas as diferenças de potencial dentro de um campo eletrostático, ou de uma
+                            máquina
+                            geradora de eletricidade, chamamos de Força eletromotriz, ou FEM.</li>
+                        <li>Dentro da maquinas elétricas existem perdas, logo uma parte da energia gerada é perdida no
+                            próprio interior da máquina.</li>
+                        <li>Quando subtraímos da FEM as perdas, teremos a tensão elétrica, que é a força liberada pela
+                            máquina para o uso externo, como por exemplo acender uma lâmpada.</li>
+                        <li>Por isso uma tomada na nossa casa esta sob Tensão e não DDP, ou FEM, pois já foram retiradas
+                            as
+                            perdas quando chega em nossa casa.</li>
+                    </ul>
+
+                    <p class="txt"><strong>A tensão pode ser, também, definida como o trabalho de um joule realizado por
+                            uma
+                            carga de um Coulomb quando se desloca devido a tensão de um volt, ou seja :</strong></p>
+
+                    <p class="alignimg">1V = 1J÷1C&nbsp;&nbsp;ou&nbsp;&nbsp; V =W÷Q</p>
+
+                    <p class="txt1"><em>Onde:</em></p>
+                    <ul>
+                        <li>V = tensão elétrica</li>
+                        <li>W= trabalho em joule (J)</li>
+                        <li>Q = quantidade de carga em Coulomb (C)</li>
+                    </ul>
+
+                    <p class="txt1"><em>Mas, o que é trabalho e Joule?</em></p>
+                    <ul>
+                        <li>Em física, quando uma força é aplicada em um corpo e promove deslocamento, diz-se que este
+                            corpo
+                            realizou trabalho.</li>
+                        <li>Em eletricidade, o corpo é a carga em Coulomb( que sabemos são milhares de elétrons) e a
+                            força é
+                            a tensão elétrica em volt, e o trabalho é a quantidade de energia desprendida em forma de
+                            calor,
+                            dada em Joule, que resulta do movimento.</li>
+                        <li>Ou seja, quando um Coulomb sofre a ação de um volt ele produz um joule de energia ou
+                            trabalho.
+                        </li>
+                        <li>Quando um componente elétrico aquece quando é submetido a uma tensão elétrica dizemos que
+                            ele
+                            sofreu efeito Joule.</li>
+                    </ul>
+
+                    <p class="txt1"><strong>È possível medir a tensão elétrica?</strong></p>
+                    <p class="txt">O instrumento de medida utilizado é o voltímetro. que deve ser instalado sempre em
+                        paralelo
+                        com a fonte ou a carga.</p>
+                    <p class="alignimg">
+                        <picture>
+                            <!-- <source media="(max-width: 1050px)" srcset="/_imagens/circuitoAmperimetros3.png" type="image/png">-->
+                            <source media="(max-width: 600px)" srcset="/_imagens/circuitosVoltimetro2.png"
+                                type="image/png">
+                            <img src="/_imagens/circuitosVoltimetro.png" alt="circuito eletrico">
+                        </picture>
+                    </p>
+
+                    <!--<p id="alignimg"><img src="/_imagens/circuitosVoltimetro.png" alt="Circuito eletrico."></p>-->
+
+                    <p><a href="#topo">Topo</a></p>
+                </div>
+            </section>
+        </main>
+</body>
+
+</html>
