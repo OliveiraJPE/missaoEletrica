@@ -3167,6 +3167,7 @@ function rodarFinal() {
 
         tabDim.innerHTML = `<pre>
         <h3>${ERRO}</h3>
+        <h4>Em SmartFones: visualização na horizontal |      | </h4>
 ...............  
 '  [ MEDIDOR ]  ' [Padrão: ${padrao}]
 ' PE   N   R    ' Prever DPS - Classe I 
@@ -3209,8 +3210,8 @@ function rodarFinal() {
             tabDim.innerHTML += `<pre>          
 '           Y                       '
 '           |-----[D${irefIlum}]------> Circuito ${irefIlum} - Iluminação (${tensaoC1f}V)
-'                                   ' D${irefIlum}: ${DisjTodosIlum[contIlum]}A - Condutores: ${CondutorIlum[contIlum++]}mm².
-'                                   ' Distribuição de Condutores: ${descFios}</pre>`
+'                                   ' D${irefIlum}: ${DisjTodosIlum[contIlum]}A - #${CondutorIlum[contIlum++]}mm².
+'                                   ' ${descFios}</pre>`
 
         }
         var ireftug = irefIlum;
@@ -3218,8 +3219,8 @@ function rodarFinal() {
             tabDim.innerHTML += `<pre>         
 '            Y                      '
 '           |-----[D${ireftug}]------> Circuito ${ireftug} - TUG - Tomadas (${tensaoC1f}V)
-'                                   ' D${ireftug}: ${DisjTodosTug[contTug]}A - Condutores: ${CondutorTuG[contTug++]}mm².
-'                                   ' Distribuição de Condutores: ${descFios}</pre>`
+'                                   ' D${ireftug}: ${DisjTodosTug[contTug]}A - #${CondutorTuG[contTug++]}mm².
+'                                   ' ${descFios}</pre>`
         }
         var irefC2 = ireftug;
 
@@ -3227,50 +3228,52 @@ function rodarFinal() {
             tabDim.innerHTML += `<pre>         
 '            Y                      '
 '           |-----[D${irefC2}]------> Circuito ${irefC2} - Aparelho de Aquecimento C1 - (${tensaoC2f}V)
-'                                   ' D${irefC2}: ${DisjTodosC2[contC2]}A - Condutores: ${CondutorC2[contC2++]}mm².
-'                                   ' Distribuição de Condutores: ${descFios}</pre>`
+'                                   ' D${irefC2}: ${DisjTodosC2[contC2]}A - #${CondutorC2[contC2++]}mm².
+'                                   ' ${descFios}</pre>`
         }
-        alert("IrefIlum: " + irefIlum + "ireftug: " + ireftug + "irefC2: " + irefC2);
+        
         var irefC3 = irefC2;
         for (; irefC3 < qC3f + irefC2; irefC3++) {
             tabDim.innerHTML += `<pre>         
 '            Y                      '
 '           |-----[D${irefC3}]------> Circuito ${irefC3}  - Ar Condicionado C3 - (${tensaoC3f}V)
-'                                   ' D${irefC3}: ${DisjTodosC3[contC3]}A - Condutores: ${CondutorC3[contC3++]}mm².
-'                                   ' Distribuição de Condutores: ${descFios}</pre>`
+'                                   ' D${irefC3}: ${DisjTodosC3[contC3]}A - #${CondutorC3[contC3++]}mm².
+'                                   ' ${descFios}</pre>`
         }
         var irefC4 = irefC3;
         for (; irefC4 < qC4f + irefC3; irefC4++) {
             tabDim.innerHTML += `<pre>         
 '            Y                      '
 '           |-----[D${irefC4}]------> Circuito ${irefC4} - Aparelhos tipo C4 - (${tensaoC4f}V)
-'                                   ' D${irefC4}: ${DisjTodosC4[contC4]}A - Condutores: ${CondutorC4[contC4++]}mm².
-'                                   ' Distribuição de Condutores: ${descFios}</pre>`
+'                                   ' D${irefC4}: ${DisjTodosC4[contC4]}A - #${CondutorC4[contC4++]}mm².
+'                                   ' ${descFios}</pre>`
         }
         var irefC5 = irefC4;
         for (; irefC5 < qC5f + irefC4; irefC5++) {
             tabDim.innerHTML += `<pre>         
 '            Y                      '
 '           |-----[D${irefC5}]------> Circuito ${irefC5} - Aparelhos tipo C5 - (${tensaoC5f}V)
-'                                   ' D${irefC5}: ${DisjTodosC5[contC5]}A - Condutores: ${CondutorC5[contC5++]}mm².
-'                                   ' Distribuição de Condutores: ${descFios}</pre>`
+'                                   ' D${irefC5}: ${DisjTodosC5[contC5]}A - #${CondutorC5[contC5++]}mm².
+'                                   ' ${descFios}</pre>`
         }
         var irefC6 = irefC5;
         for (; irefC6 < qC6f + irefC5; irefC6++) {
             tabDim.innerHTML += `<pre>         
 '            Y                      '
 '           |-----[D${irefC6}]------> Circuito ${irefC6} - Aparelhos tipo C6 - (${tensaoC6f}V)
-'                                   ' D${irefC6}: ${DisjTodosC6[contC6]}A - Condutores: ${CondutorC6[contC6++]}mm².
-'                                   ' Distribuição de Condutores: ${descFios}</pre>`
+'                                   ' D${irefC6}: ${DisjTodosC6[contC6]}A - #${CondutorC6[contC6++]}mm².
+'                                   ' ${descFios}</pre>`
         }
         tabDim.innerHTML += `<pre>         
 '                                   '
 '...................................' 
 <h6>${ERRO}</h6>
+
 </pre>`
     } else if (padrao == "UB1" || padrao == "UB2") {
         tabDim.innerHTML = `
         <h3>${ERRO}</h3>
+        <h4>Em SmartFones: visualização na horizontal |      | </h4>
         <pre>
 .................  
 '    [MEDIDOR]    ' [Padrão: ${padrao}]
@@ -3314,56 +3317,56 @@ function rodarFinal() {
             tabDim.innerHTML += `<pre>          
 '           Y                         '
 '           |-----[D${irefIlum}]------> Circuito ${irefIlum} - Iluminação (${tensaoC1f}V)
-'                                     ' D${irefIlum}: ${DisjTodosIlum[contIlum]}A - Condutores: ${CondutorIlum[contIlum++]}mm².
-'                                     ' Distribuição de Condutores: ${descFios}</pre>`
+'                                     ' D${irefIlum}: ${DisjTodosIlum[contIlum]}A - #${CondutorIlum[contIlum++]}mm².
+'                                     ' ${descFios}</pre>`
         }
         var ireftug = irefIlum;
         for (; ireftug < qC1Tug + irefIlum; ireftug++) {
             tabDim.innerHTML += `<pre>         
 '            Y                        '
 '           |-----[D${ireftug}]------> Circuito ${ireftug} - TUG - Tomadas (${tensaoC1f}V)
-'                                     ' D${ireftug}: ${DisjTodosTug[contTug]}A - Condutores: ${CondutorTuG[contTug++]}mm².
-'                                     ' Distribuição de Condutores: ${descFios}</pre>`
+'                                     ' D${ireftug}: ${DisjTodosTug[contTug]}A - #${CondutorTuG[contTug++]}mm².
+'                                     ' ${descFios}</pre>`
         }
         var irefC2 = ireftug;
         for (; irefC2 < qC2f + ireftug; irefC2++) {
             tabDim.innerHTML += `<pre>         
 '            Y                        '
 '           |-----[D${irefC2}]------> Circuito ${irefC2} - Aparelho de Aquecimento C1 - (${tensaoC2f}V)
-'                                     ' D${irefC2}: ${DisjTodosC2[contC2]}A - Condutores: ${CondutorC2[contC2++]}mm².
-'                                     ' Distribuição de Condutores: ${descFios}</pre>`
+'                                     ' D${irefC2}: ${DisjTodosC2[contC2]}A - #${CondutorC2[contC2++]}mm².
+'                                     ' ${descFios}</pre>`
         }
         var irefC3 = irefC2;
         for (; irefC3 < qC3f + irefC2; irefC3++) {
             tabDim.innerHTML += `<pre>         
 '            Y                        '
 '           |-----[D${irefC3}]------> Circuito ${irefC3} - Ar Condicionado C3 - (${tensaoC3f}V)
-'                                     ' D${irefC3}: ${DisjTodosC3[contC3]}A - Condutores: ${CondutorC3[contC3++]}mm².
-'                                     ' Distribuição de Condutores: ${descFios}</pre>`
+'                                     ' D${irefC3}: ${DisjTodosC3[contC3]}A - #${CondutorC3[contC3++]}mm².
+'                                     ' ${descFios}</pre>`
         }
         var irefC4 = irefC3;
         for (; irefC4 < qC4f + irefC3; irefC4++) {
             tabDim.innerHTML += `<pre>         
 '            Y                        '
 '           |-----[D${irefC4}]------> Circuito ${irefC4} - Aparelhos tipo C4 - (${tensaoC4f}V) 
-'                                     ' D${irefC4}: ${DisjTodosC4[contC4]}A - Condutores: ${CondutorC4[contC4++]}mm².
-'                                     ' Distribuição de Condutores: ${descFios}</pre>`
+'                                     ' D${irefC4}: ${DisjTodosC4[contC4]}A - #${CondutorC4[contC4++]}mm².
+'                                     ' ${descFios}</pre>`
         }
         var irefC5 = irefC4;
         for (; irefC5 < qC5f + irefC4; irefC5++) {
             tabDim.innerHTML += `<pre>         
 '            Y                        '
 '           |-----[D${irefC5}]------> Circuito ${irefC5} - Aparelhos tipo C5 - (${tensaoC5f}V)
-'                                     ' D${irefC5}: ${DisjTodosC5[contC5]}A - Condutores: ${CondutorC5[contC5++]}mm².
-'                                     ' Distribuição de Condutores: ${descFios}</pre>`
+'                                     ' D${irefC5}: ${DisjTodosC5[contC5]}A - #${CondutorC5[contC5++]}mm².
+'                                     ' ${descFios}</pre>`
         }
         var irefC6 = irefC5;
         for (; irefC6 < qC6f + irefC5; irefC6++) {
             tabDim.innerHTML += `<pre>         
 '            Y                        '
 '           |-----[D${irefC6}]------> Circuito ${irefC6} - Aparelhos tipo C6 - (${tensaoC6f}V)
-'                                     ' D${irefC6}: ${DisjTodosC6[contC6]}A - Condutores: ${CondutorC6[contC6++]}mm².
-'                                     ' Distribuição de Condutores: ${descFios}</pre>`
+'                                     ' D${irefC6}: ${DisjTodosC6[contC6]}A - #${CondutorC6[contC6++]}mm².
+'                                     ' ${descFios}</pre>`
         }
         tabDim.innerHTML += `<pre>         
 '                                     '
@@ -3374,6 +3377,7 @@ function rodarFinal() {
     } else if (padrao == "T1" || padrao == "T2") {
         tabDim.innerHTML = `
         <h3>${ERRO}</h3>
+        <h4>Em SmartFones: visualização na horizontal |      | </h4>
         <pre>
 ......................  
 '      [MEDIDOR]     ' [Padrão: ${padrao}]
@@ -3418,8 +3422,8 @@ function rodarFinal() {
             tabDim.innerHTML += `<pre>
 '           Y                            '
 '           |-----[D${irefIlum}]------> Circuito ${irefIlum} - Iluminação (${tensaoC1f}V)
-'                                        ' D${irefIlum}: ${DisjTodosIlum[contIlum]}A - Condutores: ${CondutorIlum[contIlum++]}mm².
-'                                        ' Distribuição de Condutores: ${descFios}</pre>`
+'                                        ' D${irefIlum}: ${DisjTodosIlum[contIlum]}A - #${CondutorIlum[contIlum++]}mm².
+'                                        ' ${descFios}</pre>`
 
         }
         var ireftug = irefIlum;
@@ -3427,48 +3431,48 @@ function rodarFinal() {
             tabDim.innerHTML += `<pre>         
 '            Y                           '
 '           |-----[D${ireftug}]------> Circuito ${ireftug} - TUG - Tomadas (${tensaoC1f}V)
-'                                        ' D${ireftug}: ${DisjTodosTug[contTug]}A - Condutores: ${CondutorTuG[contTug++]}mm².
-'                                        ' Distribuição de Condutores: ${descFios}</pre>`
+'                                        ' D${ireftug}: ${DisjTodosTug[contTug]}A - #${CondutorTuG[contTug++]}mm².
+'                                        ' ${descFios}</pre>`
         }
         var irefC2 = ireftug;
         for (; irefC2 < qC2f + ireftug; irefC2++) {
             tabDim.innerHTML += `<pre>         
 '            Y                           '
 '           |-----[D${irefC2}]------> Circuito ${irefC2} - Aparelho de Aquecimento C1 - (${tensaoC2f}V)
-'                                        ' D${irefC2}: ${DisjTodosC2[contC2]}A - Condutores: ${CondutorC2[contC2++]}mm².
-'                                        ' Distribuição de Condutores: ${descFios}</pre>`
+'                                        ' D${irefC2}: ${DisjTodosC2[contC2]}A - #${CondutorC2[contC2++]}mm².
+'                                        ' ${descFios}</pre>`
         }
         var irefC3 = irefC2;
         for (; irefC3 < qC3f + irefC2; irefC3++) {
             tabDim.innerHTML += `<pre>         
 '            Y                           '
 '           |-----[D${irefC3}]------> Circuito ${irefC3} - Ar Condicionado C3 - (${tensaoC3f}V)
-'                                        ' D${irefC3}: ${DisjTodosC3[contC3]}A - Condutores: ${CondutorC3[contC3++]}mm².
-'                                        ' Distribuição de Condutores: ${descFios}</pre>`
+'                                        ' D${irefC3}: ${DisjTodosC3[contC3]}A - #${CondutorC3[contC3++]}mm².
+'                                        ' ${descFios}</pre>`
         }
         var irefC4 = irefC3;
         for (; irefC4 < qC4f + irefC3; irefC4++) {
             tabDim.innerHTML += `<pre>         
 '            Y                           '
 '           |-----[D${irefC4}]------> Circuito ${irefC4} - Aparelhos tipo C4 - (${tensaoC4f}V)
-'                                        ' D${irefC4}: ${DisjTodosC4[contC4]}A - Condutores: ${CondutorC4[contC4++]}mm².
-'                                        ' Distribuição de Condutores: ${descFios}</pre>`
+'                                        ' D${irefC4}: ${DisjTodosC4[contC4]}A - #${CondutorC4[contC4++]}mm².
+'                                        ' ${descFios}</pre>`
         }
         var irefC5 = irefC4;
         for (; irefC5 < qC5f + irefC4; irefC5++) {
             tabDim.innerHTML += `<pre>         
 '            Y                           '
 '           |-----[D${irefC5}]------> Circuito ${irefC5} - Aparelhos tipo C5 - (${tensaoC5f}V)
-'                                        ' D${irefC5}: ${DisjTodosC5[contC5]}A - Condutores: ${CondutorC5[contC5++]}mm².
-'                                        ' Distribuição de Condutores: ${descFios}</pre>`
+'                                        ' D${irefC5}: ${DisjTodosC5[contC5]}A - #${CondutorC5[contC5++]}mm².
+'                                        ' ${descFios}</pre>`
         }
         var irefC6 = irefC5;
         for (; irefC6 < qC6f + irefC5; irefC6++) {
             tabDim.innerHTML += `<pre>         
 '            Y                           '
 '           |-----[D${irefC6}]------> Circuito ${irefC6} - Aparelhos tipo C6 - (${tensaoC6f}V)
-'                                        ' D${irefC6}: ${DisjTodosC6[contC6]}A - Condutores: ${CondutorC6[contC6++]}mm².
-'                                        ' Distribuição de Condutores: ${descFios}</pre>`
+'                                        ' D${irefC6}: ${DisjTodosC6[contC6]}A - #${CondutorC6[contC6++]}mm².
+'                                        ' ${descFios}</pre>`
         }
         tabDim.innerHTML += `<pre>         
 '                                        '
