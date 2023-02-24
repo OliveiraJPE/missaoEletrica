@@ -86,6 +86,7 @@ h4{
 	list-style: none;
 	display:inline-block;
 	background-color:#faf4f4;
+	margin-top: 10px;
 	
 	
 }
@@ -143,6 +144,11 @@ fieldset {
 	border-radius: 10px;
 }
 
+
+/*por causa do dimensionamento*/
+table{
+	margin:auto;
+}
 /*
 #tec{	
 	font-family:bubblegum;
@@ -181,9 +187,7 @@ fieldset {
 	color:#606060;
 	text-align: center;
 }
-table{
-	margin:auto;
-}
+
 tr, td{
 	border:groove;
 	border-width: 3px;
