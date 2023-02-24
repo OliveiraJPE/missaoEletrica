@@ -3167,7 +3167,7 @@ function rodarFinal() {
 
         tabDim.innerHTML = `<pre>
         <h3>${ERRO}</h3>
-        <h4>Em SmartFones: visualização na horizontal |      | </h4>
+        <h4>Em SmartFones: visualização na horizontal |_________| </h4>
 ...............  
 '  [ MEDIDOR ]  ' [Padrão: ${padrao}]
 ' PE   N   R    ' Prever DPS - Classe I 
@@ -3273,7 +3273,7 @@ function rodarFinal() {
     } else if (padrao == "UB1" || padrao == "UB2") {
         tabDim.innerHTML = `
         <h3>${ERRO}</h3>
-        <h4>Em SmartFones: visualização na horizontal |      | </h4>
+        <h4>Em SmartFones: visualização na horizontal |_________| </h4>
         <pre>
 .................  
 '    [MEDIDOR]    ' [Padrão: ${padrao}]
@@ -3377,7 +3377,7 @@ function rodarFinal() {
     } else if (padrao == "T1" || padrao == "T2") {
         tabDim.innerHTML = `
         <h3>${ERRO}</h3>
-        <h4>Em SmartFones: visualização na horizontal |      | </h4>
+        <h4>Em SmartFones: visualização na horizontal |_________| </h4>
         <pre>
 ......................  
 '      [MEDIDOR]     ' [Padrão: ${padrao}]
