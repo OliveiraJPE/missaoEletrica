@@ -1747,7 +1747,7 @@ function rodarDimenCirc() {
     <select name="selMenuC1" id="selMenuC1">	
     <option class="volt1" value=0 >Selecione</option>
     <option class="volt1" selected value=1 >127V</option>
-    <option class="volt2"  selected value=2>220v</option>
+    <option class="volt2" value=2>220v</option>
     </select>
     </fieldset>
     <br>
@@ -1806,9 +1806,8 @@ function rodarDimenCirc() {
     <select name="selMenuC1" id="selMenuC1">	
     <option class="volt1" value=0 >Selecione</option>
     <option class="volt1" selected value=1 >127V</option>
-    <option class="volt2"  selected value=2>220v - Bifásico</option>
-    <option class="volt2"  value=3>220v -Trifásico</option>
-
+    <option class="volt2" value=2>220v - Bifásico</option>
+   
     </select>
     </fieldset>
     <br>
@@ -1985,15 +1984,15 @@ function rodarCircuitos() {
 
     if (tensaoC1f == 127) {
         if (potTug % 1270 == 0) {
-            qC1Tug = parseInt(potTug / 1270);
+            qC1Tug = parseInt(potTugs / 1270);
         } else {
-            qC1Tug = parseInt(potTug / 1270) + 1;
+            qC1Tug = parseInt(potTugs / 1270) + 1;
         }
     } else {
         if (potTug % 2200 == 0) {
-            qC1Tug = parseInt(potTug / 2200);
+            qC1Tug = parseInt(potTugs / 2200);
         } else {
-            qC1Tug = parseInt(potTug / 2200) + 1;
+            qC1Tug = parseInt(potTugs / 2200) + 1;
         }
 
     }
@@ -2009,6 +2008,7 @@ function rodarCircuitos() {
 }
 function rodarIncluirTueEsp() {
     somaCirc = numeroTues + qC1Ilum + qC1Tug;
+    //alert("Número total de circuito é: "+somaCirc+ " Numeros de tues é "+numeroTues+ " QuatIluminação é "+ qC1Ilum+ " QuantTug é "+ qC1Tug);
     iterarCarga += 1;
 
     if (iterarCarga <= somaCirc) {
@@ -3074,9 +3074,9 @@ function rodarFinal() {
     var descFios;
 
 
-    nCondutores1 = "1~ R+N+PE PVC-70. Cor: Verm - Azul - Verd."
-    nCondutores2 = "2~ R+S+PE PVC-70. Cor: Verm - Pret - Verd."
-    nCondutores3 = "3~ R+S+T+PE PVC-70. Cor: Verm - Pret - Branc - Verd."
+    nCondutores1 = "1~ R+N+PE PVC-70. Cor: Vm/Az/Vd."
+    nCondutores2 = "2~ R+S+PE PVC-70. Cor: Vm/Pt/Vd."
+    nCondutores3 = "3~ R+S+T+PE PVC-70. Cor: Vm/Pt/Br/Vd."
 
     if (padrao == "UM1" || padrao == "UM2") {
         descFios = nCondutores1;
