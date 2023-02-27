@@ -1899,7 +1899,7 @@ function rodarCircuitos() {
             tensaoC2f = 220;
             break;
         case "3":
-            tensaoC2f = 1.73 * 220;
+            tensaoC2f = 219.9;
             break;
     }
     tensaoC3 = window.document.querySelector("#selMenuC3");
@@ -1915,7 +1915,7 @@ function rodarCircuitos() {
             tensaoC3f = 220;
             break;
         case "3":
-            tensaoC3f = 1.73 * 220;
+            tensaoC3f = 219.9;
             break;
     }
     tensaoC4 = window.document.querySelector("#selMenuC4");
@@ -1931,7 +1931,7 @@ function rodarCircuitos() {
             tensaoC4f = 220;
             break;
         case "3":
-            tensaoC4f = 1.73 * 220;
+            tensaoC4f = 219.9;
             break;
     }
     tensaoC5 = window.document.querySelector("#selMenuC5");
@@ -1947,7 +1947,7 @@ function rodarCircuitos() {
             tensaoC5f = 220;
             break;
         case "3":
-            tensaoC5f = 1.73 * 220;
+            tensaoC5f = 219.9;
             break;
     }
     tensaoC6 = window.document.querySelector("#selMenuC6");
@@ -1963,7 +1963,7 @@ function rodarCircuitos() {
             tensaoC6f = 220;
             break;
         case "3":
-            tensaoC6f = 1.73 * 220;
+            tensaoC6f = 219.9;
             break;
     }
 
@@ -2361,7 +2361,7 @@ function rodarIncluirTueEsp1() {
                     } else {
                         condutorC3Circ1 = disjTue.condutorCCirc;
                     }
-                    alert("Disjuntor C3 -1 : " + disjTueC21 + "A. Condutor C3 - 1 : " + condutorC2Circ1 + "mm²")
+                    alert("Disjuntor C3 -1 : " + disjTueC31 + "A. Condutor C3 - 1 : " + condutorC3Circ1 + "mm²")
                     break;
                 case "2":
 
@@ -2500,7 +2500,7 @@ function rodarIncluirTueEsp1() {
                     } else {
                         condutorC4Circ5 = disjTue.condutorCCirc;
                     }
-                    alert("Disjuntor C4 -5 : " + disjTueC25 + "A. Condutor C4 - 5 : " + condutorC2Circ5 + "mm²")
+                    alert("Disjuntor C4 -5 : " + disjTueC45 + "A. Condutor C4 - 5 : " + condutorC4Circ5 + "mm²")
                     break;
                 default:
                     alert("ERR: Neste Aplicativos o número de de aparelhos é limitado a 05 unidades");
@@ -2803,6 +2803,10 @@ function botoesAvancar() {
 }
 
 function desterminaDisjuntores() {
+    var Ib ;
+    var iB ;
+    var iN ;
+    var disjC;
 
     var Ftemp45 = 0.9;
     if (Fagrup <= 1) {
@@ -2822,31 +2826,38 @@ function desterminaDisjuntores() {
     } else if (Fagrup <= 8) {
         Fagrupf = 0.52;
     } else {
-        alert("ERR: Este aplicativo considera no máximo 8 circuitos agrupados em um eletroduto. Fator de agrupamento receberá 0.52 para continuar programa. Necessário redimensionar.");
+        alert("ERR: Fagrup - Este aplicativo considera no máximo 8 circuitos agrupados em um eletroduto. Fator de agrupamento receberá 0.52 para continuar programa. Necessário redimensionar.");
         Fagrupf = 0.52;
         ERRO = "ERR.:FATOR DE AGRUPAMENTO.DIMENSINAMENTO RECEBEU PARÂMETROS INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
     }
 
     //ib<=in<=iz   i2<=1.45Iz in = coorente nominal disj, ib corrente proj,  iz= condutorCCirc - capacidade condutores 12 - corrente convenvencinal de de atuação do disjuntor @in=i2    @=1.45    1.45in<=1.45iz ic - corrente da tabela iz=ic*k1*k2*k3
     if (padrao == "UM1" || padrao == "UM2" || padrao == "UB1" || padrao == "UB2") {
-        var Ib = potEsp / tensaoC;
-        var iB = Ib / (Fagrupf * Ftemp45);
-        var iN = iB;
+        Ib = potEsp / tensaoC;
+        iB = Ib / (Fagrupf * Ftemp45);
+        iN = iB;
     } else if (padrao == "T1" || padrao == "T2") {
+        
         if (nCarregados == 2) {
-            var Ib = potEsp / tensaoC;
-            var iB = Ib / (Fagrupf * Ftemp45);
-            var iN = iB;
+           // alert("TebsãoC 3carreg"+tensaoC+"  |   nCarregaso: "+nCarregados)
+            Ib = potEsp / tensaoC;
+            iB = Ib / (Fagrupf * Ftemp45);
+            iN = iB;
+           // alert("IB  "+Ib+" | IN  "+iN)
+            
         } else if (nCarregados == 3) {
-            var Ib = potEsp / 1.73 * tensaoC;
-            var iB = Ib / (Fagrupf * Ftemp45);
-            var iN = iB;
+            //alert("TebsãoC 3carreg"+tensaoC+"  |   nCarregaso: "+nCarregados)
+            Ib = potEsp / (1.73 * tensaoC);
+            iB = Ib / (Fagrupf * Ftemp45);
+            iN = iB;
+           //alert("IB  "+Ib+" | IN  "+iN)
+            
         }
     }
-    var disjC;
+    
 
 
-    if (padrao === "UM1") {
+    if (padrao == "UM1") {
 
         if (iN <= 6) {
             disjC = 6;
@@ -2861,11 +2872,11 @@ function desterminaDisjuntores() {
         } else if (iN <= 32) {
             disjC = 32;
         } else {
-            alert("ERR: O disjuntor máximo para este padrão 'UM1' é de 32A do tipo B, se a proteção geral for do Tipo 'C'. Disjuntor deste circuito receberá 32A, para continuar dimensionamento. Necessário redimensionar.");
+            alert("ERR: UM1 - O disjuntor máximo para este padrão 'UM1' é de 32A do tipo B, se a proteção geral for do Tipo 'C'. Disjuntor deste circuito receberá 32A, para continuar dimensionamento. Necessário redimensionar.");
             disjC = 32;
-            ERRO = "ERR.:DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
+            ERRO = "ERR.:UM1 - DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
         }
-    } else if (padrao === "UM2") {
+    } else if (padrao == "UM2") {
 
         if (iN <= 6) {
             disjC = 6;
@@ -2882,11 +2893,11 @@ function desterminaDisjuntores() {
         } else if (iN <= 40) {
             disjC = 40;
         } else {
-            alert("ERR: O disjuntor máximo para este padrão 'UM2' é de 40A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 40A, para continuar dimensionamento. Necessário redimensionar.");
+            alert("ERR: UM2 - O disjuntor máximo para este padrão 'UM2' é de 40A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 40A, para continuar dimensionamento. Necessário redimensionar.");
             disjC = 40;
-            ERRO = "ERR.:DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
+            ERRO = "ERR.:UM2 - DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
         }
-    } else if (padrao === "UB1") {
+    } else if (padrao == "UB1") {
 
         if (iN <= 6) {
             disjC = 6;
@@ -2901,52 +2912,11 @@ function desterminaDisjuntores() {
         } else if (iN <= 32) {
             disjC = 32;
         } else {
-            alert("ERR: O disjuntor máximo para este padrão 'UB1' é de 32A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 32A, para continuar dimensionamento. Necessário redimensionar.");
+            alert("ERR: UB1- O disjuntor máximo para este padrão 'UB1' é de 32A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 32A, para continuar dimensionamento. Necessário redimensionar.");
             disjC = 32;
-            ERRO = "ERR.:DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
+            ERRO = "ERR.:UB1- DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
         }
-    } else if (padrao === "UB2") {
-
-        if (iN <= 6) {
-            disjC = 6;
-        } else if (iN <= 10) {
-            disjC = 10;
-        } else if (iN <= 16) {
-            disjC = 16;
-        } else if (iN <= 20) {
-            disjC = 20;
-        } else if (iN <= 25) {
-            disjC = 25;
-        } else if (iN <= 32) {
-            disjC = 32;
-        } else if (iN <= 40) {
-            disjC = 40;
-        } else {
-            alert("ERR: O disjuntor máximo para este padrão 'UB1' é de 40A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 40A, para continuar dimensionamento. Necessário redimensionar.");
-            disjC = 40;
-            ERRO = "ERR.:DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
-        }
-    } else if (padrao === "T1") {
-
-        if (iN <= 6) {
-            disjC = 6;
-        } else if (iN <= 10) {
-            disjC = 10;
-        } else if (iN <= 16) {
-            disjC = 16;
-        } else if (iN <= 20) {
-            disjC = 20;
-        } else if (iN <= 25) {
-            disjC = 25;
-        } else if (iN <= 32) {
-            disjC = 32;
-        } else {
-            alert("ERR: O disjuntor máximo para este padrão 'T1' é de 32A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 32A, para continuar dimensionamento. Necessário redimensionar.");
-            disjC = 32;
-            ERRO = "ERR.:DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
-
-        }
-    } else if (padrao === "T2") {
+    } else if (padrao == "UB2") {
 
         if (iN <= 6) {
             disjC = 6;
@@ -2963,9 +2933,50 @@ function desterminaDisjuntores() {
         } else if (iN <= 40) {
             disjC = 40;
         } else {
-            alert("ERR: O disjuntor máximo para este padrão 'T2' é de 40A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 40A, para continuar dimensionamento. Necessário redimensionar.");
+            alert("ERR: UB2 - O disjuntor máximo para este padrão 'UB1' é de 40A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 40A, para continuar dimensionamento. Necessário redimensionar.");
             disjC = 40;
-            ERRO = "ERR.:DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
+            ERRO = "ERR.:UB2-DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
+        }
+    } else if (padrao == "T1") {
+
+        if (iN <= 6) {
+            disjC = 6;
+        } else if (iN <= 10) {
+            disjC = 10;
+        } else if (iN <= 16) {
+            disjC = 16;
+        } else if (iN <= 20) {
+            disjC = 20;
+        } else if (iN <= 25) {
+            disjC = 25;
+        } else if (iN <= 32) {
+            disjC = 32;
+        } else {
+            alert("ERR:T1 - O disjuntor máximo para este padrão 'T1' é de 32A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 32A, para continuar dimensionamento. Necessário redimensionar.");
+            disjC = 32;
+            ERRO = "ERR.:T1 - DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
+
+        }
+    } else if (padrao == "T2") {
+
+        if (iN <= 6) {
+            disjC = 6;
+        } else if (iN <= 10) {
+            disjC = 10;
+        } else if (iN <= 16) {
+            disjC = 16;
+        } else if (iN <= 20) {
+            disjC = 20;
+        } else if (iN <= 25) {
+            disjC = 25;
+        } else if (iN <= 32) {
+            disjC = 32;
+        } else if (iN <= 40) {
+            disjC = 40;
+        } else {
+            alert("ERR: T2 - O disjuntor máximo para este padrão 'T2' é de 40A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 40A, para continuar dimensionamento. Necessário redimensionar.");
+            disjC = 40;
+            ERRO = "ERR.:T2 -DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
         }
     }
 
@@ -2981,9 +2992,9 @@ function desterminaDisjuntores() {
         } else if (disjC <= 40) {//NBR5410 . Condutores carregados 57A + Ajuste Light
             condutorCCircB = 10;
         } else {
-            alert("ERR: Condutor resultou superior a 10mm². Redimensione!/nSerá atribuido 10mm² para finaliza o dimensionamento.")
+            alert("ERR: CircB2-Condutor resultou superior a 10mm². Redimensione!\nSerá atribuido 10mm² para finaliza o dimensionamento.")
             condutorCCircB = 10;
-            ERRO = "ERR.:CONDUTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
+            ERRO = "ERR.:CircB2-CONDUTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
         }
 
     } else if (nCarregados == 3) {
@@ -2998,16 +3009,17 @@ function desterminaDisjuntores() {
         } else if (disjC <= 40) {//NBR5410 . Condutores carregados 50A + Ajuste Light
             condutorCCircB = 10;
         } else {
-            alert("ERR: Condutor resultou superior a 10mm². Redimensione!/nSerá atribuido 10mm² para finaliza o dimensionamento.")
+            alert("ERR: CircB3-Condutor resultou superior a 10mm². Redimensione! \nSerá atribuido 10mm² para finaliza o dimensionamento.")
             condutorCCircB = 10;
-            ERRO = "ERR.:CONDUTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
+            ERRO = "ERR.: CircB3-CONDUTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
         }
 
     } else {
         alert("ERR: Existem apenas duas possibilidades: 2 ou 3 condutores carregados.")
     }
 
-    var queda = potEsp * distCirc;//Método Watt x metros
+    var queda = parseFloat(potEsp * distCirc);//Método Watt x metros
+    
     if (queda <= 35081 && tensaoC == 127) {
         condutorCCircA = 1.5;
     } else if (queda <= 58468 && tensaoC == 127) {
@@ -3018,36 +3030,38 @@ function desterminaDisjuntores() {
         condutorCCircA = 6;
     } else if (queda <= 233871 && tensaoC == 127) {
         condutorCCircA = 10;
-    } else if (queda <= 105270 && tensaoC == 220 && nCarregados == 2) {
+    } else if (queda <= 105270 && tensaoC == 220 ) {
         condutorCCircA = 1.5;
-    } else if (queda <= 175450 && tensaoC == 220 && nCarregados == 2) {
+    } else if (queda <= 175450 && tensaoC == 220) {
         condutorCCircA = 2.5;
-    } else if (queda <= 280720 && tensaoC == 220 && nCarregados == 2) {
+    } else if (queda <= 280720 && tensaoC == 220 ) {
         condutorCCircA = 4;
-    } else if (queda <= 421080 && tensaoC == 220 && nCarregados == 2) {
+    } else if (queda <= 421080 && tensaoC == 220 ) {
         condutorCCircA = 6;
-    } else if (queda <= 701800 && tensaoC == 220 && nCarregados == 2) {
+    } else if (queda <= 701800 && tensaoC == 220) {
         condutorCCircA = 10;
-    } else if (queda <= (105270 * 0, 866) && tensaoC == 220 && nCarregados == 3) {
+    } else if (queda <= (91164) && tensaoC == 219.9) {
         condutorCCircA = 1.5;
-    } else if (queda <= (175450 * 0, 866) && tensaoC == 220 && nCarregados == 3) {
+    } else if (queda <= (151940) && tensaoC == 219.9) {
         condutorCCircA = 2.5;
-    } else if (queda <= (280720 * 0, 866) && tensaoC == 220 && nCarregados == 3) {
+    } else if (queda <= (243104) && tensaoC == 219.9) {
         condutorCCircA = 4;
-    } else if (queda <= (421080 * 0, 866) && tensaoC == 220 && nCarregados == 3) {
+    } else if (queda <= (364655) && tensaoC == 219.9) {
         condutorCCircA = 6;
-    } else if (queda <= (701800 * 0, 866) && tensaoC == 220 && nCarregados == 3) {
+    } else if (queda <= (607759) && tensaoC == 219.9) {
         condutorCCircA = 10;
     } else {
-        alert("ERR: Condutor resultou superior a 10mm². Redimensione!/nSerá atribuido 10mm² para finaliza o dimensionamento.");
+        alert("ERR: CircA- Condutor resultou superior a 10mm². Redimensione!\nSerá atribuido 10mm² para finaliza o dimensionamento.");
         condutorCCircA = 10;
-        ERRO = "ERR.:CONDUTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
+        ERRO = "ERR.: CircA-CONDUTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE."
     }
 
     if (condutorCCircA < condutorCCircB) {
         condutorCCirc = condutorCCircB;
+        //alert("OBS.: Condutor dimensionado -  CircB: Ampacidade. ")
     } else {
         condutorCCirc = condutorCCircA;
+    //alert("OBS.: Condutor dimensionado - CircA: Queda de tensão. ")
     }
     
     return {
@@ -3071,80 +3085,63 @@ function rodarFinal() {
     var DisjTodosC4 = [disjTueC41, disjTueC42, disjTueC43, disjTueC44, disjTueC45];
     var DisjTodosC5 = [disjTueC51, disjTueC52, disjTueC53, disjTueC54, disjTueC55];
     var DisjTodosC6 = [disjTueC61, disjTueC62, disjTueC63, disjTueC64, disjTueC65];
-    var descFios;
+    var descFiosC1;
+    var descFiosC2;
+    var descFiosC3;
+    var descFiosC4;
+    var descFiosC5;
+    var descFiosC6;
 
 
     nCondutores1 = "1~ R+N+PE PVC-70. Cor: Vm/Az/Vd."
     nCondutores2 = "2~ R+S+PE PVC-70. Cor: Vm/Pt/Vd."
     nCondutores3 = "3~ R+S+T+PE PVC-70. Cor: Vm/Pt/Br/Vd."
 
-    if (padrao == "UM1" || padrao == "UM2") {
-        descFios = nCondutores1;
-    } else if (padrao == "UB1" || padrao == "UB2") {
+   
         if (tensaoC1f == 127) {
-            descFios = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC2f == 127) {
-            descFios = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC3f == 127) {
-            descFios = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC4f == 127) {
-            descFios = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC5f == 127) {
-            descFios = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC6f == 127) {
-            descFios = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC1f == 220) {
-            descFios = nCondutores2 //disjTue.nCondutores2;
-        } else if (tensaoC2f == 220) {
-            descFios = nCondutores2 //disjTue.nCondutores2;
-        } else if (tensaoC3f == 220) {
-            descFios = nCondutores2 //disjTue.nCondutores2;
-        } else if (tensaoC4f == 220) {
-            descFios = nCondutores2 //disjTue.nCondutores2;
-        } else if (tensaoC5f == 220) {
-            descFios = nCondutores2 //disjTue.nCondutores2;
-        } else if (tensaoC6f == 220) {
-            descFios = nCondutores2 //disjTue.nCondutores2;
+            descFiosC1 = nCondutores1//disjTue.nCondutores1;
+        }else if (tensaoC1f == 220) {
+            descFiosC1 = nCondutores2 //disjTue.nCondutores2;
+        }
+        if (tensaoC2f == 127) {
+            descFiosC2 = nCondutores1//disjTue.nCondutores1;
+        }else if (tensaoC2f == 220) {
+            descFiosC2 = nCondutores2 //disjTue.nCondutores2;
+        } else if (tensaoC2f == 219.9) {
+            descFiosC2 = nCondutores3//disjTue.nCondutores3;
+        } 
+        if (tensaoC3f == 127) {
+            descFiosC3 = nCondutores1//disjTue.nCondutores1;
+        } else if (tensaoC3f == 220 ) {
+            descFiosC3 = nCondutores2 //disjTue.nCondutores2;
+        } else if (tensaoC3f == 219.9) {
+            descFiosC3 = nCondutores3//disjTue.nCondutores3;
+        } 
+        if (tensaoC4f == 127) {
+            descFiosC4 = nCondutores1//disjTue.nCondutores1;
+        } else  if (tensaoC4f == 220 ) {
+            descFiosC4 = nCondutores2 //disjTue.nCondutores2;
+        } else  if (tensaoC4f == 219.9) {
+            descFiosC4 = nCondutores3//disjTue.nCondutores3;
+        } 
+        if (tensaoC5f == 127) {
+            descFiosC5 = nCondutores1//disjTue.nCondutores1;
+        } else if (tensaoC5f == 220 ) {
+            descFiosC5 = nCondutores2 //disjTue.nCondutores2;
+            //alert("Desc fio "+ 2)
+        } else  if (tensaoC5f == 219.9) {
+            //alert("Desc fio "+ 3)
+            descFiosC5 = nCondutores3//disjTue.nCondutores3;
+        } 
+        if (tensaoC6f == 127) {
+            descFiosC6 = nCondutores1//disjTue.nCondutores1;
+        } else if (tensaoC6f == 220 ) {
+            descFiosC6 = nCondutores2 //disjTue.nCondutores2;
+        } else if (tensaoC6f == 219.9 ) {
+            descFiosC6 = nCondutores3//disjTue.nCondutores3;
         }
 
-    } else if (padrao == "T1" || padrao == "T2") {
-        if (tensaoC1f == 127) {
-            descFios = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC2f == 127) {
-            descFios = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC3f == 127) {
-            descFios = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC4f == 127) {
-            descFios = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC5f == 127) {
-            descFios = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC6f == 127) {
-            descFios = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC1f == 220) {
-            descFios = nCondutores2 //disjTue.nCondutores2;
-        } else if (tensaoC2f == 220) {
-            descFios = nCondutores2 //disjTue.nCondutores2;
-        } else if (tensaoC3f == 220) {
-            descFios = nCondutores2 //disjTue.nCondutores2;
-        } else if (tensaoC4f == 220) {
-            descFios = nCondutores2 //disjTue.nCondutores2;
-        } else if (tensaoC5f == 220) {
-            descFios = nCondutores2 //disjTue.nCondutores2;
-        } else if (tensaoC6f == 220) {
-            descFios = nCondutores2 //disjTue.nCondutores2;
-        } else if (tensaoC2f == 1.73 * 220) {
-            descFios = nCondutores3//disjTue.nCondutores3;
-        } else if (tensaoC3f == 1.73 * 220) {
-            descFios = nCondutores3//disjTue.nCondutores3;
-        } else if (tensaoC4f == 1.73 * 220) {
-            descFios = nCondutores3//disjTue.nCondutores3;
-        } else if (tensaoC5f == 1.73 * 220) {
-            descFios = nCondutores3//disjTue.nCondutores3;
-        } else if (tensaoC6f == 1.73 * 220) {
-            descFios = nCondutores3//disjTue.nCondutores3;
-        }
-
-    }
+    
 
     var CondutorIlum = [condutorIlumCirc1, condutorIlumCirc2, condutorIlumCirc3, condutorIlumCirc4, condutorIlumCirc5, condutorIlumCirc6, condutorIlumCirc7, condutorIlumCirc8, condutorIlumCirc9];
     var CondutorTuG = [condutorTugCirc1, condutorTugCirc2, condutorTugCirc3, condutorTugCirc4, condutorTugCirc5, condutorTugCirc6, condutorTugCirc7, condutorTugCirc8, condutorTugCirc9];
@@ -3211,7 +3208,7 @@ function rodarFinal() {
 '           Y                       '
 '           |-----[D${irefIlum}]------> Circuito ${irefIlum} - Iluminação (${tensaoC1f}V)
 '                                   ' D${irefIlum}: ${DisjTodosIlum[contIlum]}A - #${CondutorIlum[contIlum++]}mm².
-'                                   ' ${descFios}</pre>`
+'                                   ' ${descFiosC1}</pre>`
 
         }
         var ireftug = irefIlum;
@@ -3220,7 +3217,7 @@ function rodarFinal() {
 '            Y                      '
 '           |-----[D${ireftug}]------> Circuito ${ireftug} - TUG - Tomadas (${tensaoC1f}V)
 '                                   ' D${ireftug}: ${DisjTodosTug[contTug]}A - #${CondutorTuG[contTug++]}mm².
-'                                   ' ${descFios}</pre>`
+'                                   ' ${descFiosC1}</pre>`
         }
         var irefC2 = ireftug;
 
@@ -3229,7 +3226,7 @@ function rodarFinal() {
 '            Y                      '
 '           |-----[D${irefC2}]------> Circuito ${irefC2} - Aparelho de Aquecimento C1 - (${tensaoC2f}V)
 '                                   ' D${irefC2}: ${DisjTodosC2[contC2]}A - #${CondutorC2[contC2++]}mm².
-'                                   ' ${descFios}</pre>`
+'                                   ' ${descFiosC2}</pre>`
         }
         
         var irefC3 = irefC2;
@@ -3238,7 +3235,7 @@ function rodarFinal() {
 '            Y                      '
 '           |-----[D${irefC3}]------> Circuito ${irefC3}  - Ar Condicionado C3 - (${tensaoC3f}V)
 '                                   ' D${irefC3}: ${DisjTodosC3[contC3]}A - #${CondutorC3[contC3++]}mm².
-'                                   ' ${descFios}</pre>`
+'                                   ' ${descFiosC3}</pre>`
         }
         var irefC4 = irefC3;
         for (; irefC4 < qC4f + irefC3; irefC4++) {
@@ -3246,7 +3243,7 @@ function rodarFinal() {
 '            Y                      '
 '           |-----[D${irefC4}]------> Circuito ${irefC4} - Aparelhos tipo C4 - (${tensaoC4f}V)
 '                                   ' D${irefC4}: ${DisjTodosC4[contC4]}A - #${CondutorC4[contC4++]}mm².
-'                                   ' ${descFios}</pre>`
+'                                   ' ${descFiosC4}</pre>`
         }
         var irefC5 = irefC4;
         for (; irefC5 < qC5f + irefC4; irefC5++) {
@@ -3254,7 +3251,7 @@ function rodarFinal() {
 '            Y                      '
 '           |-----[D${irefC5}]------> Circuito ${irefC5} - Aparelhos tipo C5 - (${tensaoC5f}V)
 '                                   ' D${irefC5}: ${DisjTodosC5[contC5]}A - #${CondutorC5[contC5++]}mm².
-'                                   ' ${descFios}</pre>`
+'                                   ' ${descFiosC5}</pre>`
         }
         var irefC6 = irefC5;
         for (; irefC6 < qC6f + irefC5; irefC6++) {
@@ -3262,7 +3259,7 @@ function rodarFinal() {
 '            Y                      '
 '           |-----[D${irefC6}]------> Circuito ${irefC6} - Aparelhos tipo C6 - (${tensaoC6f}V)
 '                                   ' D${irefC6}: ${DisjTodosC6[contC6]}A - #${CondutorC6[contC6++]}mm².
-'                                   ' ${descFios}</pre>`
+'                                   ' ${descFiosC6}</pre>`
         }
         tabDim.innerHTML += `<pre>         
 '                                   '
@@ -3318,7 +3315,7 @@ function rodarFinal() {
 '           Y                         '
 '           |-----[D${irefIlum}]------> Circuito ${irefIlum} - Iluminação (${tensaoC1f}V)
 '                                     ' D${irefIlum}: ${DisjTodosIlum[contIlum]}A - #${CondutorIlum[contIlum++]}mm².
-'                                     ' ${descFios}</pre>`
+'                                     ' ${descFiosC1}</pre>`
         }
         var ireftug = irefIlum;
         for (; ireftug < qC1Tug + irefIlum; ireftug++) {
@@ -3326,7 +3323,7 @@ function rodarFinal() {
 '            Y                        '
 '           |-----[D${ireftug}]------> Circuito ${ireftug} - TUG - Tomadas (${tensaoC1f}V)
 '                                     ' D${ireftug}: ${DisjTodosTug[contTug]}A - #${CondutorTuG[contTug++]}mm².
-'                                     ' ${descFios}</pre>`
+'                                     ' ${descFiosC1}</pre>`
         }
         var irefC2 = ireftug;
         for (; irefC2 < qC2f + ireftug; irefC2++) {
@@ -3334,7 +3331,7 @@ function rodarFinal() {
 '            Y                        '
 '           |-----[D${irefC2}]------> Circuito ${irefC2} - Aparelho de Aquecimento C1 - (${tensaoC2f}V)
 '                                     ' D${irefC2}: ${DisjTodosC2[contC2]}A - #${CondutorC2[contC2++]}mm².
-'                                     ' ${descFios}</pre>`
+'                                     ' ${descFiosC2}</pre>`
         }
         var irefC3 = irefC2;
         for (; irefC3 < qC3f + irefC2; irefC3++) {
@@ -3342,7 +3339,7 @@ function rodarFinal() {
 '            Y                        '
 '           |-----[D${irefC3}]------> Circuito ${irefC3} - Ar Condicionado C3 - (${tensaoC3f}V)
 '                                     ' D${irefC3}: ${DisjTodosC3[contC3]}A - #${CondutorC3[contC3++]}mm².
-'                                     ' ${descFios}</pre>`
+'                                     ' ${descFiosC3}</pre>`
         }
         var irefC4 = irefC3;
         for (; irefC4 < qC4f + irefC3; irefC4++) {
@@ -3350,7 +3347,7 @@ function rodarFinal() {
 '            Y                        '
 '           |-----[D${irefC4}]------> Circuito ${irefC4} - Aparelhos tipo C4 - (${tensaoC4f}V) 
 '                                     ' D${irefC4}: ${DisjTodosC4[contC4]}A - #${CondutorC4[contC4++]}mm².
-'                                     ' ${descFios}</pre>`
+'                                     ' ${descFiosC4}</pre>`
         }
         var irefC5 = irefC4;
         for (; irefC5 < qC5f + irefC4; irefC5++) {
@@ -3358,7 +3355,7 @@ function rodarFinal() {
 '            Y                        '
 '           |-----[D${irefC5}]------> Circuito ${irefC5} - Aparelhos tipo C5 - (${tensaoC5f}V)
 '                                     ' D${irefC5}: ${DisjTodosC5[contC5]}A - #${CondutorC5[contC5++]}mm².
-'                                     ' ${descFios}</pre>`
+'                                     ' ${descFiosC5}</pre>`
         }
         var irefC6 = irefC5;
         for (; irefC6 < qC6f + irefC5; irefC6++) {
@@ -3366,7 +3363,7 @@ function rodarFinal() {
 '            Y                        '
 '           |-----[D${irefC6}]------> Circuito ${irefC6} - Aparelhos tipo C6 - (${tensaoC6f}V)
 '                                     ' D${irefC6}: ${DisjTodosC6[contC6]}A - #${CondutorC6[contC6++]}mm².
-'                                     ' ${descFios}</pre>`
+'                                     ' ${descFiosC6}</pre>`
         }
         tabDim.innerHTML += `<pre>         
 '                                     '
@@ -3423,7 +3420,7 @@ function rodarFinal() {
 '           Y                            '
 '           |-----[D${irefIlum}]------> Circuito ${irefIlum} - Iluminação (${tensaoC1f}V)
 '                                        ' D${irefIlum}: ${DisjTodosIlum[contIlum]}A - #${CondutorIlum[contIlum++]}mm².
-'                                        ' ${descFios}</pre>`
+'                                        ' ${descFiosC1}</pre>`
 
         }
         var ireftug = irefIlum;
@@ -3432,7 +3429,7 @@ function rodarFinal() {
 '            Y                           '
 '           |-----[D${ireftug}]------> Circuito ${ireftug} - TUG - Tomadas (${tensaoC1f}V)
 '                                        ' D${ireftug}: ${DisjTodosTug[contTug]}A - #${CondutorTuG[contTug++]}mm².
-'                                        ' ${descFios}</pre>`
+'                                        ' ${descFiosC1}</pre>`
         }
         var irefC2 = ireftug;
         for (; irefC2 < qC2f + ireftug; irefC2++) {
@@ -3440,7 +3437,7 @@ function rodarFinal() {
 '            Y                           '
 '           |-----[D${irefC2}]------> Circuito ${irefC2} - Aparelho de Aquecimento C1 - (${tensaoC2f}V)
 '                                        ' D${irefC2}: ${DisjTodosC2[contC2]}A - #${CondutorC2[contC2++]}mm².
-'                                        ' ${descFios}</pre>`
+'                                        ' ${descFiosC2}</pre>`
         }
         var irefC3 = irefC2;
         for (; irefC3 < qC3f + irefC2; irefC3++) {
@@ -3448,7 +3445,7 @@ function rodarFinal() {
 '            Y                           '
 '           |-----[D${irefC3}]------> Circuito ${irefC3} - Ar Condicionado C3 - (${tensaoC3f}V)
 '                                        ' D${irefC3}: ${DisjTodosC3[contC3]}A - #${CondutorC3[contC3++]}mm².
-'                                        ' ${descFios}</pre>`
+'                                        ' ${descFiosC3}</pre>`
         }
         var irefC4 = irefC3;
         for (; irefC4 < qC4f + irefC3; irefC4++) {
@@ -3456,7 +3453,7 @@ function rodarFinal() {
 '            Y                           '
 '           |-----[D${irefC4}]------> Circuito ${irefC4} - Aparelhos tipo C4 - (${tensaoC4f}V)
 '                                        ' D${irefC4}: ${DisjTodosC4[contC4]}A - #${CondutorC4[contC4++]}mm².
-'                                        ' ${descFios}</pre>`
+'                                        ' ${descFiosC4}</pre>`
         }
         var irefC5 = irefC4;
         for (; irefC5 < qC5f + irefC4; irefC5++) {
@@ -3464,7 +3461,7 @@ function rodarFinal() {
 '            Y                           '
 '           |-----[D${irefC5}]------> Circuito ${irefC5} - Aparelhos tipo C5 - (${tensaoC5f}V)
 '                                        ' D${irefC5}: ${DisjTodosC5[contC5]}A - #${CondutorC5[contC5++]}mm².
-'                                        ' ${descFios}</pre>`
+'                                        ' ${descFiosC5}</pre>`
         }
         var irefC6 = irefC5;
         for (; irefC6 < qC6f + irefC5; irefC6++) {
@@ -3472,7 +3469,7 @@ function rodarFinal() {
 '            Y                           '
 '           |-----[D${irefC6}]------> Circuito ${irefC6} - Aparelhos tipo C6 - (${tensaoC6f}V)
 '                                        ' D${irefC6}: ${DisjTodosC6[contC6]}A - #${CondutorC6[contC6++]}mm².
-'                                        ' ${descFios}</pre>`
+'                                        ' ${descFiosC6}</pre>`
         }
         tabDim.innerHTML += `<pre>         
 '                                        '
