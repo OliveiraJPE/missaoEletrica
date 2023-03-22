@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @font-face{
 	font-family:'bubblegum';
-	src:url(../_fonts/bubblegum-sans-regular.otf);
+	src:url(bubblegum-sans-regular.otf);
 }
 
 body {
@@ -14,6 +14,7 @@ body {
 	width:auto;	
 	background-color:#ffffff;	
 	border-radius: 20px;
+	
 }
 .cabecalho{
 	color:#3f1434;

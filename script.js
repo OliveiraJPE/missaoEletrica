@@ -104,7 +104,7 @@ function menu1() {
     }
 }*/
 
-/* Select dinanmico para menu todos os outros */
+/* Select dinanmico para menu todos os outros 
 var abrirMenuapr = window.document.querySelector("li#apr");
 var abrirMenucer = window.document.querySelector("li#cer");
 var abrirMenufale = window.document.querySelector("li#fale");
@@ -119,4 +119,4 @@ function menu2() {
     localMenu1.innerHTML =
         `...`
     
-}
+}*/

@@ -25,8 +25,6 @@ var perimetroCasa = 0;
 var kvaM2 = 0;
 var aCasa = 0;
 var tensaoC = 0;
-var tensaoIlumf = 0
-var tensaoTugf = 0
 var tensaoC1f = 0;
 var tensaoC2f = 0;
 var tensaoC3f = 0;
@@ -34,38 +32,7 @@ var tensaoC4f = 0;
 var tensaoC5f = 0;
 var tensaoC6f = 0;
 
-var tensaoResIlum1 = 0;
-var tensaoResIlum2 = 0;
-var tensaoResIlum3 = 0;
-var tensaoResIlum4 = 0;
-var tensaoResIlum5 = 0
-var tensaoResIlum6 = 0;
-var tensaoResIlum7 = 0;
-var tensaoResIlum8 = 0;
-var tensaoResIlum9 = 0;
-var tensaoResTug1 = 0;
-var tensaoResTug2 = 0;
-var tensaoResTug3 = 0;
-var tensaoResTug4 = 0;
-var tensaoResTug5 = 0;
-var tensaoResTug6 = 0;
-var tensaoResTug7 = 0;
-var tensaoResTug8 = 0;
-var tensaoResTug9 = 0;
-var tensaoC1fI = [];
-var tensaoC2fI = [];
-var tensaoC3fI = [];
-var tensaoC4fI = [];
-var tensaoC5fI = [];
-var tensaoC6fI = [];
-var tensaoResC21, tensaoResC22, tensaoResC23, tensaoResC24, tensaoResC25, tensaoResC26, tensaoResC27, tensaoResC28, tensaoResC29;
-var tensaoResC31, tensaoResC32, tensaoResC33, tensaoResC34, tensaoResC35, tensaoResC36, tensaoResC37, tensaoResC38, tensaoResC39;
-var tensaoResC41, tensaoResC42, tensaoResC43, tensaoResC44, tensaoResC45;
-var tensaoResC51, tensaoResC52, tensaoResC53, tensaoResC54, tensaoResC55;
-var tensaoResC61, tensaoResC62, tensaoResC63, tensaoResC64, tensaoResC65;
 
-var tensaoC1IIlum = 0;
-var tensaoC1ITug = 0;
 var tensaoC1I = 0;
 var tensaoC2I = 0;
 var tensaoC3I = 0;
@@ -73,8 +40,7 @@ var tensaoC4I = 0;
 var tensaoC5I = 0;
 var tensaoC6I = 0;
 
-var tensaoIlum = 0
-var tensaoTug = 0
+
 var tensaoC1 = 0;
 var tensaoC2 = 0;
 var tensaoC3 = 0;
@@ -532,7 +498,7 @@ function validaNome() {
     } else if (!depend.value) {
         alert("Preencha com o número de dependências e somente depois pressione 'Continuar'.");
     } else {
-
+       
         continua()
     }
 }
@@ -543,7 +509,9 @@ function continua() {
     //Incluir TUGs e Iluminação
     tabDim.innerHTML = `<h3>Cálculo de demanda de Iluminação e TUGs.</h3>`
     tabDim.innerHTML += `<h4>Informe as dimensões da dependência.</h4>
-
+<table>
+    <tr>
+        <td>
         <form action="">
     <fieldset>
     <legend>DEPENDÊNCIA</legend>
@@ -578,7 +546,10 @@ function continua() {
             </fieldset>
             </form>
             <br><br>
-        
+        </td>
+    </tr>
+    <tr>
+        <td>
         <form action="">
     <fieldset>
     <legend>Área da dependência em 'm²'</legend>
@@ -586,7 +557,10 @@ function continua() {
             </fieldset>
             </form>
             <br><br>
-        
+        </td>
+    </tr>
+    <tr>
+        <td>
         <form action="">
     <fieldset>
     <legend>Perímetro da dependência em metros</legend>     
@@ -594,7 +568,9 @@ function continua() {
          </fieldset>
          </form>    
          <br><br>
-        
+        </td>
+    </tr>
+</table>
 
 <input type="button" name="incluir" id="incluir" value="Incuir Área e Perímetro" onClick="rodarIncluir()">`
 
@@ -1449,14 +1425,14 @@ function rodarIncluirTue() {
 
     //Incluir TUE
 
-    tabDim.innerHTML = ` <form>
+        tabDim.innerHTML = ` <form>
         <fieldset>
          <legend>Incluir nova TUE ou Calcular</legend>
          <input type="button" name="incluirTues" id="incluirTues" value="Incuir Tues" onClick="InserirTipoGeralTue()">
          <&nbsp;&nbsp;>
          <input type="button" name="calcTue" id="calcTue" value="Calcular" onClick="rodarDimenCirc() "><br><br>
          </fieldset>
-        </form>`;
+        </form>`; 
 }
 
 function rodarDimenCirc() {
@@ -1465,103 +1441,225 @@ function rodarDimenCirc() {
     numeroTues = parseFloat(qC2f) + parseFloat(qC3f) + parseFloat(qC4f) + parseFloat(qC5f) + parseFloat(qC6f);
     if (potTotalDem <= 4000) {
         padrao = "UM1";
-
+       
     } else if (potTotalDem <= 5000) {
         padrao = "UM2";
-
+        
     } else if (potTotalDem <= 7000) {
         padrao = "UB1";
-
+       
     } else if (potTotalDem <= 8000) {
         padrao = "UB2";
-
+        
     } else if (potTotalDem <= 12000) {
         padrao = "T1";
-
+       
     } else if (potTotalDem <= 13000) {
         padrao = "T2";
-
+       
     } else if (potTotalDem <= 15000) {
         padrao = "T2";
-
+       
     } else if (potTotalDem > 15000) {
-        padrao = "ERRO"
+        padrao= "ERRO"
     }
-
-    /*********Acrescentado novo teste *************************************************************************************/
     tabDim.innerHTML = `
-<h3>Atribuição de tensão para dimensionamento dos circuitos do tipo C1.</h3>`
+<h3>Dimensionamento de Circuitos.</h3>
 
+<fieldset>
+<legend>Descrição:</legend>
+<p class="txt">A fim de alcançar um dimensionamento seguro, temos que considerar os fenômenos que influenciam a formação da corrente elétrica, tais quais: Temperatura, Material do condutor, Distancia entre o ponto de consumo e/ou Quadro de distribuição e as cargas, Circuitos agrupados em eu mesmo eletroduto, tensão de alimentação da carga, entre outros, e Considerando o objetivo deste aplicativo, que é ajudar eletricistas iniciantes a dimensionar uma residencia até 15kVA, sem obrigatoriedade de ART, RRT ou TRT, necessitamos de algumas informações adcionais para o dimensionamento, aplicáveis à residências que cumprem os requisitos para obter fornecimento até esta grandeza de consumo.</p>
+</fieldset><br><br>`
 
     if (padrao == "UM1" || padrao == "UM2") {
 
         tabDim.innerHTML += `
         <form action="">
         <fieldset>
-        <legend>Tensão de cargas Tipo C1:Iluminação.</legend>
-        <select name="selMenuC1" id="selMenuC1Ilum">	
+        <legend>Tensão de cargas Tipo C1.</legend>
+        <select name="selMenuC1" id="selMenuC1">	
         <option class="volt1" value=0 >Selecione</option>
-        <option class="volt1" selected value=1 >127V</option>       
+        <option class="volt1" selected value=1 >127V</option>
+       
         </select>
         </fieldset>
-        </form><br><br>`
-        tabDim.innerHTML += `
-        <form action="">
+        <br>
         <fieldset>
-        <legend>Tensão de cargas Tipo C1: Tug.</legend>
-        <select name="selMenuC1" id="selMenuC1Tug">	
+        <legend>Tensão de cargas Tipo C2</legend>
+        <select name="selMenuC2" id="selMenuC2">	
         <option class="volt1" value=0 >Selecione</option>
-        <option class="volt1" selected value=1 >127V</option>       
+        <option class="volt1" selected value=1 >127V</option>
+        
         </select>
         </fieldset>
+        <br>
+        <fieldset>
+        <legend>Tensão de cargas Tipo C3</legend>
+        <select name="selMenuC3" id="selMenuC3">	
+        <option class="volt1" value=0 >Selecione</option>
+        <option class="volt1" selected value=1 >127V</option>
+        
+        </select>
+        </fieldset>
+        <br>
+        <fieldset>
+        <legend>Tensão de cargas Tipo C4</legend>
+        <select name="selMenuC4" id="selMenuC4">	
+        <option class="volt1" value=0 >Selecione</option>
+        <option class="volt1" selected value=1 >127V</option>
+        
+        </select>
+        </fieldset>
+        <br>
+        <fieldset>
+        <legend>Tensão de cargas Tipo C5</legend>
+        <select name="selMenuC5" id="selMenuC5">	
+        <option class="volt1" value=0 >Selecione</option>
+        <option class="volt1" selected value=1 >127V</option>
+       
+        </select>
+        </fieldset>
+        <br>
+        <fieldset>
+        <legend>Tensão de cargas Tipo C6</legend>
+        <select name="selMenuC6" id="selMenuC6">	
+        <option class="volt1" value=0 >Selecione</option>
+        <option class="volt1" selected value=1 >127V</option>
+        
+        </select>
+        </fieldset>
+        <br>
+        <br>
         </form>`
 
     } else if (padrao == "UB1" || padrao == "UB2") {
         tabDim.innerHTML += `
     <form action="">
     <fieldset>
-    <legend>Tensão de cargas Tipo C1:Iluminação.</legend>
-    <select name="selMenuC1" id="selMenuC1Ilum">	
+    <legend>Tensão de cargas Tipo C1.</legend>
+    <select name="selMenuC1" id="selMenuC1">	
     <option class="volt1" value=0 >Selecione</option>
     <option class="volt1" selected value=1 >127V</option>
     <option class="volt2" value=2>220v</option>
     </select>
     </fieldset>
-    </form><br><br>`
-        tabDim.innerHTML += `
-    <form action="">
+    <br>
     <fieldset>
-    <legend>Tensão de cargas Tipo C1: TUG.</legend>
-    <select name="selMenuC1" id="selMenuC1Tug">	
+    <legend>Tensão de cargas Tipo C2</legend>
+    <select name="selMenuC2" id="selMenuC2">	
     <option class="volt1" value=0 >Selecione</option>
-    <option class="volt1" selected value=1 >127V</option>
-    <option class="volt2" value=2>220v</option>
+    <option class="volt1" value=1 >127V</option>
+    <option class="volt2"  selected value=2>220v</option>
     </select>
     </fieldset>
+    <br>
+    <fieldset>
+    <legend>Tensão de cargas Tipo C3</legend>
+    <select name="selMenuC3" id="selMenuC3">	
+    <option class="volt1" value=0 >Selecione</option>
+    <option class="volt1" value=1 >127V</option>
+    <option class="volt2"  selected value=2>220v</option>
+    </select>
+    </fieldset>
+    <br>
+    <fieldset>
+    <legend>Tensão de cargas Tipo C4</legend>
+    <select name="selMenuC4" id="selMenuC4">	
+    <option class="volt1" value=0 >Selecione</option>
+    <option class="volt1" value=1 >127V</option>
+    <option class="volt2"  selected value=2>220v</option>
+    </select>
+    </fieldset>
+    <br>
+    <fieldset>
+    <legend>Tensão de cargas Tipo C5</legend>
+    <select name="selMenuC5" id="selMenuC5">	
+    <option class="volt1" value=0 >Selecione</option>
+    <option class="volt1" value=1 >127V</option>
+    <option class="volt2"  selected value=2>220v</option>
+    </select>
+    </fieldset>
+    <br>
+    <fieldset>
+    <legend>Tensão de cargas Tipo C6</legend>
+    <select name="selMenuC6" id="selMenuC6">	
+    <option class="volt1" value=0 >Selecione</option>
+    <option class="volt1" value=1 >127V</option>
+    <option class="volt2"  selected value=2 >220v</option>
+    </select>
+    </fieldset>
+    <br>
+    <br>
     </form>`
     } else if (padrao == "T1" || padrao == "T2") {
         tabDim.innerHTML += `
     <form action="">
     <fieldset>
-    <legend>Tensão de cargas Tipo C1: Iluminação.</legend>
-    <select name="selMenuC1" id="selMenuC1Ilum">	
+    <legend>Tensão de cargas Tipo C1.</legend>
+    <select name="selMenuC1" id="selMenuC1">	
     <option class="volt1" value=0 >Selecione</option>
     <option class="volt1" selected value=1 >127V</option>
     <option class="volt2" value=2>220v - Bifásico</option>
+   
     </select>
     </fieldset>
-    </form><br><br>`
-        tabDim.innerHTML += `
-    <form action="">
+    <br>
     <fieldset>
-    <legend>Tensão de cargas Tipo C1: TUG.</legend>
-    <select name="selMenuC1" id="selMenuC1Tug">	
+    <legend>Tensão de cargas Tipo C2</legend>
+    <select name="selMenuC2" id="selMenuC2">	
     <option class="volt1" value=0 >Selecione</option>
-    <option class="volt1" selected value=1 >127V</option>
-    <option class="volt2" value=2>220v - Bifásico</option>
+    <option class="volt1" value=1 >127V</option>
+    <option class="volt2"  selected value=2>220v - Bifásico</option>
+    <option class="volt2"  value=3>220v -Trifásico</option>
+
     </select>
     </fieldset>
+    <br>
+    <fieldset>
+    <legend>Tensão de cargas Tipo C3</legend>
+    <select name="selMenuC3" id="selMenuC3">	
+    <option class="volt1" value=0 >Selecione</option>
+    <option class="volt1" value=1 >127V</option>
+    <option class="volt2"  selected value=2>220v - Bifásico</option>
+    <option class="volt2"  value=3>220v -Trifásico</option>
+    </select>
+    </fieldset>
+    <br>
+    <fieldset>
+    <legend>Tensão de cargas Tipo C4</legend>
+    <select name="selMenuC4" id="selMenuC4">	
+    <option class="volt1" value=0 >Selecione</option>
+    <option class="volt1" value=1 >127V</option>
+    <option class="volt2"  selected value=2>220v - Bifásico</option>
+    <option class="volt2"  value=3>220v -Trifásico</option>
+    </select>
+    </fieldset>
+    <br>
+    <fieldset>
+    <legend>Tensão de cargas Tipo C5</legend>
+    <select name="selMenuC5" id="selMenuC5">	
+    <option class="volt1" value=0 >Selecione</option>
+    <option class="volt1" value=1 >127V</option>
+    <option class="volt2"  selected value=2>220v - Bifásico</option>
+    <option class="volt2"  value=3>220v -Trifásico</option>
+    </select>
+    </fieldset>
+    <br>
+    <fieldset>
+    <legend>Tensão de cargas Tipo C6</legend>
+    <select name="selMenuC6" id="selMenuC6">	
+    <option class="volt1" value=0 >Selecione</option>
+    <option class="volt1" value=1 >127V</option>
+    <option class="volt2"  selected value=2>220v - Bifásico</option>
+    <option class="volt2"  value=3>220v -Trifásico</option>
+    </select>
+    </fieldset>
+    <br>
+    <br>
     </form>`
+    } else if(padrao=="ERRO"){
+        alert(`Padrão Trifásico - Maior do que 
+         15KVA. ERRO:  Acima de 15KVA é necessário contratar um técnico ou engenheiro com obrigatoriedade de apresentação de ART, RRT ou TRT. Consulte: <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a>`)
     }
 
     tabDim.innerHTML += `<br><input type="button" name="tensao" id="tensao" value="Enviar" onClick="rodarCircuitos()">`
@@ -1569,37 +1667,103 @@ function rodarDimenCirc() {
 
 function rodarCircuitos() {
 
-    tensaoIlum = window.document.querySelector("#selMenuC1Ilum");
-    tensaoC1IIlum = tensaoIlum.options[tensaoIlum.selectedIndex].value;
-    tensaoTug = window.document.querySelector("#selMenuC1Tug");
-    tensaoC1ITug = tensaoTug.options[tensaoTug.selectedIndex].value;
+    tensaoC1 = window.document.querySelector("#selMenuC1");
+    tensaoC1I = tensaoC1.options[tensaoC1.selectedIndex].value;
 
-    switch (tensaoC1IIlum) {
+    switch (tensaoC1I) {
         case "0":
             alert("ERR: Selecione uma tensão e depois click em 'Enviar'.")
             break;
         case "1":
-            tensaoIlumf = 127;
+            tensaoC1f = 127;
             break;
         case "2":
-            tensaoIlumf = 220;
+            tensaoC1f = 220;
             break;
 
     }
-    switch (tensaoC1ITug) {
+    tensaoC2 = window.document.querySelector("#selMenuC2");
+    tensaoC2I = tensaoC2.options[tensaoC2.selectedIndex].value;
+    switch (tensaoC2I) {
         case "0":
             alert("ERR: Selecione uma tensão e depois click em 'Enviar'.")
             break;
         case "1":
-            tensaoTugf = 127;
+            tensaoC2f = 127;
             break;
         case "2":
-            tensaoTugf = 220;
+            tensaoC2f = 220;
             break;
-
+        case "3":
+            tensaoC2f = 219.9;
+            break;
+    }
+    tensaoC3 = window.document.querySelector("#selMenuC3");
+    tensaoC3I = tensaoC3.options[tensaoC3.selectedIndex].value;
+    switch (tensaoC3I) {
+        case "0":
+            alert("ERR: Selecione uma tensão e depois click em 'Enviar'.")
+            break;
+        case "1":
+            tensaoC3f = 127;
+            break;
+        case "2":
+            tensaoC3f = 220;
+            break;
+        case "3":
+            tensaoC3f = 219.9;
+            break;
+    }
+    tensaoC4 = window.document.querySelector("#selMenuC4");
+    tensaoC4I = tensaoC4.options[tensaoC4.selectedIndex].value;
+    switch (tensaoC4I) {
+        case "0":
+            alert("ERR: Selecione uma tensão e depois click em 'Enviar'.")
+            break;
+        case "1":
+            tensaoC4f = 127;
+            break;
+        case "2":
+            tensaoC4f = 220;
+            break;
+        case "3":
+            tensaoC4f = 219.9;
+            break;
+    }
+    tensaoC5 = window.document.querySelector("#selMenuC5");
+    tensaoC5I = tensaoC5.options[tensaoC5.selectedIndex].value;
+    switch (tensaoC5I) {
+        case "0":
+            alert("ERR: Selecione uma tensão e depois click em 'Enviar'.")
+            break;
+        case "1":
+            tensaoC5f = 127;
+            break;
+        case "2":
+            tensaoC5f = 220;
+            break;
+        case "3":
+            tensaoC5f = 219.9;
+            break;
+    }
+    tensaoC6 = window.document.querySelector("#selMenuC6");
+    tensaoC6I = tensaoC6.options[tensaoC6.selectedIndex].value;
+    switch (tensaoC6I) {
+        case "0":
+            alert("ERR: Selecione uma tensão e depois click em 'Enviar'.")
+            break;
+        case "1":
+            tensaoC6f = 127;
+            break;
+        case "2":
+            tensaoC6f = 220;
+            break;
+        case "3":
+            tensaoC6f = 219.9;
+            break;
     }
 
-    if (tensaoIlumf == 127) {
+    if (tensaoC1f == 127) {
         if (potIlum % 1270 == 0) {
             qC1Ilum = parseInt(potIlum / 1270);
         } else {
@@ -1614,7 +1778,7 @@ function rodarCircuitos() {
 
     }
 
-    if (tensaoTugf == 127) {
+    if (tensaoC1f == 127) {
         if (potTug % 1270 == 0) {
             qC1Tug = parseInt(potTugs / 1270);
         } else {
@@ -1637,18 +1801,8 @@ function rodarCircuitos() {
     iterarqC5 = qC5f;
     iterarqC6 = qC6f;
     rodarIncluirTueEsp()
-
 }
-
-
 function rodarIncluirTueEsp() {
-    tabDim.innerHTML = `
-<h3>Dimensionamento de Circuitos.</h3>
-
-<fieldset>
-<legend>Descrição:</legend>
-<p class="txt">A fim de alcançar um dimensionamento seguro, temos que considerar os fenômenos que influenciam a formação da corrente elétrica, tais quais: Temperatura, Material do condutor, Distancia entre o ponto de consumo e/ou Quadro de distribuição e as cargas, Circuitos agrupados em eu mesmo eletroduto, tensão de alimentação da carga, entre outros, e Considerando o objetivo deste aplicativo, que é ajudar eletricistas iniciantes a dimensionar uma residencia até 15kVA, sem obrigatoriedade de ART, RRT ou TRT, necessitamos de algumas informações adcionais para o dimensionamento, aplicáveis à residências que cumprem os requisitos para obter fornecimento até esta grandeza de consumo.</p>
-</fieldset><br><br>`
     somaCirc = numeroTues + qC1Ilum + qC1Tug;
     //alert("Número total de circuito é: "+somaCirc+ " Numeros de tues é "+numeroTues+ " QuatIluminação é "+ qC1Ilum+ " QuantTug é "+ qC1Tug);
     iterarCarga += 1;
@@ -1658,164 +1812,74 @@ function rodarIncluirTueEsp() {
         if (iterarqC2 > 0) {
             caso2 = "1";
 
-            tabDim.innerHTML += `<h2> Dados para aparelhos de aquecimento - C2</h2>
+            tabDim.innerHTML = `<h2> Dados para aparelhos de aquecimento - C2</h2>
 <h3> Parâmetros para dimensionamento de disjuntores termomagnéticos - DIN classe C e dos condutores para os circuito, considerando o clima da região metropolitana do rio de janeiro no verão, o modo de instalar "B1", condutores de cobre, com isolamento de PVC-70, até 10mm², temperatura  de 40ºC-ambiente e 30ºC-solo. Admitindo-se 5% de queda de tensão entre a carga e e o quadro geral de distribuição(NBR5410:2004). </h3>
-<h4>CASO A POTÊNCIA INFORMADA SEJA EM "WATTS", INFORME O FP CONFORME ESCPECIFICAÇÃO, SENÃO FP = 1.</h4>
+<h4>CASO A POTÊNCIA INFORMADA SEJA EM "WATTS", INFORME O FP CONFORME ESCPECIFICAÇÃO, SENÃO FP = 1.</<h4>
 <form action="">
     <fieldset>
     <legend>INSIRA OS DADOS PARA CARGA ${iterarqC2} DESTE TIPO</legend>
-    <p><b>Obs.:O Padrão adotado pelo sistema foi <em>${padrao}</em>. Logo, escolha a tensão em função do padrão: <em>${padrao}</em>. Ou seja, se o padrão for UM1 0u UM2, a única opção é 127V. Se o padrão for UB1 ou UB2, as opções para sua escolha são 127V ou 220V. E se o padrão for T1 ou T2, as opções para sua escolha são 127V, ou 220V - Bifásico ou 220V - Trifásico.<b></p><br>
-    <br><input type="number" name="tue1V" id="tue1V" value="0" min="127" max="220"> <label> Tensão para esta carga.</label><br>
     <br><input type="number" name="tue1Esp" id="tue1Esp" value="100"> <label> Potência para esta carga.</label><br>
     <br><input type="number" name="fptue1Esp" id="fptue1Esp" min="0" max="1" step="0.01"  value="1"> <label>Fator de potencia para esta carga.</label><br>
     <br><input type="number" name="fagruptue1Esp" id="fagruptue1Esp" min="1" max="8"  value="1"> <label>Número de circuitos agrupados</label><br>
     <br><input type="number" name="comprtue1Esp" id="comprtue1Esp"  value="1"> <label>Distancia entre Carga e QLF.</label><br>
     <br><input type="number" name="carrtue1Esp" id="carrtue1Esp" min="2" max="3"  value="2"> <label>Número de condutores carregados.</label><br><br>
+    
     <fieldset>
-    <legend>Nº maximo: 05 cargas deste tipo.</legend>
+    <legend>Nº maximo: 09 cargas deste tipo.</legend>
     <br><select name="SelQtue" id="SelQtue">	
+    <option class="1" value=0 >Selecione</option>
     <option class="1" value=${iterarqC2} selected>Carga ${iterarqC2}</option>       
-    </select><label>para aparelhos de aquecimento - C2</label>
-    </fieldset>
+    </select><label>Escolha nome para a carga</label>
+    </fiedset>
     </fieldset>
     <br>
     <br>
     </form>    
     <br><input type="button" name="incluirTueEsp1" id="incluirTueEsp1" value="Enviar_${iterarCarga}" onClick="rodarIncluirTueEsp1()"><br>
-    <br><br>`
+    </fieldset>
+    </form><br><br>`
             iterarqC2 -= 1;
-
-
 
         } else if (iterarqC3 > 0) {
             caso2 = "2";
-            tabDim.innerHTML += `<h2> Dados para aparelhos de Ar condicionado - C3.</h2>
+            tabDim.innerHTML = `<h2> Dados para aparelhos de Ar condicionado - C3.</h2>
 <h3> Parâmetros para dimensionamento de disjuntores termomagnéticos - DIN classe C e dos condutores para os circuito, considerando o clima da região metropolitana do rio de janeiro no verão, o modo de instalar "B1", condutores de cobre, com isolamento de PVC-70, até 10mm², temperatura  de 40ºC-ambiente e 30ºC-solo. Admitindo-se 5% de queda de tensão entre a carga e e o quadro geral de distribuição(NBR5410:2004). </h3>
-<h4>CASO A POTÊNCIA INFORMADA SEJA EM "WATTS", INFORME O FP CONFORME ESCPECIFICAÇÃO, SENÃO FP = 1.</h4>
+<h4>CASO A POTÊNCIA INFORMADA SEJA EM "WATTS", INFORME O FP CONFORME ESCPECIFICAÇÃO, SENÃO FP = 1.</<h4>
 <form action="">
     <fieldset>
     <legend>INSIRA OS DADOS PARA CARGA ${iterarqC3} DESTE TIPO</legend>
-    <p><b>Obs.:O Padrão adotado pelo sistema foi <em>${padrao}</em>. Logo, escolha a tensão em função do padrão: <em>${padrao}</em>. Ou seja, se o padrão for UM1 0u UM2, a única opção é 127V. Se o padrão for UB1 ou UB2, as opções para sua escolha são 127V ou 220V. E se o padrão for T1 ou T2, as opções para sua escolha são 127V, ou 220V - Bifásico ou 220V - Trifásico.<b></p><br>
-    <br><input type="number" name="tue1V" id="tue1V" value="0" min="127" max="220"> <label> Tensão para esta carga.</label><br>
     <br><input type="number" name="tue1Esp" id="tue1Esp" value="100"> <label> Potência para esta carga.</label><br>
     <br><input type="number" name="fptue1Esp" id="fptue1Esp" min="0" max="1" step="0.01"  value="1"> <label>Fator de potencia para esta carga.</label><br>
     <br><input type="number" name="fagruptue1Esp" id="fagruptue1Esp" min="1" max="8"  value="1"> <label>Número de circuitos agrupados</label><br>
     <br><input type="number" name="comprtue1Esp" id="comprtue1Esp"  value="1"> <label>Distancia entre Carga e QLF.</label><br>
     <br><input type="number" name="carrtue1Esp" id="carrtue1Esp" min="2" max="3"  value="2"> <label>Número de condutores carregados.</label><br><br>
+    
     <fieldset>
-    <legend>Nº maximo: 05 cargas deste tipo.</legend>
+    <legend>Nº maximo: 09 cargas deste tipo.</legend>
     <br><select name="SelQtue" id="SelQtue">	
+    <option class="1" value=0 >Selecione</option>
     <option class="1" value=${iterarqC3} selected>Carga ${iterarqC3}</option>       
-    </select><label>para aparelhos de Ar condicionado - C3</label>
-    </fieldset>
+    </select><label>Escolha nome para a carga</label>
+    </fiedset>
     </fieldset>
     <br>
     <br>
     </form>    
     <br><input type="button" name="incluirTueEsp1" id="incluirTueEsp1" value="Enviar_${iterarCarga}" onClick="rodarIncluirTueEsp1()"><br>
-   <br><br>`
+    </fieldset>
+    </form><br><br>`
 
             iterarqC3 -= 1;
 
         } else if (iterarqC4 > 0) {
             caso2 = "3";
 
-            tabDim.innerHTML += `<h2> Dados para aparelhos - C4.</h2>
+            tabDim.innerHTML = `<h2> Dados para aparelhos - C4.</h2>
 <h3> Parâmetros para dimensionamento de disjuntores termomagnéticos - DIN classe C e dos condutores para os circuito, considerando o clima da região metropolitana do rio de janeiro no verão, o modo de instalar "B1", condutores de cobre, com isolamento de PVC-70, até 10mm², temperatura  de 40ºC-ambiente e 30ºC-solo. Admitindo-se 5% de queda de tensão entre a carga e e o quadro geral de distribuição(NBR5410:2004). </h3>
-<h4>CASO A POTÊNCIA INFORMADA SEJA EM "WATTS", INFORME O FP CONFORME ESCPECIFICAÇÃO, SENÃO FP = 1.</h4>
+<h4>CASO A POTÊNCIA INFORMADA SEJA EM "WATTS", INFORME O FP CONFORME ESCPECIFICAÇÃO, SENÃO FP = 1.</<h4>
 <form action="">
     <fieldset>
     <legend>INSIRA OS DADOS PARA CARGA ${iterarqC4} DESTE TIPO</legend>
-    <p><b>Obs.:O Padrão adotado pelo sistema foi <em>${padrao}</em>. Logo, escolha a tensão em função do padrão: <em>${padrao}</em>. Ou seja, se o padrão for UM1 0u UM2, a única opção é 127V. Se o padrão for UB1 ou UB2, as opções para sua escolha são 127V ou 220V. E se o padrão for T1 ou T2, as opções para sua escolha são 127V, ou 220V - Bifásico ou 220V - Trifásico.<b></p><br>
-    <br><input type="number" name="tue1V" id="tue1V" value="0" min="127" max="220"> <label> Tensão para esta carga.</label><br>
-    <br><input type="number" name="tue1Esp" id="tue1Esp" value="100"> <label> Potência para esta carga.</label><br>
-    <br><input type="number" name="fptue1Esp" id="fptue1Esp" min="0" max="1" step="0.01"  value="1"> <label>Fator de potencia para esta carga.</label><br>
-    <br><input type="number" name="fagruptue1Esp" id="fagruptue1Esp" min="1" max="8"  value="1"> <label>Número de circuitos agrupados</label><br>
-    <br><input type="number" name="comprtue1Esp" id="comprtue1Esp"  value="1"> <label>Distancia entre Carga e QLF.</label><br>
-    <br><input type="number" name="carrtue1Esp" id="carrtue1Esp" min="2" max="3"  value="2"> <label>Número de condutores carregados.</label><br><br>    
-    <fieldset>
-    <legend>Nº maximo: 05 cargas deste tipo.</legend>
-    <br><select name="SelQtue" id="SelQtue">	
-    <option class="1" value=${iterarqC4} selected>Carga ${iterarqC4}</option>       
-    </select><label>para aparelhos - C4</label>
-    </fieldset>
-    </fieldset>
-    <br>
-    <br>
-    </form>    
-    <br><input type="button" name="incluirTueEsp1" id="incluirTueEsp1" value="Enviar_${iterarCarga}" onClick="rodarIncluirTueEsp1()"><br>
-    <br><br>`
-            iterarqC4 -= 1;
-
-
-        } else if (iterarqC5 > 0) {
-            caso2 = "4";
-            tabDim.innerHTML += `<h2> Dados para aparelhos - C5</h2>
-<h3> Parâmetros para dimensionamento de disjuntores termomagnéticos - DIN classe C e dos condutores para os circuito, considerando o clima da região metropolitana do rio de janeiro no verão, o modo de instalar "B1", condutores de cobre, com isolamento de PVC-70, até 10mm², temperatura  de 40ºC-ambiente e 30ºC-solo. Admitindo-se 5% de queda de tensão entre a carga e e o quadro geral de distribuição(NBR5410:2004). </h3>
-<h4>CASO A POTÊNCIA INFORMADA SEJA EM "WATTS", INFORME O FP CONFORME ESCPECIFICAÇÃO, SENÃO FP = 1.</h4>
-<form action="">
-    <fieldset>
-    <legend>INSIRA OS DADOS PARA CARGA ${iterarqC5} DESTE TIPO</legend>
-    <p><b>Obs.:O Padrão adotado pelo sistema foi <em>${padrao}</em>. Logo, escolha a tensão em função do padrão: <em>${padrao}</em>. Ou seja, se o padrão for UM1 0u UM2, a única opção é 127V. Se o padrão for UB1 ou UB2, as opções para sua escolha são 127V ou 220V. E se o padrão for T1 ou T2, as opções para sua escolha são 127V, ou 220V - Bifásico ou 220V - Trifásico.<b></p><br>
-    <br><input type="number" name="tue1V" id="tue1V" value="0" min="127" max="220"> <label> Tensão para esta carga.</label><br>
-    <br><input type="number" name="tue1Esp" id="tue1Esp" value="100"> <label> Potência para esta carga.</label><br>
-    <br><input type="number" name="fptue1Esp" id="fptue1Esp" min="0" max="1" step="0.01"  value="1"> <label>Fator de potencia para esta carga.</label><br>
-    <br><input type="number" name="fagruptue1Esp" id="fagruptue1Esp" min="1" max="8"  value="1"> <label>Número de circuitos agrupados</label><br>
-    <br><input type="number" name="comprtue1Esp" id="comprtue1Esp"  value="1"> <label>Distancia entre Carga e QLF.</label><br>
-    <br><input type="number" name="carrtue1Esp" id="carrtue1Esp" min="2" max="3"  value="2"> <label>Número de condutores carregados.</label><br><br>
-    <fieldset>
-    <legend>Nº maximo: 05 cargas deste tipo.</legend>
-    <br><select name="SelQtue" id="SelQtue">	
-    <option class="1" value=${iterarqC5} selected>Carga ${iterarqC5}</option>       
-    </select><label>para aparelhos - C5</label>
-    </fieldset>
-    </fieldset>
-    <br>
-    <br>
-    </form>    
-    <br><input type="button" name="incluirTueEsp1" id="incluirTueEsp1" value="Enviar_${iterarCarga}" onClick="rodarIncluirTueEsp1()"><br>
-    <br><br>`
-            iterarqC5 -= 1;
-
-        } else if (iterarqC6 > 0) {
-            caso2 = "5";
-            tabDim.innerHTML += `<h2> Dados para aparelhos - C6</h2>
-<h3> Parâmetros para dimensionamento de disjuntores termomagnéticos - DIN classe C e dos condutores para os circuito, considerando o clima da região metropolitana do rio de janeiro no verão, o modo de instalar "B1", condutores de cobre, com isolamento de PVC-70, até 10mm², temperatura  de 40ºC-ambiente e 30ºC-solo. Admitindo-se 5% de queda de tensão entre a carga e e o quadro geral de distribuição(NBR5410:2004). </h3>
-<h4>CASO A POTÊNCIA INFORMADA SEJA EM "WATTS", INFORME O FP CONFORME ESCPECIFICAÇÃO, SENÃO FP = 1.</h4>
-<form action="">
-    <fieldset>
-    <legend>INSIRA OS DADOS PARA CARGA ${iterarqC6} DESTE TIPO</legend>
-    <p><b>Obs.:O Padrão adotado pelo sistema foi <em>${padrao}</em>. Logo, escolha a tensão em função do padrão: <em>${padrao}</em>. Ou seja, se o padrão for UM1 0u UM2, a única opção é 127V. Se o padrão for UB1 ou UB2, as opções para sua escolha são 127V ou 220V. E se o padrão for T1 ou T2, as opções para sua escolha são 127V, ou 220V - Bifásico ou 220V - Trifásico.<b></p><br>
-    <br><input type="number" name="tue1V" id="tue1V" value="0" min="127" max="220"> <label> Tensão para esta carga.</label><br>
-    <br><input type="number" name="tue1Esp" id="tue1Esp" value="100"> <label> Potência para esta carga.</label><br>
-    <br><input type="number" name="fptue1Esp" id="fptue1Esp" min="0" max="1" step="0.01"  value="1"> <label>Fator de potencia para esta carga.</label><br>
-    <br><input type="number" name="fagruptue1Esp" id="fagruptue1Esp" min="1" max="8"  value="1"> <label>Número de circuitos agrupados</label><br>
-    <br><input type="number" name="comprtue1Esp" id="comprtue1Esp"  value="1"> <label>Distancia entre Carga e QLF.</label><br>
-    <br><input type="number" name="carrtue1Esp" id="carrtue1Esp" min="2" max="3"  value="2"> <label>Número de condutores carregados.</label><br><br>
-    <fieldset>
-    <legend>Nº maximo: 05 cargas deste tipo.</legend>
-    <br><select name="SelQtue" id="SelQtue">	
-    <option class="1" value=${iterarqC6} selected>Carga ${iterarqC6}</option>       
-    </select><label>para aparelhos - C6</label>
-    </fieldset>
-    </fieldset>
-    <br>
-    <br>
-    </form>    
-    <br><input type="button" name="incluirTueEsp1" id="incluirTueEsp1" value="Enviar_${iterarCarga}" onClick="rodarIncluirTueEsp1()"><br>
-   <br><br>`
-            iterarqC6 -= 1;
-
-        } else if (iterarIlum > 0) {
-            caso2 = "6";
-
-            tabDim.innerHTML += `<h2> Dados para Iluminação - C1</h2>
-    <h3> Parâmetros para dimensionamento de disjuntores termomagnéticos - DIN classe C e dos condutores para os circuito, considerando o clima da região metropolitana do rio de janeiro no verão, o modo de instalar "B1", condutores de cobre, com isolamento de PVC-70, até 10mm², temperatura  de 40ºC-ambiente e 30ºC-solo. Admitindo-se 5% de queda de tensão entre a carga e e o quadro geral de distribuição(NBR5410:2004). </h3>
-    <h4>CASO A POTÊNCIA INFORMADA SEJA EM "WATTS", INFORME O FP CONFORME ESCPECIFICAÇÃO, SENÃO FP = 1.</h4>
-    <form action="">
-    <fieldset>
-    <legend>INSIRA OS DADOS PARA CARGA ${iterarIlum} DESTE TIPO</legend>
-    <p><b>A tensão adotada para C1: Iluminação foi ${tensaoIlumf} volts.<b></p><br>
     <br><input type="number" name="tue1Esp" id="tue1Esp" value="100"> <label> Potência para esta carga.</label><br>
     <br><input type="number" name="fptue1Esp" id="fptue1Esp" min="0" max="1" step="0.01"  value="1"> <label>Fator de potencia para esta carga.</label><br>
     <br><input type="number" name="fagruptue1Esp" id="fagruptue1Esp" min="1" max="8"  value="1"> <label>Número de circuitos agrupados</label><br>
@@ -1825,26 +1889,119 @@ function rodarIncluirTueEsp() {
     <fieldset>
     <legend>Nº maximo: 09 cargas deste tipo.</legend>
     <br><select name="SelQtue" id="SelQtue">	
-    <option class="1" value=${iterarIlum} selected>Carga ${iterarIlum}</option>       
-    </select><label>para Iluminação - C1</label>
-    </fieldset>
+    <option class="1" value=0 >Selecione</option>
+    <option class="1" value=${iterarqC4} selected>Carga ${iterarqC4}</option>       
+    </select><label>Escolha nome para a carga</label>
+    </fiedset>
     </fieldset>
     <br>
     <br>
     </form>    
     <br><input type="button" name="incluirTueEsp1" id="incluirTueEsp1" value="Enviar_${iterarCarga}" onClick="rodarIncluirTueEsp1()"><br>
-    <br><br>`
+    </fieldset>
+    </form><br><br>`
+            iterarqC4 -= 1;
+
+
+        } else if (iterarqC5 > 0) {
+            caso2 = "4";
+            tabDim.innerHTML = `<h2> Dados para aparelhos - C5</h2>
+<h3> Parâmetros para dimensionamento de disjuntores termomagnéticos - DIN classe C e dos condutores para os circuito, considerando o clima da região metropolitana do rio de janeiro no verão, o modo de instalar "B1", condutores de cobre, com isolamento de PVC-70, até 10mm², temperatura  de 40ºC-ambiente e 30ºC-solo. Admitindo-se 5% de queda de tensão entre a carga e e o quadro geral de distribuição(NBR5410:2004). </h3>
+<h4>CASO A POTÊNCIA INFORMADA SEJA EM "WATTS", INFORME O FP CONFORME ESCPECIFICAÇÃO, SENÃO FP = 1.</<h4>
+<form action="">
+    <fieldset>
+    <legend>INSIRA OS DADOS PARA CARGA ${iterarqC5} DESTE TIPO</legend>
+    <br><input type="number" name="tue1Esp" id="tue1Esp" value="100"> <label> Potência para esta carga.</label><br>
+    <br><input type="number" name="fptue1Esp" id="fptue1Esp" min="0" max="1" step="0.01"  value="1"> <label>Fator de potencia para esta carga.</label><br>
+    <br><input type="number" name="fagruptue1Esp" id="fagruptue1Esp" min="1" max="8"  value="1"> <label>Número de circuitos agrupados</label><br>
+    <br><input type="number" name="comprtue1Esp" id="comprtue1Esp"  value="1"> <label>Distancia entre Carga e QLF.</label><br>
+    <br><input type="number" name="carrtue1Esp" id="carrtue1Esp" min="2" max="3"  value="2"> <label>Número de condutores carregados.</label><br><br>
+    
+    <fieldset>
+    <legend>Nº maximo: 09 cargas deste tipo.</legend>
+    <br><select name="SelQtue" id="SelQtue">	
+    <option class="1" value=0 >Selecione</option>
+    <option class="1" value=${iterarqC5} selected>Carga ${iterarqC5}</option>       
+    </select><label>Escolha nome para a carga</label>
+    </fiedset>
+    </fieldset>
+    <br>
+    <br>
+    </form>    
+    <br><input type="button" name="incluirTueEsp1" id="incluirTueEsp1" value="Enviar_${iterarCarga}" onClick="rodarIncluirTueEsp1()"><br>
+    </fieldset>
+    </form><br><br>`
+            iterarqC5 -= 1;
+
+        } else if (iterarqC6 > 0) {
+            caso2 = "5";
+            tabDim.innerHTML = `<h2> Dados para aparelhos - C6</h2>
+<h3> Parâmetros para dimensionamento de disjuntores termomagnéticos - DIN classe C e dos condutores para os circuito, considerando o clima da região metropolitana do rio de janeiro no verão, o modo de instalar "B1", condutores de cobre, com isolamento de PVC-70, até 10mm², temperatura  de 40ºC-ambiente e 30ºC-solo. Admitindo-se 5% de queda de tensão entre a carga e e o quadro geral de distribuição(NBR5410:2004). </h3>
+<h4>CASO A POTÊNCIA INFORMADA SEJA EM "WATTS", INFORME O FP CONFORME ESCPECIFICAÇÃO, SENÃO FP = 1.</<h4>
+<form action="">
+    <fieldset>
+    <legend>INSIRA OS DADOS PARA CARGA ${iterarqC6} DESTE TIPO</legend>
+    <br><input type="number" name="tue1Esp" id="tue1Esp" value="100"> <label> Potência para esta carga.</label><br>
+    <br><input type="number" name="fptue1Esp" id="fptue1Esp" min="0" max="1" step="0.01"  value="1"> <label>Fator de potencia para esta carga.</label><br>
+    <br><input type="number" name="fagruptue1Esp" id="fagruptue1Esp" min="1" max="8"  value="1"> <label>Número de circuitos agrupados</label><br>
+    <br><input type="number" name="comprtue1Esp" id="comprtue1Esp"  value="1"> <label>Distancia entre Carga e QLF.</label><br>
+    <br><input type="number" name="carrtue1Esp" id="carrtue1Esp" min="2" max="3"  value="2"> <label>Número de condutores carregados.</label><br><br>
+    
+    <fieldset>
+    <legend>Nº maximo: 09 cargas deste tipo.</legend>
+    <br><select name="SelQtue" id="SelQtue">	
+    <option class="1" value=0 >Selecione</option>
+    <option class="1" value=${iterarqC6} selected>Carga ${iterarqC6}</option>       
+    </select><label>Escolha nome para a carga</label>
+    </fiedset>
+    </fieldset>
+    <br>
+    <br>
+    </form>    
+    <br><input type="button" name="incluirTueEsp1" id="incluirTueEsp1" value="Enviar_${iterarCarga}" onClick="rodarIncluirTueEsp1()"><br>
+    </fieldset>
+    </form><br><br>`
+            iterarqC6 -= 1;
+
+        } else if (iterarIlum > 0) {
+            caso2 = "6";
+
+            tabDim.innerHTML = `<h2> Dados para Iluminação - C1</h2>
+    <h3> Parâmetros para dimensionamento de disjuntores termomagnéticos - DIN classe C e dos condutores para os circuito, considerando o clima da região metropolitana do rio de janeiro no verão, o modo de instalar "B1", condutores de cobre, com isolamento de PVC-70, até 10mm², temperatura  de 40ºC-ambiente e 30ºC-solo. Admitindo-se 5% de queda de tensão entre a carga e e o quadro geral de distribuição(NBR5410:2004). </h3>
+    <h4>CASO A POTÊNCIA INFORMADA SEJA EM "WATTS", INFORME O FP CONFORME ESCPECIFICAÇÃO, SENÃO FP = 1.</<h4>
+    <form action="">
+    <fieldset>
+    <legend>INSIRA OS DADOS PARA CARGA ${iterarIlum} DESTE TIPO</legend>
+    <br><input type="number" name="tue1Esp" id="tue1Esp" value="100"> <label> Potência para esta carga.</label><br>
+    <br><input type="number" name="fptue1Esp" id="fptue1Esp" min="0" max="1" step="0.01"  value="1"> <label>Fator de potencia para esta carga.</label><br>
+    <br><input type="number" name="fagruptue1Esp" id="fagruptue1Esp" min="1" max="8"  value="1"> <label>Número de circuitos agrupados</label><br>
+    <br><input type="number" name="comprtue1Esp" id="comprtue1Esp"  value="1"> <label>Distancia entre Carga e QLF.</label><br>
+    <br><input type="number" name="carrtue1Esp" id="carrtue1Esp" min="2" max="3"  value="2"> <label>Número de condutores carregados.</label><br><br>
+    
+    <fieldset>
+    <legend>Nº maximo: 09 cargas deste tipo.</legend>
+    <br><select name="SelQtue" id="SelQtue">	
+    <option class="1" value=0 >Selecione</option>
+    <option class="1" value=${iterarIlum} selected>Carga ${iterarIlum}</option>       
+    </select><label>Escolha nome para a carga</label>
+    </fiedset>
+    </fieldset>
+    <br>
+    <br>
+    </form>    
+    <br><input type="button" name="incluirTueEsp1" id="incluirTueEsp1" value="Enviar_${iterarCarga}" onClick="rodarIncluirTueEsp1()"><br>
+    </fieldset>
+    </form><br><br>`
             iterarIlum -= 1;
 
         } else if (iterarTug > 0) {
             caso2 = "7";
             tabDim.innerHTML = `<h2> Dados para TUGs - C1.</h2>
     <h3> Parâmetros para dimensionamento de disjuntores termomagnéticos - DIN classe C e dos condutores para os circuito, considerando o clima da região metropolitana do rio de janeiro no verão, o modo de instalar "B1", condutores de cobre, com isolamento de PVC-70, até 10mm², temperatura  de 40ºC-ambiente e 30ºC-solo. Admitindo-se 5% de queda de tensão entre a carga e e o quadro geral de distribuição(NBR5410:2004). </h3>
-    <h4>CASO A POTÊNCIA INFORMADA SEJA EM "WATTS", INFORME O FP CONFORME ESCPECIFICAÇÃO, SENÃO FP = 1.</h4>
+    <h4>CASO A POTÊNCIA INFORMADA SEJA EM "WATTS", INFORME O FP CONFORME ESCPECIFICAÇÃO, SENÃO FP = 1.</<h4>
     <form action="">
     <fieldset>
     <legend>INSIRA OS DADOS PARA CARGA ${iterarTug} DESTE TIPO</legend>
-    <p><b>A tensão adotada para C1: TUG´s foi ${tensaoTugf} volts.<b></p><br>
     <br><input type="number" name="tue1Esp" id="tue1Esp" value="100"> <label> Potência para esta carga.</label><br>
     <br><input type="number" name="fptue1Esp" id="fptue1Esp" min="0" max="1" step="0.01"  value="1"> <label>Fator de potencia para esta carga.</label><br>
     <br><input type="number" name="fagruptue1Esp" id="fagruptue1Esp" min="1" max="8"  value="1"> <label>Número de circuitos agrupados</label><br>
@@ -1854,31 +2011,25 @@ function rodarIncluirTueEsp() {
     <fieldset>
     <legend>Nº maximo: 09 cargas deste tipo.</legend>
     <br><select name="SelQtue" id="SelQtue">	
+    <option class="1" value=0 >Selecione</option>
     <option class="1" value=${iterarTug} selected>Carga ${iterarTug}</option>       
-    </select><label>para TUGs - C1</label>
-    </fieldset>
+    </select><label>Escolha nome para a carga</label>
+    </fiedset>
     </fieldset>
     <br>
     <br>
     </form>    
     <br><input type="button" name="incluirTueEsp1" id="incluirTueEsp1" value="Enviar_${iterarCarga}" onClick="rodarIncluirTueEsp1()"><br>
-    <br><br>`
+    </fieldset>
+    </form><br><br>`
 
             iterarTug -= 1;
 
         }
     }
-
 }
-
 function rodarIncluirTueEsp1() {
-    if (caso2 == "6") {
-        tensaoC = tensaoIlumf;
-    } else if (caso2 == "7") {
-        tensaoC = tensaoTugf;
-    } else {
-        tensaoC = document.querySelector("#tue1V").value;
-    }
+
     pot1Esp = document.querySelector("#tue1Esp").value;//Potência em Watt
     FPEsp = document.querySelector("#fptue1Esp").value;//Fator de potência
     Fagrup = document.querySelector("#fagruptue1Esp").value;
@@ -1894,9 +2045,10 @@ function rodarIncluirTueEsp1() {
             break;
         case "1": //aparelhos de aquecimento c2
 
+            tensaoC = tensaoC2f;
             switch (EscCargaf) {
                 case "1":
-                    tensaoResC21 = tensaoC;
+
                     disjTue = desterminaDisjuntores();
                     disjTueC21 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -1907,7 +2059,7 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C2 -1 : " + disjTueC21 + "A. Condutor C2 - 1 : " + condutorC2Circ1 + "mm²")
                     break;
                 case "2":
-                    tensaoResC22 = tensaoC;
+
                     disjTue = desterminaDisjuntores();
                     disjTueC22 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -1918,7 +2070,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C2 -2 : " + disjTueC22 + "A. Condutor C2 - 2 : " + condutorC2Circ2 + "mm²")
                     break;
                 case "3":
-                    tensaoResC23 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC23 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -1929,7 +2080,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C2 -3 : " + disjTueC23 + "A. Condutor C2 - 3 : " + condutorC2Circ3 + "mm²")
                     break;
                 case "4":
-                    tensaoResC24 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC24 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -1940,7 +2090,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C2 -4 : " + disjTueC24 + "A. Condutor C2 - 4 : " + condutorC2Circ4 + "mm²")
                     break;
                 case "5":
-                    tensaoResC25 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC25 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -1951,7 +2100,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C2 -5 : " + disjTueC25 + "A. Condutor C2 - 5 : " + condutorC2Circ5 + "mm²")
                     break;
                 case "6":
-                    tensaoResC26 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC26 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -1962,7 +2110,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C2 -6 : " + disjTueC26 + "A. Condutor C2 - 6 : " + condutorC2Circ6 + "mm²")
                     break;
                 case "7":
-                    tensaoResC27 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC27 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -1973,7 +2120,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C2 -7 : " + disjTueC27 + "A. Condutor C2 - 7 : " + condutorC2Circ7 + "mm²")
                     break;
                 case "8":
-                    tensaoResC28 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC28 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -1984,7 +2130,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C2 -8 : " + disjTueC28 + "A. Condutor C2 - 8 : " + condutorC2Circ8 + "mm²")
                     break;
                 case "9":
-                    tensaoResC29 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC29 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2001,10 +2146,10 @@ function rodarIncluirTueEsp1() {
             break;
         case "2": //aparelhos de Ar C3
 
-
+            tensaoC = tensaoC3f;
             switch (EscCargaf) {
                 case "1":
-                    tensaoResC31 = tensaoC;
+
                     disjTue = desterminaDisjuntores();
                     disjTueC31 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2015,7 +2160,7 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C3 -1 : " + disjTueC31 + "A. Condutor C3 - 1 : " + condutorC3Circ1 + "mm²")
                     break;
                 case "2":
-                    tensaoResC32 = tensaoC;
+
                     disjTue = desterminaDisjuntores();
                     disjTueC32 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2026,7 +2171,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C3 -2 : " + disjTueC32 + "A. Condutor C3 - 2 : " + condutorC3Circ2 + "mm²")
                     break;
                 case "3":
-                    tensaoResC33 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC33 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2037,7 +2181,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C3 -3 : " + disjTueC33 + "A. Condutor C3 - 3 : " + condutorC3Circ3 + "mm²")
                     break;
                 case "4":
-                    tensaoResC34 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC34 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2048,7 +2191,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C3 -4 : " + disjTueC34 + "A. Condutor C3 - 4 : " + condutorC3Circ4 + "mm²")
                     break;
                 case "5":
-                    tensaoResC35 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC35 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2059,7 +2201,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C3 -5 : " + disjTueC35 + "A. Condutor C3 - 5 : " + condutorC3Circ5 + "mm²")
                     break;
                 case "6":
-                    tensaoResC36 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC36 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2070,7 +2211,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C3 -6 : " + disjTueC36 + "A. Condutor C3 - 6 : " + condutorC3Circ6 + "mm²")
                     break;
                 case "7":
-                    tensaoResC37 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC37 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2081,7 +2221,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C3 -7 : " + disjTueC37 + "A. Condutor C3 - 7 : " + condutorC3Circ7 + "mm²")
                     break;
                 case "8":
-                    tensaoResC38 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC38 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2092,7 +2231,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C3 -8 : " + disjTueC38 + "A. Condutor C3 - 8 : " + condutorC3Circ8 + "mm²")
                     break;
                 case "9":
-                    tensaoResC39 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC39 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2108,10 +2246,9 @@ function rodarIncluirTueEsp1() {
             }
             break;
         case "3": //C4
-
+            tensaoC = tensaoC4f;
             switch (EscCargaf) {
                 case "1":
-                    tensaoResC41 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC41 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2122,7 +2259,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C4 -1 : " + disjTueC41 + "A. Condutor C4 - 1 : " + condutorC4Circ1 + "mm²")
                     break;
                 case "2":
-                    tensaoResC42 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC42 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2133,7 +2269,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C4 -2 : " + disjTueC42 + "A. Condutor C4 - 2 : " + condutorC4Circ2 + "mm²")
                     break;
                 case "3":
-                    tensaoResC43 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC43 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2144,7 +2279,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C4-3 : " + disjTueC43 + "A. Condutor C4 - 3 : " + condutorC4Circ3 + "mm²")
                     break;
                 case "4":
-                    tensaoResC44 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC44 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2155,7 +2289,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C4 -4 : " + disjTueC44 + "A. Condutor C4 - 4 : " + condutorC4Circ4 + "mm²")
                     break;
                 case "5":
-                    tensaoResC45 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC45 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2171,10 +2304,9 @@ function rodarIncluirTueEsp1() {
             }
             break;
         case "4": //C5
-
+            tensaoC = tensaoC5f;
             switch (EscCargaf) {
                 case "1":
-                    tensaoResC51 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC51 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2185,7 +2317,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C5 -1 : " + disjTueC51 + "A. Condutor C5 - 1 : " + condutorC5Circ1 + "mm²")
                     break;
                 case "2":
-                    tensaoResC52 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC52 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2196,7 +2327,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C5 -2 : " + disjTueC52 + "A. Condutor C5 - 2 : " + condutorC5Circ2 + "mm²")
                     break;
                 case "3":
-                    tensaoResC53 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC53 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2207,7 +2337,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C5-3 : " + disjTueC53 + "A. Condutor C5 - 3 : " + condutorC5Circ3 + "mm²")
                     break;
                 case "4":
-                    tensaoResC54 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC54 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2218,7 +2347,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C5 -4 : " + disjTueC54 + "A. Condutor C5 - 4 : " + condutorC5Circ4 + "mm²")
                     break;
                 case "5":
-                    tensaoResC55 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC55 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2235,10 +2363,9 @@ function rodarIncluirTueEsp1() {
 
             break;
         case "5": //C6
-
+            tensaoC = tensaoC6f;
             switch (EscCargaf) {
                 case "1":
-                    tensaoResC61 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC61 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2249,7 +2376,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C6 -1 : " + disjTueC61 + "A. Condutor C6 - 1 : " + condutorC6Circ1 + "mm²")
                     break;
                 case "2":
-                    tensaoResC62 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC62 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2260,7 +2386,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C6 -2 : " + disjTueC62 + "A. Condutor C6 - 2 : " + condutorC6Circ2 + "mm²")
                     break;
                 case "3":
-                    tensaoResC63 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC63 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2271,7 +2396,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C6 -3 : " + disjTueC63 + "A. Condutor C6 - 3 : " + condutorC6Circ3 + "mm²")
                     break;
                 case "4":
-                    tensaoResC64 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC64 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2282,7 +2406,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C6 -4 : " + disjTueC64 + "A. Condutor C6 - 4 : " + condutorC6Circ4 + "mm²")
                     break;
                 case "5":
-                    tensaoResC65 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTueC65 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2299,66 +2422,57 @@ function rodarIncluirTueEsp1() {
             break;
         case "6": //Iluminação -C1
 
-
+            tensaoC = tensaoC1f;
             switch (EscCargaf) {
                 case "1":
-                    tensaoResIlum1 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjIlum1 = disjTue.disjC;
                     condutorIlumCirc1 = disjTue.condutorCCirc;
                     alert("Disjuntor Ilum C1 -1 : " + disjIlum1 + "A. Condutor ilum C1 - 1 : " + condutorIlumCirc1 + "mm²")
                     break;
                 case "2":
-                    tensaoResIlum2 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjIlum2 = disjTue.disjC;
                     condutorIlumCirc2 = disjTue.condutorCCirc;
                     alert("Disjuntor Ilum C1 -2 : " + disjIlum2 + "A. Condutor Ilum C1 -2 : " + condutorIlumCirc2 + "mm²")
                     break;
                 case "3":
-                    tensaoResIlum3 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjIlum3 = disjTue.disjC;
                     condutorIlumCirc3 = disjTue.condutorCCirc;
                     alert("Disjuntor Ilum C1 -3 : " + disjIlum3 + "A. Condutor Ilum C1 -3: " + condutorIlumCirc3 + "mm²")
                     break;
                 case "4":
-                    tensaoResIlum4 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjIlum4 = disjTue.disjC;
                     condutorIlumCirc4 = disjTue.condutorCCirc;
                     alert("Disjuntor Ilum C1 -4 : " + disjIlum4 + "A. Condutor Ilum C1 -4 : " + condutorIlumCirc4 + "mm²")
                     break;
                 case "5":
-                    tensaoResIlum5 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjIlum5 = disjTue.disjC;
                     condutorIlumCirc5 = disjTue.condutorCCirc;
                     alert("Disjuntor C1 -5 : " + disjIlum5 + "A. Condutor C1 - 5 : " + condutorIlumCirc5 + "mm²")
                     break;
                 case "6":
-                    tensaoResIlum6 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjIlum6 = disjTue.disjC;
                     condutorIlumCirc6 = disjTue.condutorCCirc;
                     alert("Disjuntor C1 -6 : " + disjIlum6 + "A. Condutor C1 - 6 : " + condutorIlumCirc6 + "mm²")
                     break;
                 case "7":
-                    tensaoResIlum7 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjIlum7 = disjTue.disjC;
                     condutorIlumCirc7 = disjTue.condutorCCirc;
                     alert("Disjuntor C1 -7 : " + disjIlum7 + "A. Condutor C1 - 7 : " + condutorIlumCirc7 + "mm²")
                     break;
                 case "8":
-                    tensaoResIlum8 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjIlum8 = disjTue.disjC;
                     condutorIlumCirc8 = disjTue.condutorCCirc;
                     alert("Disjuntor C1 -8 : " + disjIlum8 + "A. Condutor C1 - 8 : " + condutorIlumCirc5 + "mm²")
                     break;
                 case "9":
-                    tensaoResIlum9 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjIlum9 = disjTue.disjC;
                     condutorIlumCirc9 = disjTue.condutorCCirc;
@@ -2371,10 +2485,10 @@ function rodarIncluirTueEsp1() {
             break;
         case "7": //TUG - C1
 
-
+            tensaoC = tensaoC1f;
             switch (EscCargaf) {
                 case "1":
-                    tensaoResTug1 = tensaoC;
+
                     disjTue = desterminaDisjuntores();
                     disjTug1 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2385,7 +2499,7 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C1 -1 : " + disjTug1 + "A. Condutor C1 - 1 : " + condutorTugCirc1 + "mm²")
                     break;
                 case "2":
-                    tensaoResTug2 = tensaoC;
+
                     disjTue = desterminaDisjuntores();
                     disjTug2 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2396,7 +2510,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C1 -2 : " + disjTug2 + "A. Condutor C1 -2 : " + condutorTugCirc2 + "mm²")
                     break;
                 case "3":
-                    tensaoResTug3 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTug3 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2407,7 +2520,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C1 -3 : " + disjTug3 + "A. Condutor C1 -3 : " + condutorTugCirc3 + "mm²")
                     break;
                 case "4":
-                    tensaoResTug4 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTug4 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2418,7 +2530,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C1 -4 : " + disjTug4 + "A. Condutor C1 -4 : " + condutorTugCirc4 + "mm²")
                     break;
                 case "5":
-                    tensaoResTug5 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTug5 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2429,7 +2540,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C1 -5 : " + disjTug5 + "A. Condutor C1 -5 : " + condutorTugCirc5 + "mm²")
                     break;
                 case "6":
-                    tensaoResTug6 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTug6 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2440,7 +2550,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C1 -6: " + disjTug6 + "A. Condutor C1 -6 : " + condutorTugCirc6 + "mm²")
                     break;
                 case "7":
-                    tensaoResTug7 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTug7 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2451,7 +2560,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C1 -7 : " + disjTug7 + "A. Condutor C1 -7 : " + condutorTugCirc7 + "mm²")
                     break;
                 case "8":
-                    tensaoResTug8 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTug8 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2462,7 +2570,6 @@ function rodarIncluirTueEsp1() {
                     alert("Disjuntor C1 -8 : " + disjTug8 + "A. Condutor C1 - 8 : " + condutorTugCirc8 + "mm²")
                     break;
                 case "9":
-                    tensaoResTug9 = tensaoC;
                     disjTue = desterminaDisjuntores();
                     disjTug9 = disjTue.disjC;
                     if (disjTue.condutorCCirc == 1.5) {
@@ -2492,9 +2599,9 @@ function botoesAvancar() {
 }
 
 function desterminaDisjuntores() {
-    var Ib;
-    var iB;
-    var iN;
+    var Ib ;
+    var iB ;
+    var iN ;
     var disjC;
 
     var Ftemp45 = 0.9;
@@ -2526,24 +2633,24 @@ function desterminaDisjuntores() {
         iB = Ib / (Fagrupf * Ftemp45);
         iN = iB;
     } else if (padrao == "T1" || padrao == "T2") {
-
+        
         if (nCarregados == 2) {
-            // alert("TebsãoC 3carreg"+tensaoC+"  |   nCarregaso: "+nCarregados)
+           // alert("TebsãoC 3carreg"+tensaoC+"  |   nCarregaso: "+nCarregados)
             Ib = potEsp / tensaoC;
             iB = Ib / (Fagrupf * Ftemp45);
             iN = iB;
-            // alert("IB  "+Ib+" | IN  "+iN)
-
+           // alert("IB  "+Ib+" | IN  "+iN)
+            
         } else if (nCarregados == 3) {
             //alert("TebsãoC 3carreg"+tensaoC+"  |   nCarregaso: "+nCarregados)
             Ib = potEsp / (1.73 * tensaoC);
             iB = Ib / (Fagrupf * Ftemp45);
             iN = iB;
-            //alert("IB  "+Ib+" | IN  "+iN)
-
+           //alert("IB  "+Ib+" | IN  "+iN)
+            
         }
     }
-
+    
 
 
     if (padrao == "UM1") {
@@ -2708,7 +2815,7 @@ function desterminaDisjuntores() {
     }
 
     var queda = parseFloat(potEsp * distCirc);//Método Watt x metros
-
+    
     if (queda <= 35081 && tensaoC == 127) {
         condutorCCircA = 1.5;
     } else if (queda <= 58468 && tensaoC == 127) {
@@ -2719,13 +2826,13 @@ function desterminaDisjuntores() {
         condutorCCircA = 6;
     } else if (queda <= 233871 && tensaoC == 127) {
         condutorCCircA = 10;
-    } else if (queda <= 105270 && tensaoC == 220) {
+    } else if (queda <= 105270 && tensaoC == 220 ) {
         condutorCCircA = 1.5;
     } else if (queda <= 175450 && tensaoC == 220) {
         condutorCCircA = 2.5;
-    } else if (queda <= 280720 && tensaoC == 220) {
+    } else if (queda <= 280720 && tensaoC == 220 ) {
         condutorCCircA = 4;
-    } else if (queda <= 421080 && tensaoC == 220) {
+    } else if (queda <= 421080 && tensaoC == 220 ) {
         condutorCCircA = 6;
     } else if (queda <= 701800 && tensaoC == 220) {
         condutorCCircA = 10;
@@ -2750,9 +2857,9 @@ function desterminaDisjuntores() {
         //alert("OBS.: Condutor dimensionado -  CircB: Ampacidade. ")
     } else {
         condutorCCirc = condutorCCircA;
-        //alert("OBS.: Condutor dimensionado - CircA: Queda de tensão. ")
+    //alert("OBS.: Condutor dimensionado - CircA: Queda de tensão. ")
     }
-
+    
     return {
         disjC,
         condutorCCirc
@@ -2767,13 +2874,6 @@ function rodarFinal() {
     var contC4 = 0;
     var contC5 = 0;
     var contC6 = 0;
-    var tensaoResIlum = [tensaoResIlum1, tensaoResIlum2, tensaoResIlum3, tensaoResIlum4, tensaoResIlum5, tensaoResIlum6, tensaoResIlum7, tensaoResIlum8, tensaoResIlum9];
-    var tensaoResTug = [tensaoResTug1, tensaoResTug2, tensaoResTug3, tensaoResTug4, tensaoResTug5, tensaoResTug6, tensaoResTug7, tensaoResTug8, tensaoResTug9];
-    tensaoC2fI = [tensaoResC21, tensaoResC22, tensaoResC23, tensaoResC24, tensaoResC25, tensaoResC26, tensaoResC27, tensaoResC28, tensaoResC29];
-    tensaoC3fI = [tensaoResC31, tensaoResC32, tensaoResC33, tensaoResC34, tensaoResC35, tensaoResC36, tensaoResC37, tensaoResC38, tensaoResC39];
-    tensaoC4fI = [tensaoResC41, tensaoResC42, tensaoResC43, tensaoResC44, tensaoResC45];
-    tensaoC5fI = [tensaoResC51, tensaoResC52, tensaoResC53, tensaoResC54, tensaoResC55];
-    tensaoC6fI = [tensaoResC61, tensaoResC62, tensaoResC63, tensaoResC64, tensaoResC65];
     var DisjTodosIlum = [disjIlum1, disjIlum2, disjIlum3, disjIlum4, disjIlum5, disjIlum6, disjIlum7, disjIlum8, disjIlum9];
     var DisjTodosTug = [disjTug1, disjTug2, disjTug3, disjTug4, disjTug5, disjTug6, disjTug7, disjTug8, disjTug9];
     var DisjTodosC2 = [disjTueC21, disjTueC22, disjTueC23, disjTueC24, disjTueC25, disjTueC26, disjTueC27, disjTueC28, disjTueC29];
@@ -2781,68 +2881,62 @@ function rodarFinal() {
     var DisjTodosC4 = [disjTueC41, disjTueC42, disjTueC43, disjTueC44, disjTueC45];
     var DisjTodosC5 = [disjTueC51, disjTueC52, disjTueC53, disjTueC54, disjTueC55];
     var DisjTodosC6 = [disjTueC61, disjTueC62, disjTueC63, disjTueC64, disjTueC65];
-    var descFiosC1Ilum = [];
-    var descFiosC1Tug = [];
-    var descFiosC2 = [];
-    var descFiosC3 = [];
-    var descFiosC4 = [];
-    var descFiosC5 = [];
-    var descFiosC6 = [];
+    var descFiosC1;
+    var descFiosC2;
+    var descFiosC3;
+    var descFiosC4;
+    var descFiosC5;
+    var descFiosC6;
 
 
     nCondutores1 = "1~ R+N+PE PVC-70. Cor: Vm/Az/Vd."
     nCondutores2 = "2~ R+S+PE PVC-70. Cor: Vm/Pt/Vd."
     nCondutores3 = "3~ R+S+T+PE PVC-70. Cor: Vm/Pt/Br/Vd."
-    for (var i = 0; i < 9; i++) {
 
-        if (tensaoResIlum[i] == 127) {
-            descFiosC1Ilum[i] = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoResIlum[i] == 220) {
-            descFiosC1Ilum[i] = nCondutores2 //disjTue.nCondutores2;
+   
+        if (tensaoC1f == 127) {
+            descFiosC1 = nCondutores1//disjTue.nCondutores1;
+        }else if (tensaoC1f == 220) {
+            descFiosC1 = nCondutores2 //disjTue.nCondutores2;
         }
-        if (tensaoResTug[i] == 127) {
-            descFiosC1Tug[i] = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoResTug[i] == 220) {
-            descFiosC1Tug[i] = nCondutores2 //disjTue.nCondutores2;
-        }
-        if (tensaoC2fI[i] == 127) {
-            descFiosC2[i] = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC2fI[i] == 220) {
-            descFiosC2[i] = nCondutores2 //disjTue.nCondutores2;
-        } else if (tensaoC2fI[i] == 219.9) {
-            descFiosC2[i] = nCondutores3//disjTue.nCondutores3;
-        }
-        if (tensaoC3fI[i] == 127) {
-            descFiosC3[i] = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC3fI[i] == 220) {
-            descFiosC3[i] = nCondutores2 //disjTue.nCondutores2;
-        } else if (tensaoC3fI[i] == 219.9) {
-            descFiosC3[i] = nCondutores3//disjTue.nCondutores3;
-        }
-        if (tensaoC4fI[i] == 127) {
-            descFiosC4[i] = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC4fI[i] == 220) {
-            descFiosC4[i] = nCondutores2 //disjTue.nCondutores2;
-        } else if (tensaoC4fI[i] == 219.9) {
-            descFiosC4[i] = nCondutores3//disjTue.nCondutores3;
-        }
-        if (tensaoC5fI[i] == 127) {
-            descFiosC5[i] = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC5fI[i] == 220) {
-            descFiosC5[i] = nCondutores2 //disjTue.nCondutores2;
+        if (tensaoC2f == 127) {
+            descFiosC2 = nCondutores1//disjTue.nCondutores1;
+        }else if (tensaoC2f == 220) {
+            descFiosC2 = nCondutores2 //disjTue.nCondutores2;
+        } else if (tensaoC2f == 219.9) {
+            descFiosC2 = nCondutores3//disjTue.nCondutores3;
+        } 
+        if (tensaoC3f == 127) {
+            descFiosC3 = nCondutores1//disjTue.nCondutores1;
+        } else if (tensaoC3f == 220 ) {
+            descFiosC3 = nCondutores2 //disjTue.nCondutores2;
+        } else if (tensaoC3f == 219.9) {
+            descFiosC3 = nCondutores3//disjTue.nCondutores3;
+        } 
+        if (tensaoC4f == 127) {
+            descFiosC4 = nCondutores1//disjTue.nCondutores1;
+        } else  if (tensaoC4f == 220 ) {
+            descFiosC4 = nCondutores2 //disjTue.nCondutores2;
+        } else  if (tensaoC4f == 219.9) {
+            descFiosC4 = nCondutores3//disjTue.nCondutores3;
+        } 
+        if (tensaoC5f == 127) {
+            descFiosC5 = nCondutores1//disjTue.nCondutores1;
+        } else if (tensaoC5f == 220 ) {
+            descFiosC5 = nCondutores2 //disjTue.nCondutores2;
             //alert("Desc fio "+ 2)
-        } else if (tensaoC5fI[i] == 219.9) {
+        } else  if (tensaoC5f == 219.9) {
             //alert("Desc fio "+ 3)
-            descFiosC5[i] = nCondutores3//disjTue.nCondutores3;
+            descFiosC5 = nCondutores3//disjTue.nCondutores3;
+        } 
+        if (tensaoC6f == 127) {
+            descFiosC6 = nCondutores1//disjTue.nCondutores1;
+        } else if (tensaoC6f == 220 ) {
+            descFiosC6 = nCondutores2 //disjTue.nCondutores2;
+        } else if (tensaoC6f == 219.9 ) {
+            descFiosC6 = nCondutores3//disjTue.nCondutores3;
         }
-        if (tensaoC6fI[i] == 127) {
-            descFiosC6[i] = nCondutores1//disjTue.nCondutores1;
-        } else if (tensaoC6fI[i] == 220) {
-            descFiosC6[i] = nCondutores2 //disjTue.nCondutores2;
-        } else if (tensaoC6fI[i] == 219.9) {
-            descFiosC6[i] = nCondutores3//disjTue.nCondutores3;
-        }
-    }
+
     
 
     var CondutorIlum = [condutorIlumCirc1, condutorIlumCirc2, condutorIlumCirc3, condutorIlumCirc4, condutorIlumCirc5, condutorIlumCirc6, condutorIlumCirc7, condutorIlumCirc8, condutorIlumCirc9];
@@ -2854,7 +2948,7 @@ function rodarFinal() {
     var CondutorC6 = [condutorC6Circ1, condutorC6Circ2, condutorC6Circ3, condutorC6Circ4, condutorC6Circ5];
 
     numeroCirc = qC1Ilum + qC1Tug + numeroTues;
-
+   
     if (padrao == "UM1" || padrao == "UB1" || padrao == "T1") {
         DG = "32A - 03kA - #6mm2";
         DR = "40A";
@@ -2908,60 +3002,60 @@ function rodarFinal() {
         for (; irefIlum <= qC1Ilum; irefIlum++) {
             tabDim.innerHTML += `<pre>          
 '           Y                       '
-'           |-----[D${irefIlum}]------> Circuito ${irefIlum} - Iluminação (${tensaoResIlum[contIlum]}V)
-'                                   ' D${irefIlum}: ${DisjTodosIlum[contIlum]}A - #${CondutorIlum[contIlum]}mm².
-'                                   ' ${descFiosC1Ilum[contIlum++]}</pre>`
+'           |-----[D${irefIlum}]------> Circuito ${irefIlum} - Iluminação (${tensaoC1f}V)
+'                                   ' D${irefIlum}: ${DisjTodosIlum[contIlum]}A - #${CondutorIlum[contIlum++]}mm².
+'                                   ' ${descFiosC1}</pre>`
 
         }
         var ireftug = irefIlum;
         for (; ireftug < qC1Tug + irefIlum; ireftug++) {
             tabDim.innerHTML += `<pre>         
 '            Y                      '
-'           |-----[D${ireftug}]------> Circuito ${ireftug} - TUG - Tomadas (${tensaoResTug[contTug]}V)
-'                                   ' D${ireftug}: ${DisjTodosTug[contTug]}A - #${CondutorTuG[contTug]}mm².
-'                                   ' ${descFiosC1Tug[contTug++]}</pre>`
+'           |-----[D${ireftug}]------> Circuito ${ireftug} - TUG - Tomadas (${tensaoC1f}V)
+'                                   ' D${ireftug}: ${DisjTodosTug[contTug]}A - #${CondutorTuG[contTug++]}mm².
+'                                   ' ${descFiosC1}</pre>`
         }
         var irefC2 = ireftug;
 
         for (; irefC2 < qC2f + ireftug; irefC2++) {
             tabDim.innerHTML += `<pre>         
 '            Y                      '
-'           |-----[D${irefC2}]------> Circuito ${irefC2} - Aparelho de Aquecimento C1 - (${tensaoC2fI[contC2]}V)
-'                                   ' D${irefC2}: ${DisjTodosC2[contC2]}A - #${CondutorC2[contC2]}mm².
-'                                   ' ${descFiosC2[contC2++]}</pre>`
+'           |-----[D${irefC2}]------> Circuito ${irefC2} - Aparelho de Aquecimento C1 - (${tensaoC2f}V)
+'                                   ' D${irefC2}: ${DisjTodosC2[contC2]}A - #${CondutorC2[contC2++]}mm².
+'                                   ' ${descFiosC2}</pre>`
         }
-
+        
         var irefC3 = irefC2;
         for (; irefC3 < qC3f + irefC2; irefC3++) {
             tabDim.innerHTML += `<pre>         
 '            Y                      '
-'           |-----[D${irefC3}]------> Circuito ${irefC3}  - Ar Condicionado C3 - (${tensaoC3fI[contC3]}V)
-'                                   ' D${irefC3}: ${DisjTodosC3[contC3]}A - #${CondutorC3[contC3]}mm².
-'                                   ' ${descFiosC3[contC3++]}</pre>`
+'           |-----[D${irefC3}]------> Circuito ${irefC3}  - Ar Condicionado C3 - (${tensaoC3f}V)
+'                                   ' D${irefC3}: ${DisjTodosC3[contC3]}A - #${CondutorC3[contC3++]}mm².
+'                                   ' ${descFiosC3}</pre>`
         }
         var irefC4 = irefC3;
         for (; irefC4 < qC4f + irefC3; irefC4++) {
             tabDim.innerHTML += `<pre>         
 '            Y                      '
-'           |-----[D${irefC4}]------> Circuito ${irefC4} - Aparelhos tipo C4 - (${tensaoC4fI[contC4]}V)
-'                                   ' D${irefC4}: ${DisjTodosC4[contC4]}A - #${CondutorC4[contC4]}mm².
-'                                   ' ${descFiosC4[contC4++]}</pre>`
+'           |-----[D${irefC4}]------> Circuito ${irefC4} - Aparelhos tipo C4 - (${tensaoC4f}V)
+'                                   ' D${irefC4}: ${DisjTodosC4[contC4]}A - #${CondutorC4[contC4++]}mm².
+'                                   ' ${descFiosC4}</pre>`
         }
         var irefC5 = irefC4;
         for (; irefC5 < qC5f + irefC4; irefC5++) {
             tabDim.innerHTML += `<pre>         
 '            Y                      '
-'           |-----[D${irefC5}]------> Circuito ${irefC5} - Aparelhos tipo C5 - (${tensaoC5fI[contC5]}V)
-'                                   ' D${irefC5}: ${DisjTodosC5[contC5]}A - #${CondutorC5[contC5]}mm².
-'                                   ' ${descFiosC5[contC5++]}</pre>`
+'           |-----[D${irefC5}]------> Circuito ${irefC5} - Aparelhos tipo C5 - (${tensaoC5f}V)
+'                                   ' D${irefC5}: ${DisjTodosC5[contC5]}A - #${CondutorC5[contC5++]}mm².
+'                                   ' ${descFiosC5}</pre>`
         }
         var irefC6 = irefC5;
         for (; irefC6 < qC6f + irefC5; irefC6++) {
             tabDim.innerHTML += `<pre>         
 '            Y                      '
-'           |-----[D${irefC6}]------> Circuito ${irefC6} - Aparelhos tipo C6 - (${tensaoC6fI[contC6]}V)
-'                                   ' D${irefC6}: ${DisjTodosC6[contC6]}A - #${CondutorC6[contC6]}mm².
-'                                   ' ${descFiosC6[contC6++]}</pre>`
+'           |-----[D${irefC6}]------> Circuito ${irefC6} - Aparelhos tipo C6 - (${tensaoC6f}V)
+'                                   ' D${irefC6}: ${DisjTodosC6[contC6]}A - #${CondutorC6[contC6++]}mm².
+'                                   ' ${descFiosC6}</pre>`
         }
         tabDim.innerHTML += `<pre>         
 '                                   '
@@ -3031,57 +3125,57 @@ function rodarFinal() {
         for (; irefIlum <= qC1Ilum; irefIlum++) {
             tabDim.innerHTML += `<pre>          
 '           Y                         '
-'           |-----[D${irefIlum}]------> Circuito ${irefIlum} - Iluminação (${tensaoResIlum[contIlum]}V)
-'                                     ' D${irefIlum}: ${DisjTodosIlum[contIlum]}A - #${CondutorIlum[contIlum]}mm².
-'                                   ' ${descFiosC1Ilum[contIlum++]}</pre>`
+'           |-----[D${irefIlum}]------> Circuito ${irefIlum} - Iluminação (${tensaoC1f}V)
+'                                     ' D${irefIlum}: ${DisjTodosIlum[contIlum]}A - #${CondutorIlum[contIlum++]}mm².
+'                                     ' ${descFiosC1}</pre>`
         }
         var ireftug = irefIlum;
         for (; ireftug < qC1Tug + irefIlum; ireftug++) {
             tabDim.innerHTML += `<pre>         
 '            Y                        '
-'           |-----[D${ireftug}]------> Circuito ${ireftug} - TUG - Tomadas (${tensaoResTug[contTug]}V)
-'                                     ' D${ireftug}: ${DisjTodosTug[contTug]}A - #${CondutorTuG[contTug]}mm².
-'                                   ' ${descFiosC1Tug[contTug++]}</pre>`
+'           |-----[D${ireftug}]------> Circuito ${ireftug} - TUG - Tomadas (${tensaoC1f}V)
+'                                     ' D${ireftug}: ${DisjTodosTug[contTug]}A - #${CondutorTuG[contTug++]}mm².
+'                                     ' ${descFiosC1}</pre>`
         }
         var irefC2 = ireftug;
         for (; irefC2 < qC2f + ireftug; irefC2++) {
             tabDim.innerHTML += `<pre>         
 '            Y                        '
-'           |-----[D${irefC2}]------> Circuito ${irefC2} - Aparelho de Aquecimento C1 - (${tensaoC2fI[contC2]}V)
-'                                     ' D${irefC2}: ${DisjTodosC2[contC2]}A - #${CondutorC2[contC2]}mm².
-'                                   ' ${descFiosC2[contC2++]}</pre>`
+'           |-----[D${irefC2}]------> Circuito ${irefC2} - Aparelho de Aquecimento C1 - (${tensaoC2f}V)
+'                                     ' D${irefC2}: ${DisjTodosC2[contC2]}A - #${CondutorC2[contC2++]}mm².
+'                                     ' ${descFiosC2}</pre>`
         }
         var irefC3 = irefC2;
         for (; irefC3 < qC3f + irefC2; irefC3++) {
             tabDim.innerHTML += `<pre>         
 '            Y                        '
-'           |-----[D${irefC3}]------> Circuito ${irefC3} - Ar Condicionado C3 - (${tensaoC3fI[contC3]}V)
-'                                     ' D${irefC3}: ${DisjTodosC3[contC3]}A - #${CondutorC3[contC3]}mm².
-'                                   ' ${descFiosC3[contC3++]}</pre>`
+'           |-----[D${irefC3}]------> Circuito ${irefC3} - Ar Condicionado C3 - (${tensaoC3f}V)
+'                                     ' D${irefC3}: ${DisjTodosC3[contC3]}A - #${CondutorC3[contC3++]}mm².
+'                                     ' ${descFiosC3}</pre>`
         }
         var irefC4 = irefC3;
         for (; irefC4 < qC4f + irefC3; irefC4++) {
             tabDim.innerHTML += `<pre>         
 '            Y                        '
-'           |-----[D${irefC4}]------> Circuito ${irefC4} - Aparelhos tipo C4 - (${tensaoC4fI[contC4]}V) 
-'                                     ' D${irefC4}: ${DisjTodosC4[contC4]}A - #${CondutorC4[contC4]}mm².
-'                                   ' ${descFiosC4[contC4++]}</pre>`
+'           |-----[D${irefC4}]------> Circuito ${irefC4} - Aparelhos tipo C4 - (${tensaoC4f}V) 
+'                                     ' D${irefC4}: ${DisjTodosC4[contC4]}A - #${CondutorC4[contC4++]}mm².
+'                                     ' ${descFiosC4}</pre>`
         }
         var irefC5 = irefC4;
         for (; irefC5 < qC5f + irefC4; irefC5++) {
             tabDim.innerHTML += `<pre>         
 '            Y                        '
-'           |-----[D${irefC5}]------> Circuito ${irefC5} - Aparelhos tipo C5 - (${tensaoC5fI[contC5]}V)
-'                                     ' D${irefC5}: ${DisjTodosC5[contC5]}A - #${CondutorC5[contC5]}mm².
-'                                   ' ${descFiosC5[contC5++]}</pre>`
+'           |-----[D${irefC5}]------> Circuito ${irefC5} - Aparelhos tipo C5 - (${tensaoC5f}V)
+'                                     ' D${irefC5}: ${DisjTodosC5[contC5]}A - #${CondutorC5[contC5++]}mm².
+'                                     ' ${descFiosC5}</pre>`
         }
         var irefC6 = irefC5;
         for (; irefC6 < qC6f + irefC5; irefC6++) {
             tabDim.innerHTML += `<pre>         
 '            Y                        '
-'           |-----[D${irefC6}]------> Circuito ${irefC6} - Aparelhos tipo C6 - (${tensaoC6fI[contC6]}V)
-'                                     ' D${irefC6}: ${DisjTodosC6[contC6]}A - #${CondutorC6[contC6]}mm².
-'                                   ' ${descFiosC6[contC6++]}</pre>`
+'           |-----[D${irefC6}]------> Circuito ${irefC6} - Aparelhos tipo C6 - (${tensaoC6f}V)
+'                                     ' D${irefC6}: ${DisjTodosC6[contC6]}A - #${CondutorC6[contC6++]}mm².
+'                                     ' ${descFiosC6}</pre>`
         }
         tabDim.innerHTML += `<pre>         
 '                                     '
@@ -3152,58 +3246,58 @@ function rodarFinal() {
         for (; irefIlum <= qC1Ilum; irefIlum++) {
             tabDim.innerHTML += `<pre>
 '           Y                            '
-'           |-----[D${irefIlum}]------> Circuito ${irefIlum} - Iluminação (${tensaoResIlum[contIlum]}V)
-'                                        ' D${irefIlum}: ${DisjTodosIlum[contIlum]}A - #${CondutorIlum[contIlum]}mm².
-'                                   ' ${descFiosC1Ilum[contIlum++]}</pre>`
+'           |-----[D${irefIlum}]------> Circuito ${irefIlum} - Iluminação (${tensaoC1f}V)
+'                                        ' D${irefIlum}: ${DisjTodosIlum[contIlum]}A - #${CondutorIlum[contIlum++]}mm².
+'                                        ' ${descFiosC1}</pre>`
 
         }
         var ireftug = irefIlum;
         for (; ireftug < qC1Tug + irefIlum; ireftug++) {
             tabDim.innerHTML += `<pre>         
 '            Y                           '
-'           |-----[D${ireftug}]------> Circuito ${ireftug} - TUG - Tomadas (${tensaoResTug[contTug]}V)
-'                                        ' D${ireftug}: ${DisjTodosTug[contTug]}A - #${CondutorTuG[contTug]}mm².
-'                                   ' ${descFiosC1Tug[contTug++]}</pre>`
+'           |-----[D${ireftug}]------> Circuito ${ireftug} - TUG - Tomadas (${tensaoC1f}V)
+'                                        ' D${ireftug}: ${DisjTodosTug[contTug]}A - #${CondutorTuG[contTug++]}mm².
+'                                        ' ${descFiosC1}</pre>`
         }
         var irefC2 = ireftug;
         for (; irefC2 < qC2f + ireftug; irefC2++) {
             tabDim.innerHTML += `<pre>         
 '            Y                           '
-'           |-----[D${irefC2}]------> Circuito ${irefC2} - Aparelho de Aquecimento C1 - (${tensaoC2fI[contC2]}V)
-'                                        ' D${irefC2}: ${DisjTodosC2[contC2]}A - #${CondutorC2[contC2]}mm².
-'                                   ' ${descFiosC2[contC2++]}</pre>`
+'           |-----[D${irefC2}]------> Circuito ${irefC2} - Aparelho de Aquecimento C1 - (${tensaoC2f}V)
+'                                        ' D${irefC2}: ${DisjTodosC2[contC2]}A - #${CondutorC2[contC2++]}mm².
+'                                        ' ${descFiosC2}</pre>`
         }
         var irefC3 = irefC2;
         for (; irefC3 < qC3f + irefC2; irefC3++) {
             tabDim.innerHTML += `<pre>         
 '            Y                           '
-'           |-----[D${irefC3}]------> Circuito ${irefC3} - Ar Condicionado C3 - (${tensaoC3fI[contC3]}V)
-'                                        ' D${irefC3}: ${DisjTodosC3[contC3]}A - #${CondutorC3[contC3]}mm².
-'                                   ' ${descFiosC3[contC3++]}</pre>`
+'           |-----[D${irefC3}]------> Circuito ${irefC3} - Ar Condicionado C3 - (${tensaoC3f}V)
+'                                        ' D${irefC3}: ${DisjTodosC3[contC3]}A - #${CondutorC3[contC3++]}mm².
+'                                        ' ${descFiosC3}</pre>`
         }
         var irefC4 = irefC3;
         for (; irefC4 < qC4f + irefC3; irefC4++) {
             tabDim.innerHTML += `<pre>         
 '            Y                           '
-'           |-----[D${irefC4}]------> Circuito ${irefC4} - Aparelhos tipo C4 - (${tensaoC4fI[contC4]}V)
-'                                        ' D${irefC4}: ${DisjTodosC4[contC4]}A - #${CondutorC4[contC4]}mm².
-'                                   ' ${descFiosC4[contC4++]}</pre>`
+'           |-----[D${irefC4}]------> Circuito ${irefC4} - Aparelhos tipo C4 - (${tensaoC4f}V)
+'                                        ' D${irefC4}: ${DisjTodosC4[contC4]}A - #${CondutorC4[contC4++]}mm².
+'                                        ' ${descFiosC4}</pre>`
         }
         var irefC5 = irefC4;
         for (; irefC5 < qC5f + irefC4; irefC5++) {
             tabDim.innerHTML += `<pre>         
 '            Y                           '
-'           |-----[D${irefC5}]------> Circuito ${irefC5} - Aparelhos tipo C5 - (${tensaoC5fI[contC5]}V)
-'                                        ' D${irefC5}: ${DisjTodosC5[contC5]}A - #${CondutorC5[contC5]}mm².
-'                                   ' ${descFiosC5[contC5++]}</pre>`
+'           |-----[D${irefC5}]------> Circuito ${irefC5} - Aparelhos tipo C5 - (${tensaoC5f}V)
+'                                        ' D${irefC5}: ${DisjTodosC5[contC5]}A - #${CondutorC5[contC5++]}mm².
+'                                        ' ${descFiosC5}</pre>`
         }
         var irefC6 = irefC5;
         for (; irefC6 < qC6f + irefC5; irefC6++) {
             tabDim.innerHTML += `<pre>         
 '            Y                           '
-'           |-----[D${irefC6}]------> Circuito ${irefC6} - Aparelhos tipo C6 - (${tensaoC6fI[contC6]}V)
-'                                        ' D${irefC6}: ${DisjTodosC6[contC6]}A - #${CondutorC6[contC6]}mm².
-'                                   ' ${descFiosC6[contC6++]}</pre>`
+'           |-----[D${irefC6}]------> Circuito ${irefC6} - Aparelhos tipo C6 - (${tensaoC6f}V)
+'                                        ' D${irefC6}: ${DisjTodosC6[contC6]}A - #${CondutorC6[contC6++]}mm².
+'                                        ' ${descFiosC6}</pre>`
         }
         tabDim.innerHTML += `<pre>         
 '                                        '
@@ -3238,7 +3332,7 @@ function rodarFinal() {
 
 }
 
-function rodarRelatorio() {
+function rodarRelatorio(){
 
     potTotalDem = parseFloat(d1) + parseFloat(d2) + parseFloat(d3) + parseFloat(d4) + parseFloat(d5) + parseFloat(d6);
     potFinalInst = parseFloat(c1) + parseFloat(c2f) + parseFloat(c3f) + parseFloat(c4f) + parseFloat(c5f) + parseFloat(c6f);
@@ -3285,7 +3379,7 @@ function rodarRelatorio() {
     tabDim.innerHTML += `<h3> Tabela para medidor LIGHT - Ligações novas e alterações de carga, com carga demandada até 15 kVA (40 A), sem obrigatoriedade de apresentação de ART, RRT ou TRT.</h3>`
 
     if (potTotalDem <= 4000) {
-
+        
         tabDim.innerHTML += `
                                             <fieldset>
                                             <legend>Padrão Urbano Monofáfico 1 - UM1</legend>
@@ -3300,7 +3394,7 @@ function rodarRelatorio() {
                                             </fieldset>`
         tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (RECON-BT 2023-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (RECON-BT 2023-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`
     } else if (potTotalDem <= 5000) {
-
+        
         tabDim.innerHTML += `
                                                 <fieldset>
                                                 <legend>Padrão Urbano Monofásico 2 - UM2</legend>
@@ -3315,7 +3409,7 @@ function rodarRelatorio() {
                                                 </fieldset>`
         tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (RECON-BT 2023-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (RECON-BT 2023-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`
     } else if (potTotalDem <= 7000) {
-
+        
         tabDim.innerHTML += `
                                                 <fieldset>
                                                 <legend>Padrão: Urbano Monofásico 3 - UM3 ou Urbano Bifásico 1 - UB1</legend>
@@ -3342,7 +3436,7 @@ function rodarRelatorio() {
                                                 </fieldset>`
         tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (RECON-BT 2023-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (RECON-BT 2023-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`
     } else if (potTotalDem <= 8000) {
-
+        
         tabDim.innerHTML += `
                                                 <fieldset>
                                                 <legend>Padrão: Urbano Monofásico 3 - UM3 ou Urbano Bifásico 2 - UB2</legend>
@@ -3369,7 +3463,7 @@ function rodarRelatorio() {
                                                 </fieldset>`
         tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (RECON-BT 2023-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (RECON-BT 2023-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`
     } else if (potTotalDem <= 12000) {
-
+        
         tabDim.innerHTML += `
                                                 <fieldset>
                                                 <legend>Urbano Bifásico 3 - UB3 ou Padrão Trifásico 1 - T1</legend>
@@ -3396,7 +3490,7 @@ function rodarRelatorio() {
                                                 </fieldset>`
         tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (RECON-BT 2023-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (RECON-BT 2023-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`
     } else if (potTotalDem <= 13000) {
-
+    
         tabDim.innerHTML += `
                                                 <fieldset>
                                                 <legend>Urbano Bifásico 3 - UB3 ou Padrão Trifásico 2 - T2</legend>
@@ -3423,7 +3517,7 @@ function rodarRelatorio() {
                                                 </fieldset>`
         tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (RECON-BT 2023-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (RECON-BT 2023-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`
     } else if (potTotalDem <= 15000) {
-
+        
         tabDim.innerHTML += `
                                                 <fieldset>
                                                 <legend>Padrão Trifásico 2 - T2</legend>
