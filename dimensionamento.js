@@ -1465,7 +1465,7 @@ function rodarDimenCirc() {
     numeroTues = parseFloat(qC2f) + parseFloat(qC3f) + parseFloat(qC4f) + parseFloat(qC5f) + parseFloat(qC6f);
     if (potTotalDem <= 4000) {
         padrao = "UM1";
-
+        
     } else if (potTotalDem <= 5000) {
         padrao = "UM2";
 
@@ -1487,6 +1487,7 @@ function rodarDimenCirc() {
     } else if (potTotalDem > 15000) {
         padrao = "ERRO"
     }
+alert(`Atenção: \nO Padrão calculado para este dimensionamento foi o padrão de entrada (LIGHT-RJ) do tipo: " ${padrao}" . \nOBS.:\n¬ O Padrão "UM1 ou UM2" - Urbano Monofásico fornece R+N - 127V, \n¬ O padrão "UB1 ou UB2" - Urbano Bifásico fornece R+S+N - 127V ou 220v, \n¬ O padrão "T1 ou T2" - Urbano Trifásico fornece R+S+T+N - 127V ou 220V. `);
 
     /*********Acrescentado novo teste *************************************************************************************/
     tabDim.innerHTML = `
@@ -1636,6 +1637,7 @@ function rodarCircuitos() {
     iterarqC4 = qC4f;
     iterarqC5 = qC5f;
     iterarqC6 = qC6f;
+    alert(`O Número total de circuito é: ${numeroTues + qC1Ilum + qC1Tug}: \nCircuitos de TUEs = ${numeroTues}. \nCircuitos de Iluminação = ${qC1Ilum}. \nCircuitos de TUGs = ${qC1Tug}. \nAgora, antes de continuar, rascunhe a distribuição e o diagrama unifilar sobre planta baixa, pois informações resultantes desse dimensionamento serão solicitadas a seguir.`);
     rodarIncluirTueEsp()
 
 }
@@ -1650,7 +1652,7 @@ function rodarIncluirTueEsp() {
 <p class="txt">A fim de alcançar um dimensionamento seguro, temos que considerar os fenômenos que influenciam a formação da corrente elétrica, tais quais: Temperatura, Material do condutor, Distancia entre o ponto de consumo e/ou Quadro de distribuição e as cargas, Circuitos agrupados em eu mesmo eletroduto, tensão de alimentação da carga, entre outros, e Considerando o objetivo deste aplicativo, que é ajudar eletricistas iniciantes a dimensionar uma residencia até 15kVA, sem obrigatoriedade de ART, RRT ou TRT, necessitamos de algumas informações adcionais para o dimensionamento, aplicáveis à residências que cumprem os requisitos para obter fornecimento até esta grandeza de consumo.</p>
 </fieldset><br><br>`
     somaCirc = numeroTues + qC1Ilum + qC1Tug;
-    //alert("Número total de circuito é: "+somaCirc+ " Numeros de tues é "+numeroTues+ " QuatIluminação é "+ qC1Ilum+ " QuantTug é "+ qC1Tug);
+   
     iterarCarga += 1;
 
     if (iterarCarga <= somaCirc) {
@@ -3245,9 +3247,7 @@ function rodarRelatorio() {
     numeroTues = parseFloat(qC2f) + parseFloat(qC3f) + parseFloat(qC4f) + parseFloat(qC5f) + parseFloat(qC6f);
 
     tabDim.innerHTML = `<h1> Relatório final do dimensionamento para uso didático</h1>`
-    tabDim.innerHTML += ` <p class="txt"><strong>OBS.: Este projeto destina-se apenas ao aprendizado e para o uso da aplicação deve-se ter conhecimentos de Instalações elétricas prediais, estando o seu uso restrito à estudantes e, logo, esta aplicação destina-se aos estudos e pesquisa de eletricistas. Não autorizamos seu uso comercial ou profissional, logo, não nos responsabilizamos pelo mau uso do conhecimento disponibilizado aqui, ou pela desvirtuação de seu propósito. Ressaltamos a importância de se consultar seu professor ou um profissional habilitado na área de Instalações elétricas sobre os resultados encontrados em seu estudo, antes de aplicá-lo, como também alertamos para o risco de exercício ilegal da profissão em casos de atuação em obras que requeiram a obrigatoriedade de RRT, ART ou TRT.</strong></p>
-
-<h2>Informações para solicitação de fornecimento:</h2>
+    tabDim.innerHTML += `<h2>Informações para solicitação de fornecimento:</h2>
                                             <br>
                                             <ol>
                                             <li> Data: ${data.value}.</li>
