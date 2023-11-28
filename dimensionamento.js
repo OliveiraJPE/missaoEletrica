@@ -512,6 +512,875 @@ var iterar = 0;
 var iterarCarga = 0;
 var somaCirc = 0;
 
+//Calculo direto para maquinas e circuitos
+var tabDimCirc;
+var nomeCirc;
+var nomeTensao=0;
+var nomeCCarregado=0;
+var nomeDistancia=0;
+var nomePotenciaVA=0
+var nomeFio=0;
+var nomeDisj=0;
+var nomeIB=0;
+var K1=1;
+var K2=1;
+var K3=1;
+var VAkm=0;
+var nomeFio2=0;
+var nomeFio3=0;
+var nomeResFio=0;
+var fases;
+function dimensCirc(){
+    tabDimCirc = window.document.querySelector("div#fioDisjuntor");
+    nomeCirc = window.document.querySelector("input#nCirc").value;
+    nomeTensao = window.document.querySelector("input#nCircTensao").value;
+    nomeCCarregado = window.document.querySelector("input#nCircNCond").value;
+    nomeDistancia = window.document.querySelector("input#nCircDist").value;
+    nomePotenciaVA = window.document.querySelector("input#nCircPotencia").value;
+    K1=window.document.querySelector("input#nk1").value;
+    K2=window.document.querySelector("input#nk2").value;
+    K3=window.document.querySelector("input#nk3").value;
+
+    if(!nomeCirc){
+    alert("Dê um nome para o Circuito. Ex.: Iluminação, Força, Motor...");
+    }else if(!nomePotenciaVA) {
+    alert("Escreva um valor de potência em Volt-Amperes. Ex.: 1500VA");
+    }else if(!nomeTensao) {
+    alert("Escreva um valor de tensão: 110, 127, 220, 380...");
+    }else if(!nomeCCarregado){
+    alert("Escreva o tipo de circuito: 2, 3 ou 4");
+    }else if(!nomeDistancia){
+    alert("Escreva a distancia entre a carga e o quadro de luz e/ou força.");
+    }
+        
+        if(nomeCCarregado==1){
+            fases="Monofásico";
+            nomeIB=nomePotenciaVA/(nomeTensao*K1*K2*K3);
+            VAkm=(nomeTensao*0.04)/(nomeIB*(nomeDistancia/1000));
+            nomeResFio=(0.0345*nomePotenciaVA*nomeDistancia)/(0.04*nomeTensao*nomeTensao);
+            /*nomeResFio=nomePotenciaVA*nomeDistancia;*/
+            if (nomeIB<=16){
+                nomeFio=Number.parseFloat(1.5);
+            }else if (nomeIB<=20){
+                nomeFio=Number.parseFloat(2.5);
+            }else if (nomeIB<=32){
+                nomeFio=Number.parseFloat(4);
+            }else if (nomeIB<=40){
+                nomeFio=Number.parseFloat(6);
+            }else if (nomeIB<=50){
+                nomeFio=Number.parseFloat(10);
+            }else if (nomeIB<=75){
+                nomeFio=Number.parseFloat(16);
+            }else if (nomeIB<=100){
+                nomeFio=Number.parseFloat(25);
+            }else  {alert("ERRO: Ampacidade - Condutor maior do que 25mm², procure um Técnico ou refaça a operação")}
+
+            if (VAkm>=27.4 ){
+                nomeFio2=Number.parseFloat(1.5);
+            }else if (VAkm>=16.8){
+                nomeFio2=Number.parseFloat(2.5);
+            }else if (VAkm>=10.5){
+                nomeFio2=Number.parseFloat(4);
+            }else if (VAkm>=7){
+                nomeFio2=Number.parseFloat(6);
+            }else if (VAkm>=4.2){
+                nomeFio2=Number.parseFloat(10);
+            }else if (VAkm>=2.7){
+                nomeFio2=Number.parseFloat(16);
+            }else if (VAkm>=1.72){
+                nomeFio2=Number.parseFloat(25);
+            }else   {alert("ERRO: V/A.km - Condutor maior do que 25mm², procure um Técnico ou refaça a operação")}
+
+            if (nomeResFio<=1.5){
+                nomeFio3=Number.parseFloat(1.5);
+            }else if (nomeResFio<=2.5){
+                nomeFio3=Number.parseFloat(2.5);
+            }else if (nomeResFio<=4){
+                nomeFio3=Number.parseFloat(4);
+            }else if (nomeResFio<=6){
+                nomeFio3=Number.parseFloat(6);
+            }else if (nomeResFio<=10){
+                nomeFio3=Number.parseFloat(10);
+            }else if (nomeResFio<=16){
+                nomeFio3=Number.parseFloat(16);
+            }else if (nomeResFio<=25){
+                nomeFio3=Number.parseFloat(25);
+            }else {alert("ERRO: Watt x metro -Condutor maior do que 25mm², procure um Técnico ou refaça a operação")}
+
+            
+                if(nomeFio==1.5){
+                    if (nomeIB<10){
+                nomeDisj=Number.parseFloat(10);
+                }else if (nomeIB<16){
+                    nomeDisj=Number.parseFloat(16);
+                }
+            }else  if (nomeFio==2.5){
+                if (nomeIB<10){
+                    nomeDisj=Number.parseFloat(10);
+                    }else if (nomeIB<16){
+                        nomeDisj=Number.parseFloat(16);
+                    }else if (nomeIB<20){
+                        nomeDisj=Number.parseFloat(20);
+                    }
+                }else  if (nomeFio==4){
+                    if (nomeIB<10){
+                        nomeDisj=Number.parseFloat(10);
+                        }else if (nomeIB<16){
+                            nomeDisj=Number.parseFloat(16);
+                        }else if (nomeIB<20){
+                            nomeDisj=Number.parseFloat(20);
+                        }else if (nomeIB<25){
+                            nomeDisj=Number.parseFloat(25);
+                        }else if (nomeIB<32){
+                            nomeDisj=Number.parseFloat(32);
+                        }
+                    }else  if (nomeFio==6){
+                        if (nomeIB<10){
+                            nomeDisj=Number.parseFloat(10);
+                            }else if (nomeIB<16){
+                                nomeDisj=Number.parseFloat(16);
+                            }else if (nomeIB<20){
+                                nomeDisj=Number.parseFloat(20);
+                            }else if (nomeIB<25){
+                                nomeDisj=Number.parseFloat(25);
+                            }else if (nomeIB<32){
+                                nomeDisj=Number.parseFloat(32);
+                            }else if (nomeIB<40){
+                                nomeDisj=Number.parseFloat(40);
+                            }
+                        }else  if (nomeFio==10){
+                            if (nomeIB<10){
+                                nomeDisj=Number.parseFloat(10);
+                                }else if (nomeIB<16){
+                                    nomeDisj=Number.parseFloat(16);
+                                }else if (nomeIB<20){
+                                    nomeDisj=Number.parseFloat(20);
+                                }else if (nomeIB<25){
+                                    nomeDisj=Number.parseFloat(25);
+                                }else if (nomeIB<32){
+                                    nomeDisj=Number.parseFloat(32);
+                                }else if (nomeIB<40){
+                                    nomeDisj=Number.parseFloat(40);
+                                }else if (nomeIB<45){
+                                    nomeDisj=Number.parseFloat(45);
+                                }else if (nomeIB<50){
+                                    nomeDisj=Number.parseFloat(50);
+                                } 
+                        }else  if (nomeFio==16){
+                            if (nomeIB<10){
+                                nomeDisj=Number.parseFloat(10);
+                                }else if (nomeIB<16){
+                                    nomeDisj=Number.parseFloat(16);
+                                }else if (nomeIB<20){
+                                    nomeDisj=Number.parseFloat(20);
+                                }else if (nomeIB<25){
+                                    nomeDisj=Number.parseFloat(25);
+                                }else if (nomeIB<32){
+                                    nomeDisj=Number.parseFloat(32);
+                                }else if (nomeIB<40){
+                                    nomeDisj=Number.parseFloat(40);
+                                }else if (nomeIB<45){
+                                    nomeDisj=Number.parseFloat(45);
+                                }else if (nomeIB<50){
+                                    nomeDisj=Number.parseFloat(50);
+                                }else if (nomeIB<63){
+                                    nomeDisj=Number.parseFloat(63);
+                                }else if (nomeIB<70){
+                                    nomeDisj=Number.parseFloat(70);
+                                }else if (nomeIB<75){
+                                    nomeDisj=Number.parseFloat(75);
+                                }
+                            }else  if (nomeFio==25){
+                                if (nomeIB<10){
+                                    nomeDisj=Number.parseFloat(10);
+                                    }else if (nomeIB<16){
+                                        nomeDisj=Number.parseFloat(16);
+                                    }else if (nomeIB<20){
+                                        nomeDisj=Number.parseFloat(20);
+                                    }else if (nomeIB<25){
+                                        nomeDisj=Number.parseFloat(25);
+                                    }else if (nomeIB<32){
+                                        nomeDisj=Number.parseFloat(32);
+                                    }else if (nomeIB<40){
+                                        nomeDisj=Number.parseFloat(40);
+                                    }else if (nomeIB<45){
+                                        nomeDisj=Number.parseFloat(45);
+                                    }else if (nomeIB<50){
+                                        nomeDisj=Number.parseFloat(50);
+                                    }else if (nomeIB<63){
+                                        nomeDisj=Number.parseFloat(63);
+                                    }else if (nomeIB<70){
+                                        nomeDisj=Number.parseFloat(70);
+                                    }else if (nomeIB<75){
+                                        nomeDisj=Number.parseFloat(75);
+                                    }else if (nomeIB<80){
+                                        nomeDisj=Number.parseFloat(80);
+                                    }else if (nomeIB<90){
+                                        nomeDisj=Number.parseFloat(90);
+                                    }else if (nomeIB<100){
+                                        nomeDisj=Number.parseFloat(100);
+                                    }                           
+           
+            }else  {alert("ERRO: Disjuntor maior do que  a capacidade do condutor de 25mm², procure um Técnico ou refaça a operação")}
+
+
+                    
+            alert(`ATENÇÃO: A NBR 5410 indica que o menor condutor para iluminação é o de 1.5mm² e para força o de 2.5mm².\n\nEste dimensionamento considera: Condutores e cabos de cobre isolados de PVC 70, em eletroduto magnético embutido em alvenaria à 30ºC(ar), 20ºC(solo) e queda de tensão entre o quadro e a carga de 4%. \n\nPara o Circuito nomeado de ${nomeCirc}, com ${nomePotenciaVA} VA e a corrente de projeto IB = ${nomeIB} A, ${fases} , com ${nomeDistancia} metros de comprimento entre o quadro e a carga, pelo critério de máxima corrente (QUE NÃO CONSIDERA DISTÂNCIA NO CALCULO), encontramos: ${nomeFio} mm². Pelo critério de queda de tensão V/A.km, encontramos: ${nomeFio2} mm². Já pelo critério de watt x metros, encontramos: ${nomeFio3} mm² e Disjuntor termo magnético de curva "C" : ${nomeDisj}A, para o circuito , quando submetida a tensão de ${nomeTensao} Volts. \n\nUTILIZE O MAIOR CONDUTOR ENCONTRADO.`);
+
+        }else if(nomeCCarregado==2){
+            fases="Bifásico";
+            nomeIB=nomePotenciaVA/(nomeTensao*K1*K2*K3);
+            VAkm=(nomeTensao*0.04)/(nomeIB*(nomeDistancia/1000));
+            nomeResFio=(0.0345*nomePotenciaVA*nomeDistancia)/(0.04*nomeTensao*nomeTensao);
+            /*nomeResFio=nomePotenciaVA*nomeDistancia;*/
+            if (nomeIB<=16){
+                nomeFio=Number.parseFloat(1.5);
+            }else if (nomeIB<=20){
+                nomeFio=Number.parseFloat(2.5);
+            }else if (nomeIB<=32){
+                nomeFio=Number.parseFloat(4);
+            }else if (nomeIB<=40){
+                nomeFio=Number.parseFloat(6);
+            }else if (nomeIB<=50){
+                nomeFio=Number.parseFloat(10);
+            }else if (nomeIB<=75){
+                nomeFio=Number.parseFloat(16);
+            }else if (nomeIB<=100){
+                nomeFio=Number.parseFloat(25);
+            }else  {alert("ERRO: Ampacidade - Condutor maior do que 25mm², procure um Técnico ou refaça a operação")}
+
+            if (VAkm>=27.4 ){
+                nomeFio2=Number.parseFloat(1.5);
+            }else if (VAkm>=16.8){
+                nomeFio2=Number.parseFloat(2.5);
+            }else if (VAkm>=10.5){
+                nomeFio2=Number.parseFloat(4);
+            }else if (VAkm>=7){
+                nomeFio2=Number.parseFloat(6);
+            }else if (VAkm>=4.2){
+                nomeFio2=Number.parseFloat(10);
+            }else if (VAkm>=2.7){
+                nomeFio2=Number.parseFloat(16);
+            }else if (VAkm>=1.72){
+                nomeFio2=Number.parseFloat(25);
+            }else   {alert("ERRO: V/A.km - Condutor maior do que 25mm², procure um Técnico ou refaça a operação")}
+
+            if (nomeResFio<=1.5){
+                nomeFio3=Number.parseFloat(1.5);
+            }else if (nomeResFio<=2.5){
+                nomeFio3=Number.parseFloat(2.5);
+            }else if (nomeResFio<=4){
+                nomeFio3=Number.parseFloat(4);
+            }else if (nomeResFio<=6){
+                nomeFio3=Number.parseFloat(6);
+            }else if (nomeResFio<=10){
+                nomeFio3=Number.parseFloat(10);
+            }else if (nomeResFio<=16){
+                nomeFio3=Number.parseFloat(16);
+            }else if (nomeResFio<=25){
+                nomeFio3=Number.parseFloat(25);
+            }else {alert("ERRO: Watt x metro -Condutor maior do que 25mm², procure um Técnico ou refaça a operação")}
+
+            if(nomeFio==1.5){
+                if (nomeIB<10){
+            nomeDisj=Number.parseFloat(10);
+            }else if (nomeIB<16){
+                nomeDisj=Number.parseFloat(16);
+            }
+        }else  if (nomeFio==2.5){
+            if (nomeIB<10){
+                nomeDisj=Number.parseFloat(10);
+                }else if (nomeIB<16){
+                    nomeDisj=Number.parseFloat(16);
+                }else if (nomeIB<20){
+                    nomeDisj=Number.parseFloat(20);
+                }
+            }else  if (nomeFio==4){
+                if (nomeIB<10){
+                    nomeDisj=Number.parseFloat(10);
+                    }else if (nomeIB<16){
+                        nomeDisj=Number.parseFloat(16);
+                    }else if (nomeIB<20){
+                        nomeDisj=Number.parseFloat(20);
+                    }else if (nomeIB<25){
+                        nomeDisj=Number.parseFloat(25);
+                    }else if (nomeIB<32){
+                        nomeDisj=Number.parseFloat(32);
+                    }
+                }else  if (nomeFio==6){
+                    if (nomeIB<10){
+                        nomeDisj=Number.parseFloat(10);
+                        }else if (nomeIB<16){
+                            nomeDisj=Number.parseFloat(16);
+                        }else if (nomeIB<20){
+                            nomeDisj=Number.parseFloat(20);
+                        }else if (nomeIB<25){
+                            nomeDisj=Number.parseFloat(25);
+                        }else if (nomeIB<32){
+                            nomeDisj=Number.parseFloat(32);
+                        }else if (nomeIB<40){
+                            nomeDisj=Number.parseFloat(40);
+                        }
+                    }else  if (nomeFio==10){
+                        if (nomeIB<10){
+                            nomeDisj=Number.parseFloat(10);
+                            }else if (nomeIB<16){
+                                nomeDisj=Number.parseFloat(16);
+                            }else if (nomeIB<20){
+                                nomeDisj=Number.parseFloat(20);
+                            }else if (nomeIB<25){
+                                nomeDisj=Number.parseFloat(25);
+                            }else if (nomeIB<32){
+                                nomeDisj=Number.parseFloat(32);
+                            }else if (nomeIB<40){
+                                nomeDisj=Number.parseFloat(40);
+                            }else if (nomeIB<45){
+                                nomeDisj=Number.parseFloat(45);
+                            }else if (nomeIB<50){
+                                nomeDisj=Number.parseFloat(50);
+                            } 
+                    }else  if (nomeFio==16){
+                        if (nomeIB<10){
+                            nomeDisj=Number.parseFloat(10);
+                            }else if (nomeIB<16){
+                                nomeDisj=Number.parseFloat(16);
+                            }else if (nomeIB<20){
+                                nomeDisj=Number.parseFloat(20);
+                            }else if (nomeIB<25){
+                                nomeDisj=Number.parseFloat(25);
+                            }else if (nomeIB<32){
+                                nomeDisj=Number.parseFloat(32);
+                            }else if (nomeIB<40){
+                                nomeDisj=Number.parseFloat(40);
+                            }else if (nomeIB<45){
+                                nomeDisj=Number.parseFloat(45);
+                            }else if (nomeIB<50){
+                                nomeDisj=Number.parseFloat(50);
+                            }else if (nomeIB<63){
+                                nomeDisj=Number.parseFloat(63);
+                            }else if (nomeIB<70){
+                                nomeDisj=Number.parseFloat(70);
+                            }else if (nomeIB<75){
+                                nomeDisj=Number.parseFloat(75);
+                            }
+                        }else  if (nomeFio==25){
+                            if (nomeIB<10){
+                                nomeDisj=Number.parseFloat(10);
+                                }else if (nomeIB<16){
+                                    nomeDisj=Number.parseFloat(16);
+                                }else if (nomeIB<20){
+                                    nomeDisj=Number.parseFloat(20);
+                                }else if (nomeIB<25){
+                                    nomeDisj=Number.parseFloat(25);
+                                }else if (nomeIB<32){
+                                    nomeDisj=Number.parseFloat(32);
+                                }else if (nomeIB<40){
+                                    nomeDisj=Number.parseFloat(40);
+                                }else if (nomeIB<45){
+                                    nomeDisj=Number.parseFloat(45);
+                                }else if (nomeIB<50){
+                                    nomeDisj=Number.parseFloat(50);
+                                }else if (nomeIB<63){
+                                    nomeDisj=Number.parseFloat(63);
+                                }else if (nomeIB<70){
+                                    nomeDisj=Number.parseFloat(70);
+                                }else if (nomeIB<75){
+                                    nomeDisj=Number.parseFloat(75);
+                                }else if (nomeIB<80){
+                                    nomeDisj=Number.parseFloat(80);
+                                }else if (nomeIB<90){
+                                    nomeDisj=Number.parseFloat(90);
+                                }else if (nomeIB<100){
+                                    nomeDisj=Number.parseFloat(100);
+                                }                           
+       
+        }else  {alert("ERRO: Disjuntor maior do que  a capacidade do condutor de 25mm², procure um Técnico ou refaça a operação")}
+
+
+                
+        alert(`ATENÇÃO: A NBR 5410 indica que o menor condutor para iluminação é o de 1.5mm² e para força o de 2.5mm².\n\nEste dimensionamento considera: Condutores e cabos de cobre isolados de PVC 70, em eletroduto magnético embutido em alvenaria à 30ºC(ar), 20ºC(solo) e queda de tensão entre o quadro e a carga de 4%. \n\nPara o Circuito nomeado de ${nomeCirc}, com ${nomePotenciaVA} VA e a corrente de projeto IB = ${nomeIB} A, ${fases} , com ${nomeDistancia} metros de comprimento entre o quadro e a carga, pelo critério de máxima corrente (QUE NÃO CONSIDERA DISTÂNCIA NO CALCULO), encontramos: ${nomeFio} mm². Pelo critério de queda de tensão V/A.km, encontramos: ${nomeFio2} mm². Já pelo critério de watt x metros, encontramos: ${nomeFio3} mm² e Disjuntor termo magnético de curva "C" : ${nomeDisj}A, para o circuito , quando submetida a tensão de ${nomeTensao} Volts. \n\nUTILIZE O MAIOR CONDUTOR ENCONTRADO.`);
+
+        }else if (nomeCCarregado==3){
+            fases="Bifásico + Neutro";
+            nomeIB=nomePotenciaVA/(nomeTensao*Math.sqrt(3)*K1*K2*K3*0.86);
+                VAkm=(nomeTensao*0.04)/(nomeIB*(nomeDistancia/1000));
+                nomeResFio=(0.0298*nomePotenciaVA*nomeDistancia)/(0.04*nomeTensao*nomeTensao);
+                /*nomeResFio=nomePotenciaVA*(nomeDistancia*0.866);*/
+                if (nomeIB<=10){
+                    nomeFio=Number.parseFloat(1.5);
+                }else if (nomeIB<=20){
+                    nomeFio=Number.parseFloat(2.5);
+                }else if (nomeIB<=25){
+                    nomeFio=Number.parseFloat(4);
+                }else if (nomeIB<=32){
+                    nomeFio=Number.parseFloat(6);
+                }else if (nomeIB<=50){
+                    nomeFio=Number.parseFloat(10);
+                }else if (nomeIB<=63){
+                    nomeFio=Number.parseFloat(16);
+                }else if (nomeIB<=90){
+                    nomeFio=Number.parseFloat(25);
+                }else {alert("ERRO: Ampacidade - Condutor maior do que 25mm², procure um Técnico ou refaça a operação")}
+
+                if (VAkm>=27.4 ){
+                    nomeFio2=Number.parseFloat(1.5);
+                }else if (VAkm>=16.8){
+                    nomeFio2=Number.parseFloat(2.5);
+                }else if (VAkm>=10.5){
+                    nomeFio2=Number.parseFloat(4);
+                }else if (VAkm>=7){
+                    nomeFio2=Number.parseFloat(6);
+                }else if (VAkm>=4.2){
+                    nomeFio2=Number.parseFloat(10);
+                }else if (VAkm>=2.7){
+                    nomeFio2=Number.parseFloat(16);
+                }else if (VAkm>=1.72){
+                    nomeFio2=Number.parseFloat(25);
+                }else   {alert("ERRO: V/A.km - Condutor maior do que 25mm², procure um Técnico ou refaça a operação")}
+
+                if (nomeResFio<=1.5){
+                    nomeFio3=Number.parseFloat(1.5);
+                }else if (nomeResFio<=2.5){
+                    nomeFio3=Number.parseFloat(2.5);
+                }else if (nomeResFio<=4){
+                    nomeFio3=Number.parseFloat(4);
+                }else if (nomeResFio<=6){
+                    nomeFio3=Number.parseFloat(6);
+                }else if (nomeResFio<=10){
+                    nomeFio3=Number.parseFloat(10);
+                }else if (nomeResFio<=16){
+                    nomeFio3=Number.parseFloat(16);
+                }else if (nomeResFio<=25){
+                    nomeFio3=Number.parseFloat(25);
+                }else {alert("ERRO: Watt x metro -Condutor maior do que 25mm², procure um Técnico ou refaça a operação")}
+
+                if(nomeFio==1.5){
+                    if (nomeIB<10){
+                nomeDisj=Number.parseFloat(10);
+                }
+            }else  if (nomeFio==2.5){
+                if (nomeIB<10){
+                    nomeDisj=Number.parseFloat(10);
+                    }else if (nomeIB<16){
+                        nomeDisj=Number.parseFloat(16);
+                    }else if (nomeIB<20){
+                        nomeDisj=Number.parseFloat(20);
+                    }
+                }else  if (nomeFio==4){
+                    if (nomeIB<10){
+                        nomeDisj=Number.parseFloat(10);
+                        }else if (nomeIB<16){
+                            nomeDisj=Number.parseFloat(16);
+                        }else if (nomeIB<20){
+                            nomeDisj=Number.parseFloat(20);
+                        }else if (nomeIB<25){
+                            nomeDisj=Number.parseFloat(25);
+                        }
+                    }else  if (nomeFio==6){
+                        if (nomeIB<10){
+                            nomeDisj=Number.parseFloat(10);
+                            }else if (nomeIB<16){
+                                nomeDisj=Number.parseFloat(16);
+                            }else if (nomeIB<20){
+                                nomeDisj=Number.parseFloat(20);
+                            }else if (nomeIB<25){
+                                nomeDisj=Number.parseFloat(25);
+                            }else if (nomeIB<32){
+                                nomeDisj=Number.parseFloat(32);
+                            }
+                        }else  if (nomeFio==10){
+                            if (nomeIB<10){
+                                nomeDisj=Number.parseFloat(10);
+                                }else if (nomeIB<16){
+                                    nomeDisj=Number.parseFloat(16);
+                                }else if (nomeIB<20){
+                                    nomeDisj=Number.parseFloat(20);
+                                }else if (nomeIB<25){
+                                    nomeDisj=Number.parseFloat(25);
+                                }else if (nomeIB<32){
+                                    nomeDisj=Number.parseFloat(32);
+                                }else if (nomeIB<40){
+                                    nomeDisj=Number.parseFloat(40);
+                                }else if (nomeIB<45){
+                                    nomeDisj=Number.parseFloat(45);
+                                }else if (nomeIB<50){
+                                    nomeDisj=Number.parseFloat(50);
+                                } 
+                        }else  if (nomeFio==16){
+                            if (nomeIB<10){
+                                nomeDisj=Number.parseFloat(10);
+                                }else if (nomeIB<16){
+                                    nomeDisj=Number.parseFloat(16);
+                                }else if (nomeIB<20){
+                                    nomeDisj=Number.parseFloat(20);
+                                }else if (nomeIB<25){
+                                    nomeDisj=Number.parseFloat(25);
+                                }else if (nomeIB<32){
+                                    nomeDisj=Number.parseFloat(32);
+                                }else if (nomeIB<40){
+                                    nomeDisj=Number.parseFloat(40);
+                                }else if (nomeIB<45){
+                                    nomeDisj=Number.parseFloat(45);
+                                }else if (nomeIB<50){
+                                    nomeDisj=Number.parseFloat(50);
+                                }else if (nomeIB<63){
+                                    nomeDisj=Number.parseFloat(63);
+                                }
+                            }else  if (nomeFio==25){
+                                if (nomeIB<10){
+                                    nomeDisj=Number.parseFloat(10);
+                                    }else if (nomeIB<16){
+                                        nomeDisj=Number.parseFloat(16);
+                                    }else if (nomeIB<20){
+                                        nomeDisj=Number.parseFloat(20);
+                                    }else if (nomeIB<25){
+                                        nomeDisj=Number.parseFloat(25);
+                                    }else if (nomeIB<32){
+                                        nomeDisj=Number.parseFloat(32);
+                                    }else if (nomeIB<40){
+                                        nomeDisj=Number.parseFloat(40);
+                                    }else if (nomeIB<45){
+                                        nomeDisj=Number.parseFloat(45);
+                                    }else if (nomeIB<50){
+                                        nomeDisj=Number.parseFloat(50);
+                                    }else if (nomeIB<63){
+                                        nomeDisj=Number.parseFloat(63);
+                                    }else if (nomeIB<70){
+                                        nomeDisj=Number.parseFloat(70);
+                                    }else if (nomeIB<75){
+                                        nomeDisj=Number.parseFloat(75);
+                                    }else if (nomeIB<80){
+                                        nomeDisj=Number.parseFloat(80);
+                                    }
+            }else  {alert("ERRO: Disjuntor maior do que  a capacidade do condutor de 25mm², procure um Técnico ou refaça a operação")}
+
+
+                    
+            alert(`ATENÇÃO: A NBR 5410 indica que o menor condutor para iluminação é o de 1.5mm² e para força o de 2.5mm².\n\nEste dimensionamento considera: Condutores e cabos de cobre isolados de PVC 70, em eletroduto magnético embutido em alvenaria à 30ºC(ar), 20ºC(solo) e queda de tensão entre o quadro e a carga de 4%. \n\nPara o Circuito nomeado de ${nomeCirc}, com ${nomePotenciaVA} VA e a corrente de projeto IB = ${nomeIB} A, ${fases} , com ${nomeDistancia} metros de comprimento entre o quadro e a carga, pelo critério de máxima corrente (QUE NÃO CONSIDERA DISTÂNCIA NO CALCULO), encontramos: ${nomeFio} mm². Pelo critério de queda de tensão V/A.km, encontramos: ${nomeFio2} mm². Já pelo critério de watt x metros, encontramos: ${nomeFio3} mm² e Disjuntor termo magnético de curva "C" : ${nomeDisj}A, para o circuito , quando submetida a tensão de ${nomeTensao} Volts. \n\nUTILIZE O MAIOR CONDUTOR ENCONTRADO.`);
+
+        }else if (nomeCCarregado==4){
+            fases="trifásico";
+            nomeIB=nomePotenciaVA/(nomeTensao*Math.sqrt(3)*K1*K2*K3);
+            VAkm=(nomeTensao*0.04)/(nomeIB*(nomeDistancia/1000));
+            nomeResFio=(0.0298*nomePotenciaVA*nomeDistancia)/(0.04*nomeTensao*nomeTensao);
+            /*nomeResFio=nomePotenciaVA*(nomeDistancia*0.866);*/
+            if (nomeIB<=10){
+                nomeFio=Number.parseFloat(1.5);
+            }else if (nomeIB<=20){
+                nomeFio=Number.parseFloat(2.5);
+            }else if (nomeIB<=25){
+                nomeFio=Number.parseFloat(4);
+            }else if (nomeIB<=32){
+                nomeFio=Number.parseFloat(6);
+            }else if (nomeIB<=50){
+                nomeFio=Number.parseFloat(10);
+            }else if (nomeIB<=63){
+                nomeFio=Number.parseFloat(16);
+            }else if (nomeIB<=90){
+                nomeFio=Number.parseFloat(25);
+            }else {alert("ERRO: Ampacidade - Condutor maior do que 25mm², procure um Técnico ou refaça a operação")}
+
+            if (VAkm>=27.4 ){
+                nomeFio2=Number.parseFloat(1.5);
+            }else if (VAkm>=16.8){
+                nomeFio2=Number.parseFloat(2.5);
+            }else if (VAkm>=10.5){
+                nomeFio2=Number.parseFloat(4);
+            }else if (VAkm>=7){
+                nomeFio2=Number.parseFloat(6);
+            }else if (VAkm>=4.2){
+                nomeFio2=Number.parseFloat(10);
+            }else if (VAkm>=2.7){
+                nomeFio2=Number.parseFloat(16);
+            }else if (VAkm>=1.72){
+                nomeFio2=Number.parseFloat(25);
+            }else   {alert("ERRO: V/A.km - Condutor maior do que 25mm², procure um Técnico ou refaça a operação")}
+
+            if (nomeResFio<=1.5){
+                nomeFio3=Number.parseFloat(1.5);
+            }else if (nomeResFio<=2.5){
+                nomeFio3=Number.parseFloat(2.5);
+            }else if (nomeResFio<=4){
+                nomeFio3=Number.parseFloat(4);
+            }else if (nomeResFio<=6){
+                nomeFio3=Number.parseFloat(6);
+            }else if (nomeResFio<=10){
+                nomeFio3=Number.parseFloat(10);
+            }else if (nomeResFio<=16){
+                nomeFio3=Number.parseFloat(16);
+            }else if (nomeResFio<=25){
+                nomeFio3=Number.parseFloat(25);
+            }else {alert("ERRO: Watt x metro -Condutor maior do que 25mm², procure um Técnico ou refaça a operação")}
+
+          
+            if(nomeFio==1.5){
+                if (nomeIB<10){
+            nomeDisj=Number.parseFloat(10);
+            }
+        }else  if (nomeFio==2.5){
+            if (nomeIB<10){
+                nomeDisj=Number.parseFloat(10);
+                }else if (nomeIB<16){
+                    nomeDisj=Number.parseFloat(16);
+                }else if (nomeIB<20){
+                    nomeDisj=Number.parseFloat(20);
+                }
+            }else  if (nomeFio==4){
+                if (nomeIB<10){
+                    nomeDisj=Number.parseFloat(10);
+                    }else if (nomeIB<16){
+                        nomeDisj=Number.parseFloat(16);
+                    }else if (nomeIB<20){
+                        nomeDisj=Number.parseFloat(20);
+                    }else if (nomeIB<25){
+                        nomeDisj=Number.parseFloat(25);
+                    }
+                }else  if (nomeFio==6){
+                    if (nomeIB<10){
+                        nomeDisj=Number.parseFloat(10);
+                        }else if (nomeIB<16){
+                            nomeDisj=Number.parseFloat(16);
+                        }else if (nomeIB<20){
+                            nomeDisj=Number.parseFloat(20);
+                        }else if (nomeIB<25){
+                            nomeDisj=Number.parseFloat(25);
+                        }else if (nomeIB<32){
+                            nomeDisj=Number.parseFloat(32);
+                        }
+                    }else  if (nomeFio==10){
+                        if (nomeIB<10){
+                            nomeDisj=Number.parseFloat(10);
+                            }else if (nomeIB<16){
+                                nomeDisj=Number.parseFloat(16);
+                            }else if (nomeIB<20){
+                                nomeDisj=Number.parseFloat(20);
+                            }else if (nomeIB<25){
+                                nomeDisj=Number.parseFloat(25);
+                            }else if (nomeIB<32){
+                                nomeDisj=Number.parseFloat(32);
+                            }else if (nomeIB<40){
+                                nomeDisj=Number.parseFloat(40);
+                            }else if (nomeIB<45){
+                                nomeDisj=Number.parseFloat(45);
+                            }else if (nomeIB<50){
+                                nomeDisj=Number.parseFloat(50);
+                            } 
+                    }else  if (nomeFio==16){
+                        if (nomeIB<10){
+                            nomeDisj=Number.parseFloat(10);
+                            }else if (nomeIB<16){
+                                nomeDisj=Number.parseFloat(16);
+                            }else if (nomeIB<20){
+                                nomeDisj=Number.parseFloat(20);
+                            }else if (nomeIB<25){
+                                nomeDisj=Number.parseFloat(25);
+                            }else if (nomeIB<32){
+                                nomeDisj=Number.parseFloat(32);
+                            }else if (nomeIB<40){
+                                nomeDisj=Number.parseFloat(40);
+                            }else if (nomeIB<45){
+                                nomeDisj=Number.parseFloat(45);
+                            }else if (nomeIB<50){
+                                nomeDisj=Number.parseFloat(50);
+                            }else if (nomeIB<63){
+                                nomeDisj=Number.parseFloat(63);
+                            }
+                        }else  if (nomeFio==25){
+                            if (nomeIB<10){
+                                nomeDisj=Number.parseFloat(10);
+                                }else if (nomeIB<16){
+                                    nomeDisj=Number.parseFloat(16);
+                                }else if (nomeIB<20){
+                                    nomeDisj=Number.parseFloat(20);
+                                }else if (nomeIB<25){
+                                    nomeDisj=Number.parseFloat(25);
+                                }else if (nomeIB<32){
+                                    nomeDisj=Number.parseFloat(32);
+                                }else if (nomeIB<40){
+                                    nomeDisj=Number.parseFloat(40);
+                                }else if (nomeIB<45){
+                                    nomeDisj=Number.parseFloat(45);
+                                }else if (nomeIB<50){
+                                    nomeDisj=Number.parseFloat(50);
+                                }else if (nomeIB<63){
+                                    nomeDisj=Number.parseFloat(63);
+                                }else if (nomeIB<70){
+                                    nomeDisj=Number.parseFloat(70);
+                                }else if (nomeIB<75){
+                                    nomeDisj=Number.parseFloat(75);
+                                }else if (nomeIB<80){
+                                    nomeDisj=Number.parseFloat(80);
+                                }
+        }else  {alert("ERRO: Disjuntor maior do que  a capacidade do condutor de 25mm², procure um Técnico ou refaça a operação")}
+
+
+                
+        alert(`ATENÇÃO: A NBR 5410 indica que o menor condutor para iluminação é o de 1.5mm² e para força o de 2.5mm².\n\nEste dimensionamento considera: Condutores e cabos de cobre isolados de PVC 70, em eletroduto magnético embutido em alvenaria à 30ºC(ar), 20ºC(solo) e queda de tensão entre o quadro e a carga de 4%. \n\nPara o Circuito nomeado de ${nomeCirc}, com ${nomePotenciaVA} VA e a corrente de projeto IB = ${nomeIB} A, ${fases} , com ${nomeDistancia} metros de comprimento entre o quadro e a carga, pelo critério de máxima corrente (QUE NÃO CONSIDERA DISTÂNCIA NO CALCULO), encontramos: ${nomeFio} mm². Pelo critério de queda de tensão V/A.km, encontramos: ${nomeFio2} mm². Já pelo critério de watt x metros, encontramos: ${nomeFio3} mm² e Disjuntor termo magnético de curva "C" : ${nomeDisj}A, para o circuito , quando submetida a tensão de ${nomeTensao} Volts. \n\nUTILIZE O MAIOR CONDUTOR ENCONTRADO.`);
+
+        }else if (nomeCCarregado==5){
+          // TODO document why this block is empty
+          fases="trifásico + neutro";            nomeIB=nomePotenciaVA/(nomeTensao*Math.sqrt(3)*K1*K2*K3*0.86);
+            VAkm=(nomeTensao*0.04)/(nomeIB*(nomeDistancia/1000));
+            nomeResFio=(0.0298*nomePotenciaVA*nomeDistancia)/(0.04*nomeTensao*nomeTensao);
+            /*nomeResFio=nomePotenciaVA*(nomeDistancia*0.866);*/
+            if (nomeIB<=10){
+                nomeFio=Number.parseFloat(1.5);
+            }else if (nomeIB<=20){
+                nomeFio=Number.parseFloat(2.5);
+            }else if (nomeIB<=25){
+                nomeFio=Number.parseFloat(4);
+            }else if (nomeIB<=32){
+                nomeFio=Number.parseFloat(6);
+            }else if (nomeIB<=50){
+                nomeFio=Number.parseFloat(10);
+            }else if (nomeIB<=63){
+                nomeFio=Number.parseFloat(16);
+            }else if (nomeIB<=90){
+                nomeFio=Number.parseFloat(25);
+            }else {alert("ERRO: Ampacidade - Condutor maior do que 25mm², procure um Técnico ou refaça a operação")}
+
+            if (VAkm>=27.4 ){
+                nomeFio2=Number.parseFloat(1.5);
+            }else if (VAkm>=16.8){
+                nomeFio2=Number.parseFloat(2.5);
+            }else if (VAkm>=10.5){
+                nomeFio2=Number.parseFloat(4);
+            }else if (VAkm>=7){
+                nomeFio2=Number.parseFloat(6);
+            }else if (VAkm>=4.2){
+                nomeFio2=Number.parseFloat(10);
+            }else if (VAkm>=2.7){
+                nomeFio2=Number.parseFloat(16);
+            }else if (VAkm>=1.72){
+                nomeFio2=Number.parseFloat(25);
+            }else   {alert("ERRO: V/A.km - Condutor maior do que 25mm², procure um Técnico ou refaça a operação")}
+
+            if (nomeResFio<=1.5){
+                nomeFio3=Number.parseFloat(1.5);
+            }else if (nomeResFio<=2.5){
+                nomeFio3=Number.parseFloat(2.5);
+            }else if (nomeResFio<=4){
+                nomeFio3=Number.parseFloat(4);
+            }else if (nomeResFio<=6){
+                nomeFio3=Number.parseFloat(6);
+            }else if (nomeResFio<=10){
+                nomeFio3=Number.parseFloat(10);
+            }else if (nomeResFio<=16){
+                nomeFio3=Number.parseFloat(16);
+            }else if (nomeResFio<=25){
+                nomeFio3=Number.parseFloat(25);
+            }else {alert("ERRO: Watt x metro -Condutor maior do que 25mm², procure um Técnico ou refaça a operação")}
+
+            if(nomeFio==1.5){
+                if (nomeIB<10){
+            nomeDisj=Number.parseFloat(10);
+            }
+        }else  if (nomeFio==2.5){
+            if (nomeIB<10){
+                nomeDisj=Number.parseFloat(10);
+                }else if (nomeIB<16){
+                    nomeDisj=Number.parseFloat(16);
+                }else if (nomeIB<20){
+                    nomeDisj=Number.parseFloat(20);
+                }
+            }else  if (nomeFio==4){
+                if (nomeIB<10){
+                    nomeDisj=Number.parseFloat(10);
+                    }else if (nomeIB<16){
+                        nomeDisj=Number.parseFloat(16);
+                    }else if (nomeIB<20){
+                        nomeDisj=Number.parseFloat(20);
+                    }else if (nomeIB<25){
+                        nomeDisj=Number.parseFloat(25);
+                    }
+                }else  if (nomeFio==6){
+                    if (nomeIB<10){
+                        nomeDisj=Number.parseFloat(10);
+                        }else if (nomeIB<16){
+                            nomeDisj=Number.parseFloat(16);
+                        }else if (nomeIB<20){
+                            nomeDisj=Number.parseFloat(20);
+                        }else if (nomeIB<25){
+                            nomeDisj=Number.parseFloat(25);
+                        }else if (nomeIB<32){
+                            nomeDisj=Number.parseFloat(32);
+                        }
+                    }else  if (nomeFio==10){
+                        if (nomeIB<10){
+                            nomeDisj=Number.parseFloat(10);
+                            }else if (nomeIB<16){
+                                nomeDisj=Number.parseFloat(16);
+                            }else if (nomeIB<20){
+                                nomeDisj=Number.parseFloat(20);
+                            }else if (nomeIB<25){
+                                nomeDisj=Number.parseFloat(25);
+                            }else if (nomeIB<32){
+                                nomeDisj=Number.parseFloat(32);
+                            }else if (nomeIB<40){
+                                nomeDisj=Number.parseFloat(40);
+                            }else if (nomeIB<45){
+                                nomeDisj=Number.parseFloat(45);
+                            }else if (nomeIB<50){
+                                nomeDisj=Number.parseFloat(50);
+                            } 
+                    }else  if (nomeFio==16){
+                        if (nomeIB<10){
+                            nomeDisj=Number.parseFloat(10);
+                            }else if (nomeIB<16){
+                                nomeDisj=Number.parseFloat(16);
+                            }else if (nomeIB<20){
+                                nomeDisj=Number.parseFloat(20);
+                            }else if (nomeIB<25){
+                                nomeDisj=Number.parseFloat(25);
+                            }else if (nomeIB<32){
+                                nomeDisj=Number.parseFloat(32);
+                            }else if (nomeIB<40){
+                                nomeDisj=Number.parseFloat(40);
+                            }else if (nomeIB<45){
+                                nomeDisj=Number.parseFloat(45);
+                            }else if (nomeIB<50){
+                                nomeDisj=Number.parseFloat(50);
+                            }else if (nomeIB<63){
+                                nomeDisj=Number.parseFloat(63);
+                            }
+                        }else  if (nomeFio==25){
+                            if (nomeIB<10){
+                                nomeDisj=Number.parseFloat(10);
+                                }else if (nomeIB<16){
+                                    nomeDisj=Number.parseFloat(16);
+                                }else if (nomeIB<20){
+                                    nomeDisj=Number.parseFloat(20);
+                                }else if (nomeIB<25){
+                                    nomeDisj=Number.parseFloat(25);
+                                }else if (nomeIB<32){
+                                    nomeDisj=Number.parseFloat(32);
+                                }else if (nomeIB<40){
+                                    nomeDisj=Number.parseFloat(40);
+                                }else if (nomeIB<45){
+                                    nomeDisj=Number.parseFloat(45);
+                                }else if (nomeIB<50){
+                                    nomeDisj=Number.parseFloat(50);
+                                }else if (nomeIB<63){
+                                    nomeDisj=Number.parseFloat(63);
+                                }else if (nomeIB<70){
+                                    nomeDisj=Number.parseFloat(70);
+                                }else if (nomeIB<75){
+                                    nomeDisj=Number.parseFloat(75);
+                                }else if (nomeIB<80){
+                                    nomeDisj=Number.parseFloat(80);
+                                }
+        }else  {alert("ERRO: Disjuntor maior do que  a capacidade do condutor de 25mm², procure um Técnico ou refaça a operação")}
+
+
+                
+        alert(`ATENÇÃO: A NBR 5410 indica que o menor condutor para iluminação é o de 1.5mm² e para força o de 2.5mm².\n\nEste dimensionamento considera: Condutores e cabos de cobre isolados de PVC 70, em eletroduto magnético embutido em alvenaria à 30ºC(ar), 20ºC(solo) e queda de tensão entre o quadro e a carga de 4%. \n\nPara o Circuito nomeado de ${nomeCirc}, com ${nomePotenciaVA} VA e a corrente de projeto IB = ${nomeIB} A, ${fases} , com ${nomeDistancia} metros de comprimento entre o quadro e a carga, pelo critério de máxima corrente (QUE NÃO CONSIDERA DISTÂNCIA NO CALCULO), encontramos: ${nomeFio} mm². Pelo critério de queda de tensão V/A.km, encontramos: ${nomeFio2} mm². Já pelo critério de watt x metros, encontramos: ${nomeFio3} mm² e Disjuntor termo magnético de curva "C" : ${nomeDisj}A, para o circuito , quando submetida a tensão de ${nomeTensao} Volts. \n\nUTILIZE O MAIOR CONDUTOR ENCONTRADO.`);
+           
+        
+        }else{
+alert("ERRO: refaça a operação")
+                }
+}
+
 //p16 chama função de dimensionamento
 //cria caixa de identificação com validações
 function dimens() {
