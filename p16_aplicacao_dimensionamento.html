@@ -107,6 +107,11 @@
                                 </fieldset>
                                 <br><br>
 								<fieldset>
+                                    <legend>Coloque "1" para circuito de iluminação, e "2" para circuito de força.</legend>
+                                    <input type="number" name="nCircTipo" id="nCircTipo">
+                                </fieldset>
+                                <br><br>
+								<fieldset>
                                     <legend>Potência em VA</legend>
                                     <input type="number" name="nCircPotencia" id="nCircPotencia" >
                                 </fieldset>
@@ -123,7 +128,7 @@
                                 <br><br>
                                 <fieldset>
                                     <legend>Distancia entre carga e quadro de luz e/ou força em metros.</legend>
-                                    <input type="number" name="nCircDist" id="nCircDist">
+                                    <input type="number" name="nCircDist" id="nCircDist" value="1">
                                 </fieldset>
 								<br><br>
                                 <fieldset>
@@ -143,8 +148,7 @@
                                 <br><br>
                                 <fieldset>
                                     <legend>Avançar</legend>
-                                    <input type="button" value="Continuar"
-                                        onclick="dimensCirc()">
+                                    <input type="button" value="Continuar"onclick="dimensCirc()">
                                 </fieldset>
                                 <br><br>
                             </form>
@@ -182,8 +186,7 @@
                                 <fieldset>
 
                                     <legend>Avançar</legend>
-                                    <input type="button" value="Continuar"
-                                        onclick="dimens()">
+                                    <input type="button" value="Continuar" onclick="dimens()">
                                 </fieldset>
                                 <br><br>
                             </form>
