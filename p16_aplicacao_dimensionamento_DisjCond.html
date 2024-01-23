@@ -106,7 +106,7 @@
 			<!--.........................................................................................-->
 			<div id="tudo">
 				<br>
-				<h1>Dimensionamento das Instalações elétricas prediais de baixa tensão</h1>
+				<h1>Dimensionamento das Instalações elétricas residênciais</h1>
 
 				<main>
 					<section>
@@ -115,55 +115,103 @@
 							<div id="tabDim">
 
 								<br>
-								<p><strong>OBS.2: Este projeto destina-se apenas ao aprendizado e para o
-										uso da aplicação deve-se ter conhecimentos de Instalações elétricas
-										prediais, estando o seu uso restrito à estudantes e, logo, esta
-										aplicação destina-se aos estudos e pesquisa de eletricistas. Não
-										autorizamos seu uso comercial ou profissional, logo, não nos
-										responsabilizamos pelo mau uso do conhecimento disponibilizado aqui,
-										ou pela desvirtuação de seu propósito. Ressaltamos a importância de se
-										consultar seu professor ou um profissional habilitado na área de
-										Instalações elétricas sobre os resultados encontrados em seu estudo,
-										antes de aplicá-lo, como também alertamos para o risco de exercício
-										ilegal da profissão em casos de atuação em obras que requeiram a
-										obrigatoriedade de RRT, ART ou TRT.</strong></p><br><br>
 
-								<h2>Escolha o tipo de dimensionamento que deseja fazer.</h2>
-								
-<hr><p>Dimensione o disjuntor e condutor para apenas um circuito próximo ao quadro de distribuição.</p><br>
-<div class="d-grid gap-2 col-6 mx-auto"><a href="p16_aplicacao_dimensionamento_DisjCond.html" class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true">Disjuntor e Condutor</a></div><br><hr><p>Dimensione o Medidor de energia, Quadro de distribuição: as proteções e os circuitos e os condutorese de cada circuito de uma instação residencial até 15kVA no padrão LIGHT. </p><br>
-<div class="d-grid gap-2 col-6 mx-auto"><a href="p16_aplicacao_dimensionamento_MedidorLight.html" class="btn btn-outline-primary" tabindex="-1" role="button" aria-disabled="true">Medidor 
-	 LIGHT_15kVA
-</a></div><br><hr><p>Dimensione o sistema Fotovoltaico residencial - ONGRID - para determinado consumo.</p><br>
-<div class="d-grid gap-2 col-6 mx-auto"><a href="p16_aplicacao_dimensionamento_Fotovoltaico.html" class="btn btn-outline-secondary" tabindex="-1" role="button" aria-disabled="true">Sistema Fotovoltaico Residencial</a></div><br><hr><br>				
+								<h2>Encontre o Disjuntor e o Condutor para seu equipamento.</h2>
+								<h3> OBS.: Condutor máximo 25mm². Neste caso não há a relatório final.
+									Você deve anotar o resultado e repetir a operação todas as vezes que
+									necessitar.</h3>
 
-								<p class="txt1"><a href="#topo">Topo</a></p>
-							</div>
-						</section>
-					</main>
-				</div>
-				<script
-					src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-					integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-					crossorigin="anonymous">
-		</script>
-				<script src="script.js" type="text/javascript" rel="ajax"></script>
-				<script src="dimensionamento.js" type="text/javascript" rel="JS"></script>
-				<footer>
-					<br>
-					<div id="rodape">
-						<h6 id="rodape">V4 -2024 - by Oliveira Junior, P.E.</h6>
-						<h6 id="rodape">
-							<a href="https://forms.gle/wvU4zsfET3FdbfJo9"> Quero
-								doar</a> |
-							<a href="www.facebook.com">Facebook</a> |
-							<a
-								href="https://sites.google.com/view/missaofilosofica/in%C3%ADcio">MF-EBF_GOOGLE</a>
-							|
-							<a href="mailto:missaaofilosofica@gmail.com">Fale conosco</a>
-						</h6><br>
+								<form action>
+									<fieldset>
+										<legend>Nome do Circuito.</legend>
+										<input type="text" name="nCirc" id="nCirc">
+									</fieldset>
+									<br><br>
+									<fieldset>
+										<legend>Coloque "1" para circuito de iluminação, e "2" para circuito
+											de força.</legend>
+										<input type="number" name="nCircTipo" id="nCircTipo">
+									</fieldset>
+									<br><br>
+									<fieldset>
+										<legend>Potência em VA</legend>
+										<input type="number" name="nCircPotencia" id="nCircPotencia">
+									</fieldset>
+									<br><br>
+									<fieldset>
+										<legend>Tensão em Volts: 1F + N = 127V, 3F+N = 220V, 2F + N = 127V, 2F
+											= 220V, 3F = 220V.</legend>
+										<input type="number" name="nCircTensao" id="nCircTensao">
+									</fieldset>
+									<br><br>
+									<fieldset>
+										<legend>Insira "1" para Monofásico, "2" para Bifásico, "3" para
+											bifásico + neutro, "4" para trifásico ou "5" para trifásico +
+											Neutro.</legend>
+										<input type="number" name="nCircNCond" id="nCircNCond">
+									</fieldset>
+									<br><br>
+									<fieldset>
+										<legend>Distancia entre carga e quadro de luz e/ou força em
+											metros.</legend>
+										<input type="number" name="nCircDist" id="nCircDist" value="1">
+									</fieldset>
+									<br><br>
+									<fieldset>
+										<legend>Fator de correção K1 - Fator de correção de temperatura - NBR
+											5410. Ex.:: Aplicar 1,12 para 20ºC, 1,06 para 25ºC, 0,94 para 35ºC ou
+											0,87 para 40ºC.</legend>
+										<input type="number" name="nk1" id="nk1" value="1">
+									</fieldset>
+									<br><br>
+									<fieldset>
+										<legend>Fator de correção K2 - Fator de correção de agrupamento - NBR
+											5410. Ex.:: Aplicar 0,8 para 02 circuitos agrupados, 0,7 para 03
+											circuitos agrupados, 0,65 para 04 circuitos agrupados...</legend>
+										<input type="number" name="nk2" id="nk2" value="1">
+									</fieldset>
+									<br><br>
+									<fieldset>
+										<legend>Fator de correção K3 - Fator de correção de resistividade do
+											solo - NBR 5410. Não aplicável a residências - Manter 1.</legend>
+										<input type="number" name="nk3" id="nk3" value="1">
+									</fieldset>
+									<br><br>
+									<fieldset>
+										<legend>Avançar</legend>
+										<input type="button" value="Continuar" onclick="dimensCirc()">
+									</fieldset>
+									<br><br>
+								</form>
+						</div>
+
+						<p class="txt1"><a href="#topo">Topo</a></p>
 					</div>
-				</footer>
-			</body>
+				</section>
+			</main>
+		</div>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+			crossorigin="anonymous">
+		</script>
+		<script src="script.js" type="text/javascript" rel="ajax"></script>
+		<script src="dimensionamento.js" type="text/javascript" rel="JS"></script>
+		<footer>
+			<br>
+			<div id="rodape">
+				<h6 id="rodape">V4 -2024 - by Oliveira Junior, P.E.</h6>
+				<h6 id="rodape">
+					<a href="https://forms.gle/wvU4zsfET3FdbfJo9"> Quero
+						doar</a> |
+					<a href="www.facebook.com">Facebook</a> |
+					<a
+						href="https://sites.google.com/view/missaofilosofica/in%C3%ADcio">MF-EBF_GOOGLE</a>
+					|
+					<a href="mailto:missaaofilosofica@gmail.com">Fale conosco</a>
+				</h6><br>
+			</div>
+		</footer>
+	</body>
 
-		</html>
+</html>

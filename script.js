@@ -1,122 +1,93 @@
+var consMedio1 = 0;
+var consMedio2 = 0;
+var consMedio3 = 0;
+var consMedio4 = 0;
+var consMedio5 = 0;
+var consMedio6 = 0;
+var consMedio7 = 0;
+var consMedio8 = 0;
+var consMedio9 = 0;
+var consMedio10 = 0;
+var consMedio11 = 0;
+var consMedio12 = 0;
+var consMedio13 = 0;
+var consMedio = 0;
+var irrad = 0;
+var nomeUsina;
+var consDia = 0;
+var kWp = 0;
+var potMod = 0;
+var nMod = 0;
+var ajPlacas = 0;
+var areaFoto = 0;
+var padrao = 0;
+function media() {
+  consMedio1 = Number(window.document.querySelector("#nMes1").value);
+  consMedio2 = Number(window.document.querySelector("#nMes2").value);
+  consMedio3 = Number(window.document.querySelector("#nMes3").value);
+  consMedio4 = Number(window.document.querySelector("#nMes4").value);
+  consMedio5 = Number(window.document.querySelector("#nMes5").value);
+  consMedio6 = Number(window.document.querySelector("#nMes6").value);
+  consMedio7 = Number(window.document.querySelector("#nMes7").value);
+  consMedio8 = Number(window.document.querySelector("#nMes8").value);
+  consMedio9 = Number(window.document.querySelector("#nMes9").value);
+  consMedio10 = Number(window.document.querySelector("#nMes10").value);
+  consMedio11 = Number(window.document.querySelector("#nMes11").value);
+  consMedio12 = Number(window.document.querySelector("#nMes12").value);
+  consMedio13 = Number(window.document.querySelector("#nMes13").value);
+  irrad = Number(window.document.querySelector("#nIrr").value);
+  nomeUsina = window.document.querySelector("#nCircf").value;
+  potMod = Number(window.document.querySelector("#nCircPotMod").value);
+  padrao = Number(window.document.querySelector("#npad").value);
 
-/*RequisiçãoAjax Certificação*/
-/*var obj;
-var elem;
+  consMedio =
+    (consMedio1 +
+      consMedio2 +
+      consMedio3 +
+      consMedio4 +
+      consMedio5 +
+      consMedio6 +
+      consMedio7 +
+      consMedio8 +
+      consMedio9 +
+      consMedio10 +
+      consMedio11 +
+      consMedio12) /
+      12 +
+    consMedio13;
 
-function requisicao(endereco, elemento) {
-    try {
-        obj = new XMLHttpRequest();
-        elem = elemento;
-        obj.onreadystatechange = resposta;
-        obj.open('GET', endereco, true);
-        obj.send();
-    }
-    catch (exception) {
-        alert('Falha na requisição');
-    }
+  if (padrao === 1) {
+    consMedio = consMedio - 30;
+  } else if (padrao === 2) {
+    consMedio = consMedio - 50;
+  } else if (padrao === 3) {
+    consMedio = consMedio - 100;
+  }
+  consDia = consMedio / 30;
+  kWp = consDia / (irrad * 0.75);
+  nMod = Math.round((kWp * 1000) / potMod);
+  ajPlacas = nMod * potMod;
+  areaFoto = Math.round(nMod * 3.15);
+
+  alert(
+    "A Usina nomeada de " +
+      nomeUsina +
+      " projetada para atender o consumo médio mensal de " +
+      consMedio.toFixed(2) +
+      " kW e consumo diário de " +
+      consDia.toFixed(2) +
+      " Kw. Considerando a irradiação média de " +
+      irrad +
+      " kWh/m².dia, demandará uma potência de geração de " +
+      kWp.toFixed(2) +
+      " kWp. Necessitando de " +
+      nMod +
+      " Módulos  de " +
+      potMod +
+      " Wp. O Inversor deve ser de " +
+      ajPlacas +
+      " Wp (Podendo ser superior ou inferior a esse valor em função de seu DATASHEET. Aconselha-se não variar 20%).\n\nA área aproximada, necessária para a instalação dos painéis é de " +
+      areaFoto +
+      " m² \n\nAGORA VOCÊ DEVE PESQUISAR AS OPÇÕES DE KITs COM A POTÊNCIA CALCULADA E EM FUNÇÃO DO TIPO DE TELHADO. "
+  );
 }
-
-function resposta() {
-    if (obj.readyState == 4) {
-        document.getElementById(elem).innerHTML = obj.responseText;
-
-    }
-}
-function limpar() {
-    document.getElementById(elem).innerHTML = "";
-}*/
-
-
-/* Select dinacmico para menu Fundamentos */
-/*var abrirMenu = window.document.querySelector("li#fund");
-abrirMenu.addEventListener('mouseenter', menu);
-
-var localMenu = window.document.querySelector("div.abrirMenu");
-
-function menu() {
-    localMenu.innerHTML =
-        `<select name="selMenu" id="selMenu">		
-    <option class="op" value="0">Selecione</option>
-    <option class="op" value="1">Fundamentos_1</option>
-    <option class="op" value="2">Grandezas_Elétricas</option>
-    <option class="op" value="3">Tensão_Elétrica</option>
-    <option class="op" value="4">Corrente_Elétrica</option>
-    <option class="op" value="5">Resistencia_Elétrica</option>
-    <option class="op" value="6">Potência_Elétrica</option>
-    <option class="op" value="7">Energia_Elétrica</option>
-    <option class="op" value="8">Relação_Elétrica</option>
-    <option class="op" value="9">Ética_Profissional</option>
-</select>`
-
-
-    var rodarMenu = window.document.querySelector("#selMenu");
-    rodarMenu.addEventListener('click', rodar);
-    function rodar() {
-        var selecao = rodarMenu.options[rodarMenu.selectedIndex].value;
-        //select.options[select.selectedIndex].text;
-        switch (selecao) {
-            case "1": requisicao('_paginas/p2_Fundamentos.html', 'conteudo'); break;
-            case "2": requisicao('_paginas/p3_grandezas.html', 'conteudo'); break;
-            case "3": requisicao('_paginas/p4_tensao.html', 'conteudo'); break;
-            case "4": requisicao('_paginas/p5_corrente.html', 'conteudo'); break;
-            case "5": requisicao('_paginas/p6_resistencia.html', 'conteudo'); break;
-            case "6": requisicao('_paginas/p7_potencia.html', 'conteudo'); break;
-            case "7": requisicao('_paginas/p8_energia.html', 'conteudo'); break;
-            case "8": requisicao('_paginas/p9_relacao.html', 'conteudo'); break;
-            case "9": requisicao('_paginas/p10_etica.html', 'conteudo'); break;
-
-        }
-    }
-}
-
-/* Select dinacmico para menu IEBT: Instalações Eletricas */
-/*var abrirMenu1 = window.document.querySelector("li#ins");
-abrirMenu1.addEventListener('mouseenter', menu1);
-
-var localMenu1 = window.document.querySelector("div.abrirMenu");
-
-function menu1() {
-    localMenu1.innerHTML =
-        `<select name="selMenu" id="selMenu">		
-            <option class="op" value="0">Selecione</option>
-            <option class="op" value="1">IEBT:Teoria_e_Prática</option>
-            <option class="op" value="2">Circuitos _Elementares</option>
-            <option class="op" value="3">Dimensionamento: Introdução</option>
-            <option class="op" value="4">Leitura e interpretação de diagramas elétricos</option>
-            <option class="op" value="5">Prática de Instalações Elétricas</option>
-            <option class="op" value="6">Aplicativo de Dimensionamento</option>
-        </select>`
-
-
-    var rodarMenu1 = window.document.querySelector("#selMenu");
-    rodarMenu1.addEventListener('click', rodar1);
-    function rodar1() {
-        var selecao1 = rodarMenu1.options[rodarMenu1.selectedIndex].value;
-        //select.options[select.selectedIndex].text;
-        switch (selecao1) {
-            case "1": requisicao('_paginas/p11_instalacoes.html', 'conteudo'); break;
-            case "2": requisicao('_paginas/p12_circuitosElementares.html', 'conteudo'); break;
-            case "3": requisicao('_paginas/p13_dimensionamento.html', 'conteudo'); break;
-            case "4": requisicao('_paginas/p14_leitura.html', 'conteudo'); break;
-            case "5": requisicao('_paginas/p15_pratica.html', 'conteudo'); break;
-            case "6": requisicao('_paginas/p16_aplicacao_dimensionamento.html', 'conteudo'); break;
-        }
-    }
-}*/
-
-/* Select dinanmico para menu todos os outros 
-var abrirMenuapr = window.document.querySelector("li#apr");
-var abrirMenucer = window.document.querySelector("li#cer");
-var abrirMenufale = window.document.querySelector("li#fale");
-
-
-abrirMenuapr.addEventListener('mouseenter', menu2);
-abrirMenucer.addEventListener('mouseenter', menu2);
-abrirMenufale.addEventListener('mouseenter', menu2);
-var localMenu1 = window.document.querySelector("div.abrirMenu");
-
-function menu2() {
-    localMenu1.innerHTML =
-        `...`
-    
-}*/
