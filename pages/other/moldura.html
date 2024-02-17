@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>MF-EBD</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+			crossorigin="anonymous">
+		<link rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+		<link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+	</head>
+
+	<body onload="requisicao('../other/inicio.html', 'conteudo')">
+		<p id="topo"></p>
+
+		<header class="container-fluid p-2 text-center">
+			<h1 class="cabecalho"><img src="../../img/LogoTransparente3.png"
+					alt="logo"></h1>
+			<nav class="navbar navbar-expand-lg ">
+				<div class="container-fluid">
+					<div>
+						<a class="navbar-brand" href="#">MF_EBD</a>
+					</div>
+					<div style="text-align: right;"><input type="submit"
+							value="Início" class="btn btn-outline-dark" tabindex="-1"
+							role="button" aria-disabled="true"
+							onclick="requisicao('../other/inicio.html', 'conteudo')">
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<!--.........................................................................................-->
+		<div id="tudo">
+			<main>
+				<h3 class="cabecalho">Escolha sua missão.</h3>
+				<aside>
+
+					<nav class="navbar navbar-expand-lg">
+						<div class="container-fluid">
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarSupportedContent"
+								aria-controls="navbarSupportedContent" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse justify-content-center"
+								id="navbarSupportedContent">
+								<ul class="navbar-nav">
+									<li class="nav-item dropdown">
+										<br><a class="btn btn-outline-danger" tabindex="-1"
+											role="button" aria-disabled="true" href="#" data-bs-toggle="dropdown"
+											aria-expanded="false">Missão_Elétrica</a><br>
+										<ul class="dropdown-menu">
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/p1_apresentacao.html', 'conteudo')">Apresentação_Elétrica</a></li>
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/p19_materiais_estudo.html', 'conteudo')">Manuais,
+													aulas e apostilas</a></li>
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/pv4_NR06 copy.html', 'conteudo')">NR06</a></li>
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/pv3_NR10 copy.html', 'conteudo')">NR10</a></li>
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/pv2_NR35 copy.html', 'conteudo')">NR35</a></li>
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/p2_Fundamentos.html', 'conteudo')">Fundamentos</a></li>
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/p3_grandezas.html', 'conteudo')">Grandezas
+													Elétricas</a></li>
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/p4_tensao.html', 'conteudo')">Tensão
+													Elétrica</a></li>
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/p5_corrente.html', 'conteudo')">Corrente
+													Elétrica</a></li>
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/p6_resistencia.html', 'conteudo')">Resistência
+													Elétrica</a></li>
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/p7_potencia.html', 'conteudo')">Potência
+													Elétrica</a></li>
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/p8_energia.html', 'conteudo')">Energia
+													Elétrica</a></li>
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/p9_relacao.html', 'conteudo')">Relação
+													entre Grandezas</a></li>
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/pv7_fundamentosFotovoltaicos copy.html', 'conteudo')">Fundamentos
+													de sistemas fotovoltaicos</a></li>
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/p10_etica.html', 'conteudo')">Ética
+													Profissional</a></li>
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/p11_instalacoes.html', 'conteudo')">Inst_Elétricas</a></li>
+											<li><a class="dropdown-item"
+													onclick="requisicao('../missaoEletrica/p12_circuitosElementares.html', 'conteudo')">Cicuitos
+													Elementares</a>
+												<li><a class="dropdown-item"
+														onclick="requisicao('../missaoEletrica/p13_dimensionamento.html', 'conteudo')">Dimensionamento</a></li>
+												<li><a class="dropdown-item"
+														onclick="requisicao('../missaoEletrica/p14_leitura.html', 'conteudo')">Interpretação
+														de Diagramas</a></li>
+												<li><a class="dropdown-item"
+														onclick="requisicao('../missaoEletrica/p15_pratica.html', 'conteudo')">Prática
+														de Inst_Eletricas</a></li>
+												<!--<li><a class="dropdown-item" onclick="requisicao('../missaoEletrica/p16_aplicacao_dimensionamento.html', 'conteudo')">AppWEB</a></li>-->
+												<li><a class="dropdown-item"
+														onclick="requisicao('../missaoEletrica/p16_aplicacao_dimensionamento_DisjCond.html', 'conteudo')">
+														Dimensionamento_Disjuntor_Condutor</a>
+													<li><a class="dropdown-item"
+															onclick="requisicao('../missaoEletrica/p16_aplicacao_dimensionamento_MedidorLight.html', 'conteudo')">Dimensionamento_Medidor_LIGHT_15kVA
+														</a>
+													</ul>
+												</li>
+
+											</ul>
+											&nbsp;&nbsp;
+
+											<!--Solar-->
+											<ul class="navbar-nav">
+												<li class="nav-item dropdown">
+													<br><a class="btn btn-outline-dark" tabindex="-1"
+														role="button" aria-disabled="true" href="#"
+														data-bs-toggle="dropdown"
+														aria-expanded="false">Missão_Solar</a>
+													<br>
+													<ul class="dropdown-menu">
+
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/pv1_apresentacao.html', 'conteudo')">Apresentação_Solar</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/pv19_materiais_estudo.html', 'conteudo')">Manuais,
+																aulas e apostilas</a></li>
+
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoEletrica/p10_etica.html', 'conteudo')">Ética
+																Profissional</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/pv2_NR35.html', 'conteudo')">NR35</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/pv3_NR10.html', 'conteudo')">NR10</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/pv4_NR06.html', 'conteudo')">NR06</a>
+														</li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/pv5_fundamentosGeograficos.html', 'conteudo')">Fundamentos
+																Geograficos</a></li>
+
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/pv6_fundamentosEletricos.html', 'conteudo')">Fundamentos
+																de eletricidade: Introdução.</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/p3_grandezas.html', 'conteudo')">Fundamentos
+																de eletricidade: Grandezas Eletricas.</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/p4_tensao.html', 'conteudo')">Fundamentos
+																de eletricidade: Tensão Elétrica.</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/p5_corrente.html', 'conteudo')">Fundamentos
+																de eletricidade: Corrente Elétrica.</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/p6_resistencia.html', 'conteudo')">Fundamentos
+																de eletricidade: Resistencia Elétrica.</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/p7_potencia.html', 'conteudo')">Fundamentos
+																de eletricidade: Potencia Elétrica.</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/p8_energia.html', 'conteudo')">Fundamentos
+																de eletricidade: Energia Elétrica.</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/p9_relacao.html', 'conteudo')">Fundamentos
+																de eletricidade: Relação entre grandezas elétricas.</a></li>
+
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/pv7_fundamentosFotovoltaicos.html', 'conteudo')">Fundamentos
+																Fotovoltaicos</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/pv8_equipMateriaisFerrmentas.html', 'conteudo')">Equipamentos,
+																Materiais e ferramentas Solares</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/pv9_ongrid.html', 'conteudo')">ONGRID</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/pv10_offgrid.html', 'conteudo')">OFFGRID</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/pv11_hibrido.html', 'conteudo')">HIBRIDO</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/pv12_ViabilResponsTecnica.html', 'conteudo')">Viabilidade
+																e responsabilidade Técnica</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSolar/p16_aplicacao_dimensionamento_fotovoltaico.html', 'conteudo')">Dimensionamento
+																de sistemas PV</a></li>
+													</ul>
+												</li>
+
+											</ul>
+
+											&nbsp;&nbsp;<!--Ciencias HS aplicadas-->
+											<ul class="navbar-nav">
+												<li class="nav-item dropdown">
+													<br><a class="btn btn-outline-primary" tabindex="-1"
+														role="button" aria-disabled="true" href="#"
+														data-bs-toggle="dropdown"
+														aria-expanded="false">Missão_CHS</a>
+													<br>
+													<ul class="dropdown-menu">
+
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoFilosofia/pf1_apresentacao.html', 'conteudo')">Apresentação_Filosofia</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoSociologia/ps1_apresentacao.html', 'conteudo')">Apresentação_Sociologia</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoGeografia/pg1_apresentacao.html', 'conteudo')">Apresentação_Geografia</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../missaoReligiao/pr1_apresentacao.html', 'conteudo')">Apresentação_Religão</a></li>
+
+													</ul>
+												</li>
+
+											</ul>
+
+											&nbsp;&nbsp;<!--Outros-->
+											<ul class="navbar-nav">
+												<li class="nav-item dropdown">
+													<br><a class="btn btn-outline-info" tabindex="-1"
+														role="button" aria-disabled="true" href="#"
+														data-bs-toggle="dropdown"
+														aria-expanded="false">&nbsp;&nbsp;Others&nbsp;&nbsp; </a>
+													<br>
+													<ul class="dropdown-menu">
+
+														<li><a class="dropdown-item"
+																onclick="requisicao('../other/p17_certificacao.html', 'conteudo')">Certificação</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../other/p18_contribuicoes.html', 'conteudo')">Contribuições</a></li>
+														<li><a class="dropdown-item"
+																onclick="requisicao('../other/p20_memoria.html', 'conteudo')">Memória</a></li>
+
+													</ul>
+												</li>
+											</ul>
+
+											&nbsp;&nbsp;<!--fale conosco-->
+											<ul class="navbar-nav">
+												<li class="nav-item dropdown">
+													<br><a class="btn btn-outline-success" tabindex="-1"
+														role="button" aria-disabled="true"
+														href="mailto:missao.filosofica@gmail.com"
+														data-bs-toggle="dropdown"
+														aria-expanded="false">Fale conosco</a>
+												</li>
+											</ul>
+										</li>
+									</div>
+								</div>
+							</nav>
+						</aside>
+						<section>
+							<!--<h3>DIV de resposta da requisição Assincrona Ajax</h3>-->
+							<div id="conteudo"></div><br>
+							<p class="txt"><a href="#topo">Topo</a></p>
+						</section>
+					</main>
+				</div>
+				<script
+					src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+					integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+					crossorigin="anonymous"></script>
+				<script src="../../js/ajax.js" type="text/javascript" rel="JS"></script>
+				<script src="../../js/dimensionamento.js" type="text/javascript"
+					rel="JS"></script>
+				<script src="../../js/script.js" type="text/javascript"></script>
+				<footer>
+					<br>
+					<div id="rodape">
+						<h6 id="rodape">V6 -2024 - by Oliveira Junior, P.E.</h6>
+						<h6 id="rodape">
+							<a href="https://forms.gle/wvU4zsfET3FdbfJo9"> Quero doar</a> |
+
+							<a href="mailto:missao.filosofica@gmail.com">Fale conosco</a>
+						</h6><br>
+					</div>
+				</footer>
+			</body>
+		</html>

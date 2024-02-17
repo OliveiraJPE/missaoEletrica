@@ -12,7 +12,7 @@ body {
 #tudo{
 	box-shadow:1px 1px 4px rgba(0, 0, 0, .6);
 	width:auto;	
-	background-color:#ffffff;	
+	background-color:#f3f0f0;	
 	border-radius: 20px;
 	
 }
@@ -102,11 +102,12 @@ section{
 	max-width: 1200px;
 	min-width: 100px;
 	min-height: 100px;
-	background-color: #f4f0f0;	
-	border:1px solid #606060;
+	background-color: #fffdfd;	
+	border:2px solid #f3d8d8;
 	border-radius: 20px;
 	padding:15px;
 	margin:auto;
+	box-shadow:1px 1px 4px rgba(14, 14, 14, 0.6);
 }
 #rodape{
 	clear:both; /* Limpar configurações anteriores*/
@@ -156,6 +157,20 @@ fieldset {
 /*por causa do dimensionamento*/
 table{
 	margin:auto;
+}
+
+.req{
+	width:500px;
+	height: 600px;
+	background-color: #CECECE;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+}
+.parReq{
+	text-align: justify;
+	text-indent: 50px;
+	color:rgb(27, 27, 27);
 }
 /*
 #tec{	

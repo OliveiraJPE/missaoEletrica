@@ -1157,7 +1157,7 @@ function dimensCirc() {
 //p16 chama função de dimensionamento
 //cria caixa de identificação com validações
 function dimens() {
-  tabDim = window.document.querySelector("div#tabDim");
+  tabDim = window.document.querySelector("div#conteudo");/*#tabDim*/
   nome = window.document.querySelector("#nome");
   ender = window.document.querySelector("input#ender");
   data = window.document.querySelector("input#data");
@@ -4764,7 +4764,7 @@ function rodarFinal() {
   tabDim.innerHTML += `<h6 class="txt"><strong>OBS.: Este projeto destina-se apenas ao aprendizado e para o uso da aplicação deve-se ter conhecimentos de Instalações elétricas prediais, estando o seu uso restrito à estudantes e, logo, esta aplicação destina-se aos estudos e pesquisa de eletricistas. Não autorizamos seu uso comercial ou profissional, logo, não nos responsabilizamos pelo mau uso do conhecimento disponibilizado aqui, ou pela desvirtuação de seu propósito. Ressaltamos a importância de se consultar seu professor ou um profissional habilitado na área de Instalações elétricas sobre os resultados encontrados em seu estudo, antes de aplicá-lo, como também alertamos para o risco de exercício ilegal da profissão em casos de atuação em obras que requeiram a obrigatoriedade de RRT, ART ou TRT.</strong></h6>
     <fieldset>
      <legend>Finalizar</legend>
-     <a href="index.html"><input type="button" value="Retornar ao início"></a>
+     <a href="../../pages/other/moldura.html"><input type="button" value="Retornar ao início"></a>
      <&nbsp;&nbsp;>
      <input type="button" value="Imprimir esta página"  onClick="window.print()">
      </fieldset>

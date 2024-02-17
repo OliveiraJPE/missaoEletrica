@@ -1,409 +1,353 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MF-EBD: Instalações Elétricas</title>
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-        crossorigin="anonymous">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+<h1>Sistemas Fotovoltaicos.</h1><hr><br>
 
-</head>
+<h2>1. Fundamentos de eletricidade I </h2><br>
 
-	<body>
-		<p id="topo"></p>
-		<header class="container-fluid p-2 text-center">
-			<h1 class="cabecalho"><img src="../../img/LogoTransparente3.png" alt="logo"></h1>
+<h3>O que é a eletricidade?</h3>
+<p class="txt">É a parte da física que estuda os
+    fenômenos que ocorrem com as cargas elétricas e/ou
+    elétron
+    em movimento. Quando um elétron abandona a sua
+    órbita de origem, ou seu átomo, ele acumula
+    energia e
+    realiza trabalho quando esta energia é transformada
+    em outras formas de energia, tais como;
+    calor,
+    luz, magnetismo, etc. </p><br>
 
-			<nav class="navbar navbar-expand-lg ">
-				<div class="container-fluid">
-					<h2 class="cabecalho"><a class="navbar-brand" href="#">Missão:
-							Energia Solar</a></h2>
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-						data-bs-target="#navbarSupportedContent"
-						aria-controls="navbarSupportedContent" aria-expanded="false"
-						aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse justify-content-end"
-						id="navbarSupportedContent">
-						<ul class="navbar-nav">
-                            <li class="nav-item"><a class="btn btn-link" href="../other/index1.html">Início</a></li>
-							<li class="nav-item"><a class="btn btn-link" href="../missaoSolar/pv19_materiais_estudo.html" target="_blank">Manuais, aulas e apostilas</a></li>
-                            
-							<li class="nav-item dropdown">
-								<a class="btn btn-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sistemas fotovoltaicos </a>
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="../missaoSolar/pv1_apresentacao.html">Conteúdo</a></li>
-									<li><a class="dropdown-item" href="../missaoEletrica/p10_etica.html" target="_blank">Ética Profissional</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/pv2_NR35.html">NR35</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/pv3_NR10.html">NR10</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/pv4_NR06.html">NR06</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/pv5_fundamentosGeograficos.html">Fundamentos Geograficos</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/pv6_fundamentosEletricos.html">Fundamentos de eletricidade: Introdução.</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/p3_grandezas.html">Fundamentos de eletricidade: Grandezas Eletricas.</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/p4_tensao.html">Fundamentos de eletricidade: Tensão Elétrica.</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/p5_corrente.html">Fundamentos de eletricidade: Corrente Elétrica.</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/p6_resistencia.html">Fundamentos de eletricidade: Resistencia Elétrica.</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/p7_potencia.html">Fundamentos de eletricidade: Potencia Elétrica.</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/p8_energia.html">Fundamentos de eletricidade: Energia Elétrica.</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/p9_relacao.html">Fundamentos de eletricidade: Relação entre grandezas elétricas.</a></li>
-                                    
-                                    <li><a class="dropdown-item" href="../missaoSolar/pv7_fundamentosFotovoltaicos.html">Fundamentos Fotovoltaicos</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/pv8_equipMateriaisFerrmentas.html">Equipamentos, Materiais e ferramentas Solares</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/pv9_ongrid.html">ONGRID</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/pv10_offgrid.html">OFFGRID</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/pv11_hibrido.html">HIBRIDO</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/pv12_ViabilResponsTecnica.html">Viabilidade e responsabilidade Técnica</a></li>
-                                    <li><a class="dropdown-item" href="../missaoSolar/pv16_aplicacao_dimensionamento.html">Dimensionamento de sistemas PV</a></li>
-								</ul>
-							</li>
-							<li class="nav-item"><a class="btn btn-link" href="../other/p17_certificacao.html" target="_blank">Certificação</a></li>
-							<li class="nav-item"><a class="btn btn-link" href="../other/p18_contribuicoes.html" target="_blank">Contribuições</a></li>
-							<li class="nav-item"><a class="btn btn-link" href="../other/p20_memoria.html" target="_blank">Memória e Projetos</a></li>
-							<li class="nav-item"><a class="btn btn-link" href="mailto:missaaofilosofica@gmail.com">Fale_Conosco</a></li>
-						</ul>
-
-					</div>
-				</div>
-			</nav>
-		</header>
-		<!--.........................................................................................-->
-
-        
-        <div id="tudo">
-            <br>
-            <h1>Sistemas Fotovoltaicos.</h1><hr><br>
-            <main>
-                <section>
-                    <div id="corpo">
-                      <h2>1. Fundamentos de eletricidade I </h2><br>
-
-                        <h3>O que é a eletricidade?</h3>
-                        <p class="txt">É a parte da física que estuda os
-                            fenômenos que ocorrem com as cargas elétricas e/ou
-                            elétron
-                            em movimento. Quando um elétron abandona a sua
-                            órbita de origem, ou seu átomo, ele acumula
-                            energia e
-                            realiza trabalho quando esta energia é transformada
-                            em outras formas de energia, tais como;
-                            calor,
-                            luz, magnetismo, etc. </p><br>
-
-                        <h3>O que é a física?</h3>
-                        <p class="txt">É uma ciência que estuda os fenômenos que
-                            ocorrem com os corpos, quaisquer que sejam
-                            seus
-                            tamanhos. Estuda-se desde os gigantescos, como os
-                            planetas, até os microscópicos, como os
-                            átomos.
-                        </p>
-                        <p class="txt">A física estuda a forma e as mudanças de
-                            forma dos corpos, as forças que os
-                            influenciam
-                            (gravidade, atrito), o movimento ou o repouso destes
-                            corpos, a energia que acumulam que liberam
-                            ou
-                            que se transforma.</p>
-                        <p class="txt">A física estuda os fenômenos mecânicos,
-                            as ondas, a luz, a temperatura e a
-                            eletricidade.
-                            Na
-                            parte de eletricidade, ela estuda os fenômenos que
-                            ocorrem com os átomos, com as cargas
-                            elétricas,
-                            com os elétrons, prótons e nêutrons. Isto quando
-                            estes estão em movimento ou em repouso, ou
-                            quando
-                            estão acumulando ou liberando energia.</p>
+<h3>O que é a física?</h3>
+<p class="txt">É uma ciência que estuda os fenômenos que
+    ocorrem com os corpos, quaisquer que sejam
+    seus
+    tamanhos. Estuda-se desde os gigantescos, como os
+    planetas, até os microscópicos, como os
+    átomos.
+</p>
+<p class="txt">A física estuda a forma e as mudanças de
+    forma dos corpos, as forças que os
+    influenciam
+    (gravidade, atrito), o movimento ou o repouso destes
+    corpos, a energia que acumulam que liberam
+    ou
+    que se transforma.</p>
+<p class="txt">A física estuda os fenômenos mecânicos,
+    as ondas, a luz, a temperatura e a
+    eletricidade.
+    Na
+    parte de eletricidade, ela estuda os fenômenos que
+    ocorrem com os átomos, com as cargas
+    elétricas,
+    com os elétrons, prótons e nêutrons. Isto quando
+    estes estão em movimento ou em repouso, ou
+    quando
+    estão acumulando ou liberando energia.</p>
 <br>
-                        <h3>O átomo</h3>
+<h3>O átomo</h3>
 
-                        <p class="alignimg"><img src="../../img/atomo.png" alt="figura
+<p class="alignimg"><img src="../../img/atomo.png" alt="figura
                                 átomo"></p>
-                        <p class="citacao">Fonte:
-                            https://svgsilh.com/svg_v2/1691300.svg, Licença:
-                            CC-0 </p>
+<p class="citacao">Fonte:
+    https://svgsilh.com/svg_v2/1691300.svg, Licença:
+    CC-0 </p>
 
-                        <p class="txt">É a menor parte de um corpo que ainda
-                            resguarde as características desse corpo é
-                            chamada
-                            de
-                            átomo, ou melhor, a menor parte do ouro que ainda
-                            resgclassrda as suas características, ou seja,
-                            a
-                            menor parte do ouro que ainda é ouro é o átomo de
-                            ouro. </p>
-                        <p class="txt">
-                            O átomo é composto de três pequenas partículas
-                            fundamentais: Os prótons, os elétrons e os
-                            nêutrons.
-                            Os prótons são partículas que possuem polaridade
-                            positiva (+), e são encontrados no núcleo do
-                            átomo.
-                            Os elétrons são partículas que possuem polaridade
-                            negativa (-), são encontrados circulando
-                            entorno
-                            do átomo. Os nêutrons possuem carga nula (0), são
-                            encontrados no núcleo do átomo.
-                        </p>
-                        <p class="txt">
-                            Os elétrons podem se tornar livres, sair do átomo,
-                            por uso de força externa: luz, calor,
-                            magnetismo,
-                            DDP, entre outras.
-                            Quando os elétrons se movimentam para fora de seu
-                            átomo, acumulam energia e realizam trabalho
-                            quando
-                            esta energia é transformada em outro tipo de
-                            energia, como por exemplo, no calor de um ferro de
-                            passar roupas.
-                        </p><br>
+<p class="txt">É a menor parte de um corpo que ainda
+    resguarde as características desse corpo é
+    chamada
+    de
+    átomo, ou melhor, a menor parte do ouro que ainda
+    resgclassrda as suas características, ou seja,
+    a
+    menor parte do ouro que ainda é ouro é o átomo de
+    ouro. </p>
+<p class="txt">
+    O átomo é composto de três pequenas partículas
+    fundamentais: Os prótons, os elétrons e os
+    nêutrons.
+    Os prótons são partículas que possuem polaridade
+    positiva (+), e são encontrados no núcleo do
+    átomo.
+    Os elétrons são partículas que possuem polaridade
+    negativa (-), são encontrados circulando
+    entorno
+    do átomo. Os nêutrons possuem carga nula (0), são
+    encontrados no núcleo do átomo.
+</p>
+<p class="txt">
+    Os elétrons podem se tornar livres, sair do átomo,
+    por uso de força externa: luz, calor,
+    magnetismo,
+    DDP, entre outras.
+    Quando os elétrons se movimentam para fora de seu
+    átomo, acumulam energia e realizam trabalho
+    quando
+    esta energia é transformada em outro tipo de
+    energia, como por exemplo, no calor de um ferro de
+    passar roupas.
+</p><br>
 
-                        <h2>2. Corpos bons e corpos maus condutores elétricos</h2><br>
-                        <h3>CORPOS BONS CONDUTORES</h3>
-                        <p class="txt">São aqueles corpos dos quais com o
-                            auxilio de força externa (mesmo de pouca
-                            intensidade),
-                            conseguimos liberar os elétrons de seus átomos com
-                            facilidade, ou seja, usando pouca força somos
-                            capazes de criar corrente elétrica. </p>
-                        <ul>
-                            <li>Ferro, cobre, alumínio, ouro, etc</li>
-                            <li>Os condutores elétricos comerciais de baixa
-                                tensão são feitos de ligas de cobre, que é um
-                                bom
-                                condutor elétrico.</li>
-                            <li>Em outros termos temos: poucos "Volts" seriam
-                                suficientes para fazer circular uma corrente
-                                elétrica pelos metais. Por isso dizemos que o
-                                metal é bom condutor elétrico.</li>
-                        </ul><br>
+<h2>2. Corpos bons e corpos maus condutores elétricos</h2><br>
+<h3>CORPOS BONS CONDUTORES</h3>
+<p class="txt">São aqueles corpos dos quais com o
+    auxilio de força externa (mesmo de pouca
+    intensidade),
+    conseguimos liberar os elétrons de seus átomos com
+    facilidade, ou seja, usando pouca força somos
+    capazes de criar corrente elétrica. </p>
+<ul>
+    <li>Ferro, cobre, alumínio, ouro, etc</li>
+    <li>Os condutores elétricos comerciais de baixa
+        tensão são feitos de ligas de cobre, que é um
+        bom
+        condutor elétrico.</li>
+    <li>Em outros termos temos: poucos "Volts" seriam
+        suficientes para fazer circular uma corrente
+        elétrica pelos metais. Por isso dizemos que o
+        metal é bom condutor elétrico.</li>
+</ul><br>
 
-                        <h3>CORPOS MAUS CONDUTORES </h3>
-                        <p class="txt
+<h3>CORPOS MAUS CONDUTORES </h3>
+<p class="txt
                             ">São aqueles corpos dos quais somente conseguimos
-                            liberar os elétrons com a utilização de
-                            grande força externa, e extrema dificuldade. </p>
-                        <ul>
-                            <li>Borracha, porcelana, madeira, vidro, pvc, etc.</li>
-                            <li>Os condutores elétricos comerciais de baixa
-                                tensão tem seu isolamento, sua capa, feita de
-                                PVC
-                                70, que é um mau condutor elétrico. Este PVC-70
-                                só conduz quando submetido a tensões
-                                elétricas
-                                acima de 750V.</li>
-                        </ul>
-                        <p class="txt">
-                            Em outros termos temos: somente conseguiríamos fazer
-                            circular uma corrente elétrica nestes
-                            materiais
-                            usando milhares de volts. Por isso dizemos que o
-                            estes materiais são maus condutores elétricos,
-                            ou
-                            isolantes.
-                            Não existem isolantes perfeitos. Usando força
-                            suficiente (TENSÂO ELÈTRICA, VOLT) qualquer corpo
-                            é
-                            capaz de conduzir corrente elétrica, até mesmo a
-                            borracha..
-                        </p><br>
+    liberar os elétrons com a utilização de
+    grande força externa, e extrema dificuldade. </p>
+<ul>
+    <li>Borracha, porcelana, madeira, vidro, pvc, etc.</li>
+    <li>Os condutores elétricos comerciais de baixa
+        tensão tem seu isolamento, sua capa, feita de
+        PVC
+        70, que é um mau condutor elétrico. Este PVC-70
+        só conduz quando submetido a tensões
+        elétricas
+        acima de 750V.</li>
+</ul>
+<p class="txt">
+    Em outros termos temos: somente conseguiríamos fazer
+    circular uma corrente elétrica nestes
+    materiais
+    usando milhares de volts. Por isso dizemos que o
+    estes materiais são maus condutores elétricos,
+    ou
+    isolantes.
+    Não existem isolantes perfeitos. Usando força
+    suficiente (TENSÂO ELÈTRICA, VOLT) qualquer corpo
+    é
+    capaz de conduzir corrente elétrica, até mesmo a
+    borracha..
+</p><br>
 
-                        <h3>CORPOS SEMICONDUTORES</h3>
-                        <p class="txt">Os semicondutores (Silício, Germânio) são materiais que possuem baixa condutividade elétrica. Esses elementos estão entre os condutores e isolantes, e são capazes de mudar sua condição de condução elétrica com facilidade. </p>
-                        <p class="txt">Os semicondutores não conseguem conduzir corrente elétrica em condições químicas normais. Os átomos dos semicondutores são tetravalentes, ou seja, possuem apenas quatro camadas de valência, o que os torna elementos não estáveis.</p>
-                        <p class="txt">Para que os materiais semicondutores possam conduzir corrente elétrica é necessário que seus átomos se agrupem para ganhar estabilidade. Isso ocorre quando há ligações químicas covalentes nas quais os átomos passam a ter oito elétrons e se tornam condutores de eletricidade.</p>
-                        <p class="txt">Os semicondutores apresentam dois tipos de condução elétrica: condução intrínseca e condução extrínseca. Para que haja a condução intrínseca os semicondutores precisam receber energia (calor, luz ou a aplicação de uma tensão elétrica). Já para haver a condução extrínseca, os semicondutores precisam receber excesso de carga negativa, através da inserção de outros elementos.</p>
-                        <p  class="txt">Outro modo de diminuir a resistência do cristal de silício é a dopagem, que consiste em introduzir de maneira uniforme impurezas, que podem ser átomos de arsênio ou de boro. Quando introduzimos o arsênio, o semicondutor é chamado de semicondutor de tipo “N” e quando é introduzido o boro, ele é chamado de semicondutor de tipo “P”.
+<h3>CORPOS SEMICONDUTORES</h3>
+<p class="txt">Os semicondutores (Silício, Germânio) são materiais que possuem
+    baixa condutividade elétrica. Esses elementos estão entre os condutores e
+    isolantes, e são capazes de mudar sua condição de condução elétrica com
+    facilidade. </p>
+<p class="txt">Os semicondutores não conseguem conduzir corrente elétrica em
+    condições químicas normais. Os átomos dos semicondutores são tetravalentes,
+    ou seja, possuem apenas quatro camadas de valência, o que os torna elementos
+    não estáveis.</p>
+<p class="txt">Para que os materiais semicondutores possam conduzir corrente
+    elétrica é necessário que seus átomos se agrupem para ganhar estabilidade.
+    Isso ocorre quando há ligações químicas covalentes nas quais os átomos
+    passam a ter oito elétrons e se tornam condutores de eletricidade.</p>
+<p class="txt">Os semicondutores apresentam dois tipos de condução elétrica:
+    condução intrínseca e condução extrínseca. Para que haja a condução
+    intrínseca os semicondutores precisam receber energia (calor, luz ou a
+    aplicação de uma tensão elétrica). Já para haver a condução extrínseca, os
+    semicondutores precisam receber excesso de carga negativa, através da
+    inserção de outros elementos.</p>
+<p class="txt">Outro modo de diminuir a resistência do cristal de silício é a
+    dopagem, que consiste em introduzir de maneira uniforme impurezas, que podem
+    ser átomos de arsênio ou de boro. Quando introduzimos o arsênio, o
+    semicondutor é chamado de semicondutor de tipo “N” e quando é introduzido o
+    boro, ele é chamado de semicondutor de tipo “P”.
 
-                        </p>
+</p>
 <br>
-                        <h3>POLARIZAÇÃO DE UM DIODO</h3>
-                        <p  class="txt">Quando colocamos a polaridade positiva no anodo e negativa no catodo, e fornecendo uma tensão elétrica que ultrapasse a barreira de potencial dos diodos, sendo está de 0,3 V para diodos de germânio e 0,7 V para diodos de silício, o diodo começará a conduzir a corrente elétrica que o circuito eletrônico consumidor irá solicitar da fonte geradora, logo ele irá funcionar como uma chave fechada e atuando como um condutor de elétrons, mas pode ter certeza que temos muito mais a saber sobre o seu funcionamento neste tipo de polarização</p> 
-                        <p  class="alignimg"><img src="../../img/diodo.png" class="img-fluid" alt=""></p>
-                        <p  class="alignimg"><img src="../../img/polarDiodo.png"  class="img-fluid" alt=""></p> 
-                       
+<h3>POLARIZAÇÃO DE UM DIODO</h3>
+<p class="txt">Quando colocamos a polaridade positiva no anodo e negativa no
+    catodo, e fornecendo uma tensão elétrica que ultrapasse a barreira de
+    potencial dos diodos, sendo está de 0,3 V para diodos de germânio e 0,7 V
+    para diodos de silício, o diodo começará a conduzir a corrente elétrica que
+    o circuito eletrônico consumidor irá solicitar da fonte geradora, logo ele
+    irá funcionar como uma chave fechada e atuando como um condutor de elétrons,
+    mas pode ter certeza que temos muito mais a saber sobre o seu funcionamento
+    neste tipo de polarização</p>
+<p class="alignimg"><img src="../../img/diodo.png" class="img-fluid" alt></p>
+<p class="alignimg"><img src="../../img/polarDiodo.png" class="img-fluid"
+        alt></p>
 
-                        <h2>3. GTD - Geração, Transmissão e Distribuição.</h2><br>
-                        <h3>Fontes de Eletricidade </h3>
-                        <p class="txt">É possível gerar eletricidade a partir
-                            de: atrito entre dois materiais; pressão em
-                            certos
-                            cristais; quando aquecemos ou expomos a luz certos
-                            tipos de materiais; quando expomos certos
-                            materiais a agentes químicos; ou quando forçamos a
-                            interação de campos magnéticos e/ou
-                            eletromagnéticos com o movimento de fios condutores.
-                        </p>
-                        <p class="txt">Como vimos, a eletricidade pode ser
-                            gerada de várias formas e nos mais variados
-                            níveis
-                            de
-                            tensão e corrente elétrica. Contudo para o uso
-                            efetivo desta eletricidade devemos optar por
-                            fontes
-                            de eletricidade capazes de manter níveis de tensão e
-                            corrente apropriadas para o uso comercial.
-                            É
-                            destas fontes de eletricidade que vamos tratar nesta
-                            unidade. </p><br>
+<h2>3. GTD - Geração, Transmissão e Distribuição.</h2><br>
+<h3>Fontes de Eletricidade </h3>
+<p class="txt">É possível gerar eletricidade a partir
+    de: atrito entre dois materiais; pressão em
+    certos
+    cristais; quando aquecemos ou expomos a luz certos
+    tipos de materiais; quando expomos certos
+    materiais a agentes químicos; ou quando forçamos a
+    interação de campos magnéticos e/ou
+    eletromagnéticos com o movimento de fios condutores.
+</p>
+<p class="txt">Como vimos, a eletricidade pode ser
+    gerada de várias formas e nos mais variados
+    níveis
+    de
+    tensão e corrente elétrica. Contudo para o uso
+    efetivo desta eletricidade devemos optar por
+    fontes
+    de eletricidade capazes de manter níveis de tensão e
+    corrente apropriadas para o uso comercial.
+    É
+    destas fontes de eletricidade que vamos tratar nesta
+    unidade. </p><br>
 
-                        <h3>Pilhas elétricas e Baterias </h3>
-                        <ul>
-                            <li>As pilhas e as baterias possuem, basicamente, o
-                                mesmo principio de funcionamento, sendo
-                                diferenciadas em termos de construção, nível de
-                                tensão e de corrente, ou se podem ou não ser
-                                recarregadas.</li>
-                            <li>O principio de funcionamento de uma pilha é
-                                simples: Duas placas ou eletrodos são colocados
-                                em
-                                contato com um composto químico (eletrólito)
-                                capaz de arrancar elétrons de um eletrodo e
-                                acumula-os no outro eletrodo.</li>
-                            <li>No caso da pilha alcalina o eletrodo central é o
-                                positivo, enquanto o negativo é a própria
-                                carcaça externa da pilha.</li>
-                        </ul>
+<h3>Pilhas elétricas e Baterias </h3>
+<ul>
+    <li>As pilhas e as baterias possuem, basicamente, o
+        mesmo principio de funcionamento, sendo
+        diferenciadas em termos de construção, nível de
+        tensão e de corrente, ou se podem ou não ser
+        recarregadas.</li>
+    <li>O principio de funcionamento de uma pilha é
+        simples: Duas placas ou eletrodos são colocados
+        em
+        contato com um composto químico (eletrólito)
+        capaz de arrancar elétrons de um eletrodo e
+        acumula-os no outro eletrodo.</li>
+    <li>No caso da pilha alcalina o eletrodo central é o
+        positivo, enquanto o negativo é a própria
+        carcaça externa da pilha.</li>
+</ul>
 
-                        <br>
-
-                        <h3>Usinas Elétricas. </h3>
-                        <p class="txt">As grandes usinas geradoras de energia
-                            elétrica utilizam o gerador rotativo que
-                            funciona
-                            segundo o princípio da indução eletromagnética.
-                            Diferem umas das outras pela adoção da
-                            força-motriz
-                            mecânica que irá ser aplica da ao gerador. </p>
-                        <p class="txt">O gerador rotativo não pode gerar ou
-                            manter seu próprio movimento, logo ele precisa
-                            de
-                            outra
-                            fonte de energia mecânica que seja capaz de manter
-                            seu movimento, tais como: A energia do
-                            movimento
-                            das águas (hidrodinâmica); a energia do movimento do
-                            ar (eólica); a energia do movimento do
-                            vapor
-                            d`água super aquecido (Térmica ou nuclear). </p><br>
-                        <h3>USINAS HIDROELÉTRICAS: </h3>
-                        <ul>
-                            <li>Aproveitam a energia da queda d`água dos rios.
-                                Logo, a dependência da existência de rios
-                                caudalosos e de planaltos limitam a utilização
-                                dessa fonte de energia.</li>
-                            <li>O movimento da água arrasta consigo turbina que
-                                transfere o movimento da água para o eixo do
-                                gerador, este que tem a função de transformar
-                                energia mecânica de rotação em energia
-                                elétrica.
-                            </li>
-                            <li>Os países que mais utilizam essa fonte de
-                                energia são aqueles que possuem grandes
-                                territórios e
-                                grande quantidade de rios, tais como: Brasil,
-                                Rússia, Canadá e EUA.</li>
-                            <li>Embora essa fonte seja inesgotável e pouco
-                                poluidora, a produção de energia por usina é
-                                pequena,
-                                assim como a quantidade de usinas construídas em
-                                um rio.</li>
-                        </ul><br>
-                        <h3>Usinas Fotovoltaicas: </h3>
-
-                        <p  class="txt">A usina solar fotovoltaica funciona assim: 
-                            os painéis solares produzem eletricidade, que passa por um inversor solar para converter essa energia em corrente elétrica alternada para, então, ser transmitida pelas redes de transmissão de energia e distribuída para o uso em sua casa ou empreendimento.
-                            </p> 
-                        <p  class="alignimg"><img src="../../img/casaFotovoltaica.png" class="img-fluid"alt="cas Fotovoltaica"></p> 
-                        <p  class="txt">Os painéis solares produzem energia elétrica em corrente contínua, portanto, eles precisam de um inversor solar para converter essa energia em corrente alternada (padrão elétrico para qualquer casa ou empresa conectada à rede no Brasil).</p> 
-                        <p  class="txt">Os inversores entregam a energia produzida pelos painéis fotovoltaicos de 127V, 220V até 380 Volts. Para a transmissão de energia nas linhas de alta tensão, é preciso uma voltagem bem mais alta que isso, portanto, utilizam-se transformadores para elevar a tensão para 13.800 Volts, 69.000 Volts, 138.000 Volts e até acima de 230.000 Volts.</p>
-                        <p  class="txt">Como as usinas fotovoltaicas são geralmente instaladas em áreas isoladas e distantes, a sua energia é enviada aos centros urbanos por meio das linhas de transmissão, para, depois, atender ao consumo das casas, empresas e outros empreendimentos conectados à rede da distribuidora local.</p><br>
-                        
-                        <h3>Transmissão </h3>
-                        <p class="txt">Após a geração a energia é elevada para
-                            alta tensão, com o uso de transformadores, e
-                            transmitida para as subestações das cidades, onde
-                            são abaixados, também com uso de
-                            transformadores,
-                            para os níveis de consumo em alta, média e baixa
-                            tensão. </p>
-                            <p  class="alignimg"><img src="../../img/transmissaoFotovoltaica.png" class="img-fluid" alt="transmisao"></p>
-                        
 <br>
 
-                        <h3>Distribuição </h3>
-                        <p class="txt">A distribuição é feita por
-                            concessionários como a LIGHT, ENEL, Eletro Paulo,
-                            entre
-                            outras. A
-                            distribuição primária é feita em alta e média tensão
-                            para grandes consumidores: 138kV, 13,8kV,
-                            34,5kV, 25kV, 6,3kV... A distribuição secundária,
-                            para clientes comerciais e residenciais é
-                            feita em
-                            baixa tensão: 220V e 127V. Esta elevação e
-                            abaixamento da tensão é feita por transformadores
-                            elétricos de corrente alternada, C.A.</p>
+<h3>Usinas Elétricas. </h3>
+<p class="txt">As grandes usinas geradoras de energia
+    elétrica utilizam o gerador rotativo que
+    funciona
+    segundo o princípio da indução eletromagnética.
+    Diferem umas das outras pela adoção da
+    força-motriz
+    mecânica que irá ser aplica da ao gerador. </p>
+<p class="txt">O gerador rotativo não pode gerar ou
+    manter seu próprio movimento, logo ele precisa
+    de
+    outra
+    fonte de energia mecânica que seja capaz de manter
+    seu movimento, tais como: A energia do
+    movimento
+    das águas (hidrodinâmica); a energia do movimento do
+    ar (eólica); a energia do movimento do
+    vapor
+    d`água super aquecido (Térmica ou nuclear). </p><br>
+<h3>USINAS HIDROELÉTRICAS: </h3>
+<ul>
+    <li>Aproveitam a energia da queda d`água dos rios.
+        Logo, a dependência da existência de rios
+        caudalosos e de planaltos limitam a utilização
+        dessa fonte de energia.</li>
+    <li>O movimento da água arrasta consigo turbina que
+        transfere o movimento da água para o eixo do
+        gerador, este que tem a função de transformar
+        energia mecânica de rotação em energia
+        elétrica.
+    </li>
+    <li>Os países que mais utilizam essa fonte de
+        energia são aqueles que possuem grandes
+        territórios e
+        grande quantidade de rios, tais como: Brasil,
+        Rússia, Canadá e EUA.</li>
+    <li>Embora essa fonte seja inesgotável e pouco
+        poluidora, a produção de energia por usina é
+        pequena,
+        assim como a quantidade de usinas construídas em
+        um rio.</li>
+</ul><br>
+<h3>Usinas Fotovoltaicas: </h3>
 
-                                               <p class="txt">Outras fontes de energia elétrica:
-                            Termoelétricas fazem parte do sistema interligado
-                            nacional, mas a maior contribuição é das usinas
-                            hidroelétricas: Usinas térmicas, termonucleares,
-                            solares, eólicas, entre outras,</p>
+<p class="txt">A usina solar fotovoltaica funciona assim:
+    os painéis solares produzem eletricidade, que passa por um inversor solar
+    para converter essa energia em corrente elétrica alternada para, então, ser
+    transmitida pelas redes de transmissão de energia e distribuída para o uso
+    em sua casa ou empreendimento.
+</p>
+<p class="alignimg"><img src="../../img/casaFotovoltaica.png" class="img-fluid"
+        alt="cas Fotovoltaica"></p>
+<p class="txt">Os painéis solares produzem energia elétrica em corrente
+    contínua, portanto, eles precisam de um inversor solar para converter essa
+    energia em corrente alternada (padrão elétrico para qualquer casa ou empresa
+    conectada à rede no Brasil).</p>
+<p class="txt">Os inversores entregam a energia produzida pelos painéis
+    fotovoltaicos de 127V, 220V até 380 Volts. Para a transmissão de energia nas
+    linhas de alta tensão, é preciso uma voltagem bem mais alta que isso,
+    portanto, utilizam-se transformadores para elevar a tensão para 13.800
+    Volts, 69.000 Volts, 138.000 Volts e até acima de 230.000 Volts.</p>
+<p class="txt">Como as usinas fotovoltaicas são geralmente instaladas em áreas
+    isoladas e distantes, a sua energia é enviada aos centros urbanos por meio
+    das linhas de transmissão, para, depois, atender ao consumo das casas,
+    empresas e outros empreendimentos conectados à rede da distribuidora
+    local.</p><br>
+
+<h3>Transmissão </h3>
+<p class="txt">Após a geração a energia é elevada para
+    alta tensão, com o uso de transformadores, e
+    transmitida para as subestações das cidades, onde
+    são abaixados, também com uso de
+    transformadores,
+    para os níveis de consumo em alta, média e baixa
+    tensão. </p>
+<p class="alignimg"><img src="../../img/transmissaoFotovoltaica.png"
+        class="img-fluid" alt="transmisao"></p>
+
 <br>
-                            <h3>COMPOSIÇÃO DA TARIFA DE ENERGIA ELÉTRICA</h3>
-                            <p  class="txt">Para entender o que é o Fio B, precisamos entender a composição tarifária do kWh (Quilowatt ou Kilowatt) que a concessionária cobra do consumidor final. Cada kWh é composto por:</p>
-                        <p  class="txt">Tarifa de Energia (TE): é o valor pago pela energia que sua casa ou empresa consome por mês. Já a tarifa de Uso do Sistema de Distribuição (TUSD): tarifa cobrada pelo uso do sistema de distribuição, ou seja, o custo da concessionária para levar a energia da fonte até o consumidor final, incluindo instalações, equipamentos, subestações, transformadores e postes.
-                            </p><br>
-                            <h3>O que é o Fio B?</h3>
-                        <p  class="txt">O Fio B é um custo que faz parte da TUSD, pois faz parte da despesa das concessionárias de energia elétrica para chegar a residências, comércios e propriedades rurais</p>
-                        <p  class="txt">A cobrança do Fio B começa em 2023 – todo projeto de painéis fotovoltaicos homologado a partir de 7 de janeiro de 2023 terá que pagar esta taxa. Os projetos que foram homologados antes dessa data serão isentos da cobrança até o ano de 2045, conforme previsto na lei.</p>
-                        <p  class="txt">O valor do Fio B muda de acordo com as concessionárias locais de energia elétrica, de acordo com o número de consumidores atendidos na área da concessão em que a concessionária atua.  TUSD LIGHT (Lei 14.300) em 2023 é aproximadamente R$30,00 para monofásico, R$50,00 para Bifásico e R$100, 00 para trifásico.</p>
-                        <p  class="txt">É preciso lembrar que o pagamento do Fio B se aplica somente à energia que é exportada para a rede elétrica da concessionária; a energia que é produzida e consumida instantaneamente (o chamado autoconsumo) não será taxada. Há uma discussão sobre se a taxação do fio B não é dupla tarifação, já que a taxa de manutenção, que é o fio B já é paga na disponibilidade do sistema. Hoje, após a implantação da taxação progressiva, com a lei 14.300, a Light retorna em créditos o valor da TUSD quando a injeção supera o consumo.</p>
-                        <p  class="txt"></p>
 
+<h3>Distribuição </h3>
+<p class="txt">A distribuição é feita por
+    concessionários como a LIGHT, ENEL, Eletro Paulo,
+    entre
+    outras. A
+    distribuição primária é feita em alta e média tensão
+    para grandes consumidores: 138kV, 13,8kV,
+    34,5kV, 25kV, 6,3kV... A distribuição secundária,
+    para clientes comerciais e residenciais é
+    feita em
+    baixa tensão: 220V e 127V. Esta elevação e
+    abaixamento da tensão é feita por transformadores
+    elétricos de corrente alternada, C.A.</p>
 
-                        <p><a href="#topo">Topo</a></p>
-                    </div>
-                </section>
-            </main>
-        
-
-		
-	</div>
-    <script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-			crossorigin="anonymous">
-		</script>
-		<script src="../../js/script.js" type="text/javascript" rel="ajax"></script>
-		<script src="../../js/dimensionamento.js" type="text/javascript" rel="JS"></script>
-		<footer>
-			<br>
-			<div id="rodape">
-				<h6 id="rodape">V5 -2024 - by Oliveira Junior, P.E.</h6>
-				<h6 id="rodape">
-					<a href="https://forms.gle/wvU4zsfET3FdbfJo9"> Quero
-						doar</a> |
-					<a href="www.facebook.com">Facebook</a> |
-					<a href="https://sites.google.com/view/missaofilosofica/in%C3%ADcio">MF-EBF_GOOGLE</a>
-					|
-					<a href="mailto:missaaofilosofica@gmail.com">Fale conosco</a>
-				</h6><br>
-			</div>
-		</footer>
-	</body>
-
-</html>
+<p class="txt">Outras fontes de energia elétrica:
+    Termoelétricas fazem parte do sistema interligado
+    nacional, mas a maior contribuição é das usinas
+    hidroelétricas: Usinas térmicas, termonucleares,
+    solares, eólicas, entre outras,</p>
+<br>
+<h3>COMPOSIÇÃO DA TARIFA DE ENERGIA ELÉTRICA</h3>
+<p class="txt">Para entender o que é o Fio B, precisamos entender a composição
+    tarifária do kWh (Quilowatt ou Kilowatt) que a concessionária cobra do
+    consumidor final. Cada kWh é composto por:</p>
+<p class="txt">Tarifa de Energia (TE): é o valor pago pela energia que sua casa
+    ou empresa consome por mês. Já a tarifa de Uso do Sistema de Distribuição
+    (TUSD): tarifa cobrada pelo uso do sistema de distribuição, ou seja, o custo
+    da concessionária para levar a energia da fonte até o consumidor final,
+    incluindo instalações, equipamentos, subestações, transformadores e postes.
+</p><br>
+<h3>O que é o Fio B?</h3>
+<p class="txt">O Fio B é um custo que faz parte da TUSD, pois faz parte da
+    despesa das concessionárias de energia elétrica para chegar a residências,
+    comércios e propriedades rurais</p>
+<p class="txt">A cobrança do Fio B começa em 2023 – todo projeto de painéis
+    fotovoltaicos homologado a partir de 7 de janeiro de 2023 terá que pagar
+    esta taxa. Os projetos que foram homologados antes dessa data serão isentos
+    da cobrança até o ano de 2045, conforme previsto na lei.</p>
+<p class="txt">O valor do Fio B muda de acordo com as concessionárias locais de
+    energia elétrica, de acordo com o número de consumidores atendidos na área
+    da concessão em que a concessionária atua. TUSD LIGHT (Lei 14.300) em 2023 é
+    aproximadamente R$30,00 para monofásico, R$50,00 para Bifásico e R$100, 00
+    para trifásico.</p>
+<p class="txt">É preciso lembrar que o pagamento do Fio B se aplica somente à
+    energia que é exportada para a rede elétrica da concessionária; a energia
+    que é produzida e consumida instantaneamente (o chamado autoconsumo) não
+    será taxada. Há uma discussão sobre se a taxação do fio B não é dupla
+    tarifação, já que a taxa de manutenção, que é o fio B já é paga na
+    disponibilidade do sistema. Hoje, após a implantação da taxação progressiva,
+    com a lei 14.300, a Light retorna em créditos o valor da TUSD quando a
+    injeção supera o consumo.</p>
+<p class="txt"></p>
