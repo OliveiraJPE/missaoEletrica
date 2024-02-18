@@ -11,6 +11,7 @@ var consMedio10 = 0;
 var consMedio11 = 0;
 var consMedio12 = 0;
 var consMedio13 = 0;
+var consMedio14 = 0;
 var consMedio = 0;
 var irrad = 0;
 var nomeUsina;
@@ -35,6 +36,8 @@ function media() {
   consMedio11 = Number(window.document.querySelector("#nMes11").value);
   consMedio12 = Number(window.document.querySelector("#nMes12").value);
   consMedio13 = Number(window.document.querySelector("#nMes13").value);
+  consMedio14 = Number(window.document.querySelector("#nMes14").value);
+
   irrad = Number(window.document.querySelector("#nIrr").value);
   nomeUsina = window.document.querySelector("#nCircf").value;
   potMod = Number(window.document.querySelector("#nCircPotMod").value);
@@ -52,9 +55,10 @@ function media() {
       consMedio9 +
       consMedio10 +
       consMedio11 +
-      consMedio12) /
+      consMedio12 +
+      consMedio13) /
       12 +
-    consMedio13;
+    consMedio14;
 
   if (padrao === 1) {
     consMedio = consMedio - 30;
