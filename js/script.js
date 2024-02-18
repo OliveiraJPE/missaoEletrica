@@ -57,7 +57,7 @@ function media() {
       consMedio11 +
       consMedio12 +
       consMedio13) /
-      12 +
+      13 +
     consMedio14;
 
   if (padrao === 1) {
