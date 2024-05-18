@@ -1,5 +1,12 @@
 <h1>Sistemas Fotovoltaicos.</h1><hr><br>
-<h2>Dimensione seu Sistema Fotovoltaico.</h2><br>
+
+<h2> Entenda melhor como dimensionar sistemas fotovoltaicos e depois divirta-se com o aplicativo.</h2>
+
+<div class="video">
+	<media><iframe width="100%" height="315" src="https://www.youtube.com/embed/06AglkO9VHo?si=XyuxcjTgl_Q9cUT-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></media></div>
+	<br><hr><br>
+<h2>Dimensione seu Sistema Fotovoltaico.</h2><hr><br>
+
 
 <form action="">
 
@@ -63,22 +70,51 @@
 				Monofásico, 2 para Bifásico e 3 para Trifásico, para ser subtraída
 				a taxa de disponibilidade de sistema - TUSD - do cálculo, ou 4
 				para não subtrair.</legend>
-			<label for="npad">Tipo do padrão </label><input type="number"
+			<label for="npad">Tipo do padrão </label>&nbsp;<input type="number"
 				name="npad" id="npad" min="1" max="4" value="4"><br>
 		</fieldset>
 
 		<br><br>
 		<fieldset>
-			<legend> Insira a potencia do módulo comercial</legend>
-			<input type="number" name="nCircPotMod" id="nCircPotMod"><br><hr>
-			
-			<div>
+			<legend> Insira os dados do módulo comercial</legend>
+			<label for="nCircPotMod">Potência:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="nCircPotMod" id="nCircPotMod"><br><br>
+			<label for="nCompMod"> Comprimento:</label>&nbsp;
+			<input type="number" name="nCompMod" id="nCompMod"><br>	<br>	
+			<label for="nLargMod"> Largura:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="number" name="nLargMod" id="nLargMod" ><br><hr>
 				<h3>
 				Consulte as potências de módulos fotovoltaicos comerciais no
 					site da <a
 						href="https://www.csisolar.com/br/module/" target="_blank">Canadian Solar</a>.
 			</h3>
-		</div><hr>
+		<hr>
+		</fieldset>
+		<br><br>
+
+		<fieldset>
+			<legend> Correção do sistema: ajuste de angulação (Pa%). Insira a latitude do local(ex:22.801) e o angulo (ex:33.4) de instalação para que o ajuste seja aplicado.</legend>
+			<label for="nAjLat">Latitude:&nbsp;</label><input type="number" name="nAjLat" id="nAjLat" value="22"><br><br>
+			<label for="nAjAng">Angulo:&nbsp;&nbsp;</label><input type="number" name="nAjAng" id="nAjAng" value="22"><br>	
+		</fieldset>
+		<br><br>
+
+		<fieldset>
+			<legend> Correção do sistema: ajuste de direção. Insira 1 para Norte, 2 para Leste ou Oeste, 3 para Sul, 4 Para Sudeste ou Sudoeste, 5 para Nordeste ou Noroeste ou 6 para horizontal 0º.</legend>
+			<label for="nAjDir">Direção:&nbsp;</label><input type="number" name="nAjDir" id="nAjDir" value="1"><br>
+		</fieldset>
+		<br><br>
+
+		<fieldset>
+			<p class="alignimg"><img src="../../img/distanciaFileiras.png" alt="Fileiras de módulos" class="img-fluid"></p><br>
+			<legend>Determinação de distancia entre fileiras de mádulos no solo ou laje.</legend>
+			<label for="nAjDist">Insira o valor Comprimento vertical do módulo - "L":&nbsp;</label><input type="number" name="nAjDist" id="nAjDist" value="0"><br>
+		</fieldset>
+		<br><br>
+
+		<fieldset>
+			<p class="alignimg"><legend>Determinação de Condutores e Proteções.</legend><a href="../missaoEletrica/p16_aplicacao_dimensionamento_DisjCond.html"></a></p><br>
+			
+			
 		</fieldset>
 		<br><br>
 
