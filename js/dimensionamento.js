@@ -1247,7 +1247,7 @@ while (nomeFio5>=nomeFio6){
       alert(
         `Esta série(séries) não necessitam de proteção. O seccionador da StringBox deve suportar no mínimo ${DPS.toFixed(0)}V, e  ${nomeDisj1}A. Caso opte por instalar proteção para a String adote ${nomeDisj1}A.`);
     }alert(
-        `Caso opte por instalar proteçãoSistema ${nCircC}, com ${potTotalMod}Wp, com L1 = ${ntrecho1} metros. \n-->O condutor para trecho 01 de ${nomeFio1} mm². \n-->O DPS deve ter valor maior do que ${DPS.toFixed(0)}V, Classe II. \n-->OBS.:Em caso de possibilidade de descagas atmosféricas, ou distância entre o sistema e o quadro CC maior do que 10m, consulte um Técnico ou Engenheiro para o dimensionamento do DPS e Sistema de aterramento.`);
+        `Sistema ${nCircC}, com ${potTotalMod}Wp, com L1 = ${ntrecho1} metros. \n-->O condutor para trecho 01 de ${nomeFio1} mm². \n-->O DPS deve ter valor maior do que ${DPS.toFixed(0)}V, Classe II. \n-->OBS.:Em caso de possibilidade de descagas atmosféricas, ou distância entre o sistema e o quadro CC maior do que 10m, consulte um Técnico ou Engenheiro para o dimensionamento do DPS e Sistema de aterramento.`);
     
   } else if(mark==2){
     if (((mark - 1) * nIscModCC) > Iocpr) {
