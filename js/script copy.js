@@ -97,30 +97,30 @@ function media() {
     Angradianos = angulo * (Math.PI / 180);
     Latradianos = latitude * (Math.PI / 180);
     difAnLat = Angradianos - Latradianos;
-    Ead = Ead / 0.80;
+    Ead = Ead / 0.85;
     Pa = 1 - Math.cos(difAnLat);
   } else if (direcao === 3) {
     Ead = kWp;
-    //angulo = -180 - (latitude + angulo);
+    angulo = -180 - (latitude + angulo);
     Angradianos = angulo * (Math.PI / 180);
     Latradianos = latitude * (Math.PI / 180);
     difAnLat = Angradianos - Latradianos;
-    Ead = Ead / 0.41;
-    Pa = 1 - Math.cos(difAnLat);
+    Ead = Ead / 0.53;
+    Pa = -1 / Math.cos(difAnLat);
   } else if (direcao === 4) {
     Ead = kWp;
-    //angulo = -180 - (latitude + angulo);
+    angulo = -180 - (latitude + angulo);
     Angradianos = angulo * (Math.PI / 180);
     Latradianos = latitude * (Math.PI / 180);
     difAnLat = Angradianos - Latradianos;
-    Ead = Ead / 0.5;
-    Pa = 1 - Math.cos(difAnLat);
+    Ead = Ead / 0.6;
+    Pa = -1 / Math.cos(difAnLat);
   } else if (direcao === 5) {
     Ead = kWp;
     Angradianos = angulo * (Math.PI / 180);
     Latradianos = latitude * (Math.PI / 180);
     difAnLat = Angradianos - Latradianos;
-    Ead = Ead / 0.92;
+    Ead = Ead / 0.95;
     Pa = 1 - Math.cos(difAnLat);
   } else if (direcao === 6) {
     Ead = kWp;
