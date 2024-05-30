@@ -97,7 +97,7 @@ function media() {
     Angradianos = angulo * (Math.PI / 180);
     Latradianos = latitude * (Math.PI / 180);
     difAnLat = Angradianos - Latradianos;
-    Ead = Ead / 0.80;
+    Ead = Ead / 0.85;
     Pa = 1 - Math.cos(difAnLat);
   } else if (direcao === 3) {
     Ead = kWp;
@@ -120,7 +120,7 @@ function media() {
     Angradianos = angulo * (Math.PI / 180);
     Latradianos = latitude * (Math.PI / 180);
     difAnLat = Angradianos - Latradianos;
-    Ead = Ead / 0.92;
+    Ead = Ead / 0.95;
     Pa = 1 - Math.cos(difAnLat);
   } else if (direcao === 6) {
     Ead = kWp;
