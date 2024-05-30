@@ -101,20 +101,20 @@ function media() {
     Pa = 1 - Math.cos(difAnLat);
   } else if (direcao === 3) {
     Ead = kWp;
-    angulo = -180 - (latitude + angulo);
+    //angulo = -180 - (latitude + angulo);
     Angradianos = angulo * (Math.PI / 180);
     Latradianos = latitude * (Math.PI / 180);
     difAnLat = Angradianos - Latradianos;
-    Ead = Ead / 0.53;
-    Pa = -1 / Math.cos(difAnLat);
+    Ead = Ead / 0.41;
+    Pa = 1 - Math.cos(difAnLat);
   } else if (direcao === 4) {
     Ead = kWp;
-    angulo = -180 - (latitude + angulo);
+    //angulo = -180 - (latitude + angulo);
     Angradianos = angulo * (Math.PI / 180);
     Latradianos = latitude * (Math.PI / 180);
     difAnLat = Angradianos - Latradianos;
-    Ead = Ead / 0.6;
-    Pa = -1 / Math.cos(difAnLat);
+    Ead = Ead / 0.5;
+    Pa = 1 - Math.cos(difAnLat);
   } else if (direcao === 5) {
     Ead = kWp;
     Angradianos = angulo * (Math.PI / 180);
@@ -149,9 +149,9 @@ function media() {
   alert(
     `   Esta Usina, nomeada de ${nomeUsina} e orientada para a direção   ${direcao} (Onde: 1 - Norte, 2 - Leste ou Oeste, 3 - Sul, 4 - Sudeste ou Sudoeste, 5 - Nordeste ou Noroeste, e 6 para horizontal 0º.), e à inclinação de ${angulo} Graus, foi projetada para atender o consumo médio mensal de  ${consMedio.toFixed(
       2
-    )} kW e consumo diário de ${consDia.toFixed(
+    )} kWh e consumo diário de ${consDia.toFixed(
       2
-    )}Kw. Considerando a irradiação média de  ${irrad} kWh/m².dia, demandará uma potência de geração de  ${Eadf.toFixed(
+    )}Kwh. Considerando a irradiação média de  ${irrad} kWh/m².dia, demandará uma potência de geração de  ${Eadf.toFixed(
       2
     )} kWp. Necessitando de  ${nMod} módulos  de  ${potMod} Wp. O Inversor (ou MicroInversores), deve ser de  ${(
       ajPlacas / 1000
@@ -166,6 +166,7 @@ function media() {
     ).toFixed(
       2
     )} m. Existem outros métodos no mercado, mas estes são bem utilizados.\n   AGORA VOCÊ DEVE APRESENTAR A PROPOSTA AO CLIENTE E AJUSTAR OS CALCULOS. DEPOIS DE TUDO AJUSTADO EM FUMÇÃO DA NECESSIDADE DO CLIENTE, DEVE PESQUISAR AS OPÇÕES DE KITs COM A POTÊNCIA CALCULADA E EM FUNÇÃO DO TIPO DE TELHADO.\n 
-       OS KITS, NO GERAL, APRESENTAM PREÇOS MAIS ATRATIVOS DO QUE A COMPRA EM SEPARADO. E A FIDELIDADE A UM FORNECEDOR PODE REVELAR DESCONTOS BEM INTERESSANTES.\n   NÃO ESQUEÇA! A USINA É DIMENSIONADA PELO INTERESSE, LOGO, ESSE CALCULO FRIO PODE SER AJUSTADO PARA MAIOR OU MENOR APÓS CONFRONTAR A TÉCNICA AO INTERESSE DO CLIENTE.\n   CONVERSE BASTANTE ANTES DE INICIAR A COMPRA DOS MATERIAIS!`
+       OS KITS, NO GERAL, APRESENTAM PREÇOS MAIS ATRATIVOS DO QUE A COMPRA EM SEPARADO. E A FIDELIDADE A UM FORNECEDOR PODE REVELAR DESCONTOS BEM INTERESSANTES.\n   NÃO ESQUEÇA! A USINA É DIMENSIONADA PELO INTERESSE, LOGO, ESSE CALCULO FRIO PODE SER AJUSTADO PARA MAIOR OU MENOR APÓS CONFRONTAR A TÉCNICA AO INTERESSE DO CLIENTE.\n   CONVERSE BASTANTE ANTES DE INICIAR A COMPRA DOS MATERIAIS!
+       Referencia: ZILLES, R. et al. Sistemas fotovoltaicos conectados à rede elétrica. 1. ed. São Paulo: Oficina de Textos, 2012. E-book. Disponível em: https://plataforma.bvirtual.com.br. Acesso em: 20 maio 2024.`
   );
 }
