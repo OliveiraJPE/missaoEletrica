@@ -744,7 +744,7 @@ function dimensCircCC() {
     }else if(disj<=120){
       disj=120;
     }else if(disj<=150){
-      disj=1500;
+      disj=150;
     }else if(disj<=175){
       disj=175;
     }else{alert(`ERRO: Disjuntor maior do que 175A-->(${disj.toFixed(0)}A) Consulte um técnico ou engenheiro.`)}

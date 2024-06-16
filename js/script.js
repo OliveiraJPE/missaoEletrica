@@ -36,6 +36,8 @@ var ArMod = 0;
 var difAnLat = 0;
 var Angradianos = 0;
 var Latradianos = 0;
+var fdi;
+var PotINV;
 function media() {
   consMedio1 = Number(window.document.querySelector("#nMes1").value);
   consMedio2 = Number(window.document.querySelector("#nMes2").value);
@@ -56,6 +58,7 @@ function media() {
   nomeUsina = window.document.querySelector("#nCircf").value;
   potMod = Number(window.document.querySelector("#nCircPotMod").value);
   padrao = Number(window.document.querySelector("#npad").value);
+  //fdi = Number(window.document.querySelector("#nCircFDI").value);
 
   consMedio =
     (consMedio1 +
@@ -138,35 +141,26 @@ function media() {
     Pa = 1 - Math.cos(difAnLat);
   }
   Eadf = Ead + Ead * Pa;
-  nMod = Math.round((Eadf * 1000) / potMod);
+  nMod = Math.ceil((Eadf * 1000) / potMod);
   ArMod = CompMod * largMod * nMod;
-  ajPlacas = (nMod+ 1)* potMod;
+  ajPlacas = nMod * potMod;
 
   distancia =
     3.5 * Ldistancia * Math.sin(Latradianos) -
     Ldistancia * Math.cos(Latradianos);
 
+
+	//fdi = 0.70;
+		
+    PotINV =  Math.ceil(nMod*potMod*0.0007);
+    ajPlacas =  nMod*potMod*0.001;
+    PotINV = Math.floor((ajPlacas+PotINV)/2);
+    fdi = (PotINV/ajPlacas).toFixed(2);
+
+   
+    //ajPlacas = nMod*potMod;
   alert(
-    `   Esta Usina, nomeada de ${nomeUsina} e orientada para a direção   ${direcao} (Onde: 1 - Norte, 2 - Leste ou Oeste, 3 - Sul, 4 - Sudeste ou Sudoeste, 5 - Nordeste ou Noroeste, e 6 para horizontal 0º.), e à inclinação de ${angulo} Graus, foi projetada para atender o consumo médio mensal de  ${consMedio.toFixed(
-      2
-    )} kWh e consumo diário de ${consDia.toFixed(
-      2
-    )}Kwh. Considerando a irradiação média de  ${irrad} kWh/m².dia, demandará uma potência de geração de  ${Eadf.toFixed(
-      2
-    )} kWp. Necessitando de  ${nMod} módulos  de  ${potMod} Wp. O Inversor (ou MicroInversores), deve ser de  ${(
-      ajPlacas / 1000
-    ).toFixed(
-      2
-    )} KWp (Podendo ser superior ou inferior a esse valor em função de seu DATASHEET. Aconselha-se não variar mais do que 20%).\n   A área aproximada, necessária para a instalação dos painéis é de ${ArMod.toFixed(
-      2
-    )} m².\n   Se a usina for no solo ou em uma laje, a fim de evitar o sombreamento usamos dois métodos para garantir o distanciamento das fileiras de painéis: Método 01 para mínimo:  D = L x cos@; h = L x sen@; d = (3,5 x h) – D = ${distancia.toFixed(
-      2
-    )} m, e Método 02 para máximo: d = FS + (3,5 x h) – D, onde FS. d = ${(
-      distancia + 1
-    ).toFixed(
-      2
-    )} m. Existem outros métodos no mercado, mas estes são bem utilizados.\n   AGORA VOCÊ DEVE APRESENTAR A PROPOSTA AO CLIENTE E AJUSTAR OS CALCULOS. DEPOIS DE TUDO AJUSTADO EM FUMÇÃO DA NECESSIDADE DO CLIENTE, DEVE PESQUISAR AS OPÇÕES DE KITs COM A POTÊNCIA CALCULADA E EM FUNÇÃO DO TIPO DE TELHADO.\n 
-       OS KITS, NO GERAL, APRESENTAM PREÇOS MAIS ATRATIVOS DO QUE A COMPRA EM SEPARADO. E A FIDELIDADE A UM FORNECEDOR PODE REVELAR DESCONTOS BEM INTERESSANTES.\n   NÃO ESQUEÇA! A USINA É DIMENSIONADA PELO INTERESSE, LOGO, ESSE CALCULO FRIO PODE SER AJUSTADO PARA MAIOR OU MENOR APÓS CONFRONTAR A TÉCNICA AO INTERESSE DO CLIENTE.\n   CONVERSE BASTANTE ANTES DE INICIAR A COMPRA DOS MATERIAIS!
-       Referencia: ZILLES, R. et al. Sistemas fotovoltaicos conectados à rede elétrica. 1. ed. São Paulo: Oficina de Textos, 2012. E-book. Disponível em: https://plataforma.bvirtual.com.br. Acesso em: 20 maio 2024.`
+    `   Esta Usina, nomeada de ${nomeUsina} e orientada para a direção   ${direcao} (Onde: 1 - Norte, 2 - Leste ou Oeste, 3 - Sul, 4 - Sudeste ou Sudoeste, 5 - Nordeste ou Noroeste, e 6 para horizontal 0º.), e à inclinação de ${angulo} Graus, foi projetada para atender o consumo médio mensal de  ${consMedio.toFixed( 2 )} kWh e consumo diário de ${consDia.toFixed( 2 )}Kwh. Considerando a irradiação média de  ${irrad} kWh/m².dia, demandará uma potência de geração de  ${ajPlacas.toFixed(2)} kWp. Necessitando de  ${nMod} módulos  de  ${potMod} Wp. Segundo Zilles (2012) a potência do Inversor (ou MicroInversores), deve considerar a potência de máxima potência do Gerador e o fator de dimensionamento do inversor, a fim de minorar as perdas provocadas pelo inversor. Que para esse dimensionamento o FDI resultou em ${fdi}. Sugerimos que o inversor seja de ${PotINV}kWp. Caso sua escolha resulte um inversor diferente, consulte o datasheet do inversor escolhido e ajuste sua escolha, considerando um FDI = PotInv / Pfv, entre 0,7 (Overside) e 1 (Previsão de aumento futuro de produção).\n   A área aproximada, necessária para a instalação dos painéis é de ${ArMod.toFixed( 2 )} m².\n   Se a usina for no solo ou em uma laje, a fim de evitar o sombreamento usamos dois métodos para garantir o distanciamento das fileiras de painéis: Método 01 para mínimo:  D = L x cos@; h = L x sen@; d = (3,5 x h) – D = ${distancia.toFixed( 2 )} m, e Método 02 para máximo: d = FS + (3,5 x h) – D, onde FS. d = ${(distancia + 1 ).toFixed(2)} m. Existem outros métodos no mercado, mas estes são bem utilizados.\n   Referencia: ZILLES, R. et al. Sistemas fotovoltaicos conectados à rede elétrica. 1. ed. São Paulo: Oficina de Textos, 2012. E-book. Disponível em: https://plataforma.bvirtual.com.br. Acesso em: 20 maio 2024.`
   );
+  alert("   AGORA VOCÊ DEVE APRESENTAR A PROPOSTA AO CLIENTE E AJUSTAR OS CALCULOS. DEPOIS DE TUDO AJUSTADO EM FUNÇÃO DA NECESSIDADE DO CLIENTE, DEVE PESQUISAR AS OPÇÕES DE KITs COM A POTÊNCIA CALCULADA E EM FUNÇÃO DO TIPO DE TELHADO.\n   OS KITS, NO GERAL, APRESENTAM PREÇOS MAIS ATRATIVOS DO QUE A COMPRA EM SEPARADO. E A FIDELIDADE A UM FORNECEDOR PODE REVELAR DESCONTOS BEM INTERESSANTES.\n   NÃO ESQUEÇA! A USINA É DIMENSIONADA PELO INTERESSE, LOGO, ESSE CALCULO FRIO PODE SER AJUSTADO PARA MAIOR OU MENOR APÓS CONFRONTAR A TÉCNICA AO INTERESSE DO CLIENTE.\n   CONVERSE BASTANTE ANTES DE INICIAR A COMPRA DOS MATERIAIS!");
 }

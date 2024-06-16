@@ -9,7 +9,7 @@
 	<media><iframe width="100%" height="315" src="https://www.youtube.com/embed/Pdqu29yvVHI?si=yMsV-7eDwBlx4uF4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></media></div>
 <br><hr><br>
 <h2>Encontre o Condutor e as proteções para sua instalação ONGRID.</h2>
-<h3> Observe o desenho abaixo e enquadre seu projeto no modelo mais parecido. Obs.: O condutor máximo adotado aqui é de 35mm². Neste caso não há a relatório final. Você deve anotar o resultado e repetir a operação todas as vezes que 	necessitar.</h3><br><hr>
+<h3> Observe o desenho abaixo e enquadre seu projeto no modelo mais parecido. Obs.: O condutor máximo adotado aqui é de 95mm². Neste caso não há a relatório final. Você deve anotar o resultado e repetir a operação todas as vezes que 	necessitar.</h3><br><hr>
 
 <p class="alignimg"><img class="img-fluid" src="../../img/sistemaStrings.png" alt="Sistemas Strings"></p>
 <br><hr><br>
@@ -26,41 +26,49 @@
 	</fieldset>
 	<br><br>
 	<fieldset>
+		<h3>Para conhecer o número de painéis click aqui: <a class="cabeçalho" onclick="requisicao('../missaoSolar/p16_aplicacao_dimensionamento_Fotovoltaico.html', 'conteudo')"> Dimensionamento de sistemas fotovlotaicos.</a></h3>
 		<legend>Insira o número de Módulos de uma String.</legend>
 		<input type="number" name="nModCC" id="nModCC" value="1">
 	</fieldset>
 	<br><br>
 	<fieldset>
+		<h3>A potencia total será produto entre o número de painéis e a potencia de um painel.</h3>
 		<legend>Insira a potência (Wp) de um módulo.</legend>
 		<input type="number" name="nPotModCC" id="nPotModCC" value="330">
 	</fieldset>
 	<br><br>
 	<fieldset>
+		<h3>A tensão máxima de entrada do inversor deve ser maior do que a soma das tensões de circuito aberto da String.</h3>
 		<legend>Insira a Tensão Voc (V) de um módulo.</legend>
 		<input type="number" name="nVocModCC" id="nVocModCC" value="37">
 	</fieldset>
 	<br><br>
 	<fieldset>
+		<h3>O dimensionamento pelo critério de queda de tensão, considera a tensão de máxima potência da String, que é resultante do somatório das tensões de máxima potência de cada módulo.</h3>
 		<legend>Insira a Tensão VMax (Vp) de um módulo.</legend>
 		<input type="number" name="nVpModCC" id="nVpModCC" value="30">
 	</fieldset>
 	<br><br>
 	<fieldset>
+		<h3>O dimensionamento do condutor pelo critério de máxima condução de corrente usa a corrente de curto circuito, considerando String única.</h3>
 		<legend>Insira a Corrente Isc (A) de um módulo.</legend>
 		<input type="number" name="nIscModCC" id="nIscModCC" value="6.5">
 	</fieldset>
 	<br><br>
 	<fieldset>
+		<h3>O Fator de forma considera a relação entre a Vmp x Imp / Voc x Isc.</h3>
 		<legend>Insira a Corrente IMax (A) de um módulo.</legend>
 		<input type="number" name="nIMaxModCC" id="nIMaxModCC" value="5">
 	</fieldset>
 	<br><br>
 	<fieldset>
+		<h3>O dimensionamento do condutor pelo critério de máxima condução de corrente usa a corrente inversa, considerando n Strings em paralelo.</h3>
 		<legend>Insira a Corrente -OCPR, IMax Inversa(A), Fusível gPV, Imax Inversa-OCPR ou Máximo fusivel série</legend>
 		<input type="number" name="nIocprCC" id="nIocprCC" value="10">
 	</fieldset>
 	<br><br>
 	<fieldset>
+		<h3>O dimensionamento pelo critério de queda de tensão considera o somat´rio das distancias, para determinação da queda de tensão no condutor.</h3>
 		<legend>Insira a distancia em metros para o trecho à dimensionar ou deixe 1.</legend>
 		<label for="ntrecho1">Trecho 1</label>&nbsp;&nbsp;<input type="number" name="ntrecho1" id="ntrecho1" value="1"><br><br>
 		<label for="ntrecho2">Trecho 2</label>&nbsp;&nbsp;<input type="number" name="ntrecho2" id="ntrecho2" value="1"><br><br>
