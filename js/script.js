@@ -38,7 +38,13 @@ var Angradianos = 0;
 var Latradianos = 0;
 var fdi;
 var PotINV;
+var AJDIRRESUL;
+var Paaaa;
 function media() {
+  nomeUsina = window.document.querySelector("#nCircf").value;
+  if(!nomeUsina){
+    alert("Insira um nome para a Usina!!!!")  
+  }else{
   consMedio1 = Number(window.document.querySelector("#nMes1").value);
   consMedio2 = Number(window.document.querySelector("#nMes2").value);
   consMedio3 = Number(window.document.querySelector("#nMes3").value);
@@ -55,7 +61,7 @@ function media() {
   consMedio14 = Number(window.document.querySelector("#nMes14").value);
 
   irrad = Number(window.document.querySelector("#nIrr").value);
-  nomeUsina = window.document.querySelector("#nCircf").value;
+ 
   potMod = Number(window.document.querySelector("#nCircPotMod").value);
   padrao = Number(window.document.querySelector("#npad").value);
   //fdi = Number(window.document.querySelector("#nCircFDI").value);
@@ -84,7 +90,7 @@ function media() {
   } else if (padrao === 3) {
     consMedio = consMedio - 100;
   }
-  consDia = consMedio / 30;
+  consDia = (consMedio*12)/365;
   kWp = consDia / (irrad * 0.75);
 
   /***********************************/
@@ -100,7 +106,8 @@ function media() {
     Angradianos = angulo * (Math.PI / 180);
     Latradianos = latitude * (Math.PI / 180);
     difAnLat = Angradianos - Latradianos;
-    Ead = Ead / 0.85;
+    AJDIRRESUL=0.85.
+    Ead = Ead / AJDIRRESUL;
     Pa = 1 - Math.cos(difAnLat);
   } else if (direcao === 3) {
     Ead = kWp;
@@ -108,7 +115,8 @@ function media() {
     Angradianos = angulo * (Math.PI / 180);
     Latradianos = latitude * (Math.PI / 180);
     difAnLat = Angradianos - Latradianos;
-    Ead = Ead / 0.41;
+    AJDIRRESUL=0.41;
+    Ead = Ead / AJDIRRESUL;
     Pa = 1 - Math.cos(difAnLat);
   } else if (direcao === 4) {
     Ead = kWp;
@@ -116,34 +124,39 @@ function media() {
     Angradianos = angulo * (Math.PI / 180);
     Latradianos = latitude * (Math.PI / 180);
     difAnLat = Angradianos - Latradianos;
-    Ead = Ead / 0.5;
+    AJDIRRESUL=0.5;
+    Ead = Ead / AJDIRRESUL;
     Pa = 1 - Math.cos(difAnLat);
   } else if (direcao === 5) {
     Ead = kWp;
     Angradianos = angulo * (Math.PI / 180);
     Latradianos = latitude * (Math.PI / 180);
     difAnLat = Angradianos - Latradianos;
-    Ead = Ead / 0.95;
+    AJDIRRESUL=0.95;
+    Ead = Ead / AJDIRRESUL;
     Pa = 1 - Math.cos(difAnLat);
   } else if (direcao === 6) {
     Ead = kWp;
     Angradianos = angulo * (Math.PI / 180);
     Latradianos = latitude * (Math.PI / 180);
     difAnLat = Angradianos - Latradianos;
-    Ead = Ead / 0.9;
+    AJDIRRESUL=0.9;
+    Ead = Ead / AJDIRRESUL;
     Pa = 1 - Math.cos(difAnLat);
   } else {
     Ead = kWp;
     Angradianos = angulo * (Math.PI / 180);
     Latradianos = latitude * (Math.PI / 180);
     difAnLat = Angradianos - Latradianos;
-    Ead = Ead / 1;
+    AJDIRRESUL=1;
+    Ead = Ead / AJDIRRESUL;
     Pa = 1 - Math.cos(difAnLat);
   }
   Eadf = Ead + Ead * Pa;
   nMod = Math.ceil((Eadf * 1000) / potMod);
   ArMod = CompMod * largMod * nMod;
   ajPlacas = nMod * potMod;
+  
 
   distancia =
     3.5 * Ldistancia * Math.sin(Latradianos) -
@@ -157,10 +170,19 @@ function media() {
     PotINV = Math.floor((ajPlacas+PotINV)/2);
     fdi = (PotINV/ajPlacas).toFixed(2);
 
-   
+   if(Pa==0)
+  {
+    Paaaa=1;
+  }else{
+    Paaaa=Math.cos(difAnLat);
+  }
     //ajPlacas = nMod*potMod;
   alert(
-    `   Esta Usina, nomeada de ${nomeUsina} e orientada para a direção   ${direcao} (Onde: 1 - Norte, 2 - Leste ou Oeste, 3 - Sul, 4 - Sudeste ou Sudoeste, 5 - Nordeste ou Noroeste, e 6 para horizontal 0º.), e à inclinação de ${angulo} Graus, foi projetada para atender o consumo médio mensal de  ${consMedio.toFixed( 2 )} kWh e consumo diário de ${consDia.toFixed( 2 )}Kwh. Considerando a irradiação média de  ${irrad} kWh/m².dia, demandará uma potência de geração de  ${ajPlacas.toFixed(2)} kWp. Necessitando de  ${nMod} módulos  de  ${potMod} Wp. Segundo Zilles (2012) a potência do Inversor (ou MicroInversores), deve considerar a potência de máxima potência do Gerador e o fator de dimensionamento do inversor, a fim de minorar as perdas provocadas pelo inversor. Que para esse dimensionamento o FDI resultou em ${fdi}. Sugerimos que o inversor seja de ${PotINV}kWp. Caso sua escolha resulte um inversor diferente, consulte o datasheet do inversor escolhido e ajuste sua escolha, considerando um FDI = PotInv / Pfv, entre 0,7 (Overside) e 1 (Previsão de aumento futuro de produção).\n   A área aproximada, necessária para a instalação dos painéis é de ${ArMod.toFixed( 2 )} m².\n   Se a usina for no solo ou em uma laje, a fim de evitar o sombreamento usamos dois métodos para garantir o distanciamento das fileiras de painéis: Método 01 para mínimo:  D = L x cos@; h = L x sen@; d = (3,5 x h) – D = ${distancia.toFixed( 2 )} m, e Método 02 para máximo: d = FS + (3,5 x h) – D, onde FS. d = ${(distancia + 1 ).toFixed(2)} m. Existem outros métodos no mercado, mas estes são bem utilizados.\n   Referencia: ZILLES, R. et al. Sistemas fotovoltaicos conectados à rede elétrica. 1. ed. São Paulo: Oficina de Textos, 2012. E-book. Disponível em: https://plataforma.bvirtual.com.br. Acesso em: 20 maio 2024.`
+    `   Esta Usina, nomeada de ${nomeUsina} e orientada para a direção   ${direcao} (Onde: 1 - Norte, 2 - Leste ou Oeste, 3 - Sul, 4 - Sudeste ou Sudoeste, 5 - Nordeste ou Noroeste, e 6 para horizontal 0º.), e à inclinação de ${angulo} Graus, foi projetada para atender o consumo médio mensal de  ${consMedio.toFixed( 2 )} kWh.mês e consumo diário de ${consDia.toFixed( 2 )}Kwh. Considerando a irradiação média de  ${irrad} kWh/m².dia, demandará uma potência de geração de  ${ajPlacas.toFixed(2)} kWp. Necessitando de  ${nMod} módulos  de  ${potMod} Wp. Segundo Zilles (2012) a potência do Inversor (ou MicroInversores), deve considerar a potência de máxima potência do Gerador e o fator de dimensionamento do inversor, a fim de minorar as perdas provocadas pelo inversor. Sugerimos que o inversor seja de ${PotINV}kWp, que resultará um FDI = ${fdi}. Caso sua escolha resulte um inversor diferente, consulte o datasheet do inversor escolhido e ajuste sua escolha, considerando um FDI = PotInv / Pfv, entre 0,7 (Overside) e 1 (Previsão de aumento futuro de produção).\n   A área aproximada, necessária para a instalação dos painéis é de ${ArMod.toFixed( 2 )} m².\n   Se a usina for no solo ou em uma laje, a fim de evitar o sombreamento usamos dois métodos para garantir o distanciamento das fileiras de painéis: Método 01 para mínimo:  D = L x cos@; h = L x sen@; d = (3,5 x h) – D = ${distancia.toFixed( 2 )} m, e Método 02 para máximo: d = FS + (3,5 x h) – D, onde FS. d = ${(distancia + 1 ).toFixed(2)} m. Existem outros métodos no mercado, mas estes são bem utilizados.\n   Referencia: ZILLES, R. et al. Sistemas fotovoltaicos conectados à rede elétrica. 1. ed. São Paulo: Oficina de Textos, 2012. E-book. Disponível em: https://plataforma.bvirtual.com.br. Acesso em: 20 maio 2024.`
   );
+  alert(`Esta usina foi projetada para atender o consumo médio mensal de  ${consMedio.toFixed( 2 )} kWh.mês. Considere o ajuste da energia resultante gerada para confirmar se o gerador está em função das características do projeto. Ou seja, para esse projeto a estimativa de energia gerada pelos ${nMod} módulos  de  ${potMod} Wp, associados ao inversor de ${PotINV}kWp, será: ISDMM (ou HSP) x Ajuste de angulação x Ajuste de direção x média anual de dias por mês x potência do inversor = ${irrad.toFixed(2)} x ${Paaaa.toFixed(2)} x ${AJDIRRESUL.toFixed(2)}x (365/12) x ${PotINV.toFixed(2)} = ${(irrad*Paaaa*AJDIRRESUL*30.416666667*PotINV).toFixed(2)} kWh.mês.`);
+
   alert("   AGORA VOCÊ DEVE APRESENTAR A PROPOSTA AO CLIENTE E AJUSTAR OS CALCULOS. DEPOIS DE TUDO AJUSTADO EM FUNÇÃO DA NECESSIDADE DO CLIENTE, DEVE PESQUISAR AS OPÇÕES DE KITs COM A POTÊNCIA CALCULADA E EM FUNÇÃO DO TIPO DE TELHADO.\n   OS KITS, NO GERAL, APRESENTAM PREÇOS MAIS ATRATIVOS DO QUE A COMPRA EM SEPARADO. E A FIDELIDADE A UM FORNECEDOR PODE REVELAR DESCONTOS BEM INTERESSANTES.\n   NÃO ESQUEÇA! A USINA É DIMENSIONADA PELO INTERESSE, LOGO, ESSE CALCULO FRIO PODE SER AJUSTADO PARA MAIOR OU MENOR APÓS CONFRONTAR A TÉCNICA AO INTERESSE DO CLIENTE.\n   CONVERSE BASTANTE ANTES DE INICIAR A COMPRA DOS MATERIAIS!");
+
+}
 }
