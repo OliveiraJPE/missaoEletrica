@@ -42,6 +42,8 @@ var AJDIRRESUL;
 var Paaaa;
 var tMod;
 var tPotInv;
+var tMod2;
+var direcaoNome;
 function media() {
   nomeUsina = window.document.querySelector("#nCircf").value;
   if(!nomeUsina){
@@ -179,29 +181,41 @@ function media() {
   }else{
     Paaaa=Math.cos(difAnLat);
   }
+
+  /**Energia Gerada tMod2 */
+tMod2 = ((irrad +(irrad*(1-fdi)))*0.75*Paaaa*AJDIRRESUL*30.416666667*PotINV);
+i=0;
+while(consMedio>tMod2){
+  nMod+=1;  	
+  PotINV =  Math.ceil(nMod*potMod*0.0007);
+  ajPlacas =  nMod*potMod*0.001;
+  PotINV = Math.floor((ajPlacas+PotINV)/2);
+  fdi = (PotINV/ajPlacas).toFixed(2);
+  tMod2 = ((irrad +(irrad*(1-fdi)))*0.75*Paaaa*AJDIRRESUL*30.416666667*PotINV);
+
+  i++
+}
+if(direcao==1){
+  direcaoNome= "Norte";
+}else if(direcao==2){
+  direcaoNome= "Leste ou Oeste";
+}else if(direcao==3){
+  direcaoNome= "Sul";
+}else if(direcao==4){
+  direcaoNome= "Sudeste ou Sudoeste";
+}else if(direcao==5){
+  direcaoNome= "Nordeste ou Noroeste";
+}else if(direcao==6){
+  direcaoNome= "Horizontal - 0º";
+}else { direcaoNome= "Indeterminada - Ajustada para 0º"; }
+
     //ajPlacas = nMod*potMod;
   alert(
-    `   Esta Usina, nomeada de ${nomeUsina} e orientada para a direção   ${direcao} (Onde: 1 - Norte, 2 - Leste ou Oeste, 3 - Sul, 4 - Sudeste ou Sudoeste, 5 - Nordeste ou Noroeste, e 6 para horizontal 0º.), e à inclinação de ${angulo} Graus, foi projetada para atender o consumo médio mensal de  ${consMedio.toFixed( 2 )} kWh.mês e consumo diário de ${consDia.toFixed( 2 )}Kwh. Considerando a irradiação média de  ${irrad} kWh/m².dia, demandará uma potência de geração de  ${ajPlacas.toFixed(2)} kWp. Necessitando de  ${nMod} módulos  de  ${potMod} Wp. Segundo Zilles (2012) a potência do Inversor (ou MicroInversores), deve considerar a potência de máxima potência do Gerador e o fator de dimensionamento do inversor, a fim de minorar as perdas provocadas pelo inversor. Sugerimos que a potência do inversor ( ou dos inversores somados), seja de ${PotINV}kWp, que resultará um FDI = ${fdi}. Caso sua escolha resulte um inversor diferente, consulte o datasheet do inversor escolhido e ajuste sua escolha, considerando um FDI = PotInv / Pfv, entre 0,7 (Overside) e 1,05 (Previsão de aumento futuro de produção).\n   A área aproximada, necessária para a instalação dos painéis é de ${ArMod.toFixed( 2 )} m².\n   Se a usina for no solo ou em uma laje, a fim de evitar o sombreamento usamos dois métodos para garantir o distanciamento das fileiras de painéis: Método 01 para mínimo:  D = L x cos@; h = L x sen@; d = (3,5 x h) – D = ${distancia.toFixed( 2 )} m, e Método 02 para máximo: d = FS + (3,5 x h) – D, onde FS. d = ${(distancia + 1 ).toFixed(2)} m. Existem outros métodos no mercado, mas estes são bem utilizados.\n `
-  );
-  alert(`Esta usina foi projetada para atender o consumo médio mensal de  ${consMedio.toFixed( 2 )} kWh.mês. Considere o ajuste da energia resultante gerada para confirmar se o gerador está em função das características do projeto. Ou seja, para esse projeto a estimativa de energia gerada pelos ${nMod} módulos  de  ${potMod} Wp, associados ao inversor ( ou inversores somados), de ${PotINV}kWp, será: (ISDMM (ou HSP) + Ajuste de overside) x ajuste de perdas do sistema (PR) x Ajuste de perdas por angulação x Ajuste de perdas por direção x média anual de dias por mês x potência do inversor = (${irrad.toFixed(2)} + (${irrad.toFixed(2)} x ${1-fdi}) x 0,75 x ${Paaaa.toFixed(2)} x ${AJDIRRESUL.toFixed(2)}x (365/12) x ${PotINV.toFixed(2)} = MÉDIA DE ${((irrad +(irrad*(1-fdi)))*0.75*Paaaa*AJDIRRESUL*30.416666667*PotINV).toFixed(2)} kWh.mês.`);
-i=0;
-  while(((irrad +(irrad*(1-fdi)))*0.75*Paaaa*AJDIRRESUL*30.416666667*PotINV)<consMedio){
- tMod=nMod;
- tMod += i + parseInt(prompt(`O Fator do dimensionamento do Inversor (FDI), resultou muito baixo, ou a média de geração de energia mensal.anual resultou abaixo da demanda estimada de consumo médio:\nConsumo médio mensal estimado = ${consMedio.toFixed( 2 )} kWh.mês.\nMédia de geração de energia mensal resultante = ${((irrad +(irrad*(1-fdi)))*0.75*Paaaa*AJDIRRESUL*30.416666667*PotINV).toFixed(2)} kWh.mês.\nLembre-se de que estes dimensionamento sempre retratam estimativas. \nInclua um ou mais módulos para ajustar o resultado de forma rápida, e pressione ENTER ou OK.`));
-if(nMod<tMod){
-    PotINV =  Math.ceil(tMod*potMod*0.0007);
-    ajPlacas =  tMod*potMod*0.001;
-    PotINV = Math.floor((ajPlacas+PotINV)/2);
-    fdi = (PotINV/ajPlacas).toFixed(2);
-    alert(
-      `   O novo dimensionamento para a usina nomeada de ${nomeUsina} e orientada para a direção   ${direcao} (Onde: 1 - Norte, 2 - Leste ou Oeste, 3 - Sul, 4 - Sudeste ou Sudoeste, 5 - Nordeste ou Noroeste, e 6 para horizontal 0º.), e à inclinação de ${angulo} Graus, foi projetada para atender o consumo médio mensal de  ${consMedio.toFixed( 2 )} kWh.mês e consumo diário de ${consDia.toFixed( 2 )}Kwh. Considerando a irradiação média de  ${irrad} kWh/m².dia, demandará uma potência de geração de  ${ajPlacas.toFixed(2)} kWp. Necessitando de  ${tMod} módulos  de  ${potMod} Wp. Segundo Zilles (2012) a potência do Inversor (ou MicroInversores), deve considerar a potência de máxima potência do Gerador e o fator de dimensionamento do inversor, a fim de minorar as perdas provocadas pelo inversor. Sugerimos que a potência do inversor ( ou dos inversores somados), seja de ${PotINV}kWp, que resultará um FDI = ${fdi}. Caso sua escolha resulte um inversor diferente, consulte o datasheet do inversor escolhido e ajuste sua escolha, considerando um FDI = PotInv / Pfv, entre 0,7 (Overside) e 1,05 (Previsão de aumento futuro de produção).\n   A área aproximada, necessária para a instalação dos painéis é de ${ArMod.toFixed( 2 )} m².\n   Se a usina for no solo ou em uma laje, a fim de evitar o sombreamento usamos dois métodos para garantir o distanciamento das fileiras de painéis: Método 01 para mínimo:  D = L x cos@; h = L x sen@; d = (3,5 x h) – D = ${distancia.toFixed( 2 )} m, e Método 02 para máximo: d = FS + (3,5 x h) – D, onde FS. d = ${(distancia + 1 ).toFixed(2)} m. Existem outros métodos no mercado, mas estes são bem utilizados.\n   `
-    );
-  alert(`Após o ajuste no número de painíes, para ${tMod} módulos  de  ${potMod} Wp, e potência do inversor ( ou dos inversores somados), de ${PotINV}kWp, foi associado ao arranjo. Assim, o cálculo a seguir demonstrará a nova estimativa de geração de energia: (ISDMM (ou HSP) + Ajuste de overside) x ajuste de perdas do sistema x Ajuste de perdas por angulação x Ajuste de perdas por direção x média anual de dias por mês x potência do inversor = (${irrad.toFixed(2)} + (${irrad.toFixed(2)} x ${1-fdi}) x 0,75 x ${Paaaa.toFixed(2)} x ${AJDIRRESUL.toFixed(2)}x (365/12) x ${PotINV.toFixed(2)} = MÉDIA DE ${((irrad +(irrad*(1-fdi)))*0.75*Paaaa*AJDIRRESUL*30.416666667*PotINV).toFixed(2)} kWh.mês.`);
-  }
-  i++;
- }
-
-  alert("   AGORA VOCÊ DEVE APRESENTAR A PROPOSTA AO CLIENTE E AJUSTAR OS CALCULOS. DEPOIS DE TUDO AJUSTADO EM FUNÇÃO DA NECESSIDADE DO CLIENTE, DEVE PESQUISAR AS OPÇÕES DE KITs COM A POTÊNCIA CALCULADA E EM FUNÇÃO DO TIPO DE TELHADO.\n   OS KITS, NO GERAL, APRESENTAM PREÇOS MAIS ATRATIVOS DO QUE A COMPRA EM SEPARADO. E A FIDELIDADE A UM FORNECEDOR PODE REVELAR DESCONTOS BEM INTERESSANTES.\n   NÃO ESQUEÇA! A USINA É DIMENSIONADA PELO INTERESSE, LOGO, ESSE CALCULO FRIO PODE SER AJUSTADO PARA MAIOR OU MENOR APÓS CONFRONTAR A TÉCNICA AO INTERESSE DO CLIENTE.\n   CONVERSE BASTANTE ANTES DE INICIAR A COMPRA DOS MATERIAIS!\nReferencia: ZILLES, R. et al. Sistemas fotovoltaicos conectados à rede elétrica. 1. ed. São Paulo: Oficina de Textos, 2012. E-book. Disponível em: https://plataforma.bvirtual.com.br. Acesso em: 20 maio 2024.");
+    `Esta Usina, nomeada de ${nomeUsina}, orientada para a direção ${direcaoNome}, com inclinação de ${angulo} Graus, foi projetada para atender o consumo médio mensal de  ${consMedio.toFixed( 2 )} kWh.mês e consumo diário de ${consDia.toFixed( 2 )}Kwh. Considerando a irradiação média-diária-anual de ${irrad} kWh/m².dia, demandará uma potência de geração de ${ajPlacas.toFixed(2)} kWp. Necessitando de ${nMod} módulos de ${potMod} Wp.`); 
+     alert(`Segundo Zilles, R. (2012), a potência do Inversor (ou MicroInversores), deve considerar a potência de máxima potência do Gerador e o fator de dimensionamento do inversor (FDI), a fim de minorar as perdas provocadas pelo inversor.\n\nAssim sendo, encontramos a potência do inversor (ou dos inversores somados):\n\nPotência do Inversor = ${PotINV}kWp, que resultará um FDI = ${fdi}. \n\nComo regra geral o FDI = PotInv / Pfv, ficará entre 0,7 (Overside) e 1,05 (Previsão de aumento futuro de produção), no nossos ensaios. Contudo, cada inversor possui sua indicação de FDI, que varia, em média, de 0,5 até 2. \n\nA área aproximada, necessária para a instalação dos painéis é de ${ArMod.toFixed( 2 )} m².`);
+  alert(`Esta usina foi projetada para atender o consumo médio mensal de  ${consMedio.toFixed( 2 )} kWh.mês. \n\nPara esse projeto a estimativa de energia gerada pelos ${nMod} módulos de ${potMod} Wp, associados ao inversor (ou inversores somados), de ${PotINV}kWp, será encontrada em função da fórmula: \n\nMÉDIA DE ENERGIA QUE SERÁ GERADA POR MÊS = (ISDMM (ou HSP) + Ajuste de overside) x ajuste de perdas do sistema (PR) x Ajuste de perdas por angulação x Ajuste de perdas por direção x média anual de dias por mês x potência do inversor = (${irrad.toFixed(2)} + (${irrad.toFixed(2)} x ${1-fdi}) x 0,75 x ${Paaaa.toFixed(2)} x ${AJDIRRESUL.toFixed(2)}x (365/12) x ${PotINV.toFixed(2)} = ${((irrad +(irrad*(1-fdi)))*0.75*Paaaa*AJDIRRESUL*30.416666667*PotINV).toFixed(2)} kWh.mês.`);
+  alert(`Se a usina for no solo ou em uma laje, a fim de evitar o sombreamento usamos dois métodos para garantir o distanciamento das fileiras de painéis: \n\nMétodo 01 para mínimo:  D = L x cos@; h = L x sen@; d = (3,5 x h) – D = ${distancia.toFixed( 2 )} m.\n\nMétodo 02 para máximo: d = FS + (3,5 x h) – D, onde FS. d = ${(distancia + 1 ).toFixed(2)} m. `);
+  alert("NÃO ESQUEÇA! A USINA É DIMENSIONADA PELO INTERESSE, LOGO, ESSE CALCULO FRIO PODE SER AJUSTADO PARA MAIOR OU MENOR APÓS CONFRONTAR A TÉCNICA AO INTERESSE DO CLIENTE.\n\nCONVERSE BASTANTE ANTES DE INICIAR A COMPRA DOS MATERIAIS!\n\nReferencia: ZILLES, R. et al. Sistemas fotovoltaicos conectados à rede elétrica. 1. ed. São Paulo: Oficina de Textos, 2012. E-book. Disponível em: https://plataforma.bvirtual.com.br. Acesso em: 20 maio 2024.");
 
 }
 }
