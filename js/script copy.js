@@ -137,7 +137,7 @@ function media() {
     Ead = Ead / 1;
     Pa = 1 - Math.cos(difAnLat);
   }
-  Eadf = Ead + Ead * Pa;
+  Eadf = Ead + (Ead * Pa);
   nMod = Math.round((Eadf * 1000) / potMod);
   ArMod = CompMod * largMod * nMod;
   ajPlacas = (nMod+ 1)* potMod;
