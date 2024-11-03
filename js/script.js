@@ -188,7 +188,7 @@ i=0;
   while(((irrad +(irrad*(1-fdi)))*0.75*Paaaa*AJDIRRESUL*30.416666667*PotINV)<consMedio){
  tMod=nMod;
  tMod += i + parseInt(prompt(`O Fator do dimensionamento do Inversor (FDI), resultou muito baixo, ou a média de geração de energia mensal.anual resultou abaixo da demanda estimada de consumo médio:\nConsumo médio mensal estimado = ${consMedio.toFixed( 2 )} kWh.mês.\nMédia de geração de energia mensal resultante = ${((irrad +(irrad*(1-fdi)))*0.75*Paaaa*AJDIRRESUL*30.416666667*PotINV).toFixed(2)} kWh.mês.\nLembre-se de que estes dimensionamento sempre retratam estimativas. \nInclua um ou mais módulos para ajustar o resultado de forma rápida, e pressione ENTER ou OK.`));
-  if(nMod<tMod){
+if(nMod<tMod){
     PotINV =  Math.ceil(tMod*potMod*0.0007);
     ajPlacas =  tMod*potMod*0.001;
     PotINV = Math.floor((ajPlacas+PotINV)/2);
