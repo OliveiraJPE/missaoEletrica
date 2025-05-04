@@ -1,5 +1,5 @@
 
-<h1>Dimensionamento das Instalações elétricas residênciais</h1><hr>
+<h1>Dimensionamento das Instalações elétricas residênciais, para o modo de instalar: Eletroduto embutido em alvenaria - B1, e condutor PVC -70º.</h1><hr>
 
 <br>
 <h2> Entenda melhor como dimensionar condutores e disjuntores e depois divirta-se com o aplicativo.</h2>
@@ -7,70 +7,105 @@
 <div class="video">
 	<media><iframe width="100%" height="315" src="https://www.youtube.com/embed/bJXGuEERP3w?si=2e4Qmy_W9kfeXJ0R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></media></div>
 <br><hr><br>
-<h2>Encontre o Disjuntor e o Condutor para seu equipamento.</h2>
-<h3> OBS.: Condutor máximo 25mm². Neste caso não há a relatório final.
-	Você deve anotar o resultado e repetir a operação todas as vezes que
-	necessitar.</h3>
+<h2>Encontre o Disjuntor e o Condutor para sua carga.</h2>
 
 <form action>
 	<fieldset>
 		<legend>Nome do Circuito.</legend>
-		<input type="text" name="nCirc" id="nCirc">
+		<input type="text" name="nCirc" id="nCirc" value="Meu circuito">
 	</fieldset>
 	<br><br>
+
 	<fieldset>
-		<legend>Coloque "1" para circuito de iluminação, e "2" para circuito
-			de força.</legend>
-		<input type="number" name="nCircTipo" id="nCircTipo">
+		<legend>Escolha o tipo de circuito.</legend>
+           <input type="radio" name="nCircTipo" id="nCircTipoIluminacao" value="Iluminacao" checked><label>&nbsp; Iluminação</label><br>
+		   <input type="radio" name="nCircTipo" id="nCircTipoForca" value="forca"><label>&nbsp; Força</label><br>
 	</fieldset>
 	<br><br>
+
 	<fieldset>
-		<legend>Potência em VA</legend>
-		<input type="number" name="nCircPotencia" id="nCircPotencia">
+		<legend>Indique a potência em VA.</legend>
+			<input type="number" name="nCircPotencia" id="nCircPotencia" value="1270">
 	</fieldset>
 	<br><br>
+
 	<fieldset>
-		<legend>Tensão em Volts: 1F + N = 127V, 3F+N = 220V, 2F + N = 127V, 2F
-			= 220V, 3F = 220V.</legend>
-		<input type="number" name="nCircTensao" id="nCircTensao">
+		<legend>Escolha a tensão em volts.</legend>
+			<input type="radio" name="nCircTensao" id="nCircTensao127" value="127" checked><label>&nbsp; 127V (Fase + Neutro + PE)</label><br>
+			<input type="radio" name="nCircTensao" id="nCircTensao220" value="219.393102292"><label>&nbsp; 220V (Fase + Neutro + PE)</label><br>
+			<input type="radio" name="nCircTensao" id="nCircTensao_220" value="220.000000001"><label>&nbsp; 220V (Fase + Fase + PE)</label><br>
+			<input type="radio" name="nCircTensao" id="nCircTensao_220_3" value="220"><label>&nbsp; 220V (Fase + Fase + Fase + PE)</label><br>
+			<input type="radio" name="nCircTensao" id="nCircTensao380" value="380"><label>&nbsp; 380V (Fase + Fase +Fase + PE)</label><br>
 	</fieldset>
 	<br><br>
+
 	<fieldset>
-		<legend>Insira "1" para Monofásico, "2" para Bifásico, "3" para
-			bifásico + neutro, "4" para trifásico ou "5" para trifásico +
-			Neutro.</legend>
-		<input type="number" name="nCircNCond" id="nCircNCond">
+		<legend>Indique a distancia entre carga e o quadro de proteção, em metros.</legend>
+			<input type="number" name="nCircDist" id="nCircDist" value="1">
 	</fieldset>
 	<br><br>
+
 	<fieldset>
-		<legend>Distancia entre carga e quadro de luz e/ou força em
-			metros.</legend>
-		<input type="number" name="nCircDist" id="nCircDist" value="1">
+		<legend>Escolha a mode de instalar da instalação.</legend>
+			<input type="radio" name="nk1ps" id="nk1A" value="Parede" checked><label>&nbsp; Parede ou Teto</label><br>
+			<input type="radio" name="nk1ps" id="nk1S" value="Solo"><label>&nbsp; Solo</label><br>
+			
 	</fieldset>
 	<br><br>
+
 	<fieldset>
-		<legend>Fator de correção K1 - Fator de correção de temperatura - NBR
-			5410. Ex.:: Aplicar 1,12 para 20ºC, 1,06 para 25ºC, 0,94 para 35ºC ou
-			0,87 para 40ºC.</legend>
-		<input type="number" name="nk1" id="nk1" value="1">
+		<legend>Escolha a temperatura aproximada para o local da instalação - Fator de correção K1.</legend>
+			<input type="radio" name="nk1" id="nk110" value="10"><label>&nbsp; 10ºC (ou menos)</label><br>
+			<input type="radio" name="nk1" id="nk115" value="15"><label>&nbsp; 15ºC (ou menos)</label><br>			
+			<input type="radio" name="nk1" id="nk130" value="20"><label>&nbsp; 20ºC (ou menos)</label><br>
+			<input type="radio" name="nk1" id="nk130" value="25"><label>&nbsp; 25ºC (ou menos)</label><br>
+			<input type="radio" name="nk1" id="nk130" value="30" checked><label>&nbsp; 30ºC (ou menos)</label><br>
+			<input type="radio" name="nk1" id="nk135" value="35"><label>&nbsp; 35ºC (ou menos)</label><br>
+			<input type="radio" name="nk1" id="nk140" value="40"><label>&nbsp; 40ºC (ou menos)</label><br>
+			<input type="radio" name="nk1" id="nk145" value="45"><label>&nbsp; 45ºC (ou menos)</label><br>
+			<input type="radio" name="nk1" id="nk150" value="50"><label>&nbsp; 50ºC (ou menos)</label><br>
+			<input type="radio" name="nk1" id="nk155" value="55"><label>&nbsp; 55ºC (ou menos)</label><br>
+			<input type="radio" name="nk1" id="nk155" value="60"><label>&nbsp; 60ºC (ou menos)</label><br>
 	</fieldset>
 	<br><br>
+
 	<fieldset>
-		<legend>Fator de correção K2 - Fator de correção de agrupamento - NBR
-			5410. Ex.:: Aplicar 0,8 para 02 circuitos agrupados, 0,7 para 03
-			circuitos agrupados, 0,65 para 04 circuitos agrupados...</legend>
-		<input type="number" name="nk2" id="nk2" value="1">
+		<legend>Indique a quantidade de circuitos no mesmo eletroduto - Fator de correção K2/REF-1/A-F/até 08 circuitos. </legend>
+			<input type="radio" name="nk2" id="nk21" value="1" checked><label>&nbsp; 01 (Somente este circuito)</label><br>
+			<input type="radio" name="nk2" id="nk22" value="2" ><label>&nbsp; 02 (este + 01)</label><br>
+			<input type="radio" name="nk2" id="nk23" value="3" ><label>&nbsp; 03 (este + 02)</label><br>
+			<input type="radio" name="nk2" id="nk24" value="4" ><label>&nbsp; 04 (este + 03)</label><br>
+			<input type="radio" name="nk2" id="nk25" value="5" ><label>&nbsp; 05 (este + 04)</label><br>
+			<input type="radio" name="nk2" id="nk26" value="6" ><label>&nbsp; 06 (este + 05)</label><br>
+			<input type="radio" name="nk2" id="nk27" value="7" ><label>&nbsp; 07 (este + 06)</label><br>
+			<input type="radio" name="nk2" id="nk28" value="8" ><label>&nbsp; 08 (este + 07)</label><br>
+			
 	</fieldset>
 	<br><br>
+
 	<fieldset>
-		<legend>Fator de correção K3 - Fator de correção de resistividade do
-			solo - NBR 5410. Não aplicável a residências - Manter 1.</legend>
-		<input type="number" name="nk3" id="nk3" value="1">
+		<p><em>Fator de correção K3 - Fator de correção de resistividade do solo - NBR 5410. Não aplicável neste ensaio - Consideraremos o solo com resistividade térmica diferente de 2,5 K.m/W.</em></p>
 	</fieldset>
 	<br><br>
+
+	<fieldset>
+		<legend>Indique a curva de disparo do disjuntor.</legend>
+		<p><em>Para residencias, caso não saiba, serão utilizados tempos típicos. Logo, deixe como está!</em></p>
+			<input type="radio" name="ncorrenteCurto" id="ncorrenteCurto1" value="B" ><label>&nbsp; Curva de disparo "B" </label><br>
+			<input type="radio" name="ncorrenteCurto" id="ncorrenteCurto2" value="C" checked><label>&nbsp; Curva de disparo "C" </label><br>
+			<input type="radio" name="ncorrenteCurto" id="ncorrenteCurto3" value="D" ><label>&nbsp; Curva de disparo "D" </label><br>
+			<input type="number" name="ntempoCurto" id="ntempoCurto" value="0.01"><br><br>
+			<input type="number" name="nkConstanteCondutor" id="nkConstanteCondutor" value="115">
+	</fieldset>
+	<br><br>
+
 	<fieldset>
 		<legend>Avançar</legend>
-		<input type="button" value="Continuar" onclick="dimensCirc()">
+			<input type="button" value="Continuar" onclick="dimensDisjCondutor()">
 	</fieldset>
+	<!--<fieldset>
+		<legend>Avançar</legend>
+			<input type="button" value="Continuar" onclick="dimensCirc()">
+	</fieldset>-->
 	<br><br>
 </form>
