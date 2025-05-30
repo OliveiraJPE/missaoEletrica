@@ -1,0 +1,51 @@
+  <h1>Dimensionamento de Sistema Fotovoltaico Off-grid (Método 01)</h1>
+
+  <form id="formulario">
+    <fieldset>
+      <legend>Passo 1: Levantamento da carga</legend>
+      <label>Potência total das cargas prioritárias (Pt) em W:
+        <input type="number" id="pt">
+      </label>
+      <label>Tempo médio de uso por dia (Tm) em horas:
+        <input type="number" id="tm">
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Passo 2: Perdas do sistema</legend>
+      <label>Margem de perdas (25%): valor automático.</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Passo 3: Banco de baterias</legend>
+      <label>Dias de autonomia:
+        <input type="number" id="dauto">
+      </label>
+      <label>Tensão do sistema (Vsist):
+        <input type="number" id="vsist">
+      </label>
+      <label>Profundidade de descarga (DoD):
+        <input type="number" step="0.01" id="dod">
+      </label>
+      <label>Capacidade de uma bateria (Cbc) em Ah:
+        <input type="number" id="cbc">
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Passo 4: Módulos Solares</legend>
+      <label>HSP (Horas de Sol Pleno):
+        <input type="number" step="0.01" id="hsp">
+      </label>
+      <label>Potência de um módulo (Pmod) em Wp:
+        <input type="number" id="pmod">
+      </label>
+    </fieldset>
+
+    <button type="button" onclick="calcular()">Calcular</button>
+  </form>
+
+  <div class="resultado" id="saida"></div>
+
+  
+

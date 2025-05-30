@@ -1,5 +1,35 @@
 /**********************Rodando*************************** */
 
+    function calcular() {
+      const pt = parseFloat(document.getElementById('pt').value);
+      const tm = parseFloat(document.getElementById('tm').value);
+      const dauto = parseFloat(document.getElementById('dauto').value);
+      const vsist = parseFloat(document.getElementById('vsist').value);
+      const dod = parseFloat(document.getElementById('dod').value);
+      const cbc = parseFloat(document.getElementById('cbc').value);
+      const hsp = parseFloat(document.getElementById('hsp').value);
+      const pmod = parseFloat(document.getElementById('pmod').value);
+
+      const cd = pt * tm;
+      const cdps = cd * 1.25;
+      const cwh = cdps * dauto;
+      const cah = cwh / vsist;
+      const cdod = cah / dod;
+      const nbat = Math.ceil(cdod / cbc);
+
+      const parr = cdps / hsp;
+      const parrAj = parr * 1.2;
+      const nmod = Math.ceil(parrAj / pmod);
+
+      document.getElementById('saida').innerHTML = `
+        <h3>Resultados:</h3>
+        <p><strong>Consumo diário (Cd):</strong> ${cd.toFixed(2)} Wh/dia</p>
+        <p><strong>Consumo com perdas (Cdps):</strong> ${cdps.toFixed(2)} Wh/dia</p>
+        <p><strong>Banco de baterias:</strong> ${cdod.toFixed(2)} Ah → ${nbat} baterias de ${cbc} Ah</p>
+        <p><strong>Potência do arranjo:</strong> ${parrAj.toFixed(2)} Wp → ${nmod} módulos de ${pmod} Wp</p>
+      `;
+    }
+  
 function dimensDisjCondutor() {
     function pegando(pego) {
       const radios = pego;
