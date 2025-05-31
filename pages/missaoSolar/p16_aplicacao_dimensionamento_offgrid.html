@@ -1,46 +1,59 @@
-  <h1>Dimensionamento de Sistema Fotovoltaico Off-grid (Método 01)</h1>
+  <h1>Dimensionamento de Sistema Fotovoltaico Off-grid.</h1>
 
   <form id="formulario">
     <fieldset>
       <legend>Passo 1: Levantamento da carga</legend>
       <label>Potência total das cargas prioritárias (Pt) em W:
-        <input type="number" id="pt">
+        <input type="number" id="pt" value="400">
       </label>
+      <br><br>
+
       <label>Tempo médio de uso por dia (Tm) em horas:
-        <input type="number" id="tm">
+        <input type="number" id="tm" value="4">
       </label>
-    </fieldset>
+    </fieldset>  <br><br>
 
     <fieldset>
       <legend>Passo 2: Perdas do sistema</legend>
       <label>Margem de perdas (25%): valor automático.</label>
-    </fieldset>
+    </fieldset>  <br><br>
 
     <fieldset>
       <legend>Passo 3: Banco de baterias</legend>
       <label>Dias de autonomia:
-        <input type="number" id="dauto">
-      </label>
+        <input type="number" id="dauto" value="2">
+      </label>  <br><br>
       <label>Tensão do sistema (Vsist):
-        <input type="number" id="vsist">
-      </label>
-      <label>Profundidade de descarga (DoD):
-        <input type="number" step="0.01" id="dod">
-      </label>
+        <input type="number" id="vsist" value="24">
+      </label>  <br><br>
+      <label>Profundidade de descarga diária (DoD):
+        <input type="number" step="0.01" id="dod" value="0.3">
+      </label>  <br><br>
+      <label>Profundidade de descarga máxima (DoD):
+        <input type="number" step="0.01" id="dodm" value="0.8">
+      </label>  <br><br>
       <label>Capacidade de uma bateria (Cbc) em Ah:
-        <input type="number" id="cbc">
+        <input type="number" id="cbc" value="115">
       </label>
-    </fieldset>
+    </fieldset>  <br><br>
 
     <fieldset>
       <legend>Passo 4: Módulos Solares</legend>
       <label>HSP (Horas de Sol Pleno):
-        <input type="number" step="0.01" id="hsp">
-      </label>
+        <input type="number" step="0.01" id="hsp" value="4">
+      </label>  <br><br>
       <label>Potência de um módulo (Pmod) em Wp:
-        <input type="number" id="pmod">
+        <input type="number" id="pmod" value="330">
       </label>
-    </fieldset>
+    </fieldset>  <br><br>
+
+    <fieldset>
+      <legend>Passo 5: Inversor</legend>
+      <select id="inversor">
+        <option value="1" selected>Inversor de onda senoidal pura.</option>
+        <option value="2">Inversor de onda modificada.</option>  
+      </select>  
+    </fieldset>  <br><br>
 
     <button type="button" onclick="calcular()">Calcular</button>
   </form>

@@ -1,25 +1,106 @@
 /**********************Rodando*************************** */
+function calcular() {
+  // Entrada de dados
+  const pt = parseFloat(document.getElementById('pt').value);
+  const tm = parseFloat(document.getElementById('tm').value);
+  const dauto = parseFloat(document.getElementById('dauto').value);
+  const vsist = parseFloat(document.getElementById('vsist').value);
+  const dod = parseFloat(document.getElementById('dod').value);
+  const dodm = parseFloat(document.getElementById('dodm').value);
+  const capacidadeBateria = parseFloat(document.getElementById('cbc').value);
+  const hsp = parseFloat(document.getElementById('hsp').value);
+  const potenciaModulo = parseFloat(document.getElementById('pmod').value);
+  const tipoInversor = parseFloat(document.getElementById('inversor').value); // 1 = senoidal pura
 
-    function calcular() {
+  // Validação de campos
+  if ([
+    pt, tm, dauto, vsist, dod, dodm, capacidadeBateria, hsp, potenciaModulo, tipoInversor
+  ].some(isNaN)) {
+    alert("Por favor, preencha todos os campos corretamente.");
+    return;
+  }
+
+  // Cálculo de consumo
+  const consumoDiario = pt * tm; // Cd
+  const consumoComPerdas = consumoDiario * 1.25; // Cdps
+  const energiaTotal = consumoComPerdas * dauto; // energia para autonomia (Wh)
+  const energiaUmDia = consumoComPerdas; // consumo de 1 dia
+
+  // Capacidade da bateria nos dois cenários
+  const capacidadeAutonomia = (energiaTotal / vsist) / dodm;
+  const capacidadeUsoDiario = (energiaUmDia / vsist) / dod;
+  const capacidadeFinal = Math.max(capacidadeAutonomia, capacidadeUsoDiario);
+
+  // Número de baterias
+  const numBaterias = Math.ceil(capacidadeFinal / capacidadeBateria);
+
+  // Potência do arranjo FV
+  const potenciaArranjoBruta = consumoComPerdas / hsp;
+  const potenciaArranjoCorrigida = potenciaArranjoBruta * 1.2;
+  const numModulos = Math.ceil(potenciaArranjoCorrigida / potenciaModulo);
+
+  // Inversor (com ou sem fator de correção)
+  const potenciaInversor = tipoInversor === 1
+    ? Math.ceil(potenciaArranjoCorrigida / 100) * 100
+    : Math.ceil((potenciaArranjoCorrigida * 1.5) / 100) * 100;
+
+  const controladorA = Math.ceil((((numModulos*potenciaModulo)/vsist))/10)*10;
+
+  // Resultado na tela
+  document.getElementById('saida').innerHTML = `
+    <h3>Resultados:</h3>
+    <p><strong>Consumo diário (Cd):</strong> ${consumoDiario.toFixed(2)} Wh/dia</p>
+    <p><strong>Consumo com perdas (Cdps):</strong> ${consumoComPerdas.toFixed(2)} Wh/dia</p>
+    <p><strong>Banco de baterias:</strong> ${capacidadeFinal.toFixed(2)} Ah → ${numBaterias} baterias de ${capacidadeBateria} Ah</p>
+    <p><strong>Potência do arranjo:</strong> ${potenciaArranjoCorrigida.toFixed(2)} Wp → ${numModulos} módulos de ${potenciaModulo} Wp</p>
+    <p><strong>Controlador adotado:</strong> ${controladorA}A.</p>
+    <p><strong>Potência do inversor adotado:</strong> ${potenciaInversor} W</p>
+    <p><strong>⚠️ Verifique se a tensão Voc e a corrente Isc (ou Imax) do arranjo FV são compatíveis com a entrada do controlador antes da instalação!</strong></p>
+  `;
+}
+
+
+    /*function calcular() {
+      
+
       const pt = parseFloat(document.getElementById('pt').value);
       const tm = parseFloat(document.getElementById('tm').value);
       const dauto = parseFloat(document.getElementById('dauto').value);
       const vsist = parseFloat(document.getElementById('vsist').value);
       const dod = parseFloat(document.getElementById('dod').value);
+      const dodm = parseFloat(document.getElementById('dodm').value);
       const cbc = parseFloat(document.getElementById('cbc').value);
       const hsp = parseFloat(document.getElementById('hsp').value);
       const pmod = parseFloat(document.getElementById('pmod').value);
+      const inv = parseFloat(document.getElementById('inversor').value);
 
       const cd = pt * tm;
       const cdps = cd * 1.25;
       const cwh = cdps * dauto;
+      const cwhDia = cdps;
       const cah = cwh / vsist;
-      const cdod = cah / dod;
+      const cahDia = cwhDia / vsist;
+
+      let cdod;  
+      if(cwh<cwhDia){
+      cdod = cah / dodm;
+      }else{
+      cdod = cahDia / dod;
+      }
+alert(`Energia dois dias: cwhDia - ${cwh}, Energia um dia - cwh ${cwhDia}, Capacidade de um dia - cahDia ${cahDia}, Capacidade de dois dias - cah ${cah}, DoD  min -dod  ${dod}, DoDm max - dodm ${ dodm}, Capacidade final - cdod ${cdod}  `)
+
+
       const nbat = Math.ceil(cdod / cbc);
 
       const parr = cdps / hsp;
       const parrAj = parr * 1.2;
       const nmod = Math.ceil(parrAj / pmod);
+      let inversor;
+      if(inv==1){   
+        inversor = Math.ceil(cdps / 100) * 100;       
+      } else{
+        inversor = Math.ceil(cdps*1.5 / 100) * 100; 
+      }
 
       document.getElementById('saida').innerHTML = `
         <h3>Resultados:</h3>
@@ -27,8 +108,10 @@
         <p><strong>Consumo com perdas (Cdps):</strong> ${cdps.toFixed(2)} Wh/dia</p>
         <p><strong>Banco de baterias:</strong> ${cdod.toFixed(2)} Ah → ${nbat} baterias de ${cbc} Ah</p>
         <p><strong>Potência do arranjo:</strong> ${parrAj.toFixed(2)} Wp → ${nmod} módulos de ${pmod} Wp</p>
+         <p><strong>Potência do inversor adotado:</strong> ${inversor.toFixed(2)} W</p>
+          <p><strong>⚠️ Verifique se a tensão Voc e a corrente Isc (ou Imax) do arranjo fotovoltaico são compatíveis com a entrada do controlador antes da instalação.</strong></p>
       `;
-    }
+    }*/
   
 function dimensDisjCondutor() {
     function pegando(pego) {
