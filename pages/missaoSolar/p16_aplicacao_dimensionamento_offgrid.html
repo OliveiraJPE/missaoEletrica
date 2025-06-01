@@ -38,6 +38,25 @@
     </fieldset>  <br><br>
 
     <fieldset>
+ <label for="taxaC">Selecione uma taxa C padrão:</label>
+  <select id="taxaC">
+    <option value="0.001">C100 - 100h</option>
+    <option value="0.05" selected>C20 - 20h (padrão)</option>
+    <option value="0.1">C10 - 10h</option>
+    <option value="0.2">C5 - 5h</option>
+    <option value="0.5">C2 - 2h</option>
+    <option value="1">C1 - 1h</option>
+    <option value="1">1C - 1h</option>
+    <option value="2">2C - 0.5h</option>
+    <option value="5">5C - 0.2h</option>
+  </select>
+
+ <!-- <label for="taxaCustom">Ou digite uma taxa C personalizada (ex: C8, 0.5C, 3C):</label>
+  <input type="text" id="taxaCustom" placeholder="Ex: 0.25C, C50, 4C" />-->
+
+    </fieldset>
+
+    <fieldset>
       <legend>Passo 4: Módulos Solares</legend>
       <label>HSP (Horas de Sol Pleno):
         <input type="number" step="0.01" id="hsp" value="4">
