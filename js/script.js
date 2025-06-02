@@ -80,11 +80,14 @@
     <p><strong>Consumo diário (Cd):</strong> ${consumoDiario.toFixed(2)} Wh/dia</p>
     <p><strong>Consumo com perdas (Cdps):</strong> ${consumoComPerdas.toFixed(2)} Wh/dia</p>
     <p><strong>Banco de baterias:</strong> ${capacidadeTotalAh.toFixed(2)} Ah → ${numBaterias} baterias (em ${numRamos} ramos de ${bateriasPorRamo} em série)</p>
+    <p>⚠️ Atenção! Adotar uma tensão maior para o banco pode diminuir o número de baterias.
     <p><strong>Potência do arranjo FV:</strong> ${potenciaArranjoCorrigida.toFixed(2)} Wp → ${numModulos} módulos de ${potenciaModulo} Wp</p>
+    <p>⚠️ Atenção! Adotar módulos de potência menor ou maior, pode ajustar a capacidade do controlador e o tempo de recarga, gerando economia na compra.
     <p><strong>Controlador adotado:</strong> ${controladorA} A</p>
-    <p><strong>Potência do inversor:</strong> ${potenciaInversor} W</p>
+    <p><strong>Potência do inversor:</strong> ${potenciaInversor} W - Potência real</p>
+    <p>⚠️ Atenção! Informe-se se a potência do inversor é a real. Para vendas é usual usar a potência de pico na face e a real apresentada apenas no Data Sheet.
     <p><strong>Tempo estimado de recarga:</strong> ${tempoRecarga.toFixed(2)} horas</p>
-    <p><strong>⚠️ Verifique Voc e Isc dos módulos em relação ao controlador!</strong></p>
+    <p><strong>⚠️Atenção! Verifique Voc e Isc dos módulos em relação ao controlador!</strong></p>
   `;
 }
 
