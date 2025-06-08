@@ -1,4 +1,4 @@
-/******
+
 // Arquivo: app.js
 
 // Simulando o JSON (em um cenário real, você poderia carregar o JSON de um arquivo externo)
@@ -204,4 +204,4 @@ function buscarCertificado() {
   } else {
     resultadoDiv.innerHTML = 'Nenhum Certificado encontrado. Insira o código que consta abaixo do QRCode no verso do Certificado.';
   }
-}*/
+}

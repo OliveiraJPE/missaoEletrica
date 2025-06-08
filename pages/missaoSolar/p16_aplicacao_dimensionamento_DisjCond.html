@@ -1,30 +1,17 @@
 
-<h1>Dimensionamento de condutores e proteção: PV - GRID TIE</h1>
+<h1>Dimensionamento de condutores e chave fotovoltaica - Cicuito CC.</h1>
 <hr>
 
 <br>
-<h2> Entenda melhor como dimensionar cabos e proteções para sistemas fotovoltaicos e depois divirta-se com o aplicativo.</h2>
-
-<div class="video">
-	<media><iframe width="100%" height="315" src="https://www.youtube.com/embed/Pdqu29yvVHI?si=yMsV-7eDwBlx4uF4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></media></div>
-<br><hr><br>
-<h2>Encontre o Condutor e as proteções para sua instalação ONGRID.</h2>
-<h3> Observe o desenho abaixo e enquadre seu projeto no modelo mais parecido. Obs.: O condutor máximo adotado aqui é de 95mm². Neste caso não há a relatório final. Você deve anotar o resultado e repetir a operação todas as vezes que 	necessitar.</h3><br><hr>
-
-<p class="alignimg"><img class="img-fluid" src="../../img/sistemaStrings.png" alt="Sistemas Strings"></p>
-<br><hr><br>
+<h2> Entenda melhor como dimensionar cabos, corrente da chave ou disjuntor CC, para sistemas fotovoltaicos, e depois divirta-se com o aplicativo.</h2>
 
 <form action>
 	<fieldset>
 		<legend>Nome do Circuito.</legend>
-		<input type="text" name="nCircC" id="nCircC">
+		<input type="text" name="nCircC" id="nCircC" value="Meu circuito">
 	</fieldset>
 	<br><br>
-	<fieldset>
-		<legend>Insira "1" para dimensionar o condutor semelhante ao arranjo 01; "2" para Duas Strings em paralelo entrando em uma MPPT ou Caixa de Junção,para dimensionar o condutor semelhante ao arranjo 02; "3" para dimensionar o condutor semelhante ao arranjo 03; "4" para dimensionar o condutor semelhante ao arranjo 04. O Modo de Instalar adotado aqui para CC, NBR16612: A1, Exposto ao Sol, M1, Tabel C.4., 50º. Para o Cabo CA, busque o menu <a class="cabeçalho" onclick="requisicao('../missaoEletrica/p16_aplicacao_dimensionamento_DisjCond.html', 'conteudo')"> Dimensionamento de condutores e proteções C.A.</a>, e use os dados do Inversor para dimensionar o lado CA. Considere o padrão do medidor para não dimensionar um sistema cujo padrão da distribuidora não comporte.</legend>
-		<input type="number" name="nCircTipoCC" id="nCircTipoCC" min="1" max="4" value="1">
-	</fieldset>
-	<br><br>
+	
 	<fieldset>
 		<h3>Para conhecer o número de painéis click aqui: <a class="cabeçalho" onclick="requisicao('../missaoSolar/p16_aplicacao_dimensionamento_Fotovoltaico.html', 'conteudo')"> Dimensionamento de sistemas fotovlotaicos.</a></h3>
 		<legend>Insira o número de Módulos de uma String.</legend>
@@ -38,7 +25,7 @@
 	</fieldset>
 	<br><br>
 	<fieldset>
-		<h3>A tensão máxima de entrada do inversor deve ser maior do que a soma das tensões de circuito aberto da String.</h3>
+		<h3>A tensão máxima de entrada do inversor deve ser maior do que a tensão de circuito aberto da String.</h3>
 		<legend>Insira a Tensão Voc (V) de um módulo.</legend>
 		<input type="number" name="nVocModCC" id="nVocModCC" value="37">
 	</fieldset>
@@ -62,28 +49,19 @@
 	</fieldset>
 	<br><br>
 	<fieldset>
-		<h3>O dimensionamento do condutor pelo critério de máxima condução de corrente usa a corrente inversa, considerando n Strings em paralelo.</h3>
-		<legend>Insira a Corrente -OCPR, IMax Inversa(A), Fusível gPV, Imax Inversa-OCPR ou Máximo fusivel série</legend>
-		<input type="number" name="nIocprCC" id="nIocprCC" value="10">
-	</fieldset>
-	<br><br>
-	<fieldset>
-		<h3>O dimensionamento pelo critério de queda de tensão considera o somat´rio das distancias, para determinação da queda de tensão no condutor.</h3>
-		<legend>Insira a distancia em metros para o trecho à dimensionar ou deixe 1.</legend>
-		<label for="ntrecho1">Trecho 1</label>&nbsp;&nbsp;<input type="number" name="ntrecho1" id="ntrecho1" value="1"><br><br>
-		<label for="ntrecho2">Trecho 2</label>&nbsp;&nbsp;<input type="number" name="ntrecho2" id="ntrecho2" value="1"><br><br>
-		<label for="ntrecho3">Trecho 3</label>&nbsp;&nbsp;<input type="number" name="ntrecho3" id="ntrecho3" value="1"><br><br>
-		<label for="ntrecho4">Trecho 4</label>&nbsp;&nbsp;<input type="number" name="ntrecho4" id="ntrecho4" value="1"><br><br>
-		<label for="ntrecho5">Trecho 5</label>&nbsp;&nbsp;<input type="number" name="ntrecho5" id="ntrecho5" value="1"><br><br>
-		<label for="ntrecho6">Trecho 6</label>&nbsp;&nbsp;<input type="number" name="ntrecho6" id="ntrecho6" value="1"><br><br>
-		<label for="ntrecho7">Trecho 7</label>&nbsp;&nbsp;<input type="number" name="ntrecho7" id="ntrecho7" value="1"><br><br>
-		<label for="ntrecho8">Trecho 8</label>&nbsp;&nbsp;<input type="number" name="ntrecho8" id="ntrecho8" value="1"><br><br>
-		
+		<h3>O dimensionamento pelo critério de queda de tensão considera o somatório das distancias, para determinação da queda de tensão no condutor.</h3>
+		<legend>Insira a distancia em metros entre os módulos e a string box CC.</legend>
+		<label for="ntrecho1">Distancia</label>&nbsp;&nbsp;<input type="number" name="ntrecho1" id="ntrecho1" value="1"><br><br>
+				
 	<fieldset>
 		<legend>Avançar</legend>
 		<input type="button" value="Continuar" onclick="dimensCircCC()">
 	</fieldset>
 	<br><br>
 </form>
+
+
+
+<div id="saidaResultados"></div>
 
 	
