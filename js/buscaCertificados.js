@@ -165,11 +165,11 @@ const alunos = [
       "Realizacao":"MF-EBD - CNPJ: 50.495.500/0001-10."
    },
    { "cod": "pmec0000022", 
-    "Nome": "Certificamos que Fábio de Araújo, participou do Curso de Mecânica de Automóveis MOD I, Turma: UnESP - Turma especial, individual, personalzado e sob demanda .",
+    "Nome": "Certificamos que Fabio de Araújo, CPF: 132.936.207-10, participou do Curso de Mecânica de Automóveis MOD I, Turma: UnESP - Turma especial, individual, personalzado e sob demanda .",
     "Carga_horaria": "40h.",
     "Periodo": "Setembro/Dezembro de 2024.",
     "Local": "Itaguaí - RJ.",
-      "Projeto":"MF-EBD Missão Educação.",
+      "Projeto":"Missão Educação.",
       "Realizacao":"MF-EBD - CNPJ: 50.495.500/0001-10."
    },
    { "cod": "pv0000001", 
