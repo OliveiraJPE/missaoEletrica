@@ -164,6 +164,14 @@ const alunos = [
       "Projeto":"Projeto social Brisa Mar.",
       "Realizacao":"MF-EBD - CNPJ: 50.495.500/0001-10."
    },
+   { "cod": "pmec0000022", 
+    "Nome": "Certificamos que Fábio de Araújo, participou do Curso de Mecânica de Automóveis MOD I, Turma: UnESP - Turma especial, individual, personalzado e sob demanda .",
+    "Carga_horaria": "40h.",
+    "Periodo": "Setembro/Dezembro de 2024.",
+    "Local": "Itaguaí - RJ.",
+      "Projeto":"MF-EBD Missão Educação.",
+      "Realizacao":"MF-EBD - CNPJ: 50.495.500/0001-10."
+   },
    { "cod": "pv0000001", 
     "Nome": "Certificamos que TESTE, participou das Oficinas XXXXXXXXXXXX",
     "Carga_horaria": "xxh.",
