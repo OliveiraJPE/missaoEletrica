@@ -1332,7 +1332,7 @@ function calculo() {
       potIlum +
       " VA, C1 resultou em: " +
       c1 +
-      " VA.  O sistema, atendendo o RECON-BT 2023 - LIGHT, para dimsnsionamento de unidade residêncial, adotou o maior valor calculado para o dimensionamento, comparando o resultado dos dois métodos."
+      " VA.  O sistema, atendendo o RECON-BT 2026 - LIGHT, para dimsnsionamento de unidade residêncial, adotou o maior valor calculado para o dimensionamento, comparando o resultado dos dois métodos."
   );
 
   if (kvaM2 > c1) {
@@ -3986,7 +3986,7 @@ function rodarFinal() {
 <li>Posição do poste da Light: do mesmo lado da rua do imóvel ou do outro lado da rua.</li>
 <li>Tipo, material e altura da ancoragem: Poste, Pontalete, Fachada... </li>
 <li>Tipo da descida: se tubulação deve-se indicar as medidas.  </li>
-<li>Outros:Sugerimos o <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a> a partir da página 149, onde encontrará desenhos e medidas.</li>
+<li>Outros:Sugerimos o <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">RECON-BT 2026-LIGHT</a> a partir da página 149, onde encontrará desenhos e medidas.</li>
 
 </ul>
 <p>Exemplo de planta de Localização para solicitação de fornecimento Light padrão 15KVA(40A ou 32A):  </p>
@@ -4134,7 +4134,7 @@ function rodarFinal() {
 <li>Posição do poste da Light: do mesmo lado da rua do imóvel ou do outro lado da rua.</li>
 <li>Tipo, material e altura da ancoragem: Poste, Pontalete, Fachada... </li>
 <li>Tipo da descida: se tubulação deve-se indicar as medidas.  </li>
-<li>Outros:Sugerimos o <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a> a partir da página 149, onde encontrará desenhos e medidas.</li>
+<li>Outros:Sugerimos o <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">RECON-BT 2026-LIGHT</a> a partir da página 149, onde encontrará desenhos e medidas.</li>
 
 </ul>
 <p>Exemplo de planta de Localização para solicitação de fornecimento Light padrão 15KVA(40A ou 32A):  </p>
@@ -4282,7 +4282,7 @@ function rodarFinal() {
 <li>Posição do poste da Light: do mesmo lado da rua do imóvel ou do outro lado da rua.</li>
 <li>Tipo, material e altura da ancoragem: Poste, Pontalete, Fachada... </li>
 <li>Tipo da descida: se tubulação deve-se indicar as medidas.  </li>
-<li>Outros:Sugerimos o <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a> a partir da página 149, onde encontrará desenhos e medidas.</li>
+<li>Outros:Sugerimos o <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">RECON-BT 2026-LIGHT</a> a partir da página 149, onde encontrará desenhos e medidas.</li>
 
 </ul>
 <p>Exemplo de planta de Localização para solicitação de fornecimento Light padrão 15KVA(40A ou 32A):  </p>
@@ -4333,7 +4333,7 @@ function rodarRelatorio() {
                                             <li> Usuário: ${nome.value}.</li>
                                             </ol>
                                         <br>`;
-  tabDim.innerHTML += `<p>OBS.: O dimensionamento foi feito considerando o padrão urbano LIGHT-RJ 15KVA: de UM1 até T2 - (RECON-BT 2023).</p><p><a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a> </p><br>`;
+  tabDim.innerHTML += `<p>OBS.: O dimensionamento foi feito considerando o padrão urbano LIGHT-RJ 15KVA: de UM1 até T2 - (Recon Light 2026).</p><p><a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a> </p><br>`;
 
   tabDim.innerHTML += `<p>Neste dimensionamento foram encontrados os seguintes resultados: </p>`;
   tabDim.innerHTML += `<ol>
@@ -4375,7 +4375,7 @@ function rodarRelatorio() {
                                             <li>Condutores(mm²):  06 mm²</li>
                                             </ul>
                                             </fieldset>`;
-    tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (RECON-BT 2023-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (RECON-BT 2023-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
+    tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
   } else if (potTotalDem <= 5000) {
     tabDim.innerHTML += `
                                                 <fieldset>
@@ -4389,7 +4389,7 @@ function rodarRelatorio() {
                                                 <li>Condutores(mm²):  10 mm²</li>
                                                 </ul>
                                                 </fieldset>`;
-    tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (RECON-BT 2023-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (RECON-BT 2023-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
+    tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
   } else if (potTotalDem <= 7000) {
     tabDim.innerHTML += `
                                                 <fieldset>
@@ -4415,7 +4415,7 @@ function rodarRelatorio() {
                                                 <li>Condutores(mm²):  06 mm²</li>
                                                 </ul>
                                                 </fieldset>`;
-    tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (RECON-BT 2023-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (RECON-BT 2023-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
+    tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
   } else if (potTotalDem <= 8000) {
     tabDim.innerHTML += `
                                                 <fieldset>
@@ -4441,7 +4441,7 @@ function rodarRelatorio() {
                                                 <li>Condutores(mm²):  10 mm²</li>
                                                 </ul>
                                                 </fieldset>`;
-    tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (RECON-BT 2023-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (RECON-BT 2023-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
+    tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
   } else if (potTotalDem <= 12000) {
     tabDim.innerHTML += `
                                                 <fieldset>
@@ -4467,7 +4467,7 @@ function rodarRelatorio() {
                                                 <li>Condutores(mm²):  06 mm²</li>
                                                 </ul>
                                                 </fieldset>`;
-    tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (RECON-BT 2023-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (RECON-BT 2023-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
+    tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
   } else if (potTotalDem <= 13000) {
     tabDim.innerHTML += `
                                                 <fieldset>
@@ -4493,7 +4493,7 @@ function rodarRelatorio() {
                                                 <li>Condutores(mm²):  10 mm²</li>
                                                 </ul>
                                                 </fieldset>`;
-    tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (RECON-BT 2023-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (RECON-BT 2023-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
+    tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
   } else if (potTotalDem <= 15000) {
     tabDim.innerHTML += `
                                                 <fieldset>
@@ -4507,14 +4507,14 @@ function rodarRelatorio() {
                                                 <li>Condutores(mm²):  10 mm²</li>
                                                 </ul>
                                                 </fieldset>`;
-    tabDim.innerHTML += `<br><p>Tabela de dimensionamento de materiais (RECON-BT 2023-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (RECON-BT 2023-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
+    tabDim.innerHTML += `<br><p>Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
   } else if (potTotalDem > 15000) {
     tabDim.innerHTML += `
                                             <h4>Padrão Trifásico - Maior do que 
                                              15KVA</h4>
         
                                              <p>  ERRO:  Acima de 15KVA é necessário contratar um técnico ou engenheiro com obrigatoriedade de apresentação de ART, RRT ou TRT</p><br>
-                                             <p>Consulte: Tabela de dimensionamento de materiais (RECON-BT 2023-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (RECON-BT 2023-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202023.pdf"  target="_blank">RECON-BT 2023-LIGHT</a>, ou entre em contato para maiores informações.</p>
+                                             <p>Consulte: Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p>
                                              <p><a href="mailto:missao.filosofica@gmail.com">Missão: Instalações Elétricas.</a> </p><br>$`;
   }
 }
