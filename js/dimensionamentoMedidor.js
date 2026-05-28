@@ -726,7 +726,7 @@ function continua() {
     <legend>DEPENDÊNCIA</legend>
             <select name="selMenu2" id="selMenu2">		
                 <option class="op" value=0>Selecione</option>
-                <option class="op" value=1>Quarto_1</option>
+                <option class="op" value=1 selected>Quarto_1</option>
                 <option class="op" value=2>Quarto_2</option>
                 <option class="op" value=3>Quarto_3</option>
                 <option class="op" value=4>Quarto_4</option>
@@ -759,7 +759,7 @@ function continua() {
         <form action="">
     <fieldset>
     <legend>Área da dependência em 'm²'</legend>
-            <input type="number" name="area" id="area"> 
+            <input type="number" name="area" id="area" value="30"> 
             </fieldset>
             </form>
             <br><br>
@@ -767,7 +767,7 @@ function continua() {
         <form action="">
     <fieldset>
     <legend>Perímetro da dependência em metros</legend>     
-         <label for="perim"><input type="number" name="perim" id="perim">
+         <label for="perim"><input type="number" name="perim" id="perim" value="22">
          </fieldset>
          </form>    
          <br><br>
@@ -1432,7 +1432,7 @@ function InserirTipoGeralTue() {
     <legend>TIPO GERAL</legend>
 <select name="selMenu3" id="selMenu3">		
 <option class="op1" value=0>Selecione</option>
-<option class="op1" value=1>Aparelho de aquecimento_C2</option>
+<option class="op1" value=1 selected>Aparelho de aquecimento_C2</option>
 <option class="op1" value=2>Condicionador de Ar_C3</option>
 <option class="op1" value=3>Self Contained(Similares_C4</option>
 <option class="op1" value=4>Motores, Maq. de solda (motor-gerador)_C5</option>
@@ -1456,7 +1456,7 @@ function InserirTipoGeralTue() {
     <legend>CLASSIFIQUE O TIPO</legend>
 <select name="selMenu4" id="selMenu4">		
 <option class="op1" value=0>Selecione</option>
-<option class="op1" value=1>Tipo 1</option>
+<option class="op1" value=1 selected>Tipo 1</option>
 <option class="op1" value=2>Tipo 2</option>
 <option class="op1" value=3>Tipo 3</option>
 <option class="op1" value=4>Tipo 4</option>
@@ -1470,7 +1470,7 @@ function InserirTipoGeralTue() {
 <form action="">
     <fieldset>
     <legend>QUANT. DE TUEs DO MESMO TIPO</legend>     
-<input type="number" name="qtue" id="qtue">
+<input type="number" name="qtue" id="qtue" value="1">
 </fieldset>
 </form> 
 <br><br>    
@@ -1479,7 +1479,7 @@ function InserirTipoGeralTue() {
 <form action="">
     <fieldset>
     <legend>SOMA DAS POTÊNCIAS DAS CARGAS DESTE TIPO</legend>
-    <input type="number" name="tue" id="tue"> 
+    <input type="number" name="tue" id="tue" value="4400"> 
     </fieldset>
     </form>
     <br><br>
