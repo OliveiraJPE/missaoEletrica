@@ -1423,7 +1423,7 @@ function calculo() {
 function InserirTipoGeralTue() {
   tabDim.innerHTML = `<br><table>`;
   tabDim.innerHTML += `<tr><h3>Cálculo de demanda de TUEs.</h3></tr>`;
-  tabDim.innerHTML += `<tr><h4>Informe o tipo, quantidade e soma de potencias para TUEs do mesmo tipo. </h4></tr>`;
+  tabDim.innerHTML += `<tr><h4>Selecione o tipo, quantidade e soma de potencias para TUEs do mesmo tipo. </h4></tr>`;
   tabDim.innerHTML += `<tr>`;
   tabDim.innerHTML += `<td>
 <br>
