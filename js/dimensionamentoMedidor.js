@@ -1955,25 +1955,21 @@ function rodarDimenCirc() {
     parseFloat(qC4f) +
     parseFloat(qC5f) +
     parseFloat(qC6f);
-  if (potTotalDem <= 4000) {
+  if (potTotalDem <= 5000) {
     padrao = "UM1";
-  } else if (potTotalDem <= 5000) {
-    padrao = "UM2";
-  } else if (potTotalDem <= 7000) {
-    padrao = "UB1";
   } else if (potTotalDem <= 8000) {
-    padrao = "UB2";
-  } else if (potTotalDem <= 12000) {
-    padrao = "T1";
+    padrao = "UB1";
   } else if (potTotalDem <= 13000) {
-    padrao = "T2";
+    padrao = "UB2";
   } else if (potTotalDem <= 15000) {
+    padrao = "T1";
+  } else if (potTotalDem <= 24000) {
     padrao = "T2";
-  } else if (potTotalDem > 15000) {
+  } else if (potTotalDem > 24000) {
     padrao = "ERRO";
   }
   alert(
-    `Atenção: \nO Padrão calculado para este dimensionamento foi o padrão de entrada (LIGHT-RJ) do tipo: " ${padrao}" . \nOBS.:\n¬ O Padrão "UM1 ou UM2" - Urbano Monofásico fornece R+N - 127V, \n¬ O padrão "UB1 ou UB2" - Urbano Bifásico fornece R+S+N - 127V ou 220v, \n¬ O padrão "T1 ou T2" - Urbano Trifásico fornece R+S+T+N - 127V ou 220V. `
+    `Atenção: \nO Padrão a ser determinado para este dimensionamento (LIGHT-RJ - 2026) deve considerar a potência demnda de: " ${potTotalDem}" . \nOBS.:\n¬ O Padrão "UM1<=5000w ou UM2 <=8000w" - Urbano Monofásico fornece R+N - 127V, \n¬ O padrão "UB1<=8000w ou UB2<=13000w" - Urbano Bifásico fornece R+S+N - 127V ou 220v, \n¬ O padrão "T1<=15000w ou T2<=24000w" - Urbano Trifásico fornece R+S+T+N - 127V ou 220V. `
   );
 
   /*********Acrescentado novo teste *************************************************************************************/
@@ -3300,7 +3296,7 @@ function desterminaDisjuntores() {
     );
     Fagrupf = 0.52;
     ERRO =
-      "ERR.:FATOR DE AGRUPAMENTO.DIMENSINAMENTO RECEBEU PARÂMETROS INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE.";
+      "ERR.:FATOR DE AGRUPAMENTO.DIMENSINAMENTO RECEBEU PARÂMETROS INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2026 - REDIMENSIONE.";
   }
 
   //ib<=in<=iz   i2<=1.45Iz in = coorente nominal disj, ib corrente proj,  iz= condutorCCirc - capacidade condutores 12 - corrente convenvencinal de de atuação do disjuntor @in=i2    @=1.45    1.45in<=1.45iz ic - corrente da tabela iz=ic*k1*k2*k3
@@ -3342,13 +3338,15 @@ function desterminaDisjuntores() {
       disjC = 25;
     } else if (iN <= 32) {
       disjC = 32;
+    } else if (iN <= 40) {
+      disjC = 40;
     } else {
       alert(
-        "ERR: UM1 - O disjuntor máximo para este padrão 'UM1' é de 32A do tipo B, se a proteção geral for do Tipo 'C'. Disjuntor deste circuito receberá 32A, para continuar dimensionamento. Necessário redimensionar."
+        "ERR: UM1 - O disjuntor máximo para este padrão 'UM1' é de 40A do tipo B, se a proteção geral for do Tipo 'C'. Disjuntor deste circuito receberá 40A, para continuar dimensionamento. Necessário redimensionar."
       );
-      disjC = 32;
+      disjC = 40;
       ERRO =
-        "ERR.:UM1 - DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE.";
+        "ERR.:UM1 - DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2026 - REDIMENSIONE.";
     }
   } else if (padrao == "UM2") {
     if (iN <= 6) {
@@ -3365,13 +3363,15 @@ function desterminaDisjuntores() {
       disjC = 32;
     } else if (iN <= 40) {
       disjC = 40;
+    } else if (iN <= 63) {
+      disjC = 63;
     } else {
       alert(
-        "ERR: UM2 - O disjuntor máximo para este padrão 'UM2' é de 40A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 40A, para continuar dimensionamento. Necessário redimensionar."
+        "ERR: UM2 - O disjuntor máximo para este padrão 'UM2' é de 63A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 63A, para continuar dimensionamento. Necessário redimensionar."
       );
-      disjC = 40;
+      disjC = 63;
       ERRO =
-        "ERR.:UM2 - DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE.";
+        "ERR.:UM2 - DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2026 - REDIMENSIONE.";
     }
   } else if (padrao == "UB1") {
     if (iN <= 6) {
@@ -3386,13 +3386,15 @@ function desterminaDisjuntores() {
       disjC = 25;
     } else if (iN <= 32) {
       disjC = 32;
+    } else if (iN <= 40) {
+      disjC = 40;
     } else {
       alert(
-        "ERR: UB1- O disjuntor máximo para este padrão 'UB1' é de 32A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 32A, para continuar dimensionamento. Necessário redimensionar."
+        "ERR: UB1- O disjuntor máximo para este padrão 'UB1' é de 40A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 40A, para continuar dimensionamento. Necessário redimensionar."
       );
-      disjC = 32;
+      disjC = 40;
       ERRO =
-        "ERR.:UB1- DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE.";
+        "ERR.:UB1- DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2026 - REDIMENSIONE.";
     }
   } else if (padrao == "UB2") {
     if (iN <= 6) {
@@ -3409,36 +3411,17 @@ function desterminaDisjuntores() {
       disjC = 32;
     } else if (iN <= 40) {
       disjC = 40;
+    } else if (iN <= 63) {
+      disjC = 63;
     } else {
       alert(
-        "ERR: UB2 - O disjuntor máximo para este padrão 'UB1' é de 40A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 40A, para continuar dimensionamento. Necessário redimensionar."
+        "ERR: UB2 - O disjuntor máximo para este padrão 'UB1' é de 63A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 63A, para continuar dimensionamento. Necessário redimensionar."
       );
-      disjC = 40;
+      disjC = 63;
       ERRO =
-        "ERR.:UB2-DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE.";
+        "ERR.:UB2-DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2026 - REDIMENSIONE.";
     }
   } else if (padrao == "T1") {
-    if (iN <= 6) {
-      disjC = 6;
-    } else if (iN <= 10) {
-      disjC = 10;
-    } else if (iN <= 16) {
-      disjC = 16;
-    } else if (iN <= 20) {
-      disjC = 20;
-    } else if (iN <= 25) {
-      disjC = 25;
-    } else if (iN <= 32) {
-      disjC = 32;
-    } else {
-      alert(
-        "ERR:T1 - O disjuntor máximo para este padrão 'T1' é de 32A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 32A, para continuar dimensionamento. Necessário redimensionar."
-      );
-      disjC = 32;
-      ERRO =
-        "ERR.:T1 - DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE.";
-    }
-  } else if (padrao == "T2") {
     if (iN <= 6) {
       disjC = 6;
     } else if (iN <= 10) {
@@ -3455,11 +3438,36 @@ function desterminaDisjuntores() {
       disjC = 40;
     } else {
       alert(
-        "ERR: T2 - O disjuntor máximo para este padrão 'T2' é de 40A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 40A, para continuar dimensionamento. Necessário redimensionar."
+        "ERR:T1 - O disjuntor máximo para este padrão 'T1' é de 40A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 40A, para continuar dimensionamento. Necessário redimensionar."
       );
       disjC = 40;
       ERRO =
-        "ERR.:T2 -DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE.";
+        "ERR.:T1 - DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2026 - REDIMENSIONE.";
+    }
+  } else if (padrao == "T2") {
+    if (iN <= 6) {
+      disjC = 6;
+    } else if (iN <= 10) {
+      disjC = 10;
+    } else if (iN <= 16) {
+      disjC = 16;
+    } else if (iN <= 20) {
+      disjC = 20;
+    } else if (iN <= 25) {
+      disjC = 25;
+    } else if (iN <= 32) {
+      disjC = 32;
+    } else if (iN <= 40) {
+      disjC = 40;
+    } else if (iN <= 63) {
+      disjC = 63;
+    } else {
+      alert(
+        "ERR: T2 - O disjuntor máximo para este padrão 'T2' é de 63A do tipo B, se a proteção geral for do Tipo 'C'.Disjuntor deste circuito receberá 63A, para continuar dimensionamento. Necessário redimensionar."
+      );
+      disjC = 63;
+      ERRO =
+        "ERR.:T2 -DISJUNTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2026 - REDIMENSIONE.";
     }
   }
 
@@ -3479,13 +3487,16 @@ function desterminaDisjuntores() {
     } else if (disjC <= 40) {
       //NBR5410 . Condutores carregados 57A + Ajuste Light
       condutorCCircB = 10;
+    } else if (disjC <= 63) {
+      //NBR5410 . Condutores carregados 57A + Ajuste Light
+      condutorCCircB = 16;
     } else {
       alert(
-        "ERR: CircB2-Condutor resultou superior a 10mm². Redimensione!\nSerá atribuido 10mm² para finaliza o dimensionamento."
+        "ERR: CircB2-Condutor resultou superior a 16mm². Redimensione!\nSerá atribuido 16mm² para finaliza o dimensionamento."
       );
-      condutorCCircB = 10;
+      condutorCCircB = 16;
       ERRO =
-        "ERR.:CircB2-CONDUTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE.";
+        "ERR.:CircB2-CONDUTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2026 - REDIMENSIONE.";
     }
   } else if (nCarregados == 3) {
     if (disjC <= 10) {
@@ -3503,13 +3514,16 @@ function desterminaDisjuntores() {
     } else if (disjC <= 40) {
       //NBR5410 . Condutores carregados 50A + Ajuste Light
       condutorCCircB = 10;
+     } else if (disjC <= 63) {
+      //NBR5410 . Condutores carregados 57A + Ajuste Light
+      condutorCCircB = 16;
     } else {
       alert(
-        "ERR: CircB3-Condutor resultou superior a 10mm². Redimensione! \nSerá atribuido 10mm² para finaliza o dimensionamento."
+        "ERR: CircB3-Condutor resultou superior a 16mm². Redimensione! \nSerá atribuido 16mm² para finaliza o dimensionamento."
       );
-      condutorCCircB = 10;
+      condutorCCircB = 16;
       ERRO =
-        "ERR.: CircB3-CONDUTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE.";
+        "ERR.: CircB3-CONDUTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2026 - REDIMENSIONE.";
     }
   } else {
     alert(
@@ -3529,6 +3543,8 @@ function desterminaDisjuntores() {
     condutorCCircA = 6;
   } else if (queda <= 233871 && tensaoC == 127) {
     condutorCCircA = 10;
+  } else if (queda <= 374193 && tensaoC == 127) {
+    condutorCCircA = 16;
   } else if (queda <= 105270 && tensaoC == 220) {
     condutorCCircA = 1.5;
   } else if (queda <= 175450 && tensaoC == 220) {
@@ -3539,6 +3555,8 @@ function desterminaDisjuntores() {
     condutorCCircA = 6;
   } else if (queda <= 701800 && tensaoC == 220) {
     condutorCCircA = 10;
+  } else if (queda <= 1122880 && tensaoC == 220) {
+    condutorCCircA = 16;
   } else if (queda <= 91164 && tensaoC == 219.9) {
     condutorCCircA = 1.5;
   } else if (queda <= 151940 && tensaoC == 219.9) {
@@ -3549,13 +3567,15 @@ function desterminaDisjuntores() {
     condutorCCircA = 6;
   } else if (queda <= 607759 && tensaoC == 219.9) {
     condutorCCircA = 10;
+  } else if (queda <= 972414 && tensaoC == 219.9) {
+    condutorCCircA = 16;
   } else {
     alert(
-      "ERR: CircA- Condutor resultou superior a 10mm². Redimensione!\nSerá atribuido 10mm² para finaliza o dimensionamento."
+      "ERR: CircA- Condutor resultou superior a 16mm². Redimensione!\nSerá atribuido 16mm² para finaliza o dimensionamento."
     );
     condutorCCircA = 10;
     ERRO =
-      "ERR.: CircA-CONDUTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2023 - REDIMENSIONE.";
+      "ERR.: CircA-CONDUTORES. DIMENSINAMENTO RECEBEU PARAMETRO INCORRETOS E DESOBEDECE A NBR5410:2004 E LIGHT 2026 - REDIMENSIONE.";
   }
 
   if (condutorCCircA < condutorCCircB) {
@@ -3840,11 +3860,11 @@ function rodarFinal() {
   numeroCirc = qC1Ilum + qC1Tug + numeroTues;
 
   if (padrao == "UM1" || padrao == "UB1" || padrao == "T1") {
-    DG = "32A - 03kA - #6mm2";
+    DG = "40A - 03kA - #10mm2";
     DR = "40A";
   } else {
-    DG = "40A - 03kA - #10mm²";
-    DR = "40A";
+    DG = "63A - 03kA - #16mm²";
+    DR = "63A";
   }
   if (padrao == "UM1" || padrao == "UM2") {
     rodarRelatorio();
@@ -4362,7 +4382,7 @@ function rodarRelatorio() {
 
   tabDim.innerHTML += `<h3> Tabela para medidor LIGHT - Ligações novas e alterações de carga, com carga demandada até 15 kVA (40 A), sem obrigatoriedade de apresentação de ART, RRT ou TRT.</h3>`;
 
-  if (potTotalDem <= 4000) {
+  if (potTotalDem <= 5000) {
     tabDim.innerHTML += `
                                             <fieldset>
                                             <legend>Padrão Urbano Monofáfico 1 - UM1</legend>
@@ -4370,68 +4390,16 @@ function rodarRelatorio() {
                                             <li>Potencia demanda: ${potTotalDem} VA.</li>
                                             <li>Tensão Nominal(V): 127V.</li>
                                             <li>Nº de fases: 01.</li>
-                                            <li>Demanda (KVA): D<= 4 KVA.</li>
-                                            <li>Proteção Geral (A): 32A - 1F+1N.</li>
-                                            <li>Condutores(mm²):  06 mm²</li>
+                                            <li>Demanda (KVA): D<= 5 KVA.</li>
+                                            <li>Proteção Geral (A): 40A - 1F+1N.</li>
+                                            <li>Condutores(mm²):  10 mm²</li>
                                             </ul>
                                             </fieldset>`;
     tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
-  } else if (potTotalDem <= 5000) {
+  }  else if (potTotalDem <= 8000) {
     tabDim.innerHTML += `
                                                 <fieldset>
-                                                <legend>Padrão Urbano Monofásico 2 - UM2</legend>
-                                                <ul>
-                                                <li>Potencia demanda: ${potTotalDem} VA.</li>
-                                                <li>Tensão Nominal(V): 127V.</li>
-                                                <li>Nº de fases: 01.</li>
-                                                <li>Demanda (KVA): D<= 5 KVA.</li>
-                                                <li>Proteção Geral (A): 40A - 1F+1N.</li>
-                                                <li>Condutores(mm²):  10 mm²</li>
-                                                </ul>
-                                                </fieldset>`;
-    tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
-  } else if (potTotalDem <= 7000) {
-    tabDim.innerHTML += `
-                                                <fieldset>
-                                                <legend>Padrão: Urbano Monofásico 3 - UM3 ou Urbano Bifásico 1 - UB1</legend>
-                                                <h4>Urbano Monofásico 3 - UM3</h4>
-                                                <p>Obs.: UM3 - Padrão 15kVA(63A):Obrigatoriedade de apresentação de ART, RRT ou TRT</p>
-                                                <ul>
-                                                <li>Potencia demanda: ${potTotalDem} VA.</li>
-                                                <li>Tensão Nominal(V): 127V.</li>
-                                                <li>Nº de fases: 01.</li>
-                                                <li>Demanda (KVA): D<= 8 KVA.</li>
-                                                <li>Proteção Geral (A): 63A - 1F+1N.</li>
-                                                <li>Condutores(mm²):  16 mm²</li>
-                                                </ul>
-
-                                                <h4>Urbano Bifásico 1 - UB1</h4>
-                                                <ul>
-                                                <li>Potencia demanda: ${potTotalDem} VA.</li>
-                                                <li>Tensão Nominal(V): 220V/127V.</li>
-                                                <li>Nº de fases: 02.</li>
-                                                <li>Demanda (KVA): D<= 7 KVA.</li>
-                                                <li>Proteção Geral (A): 32A - 2F+1N.</li>
-                                                <li>Condutores(mm²):  06 mm²</li>
-                                                </ul>
-                                                </fieldset>`;
-    tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
-  } else if (potTotalDem <= 8000) {
-    tabDim.innerHTML += `
-                                                <fieldset>
-                                                <legend>Padrão: Urbano Monofásico 3 - UM3 ou Urbano Bifásico 2 - UB2</legend>
-                                                <h4>Urbano Monofásico 3 - UM3</h4>
-                                                <p>Obs.:UM3 - Padrão 15kVA(63A):Obrigatoriedade de apresentação de ART, RRT ou TRT</p>
-                                                <ul>
-                                                <li>Potencia demanda: ${potTotalDem} VA.</li>
-                                                <li>Tensão Nominal(V): 127V.</li>
-                                                <li>Nº de fases: 01.</li>
-                                                <li>Demanda (KVA): D<= 8 KVA.</li>
-                                                <li>Proteção Geral (A): 63A - 1F+1N.</li>
-                                                <li>Condutores(mm²):  16 mm²</li>
-                                                </ul>
-
-                                                <h4>Urbano Bifásico 2 - UB2</h4>
+                                                <legend>Padrão: Urbano Bifásico 1 - UB1</legend>
                                                 <ul>
                                                 <li>Potencia demanda: ${potTotalDem} VA.</li>
                                                 <li>Tensão Nominal(V): 220V/127V.</li>
@@ -4442,38 +4410,10 @@ function rodarRelatorio() {
                                                 </ul>
                                                 </fieldset>`;
     tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
-  } else if (potTotalDem <= 12000) {
-    tabDim.innerHTML += `
-                                                <fieldset>
-                                                <legend>Urbano Bifásico 3 - UB3 ou Padrão Trifásico 1 - T1</legend>
-                                                <h4>Urbano Bifásico 3 - UB3</h4>
-                                                <p>Obs.: UB3 - Padrão 15kVA(63A):Obrigatoriedade de apresentação de ART, RRT ou TRT</p>
-                                                <ul>
-                                                <li>Potencia demanda: ${potTotalDem} VA.</li>
-                                                <li>Tensão Nominal(V): 220V/127V.</li>
-                                                <li>Nº de fases: 02.</li>
-                                                <li>Demanda (KVA): D<= 13 KVA.</li>
-                                                <li>Proteção Geral (A): 63A - 2F+1N.</li>
-                                                <li>Condutores(mm²):  16 mm²</li>
-                                                </ul>
-
-                                                <h4>Padrão Trifásico 1 - T1</h4>
-                                                <ul>
-                                                <li>Potencia demanda: ${potTotalDem} VA.</li>
-                                                <li>Tensão Nominal(V): 220/127V.</li>
-                                                <li>Nº de fases: 03.</li>
-                                                <li>Demanda (KVA): D<= 12 KVA.</li>
-                                                <li>Proteção Geral (A): 32A - 03F+1N.</li>
-                                                <li>Condutores(mm²):  06 mm²</li>
-                                                </ul>
-                                                </fieldset>`;
-    tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
   } else if (potTotalDem <= 13000) {
     tabDim.innerHTML += `
                                                 <fieldset>
-                                                <legend>Urbano Bifásico 3 - UB3 ou Padrão Trifásico 2 - T2</legend>
-                                                <h4>Urbano Bifásico 3 - UB3</h4>
-                                                <p>Obs.:UB3 - Padrão 15kVA(63A):Obrigatoriedade de apresentação de ART, RRT ou TRT</p>
+                                                <legend>Urbano Bifásico 2 - UB2</legend>
                                                 <ul>
                                                 <li>Potencia demanda: ${potTotalDem} VA.</li>
                                                 <li>Tensão Nominal(V): 220V/127V.</li>
@@ -4482,9 +4422,14 @@ function rodarRelatorio() {
                                                 <li>Proteção Geral (A): 63A - 2F+1N.</li>
                                                 <li>Condutores(mm²):  16 mm²</li>
                                                 </ul>
-
-                                                <h4>Padrão Trifásico 2 - T2</h4>
+                                                </fieldset>`;
+    tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
+  } else if (potTotalDem <= 15000) {
+    tabDim.innerHTML += `
+                                                <fieldset>
+                                                <legend>Padrão Trifásico 1 - T1</legend>
                                                 <ul>
+                                                
                                                 <li>Potencia demanda: ${potTotalDem} VA.</li>
                                                 <li>Tensão Nominal(V): 220/127V.</li>
                                                 <li>Nº de fases: 03.</li>
@@ -4494,7 +4439,7 @@ function rodarRelatorio() {
                                                 </ul>
                                                 </fieldset>`;
     tabDim.innerHTML += `<br>Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
-  } else if (potTotalDem <= 15000) {
+  } else if (potTotalDem <= 24000) {
     tabDim.innerHTML += `
                                                 <fieldset>
                                                 <legend>Padrão Trifásico 2 - T2</legend>
@@ -4502,16 +4447,17 @@ function rodarRelatorio() {
                                                 <li>Potencia demanda: ${potTotalDem} VA.</li>
                                                 <li>Tensão Nominal(V): 220/127V.</li>
                                                 <li>Nº de fases: 03.</li>
-                                                <li>Demanda (KVA): D<= 15 KVA.</li>
-                                                <li>Proteção Geral (A): 40A - 03F+1N.</li>
-                                                <li>Condutores(mm²):  10 mm²</li>
+                                                <li>Demanda (KVA): D<= 24 KVA.</li>
+                                                <li>Proteção Geral (A): 63A - 03F+1N.</li>
+                                                <li>Condutores(mm²):  16 mm²</li>
+                                                <li> ERRO:  Acima de 15KVA é necessário contratar um técnico ou engenheiro com obrigatoriedade de apresentação de ART, RRT ou TRT </li>
                                                 </ul>
                                                 </fieldset>`;
     tabDim.innerHTML += `<br><p>Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p><br>`;
-  } else if (potTotalDem > 15000) {
+  } else if (potTotalDem > 24000) {
     tabDim.innerHTML += `
                                             <h4>Padrão Trifásico - Maior do que 
-                                             15KVA</h4>
+                                             24KVA</h4>
         
                                              <p>  ERRO:  Acima de 15KVA é necessário contratar um técnico ou engenheiro com obrigatoriedade de apresentação de ART, RRT ou TRT</p><br>
                                              <p>Consulte: Tabela de dimensionamento de materiais (Recon Light 2026-LIGHT, Capitulo 5, pag 149), e os diagramas do ponto de entrada até 24kVA (Recon Light 2026-LIGHT, Capitulo 6, pg153(), podem ser acessados no <a href="https://www.light.com.br/Documentos%20Compartilhados/Normas-Tecnicas/RECON-BT%202026.pdf"  target="_blank">Recon Light 2026-LIGHT</a>, ou entre em contato para maiores informações.</p>
