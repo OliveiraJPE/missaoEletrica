@@ -1,0 +1,98 @@
+
+
+<div class="container">
+
+<h1>⚡ MISSÃO ELÉTRICA</h1>
+<h2>Construtor de Orçamento Elétrico</h2>
+<p>Elabore um orçamento de instalação elétrica residencial.</p>
+
+<h2>1. Identificação</h2>
+
+<div class="grid">
+  <div>
+    <label>Nome do cliente</label>
+    <input id="cliente" placeholder="Nome do cliente">
+  </div>
+
+  <div>
+    <label>Responsável pelo orçamento</label>
+    <input id="responsavel" placeholder="Nome do aluno">
+  </div>
+
+  <div>
+    <label>Endereço da obra</label>
+    <input id="endereco" placeholder="Endereço">
+  </div>
+
+  <div>
+    <label>Tipo de instalação</label>
+    <select id="tipo">
+      <option>Residencial</option>
+      <option>Comercial</option>
+      <option>Predial</option>
+    </select>
+  </div>
+</div>
+
+<h2>2. Materiais e serviços</h2>
+
+<table>
+<thead>
+<tr>
+  <th>Descrição</th>
+  <th>Unid.</th>
+  <th>Qtd.</th>
+  <th>Preço unit. (R$)</th>
+  <th>Total (R$)</th>
+  <th>Ação</th>
+</tr>
+</thead>
+<tbody id="itens"></tbody>
+</table>
+
+<button onclick="adicionarItem()">
++ Adicionar item
+</button>
+
+<h2>3. Custos adicionais</h2>
+
+<div class="grid">
+  <div>
+    <label>Mão de obra (R$)</label>
+    <input type="number" id="maoObra" value="0" min="0" step="0.01" oninput="calcular()">
+  </div>
+
+  <div>
+    <label>Deslocamento e outros custos (R$)</label>
+    <input type="number" id="extras" value="0" min="0" step="0.01" oninput="calcular()">
+  </div>
+
+  <div>
+    <label>Margem adicional (%)</label>
+    <input type="number" id="margem" value="0" min="0" step="0.01" oninput="calcular()">
+  </div>
+</div>
+
+<div class="total">
+  Materiais: <span id="subtotal">R$ 0,00</span><br>
+  Mão de obra: <span id="valorMao">R$ 0,00</span><br>
+  Custos adicionais: <span id="valorExtras">R$ 0,00</span><br>
+  Margem adicional: <span id="valorMargem">R$ 0,00</span><br>
+  <strong>Total: <span id="total">R$ 0,00</span></strong>
+</div>
+
+<h2>4. Observações</h2>
+<input id="observacoes"
+placeholder="Prazo, condições de pagamento e validade do orçamento">
+
+<div class="acoes">
+  <button onclick="adicionarItem()">Adicionar material</button>
+  <button onclick="gerarPDF()">📄 Gerar PDF</button>
+  <button onclick="window.print()">Imprimir</button>
+</div>
+
+</div>
+
+
+
+

@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Missão: Orçamento</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f4f7;
+  margin: 0;
+  padding: 15px;
+  color: #263238;
+}
+
+.container {
+  max-width: 1050px;
+  margin: auto;
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+}
+
+h1 { color: #174c75; }
+h2 { font-size: 19px; color: #174c75; }
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px 0 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+th, td {
+  padding: 9px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background: #174c75;
+  color: white;
+}
+
+td input {
+  margin: 0;
+  min-width: 65px;
+}
+
+button {
+  padding: 11px 16px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px 3px;
+  color: white;
+  background: #174c75;
+}
+
+button:hover { opacity: .85; }
+
+.remover { background: #bd3636; }
+
+.total {
+  background: #e9f2f8;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: right;
+  line-height: 1.9;
+}
+
+.total strong {
+  font-size: 23px;
+  color: #174c75;
+}
+
+.acoes {
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media(max-width:650px) {
+  .grid { grid-template-columns: 1fr; }
+  .container { padding: 12px; }
+  table { font-size: 12px; }
+  th, td { padding: 5px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>⚡ MISSÃO ELÉTRICA</h1>
+<h2>Construtor de Orçamento Elétrico</h2>
+<p>Elabore um orçamento de instalação elétrica residencial.</p>
+
+<h2>1. Identificação</h2>
+
+<div class="grid">
+  <div>
+    <label>Nome do cliente</label>
+    <input id="cliente" placeholder="Nome do cliente">
+  </div>
+
+  <div>
+    <label>Responsável pelo orçamento</label>
+    <input id="responsavel" placeholder="Nome do aluno">
+  </div>
+
+  <div>
+    <label>Endereço da obra</label>
+    <input id="endereco" placeholder="Endereço">
+  </div>
+
+  <div>
+    <label>Tipo de instalação</label>
+    <select id="tipo">
+      <option>Residencial</option>
+      <option>Comercial</option>
+      <option>Predial</option>
+    </select>
+  </div>
+</div>
+
+<h2>2. Materiais e serviços</h2>
+
+<table>
+<thead>
+<tr>
+  <th>Descrição</th>
+  <th>Unid.</th>
+  <th>Qtd.</th>
+  <th>Preço unit. (R$)</th>
+  <th>Total (R$)</th>
+  <th>Ação</th>
+</tr>
+</thead>
+<tbody id="itens"></tbody>
+</table>
+
+<button onclick="adicionarItem()">
++ Adicionar item
+</button>
+
+<h2>3. Custos adicionais</h2>
+
+<div class="grid">
+  <div>
+    <label>Mão de obra (R$)</label>
+    <input type="number" id="maoObra" value="0" min="0" step="0.01" oninput="calcular()">
+  </div>
+
+  <div>
+    <label>Deslocamento e outros custos (R$)</label>
+    <input type="number" id="extras" value="0" min="0" step="0.01" oninput="calcular()">
+  </div>
+
+  <div>
+    <label>Margem adicional (%)</label>
+    <input type="number" id="margem" value="0" min="0" step="0.01" oninput="calcular()">
+  </div>
+</div>
+
+<div class="total">
+  Materiais: <span id="subtotal">R$ 0,00</span><br>
+  Mão de obra: <span id="valorMao">R$ 0,00</span><br>
+  Custos adicionais: <span id="valorExtras">R$ 0,00</span><br>
+  Margem adicional: <span id="valorMargem">R$ 0,00</span><br>
+  <strong>Total: <span id="total">R$ 0,00</span></strong>
+</div>
+
+<h2>4. Observações</h2>
+<input id="observacoes"
+placeholder="Prazo, condições de pagamento e validade do orçamento">
+
+<div class="acoes">
+  <button onclick="adicionarItem()">Adicionar material</button>
+  <button onclick="gerarPDF()">📄 Gerar PDF</button>
+  <button onclick="window.print()">Imprimir</button>
+</div>
+
+</div>
+
+<script>
+const formato = valor =>
+  Number(valor || 0).toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
+
+function adicionarItem(nome = "", unidade = "un", qtd = 1, preco = 0) {
+  const linha = document.createElement("tr");
+
+  linha.innerHTML = `
+    <td><input class="descricao" value="${nome}"
+       placeholder="Material ou serviço"></td>
+    <td><input class="unidade" value="${unidade}"></td>
+    <td><input class="quantidade" type="number"
+       min="0" step="0.01" value="${qtd}"></td>
+    <td><input class="preco" type="number"
+       min="0" step="0.01" value="${preco}"></td>
+    <td class="resultado">R$ 0,00</td>
+    <td><button class="remover"
+       onclick="this.closest('tr').remove(); calcular()">
+       X</button></td>
+  `;
+
+  document.getElementById("itens").appendChild(linha);
+
+  linha.querySelectorAll("input").forEach(input => {
+    input.addEventListener("input", calcular);
+  });
+
+  calcular();
+}
+
+function calcular() {
+  let subtotal = 0;
+
+  document.querySelectorAll("#itens tr").forEach(linha => {
+    const qtd = Math.max(0,
+      Number(linha.querySelector(".quantidade").value) || 0);
+    const preco = Math.max(0,
+      Number(linha.querySelector(".preco").value) || 0);
+
+    const total = qtd * preco;
+
+    linha.querySelector(".resultado").textContent = formato(total);
+    subtotal += total;
+  });
+
+  const mao = Math.max(0, Number(
+    document.getElementById("maoObra").value) || 0);
+
+  const extras = Math.max(0, Number(
+    document.getElementById("extras").value) || 0);
+
+  const margem = Math.max(0, Number(
+    document.getElementById("margem").value) || 0);
+
+  const base = subtotal + mao + extras;
+  const valorMargem = base * margem / 100;
+  const totalGeral = base + valorMargem;
+
+  document.getElementById("subtotal").textContent = formato(subtotal);
+  document.getElementById("valorMao").textContent = formato(mao);
+  document.getElementById("valorExtras").textContent = formato(extras);
+  document.getElementById("valorMargem").textContent = formato(valorMargem);
+  document.getElementById("total").textContent = formato(totalGeral);
+
+  return { subtotal, mao, extras, valorMargem, totalGeral };
+}
+
+function gerarPDF() {
+  if (!window.jspdf) {
+    alert("Biblioteca PDF não carregada. Verifique sua conexão.");
+    return;
+  }
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  const valores = calcular();
+
+  let y = 20;
+
+  function linha(texto, tamanho = 10) {
+    doc.setFontSize(tamanho);
+
+    const linhas = doc.splitTextToSize(texto, 175);
+
+    if (y + linhas.length * 6 > 280) {
+      doc.addPage();
+      y = 20;
+    }
+
+    doc.text(linhas, 15, y);
+    y += linhas.length * 6 + 2;
+  }
+
+  doc.setFont("helvetica", "bold");
+  linha("MISSAO ELETRICA - ORCAMENTO", 17);
+
+  doc.setFont("helvetica", "normal");
+  linha("Cliente: " + document.getElementById("cliente").value);
+  linha("Responsavel: " + document.getElementById("responsavel").value);
+  linha("Endereco: " + document.getElementById("endereco").value);
+  linha("Tipo: " + document.getElementById("tipo").value);
+  linha("Data: " + new Date().toLocaleDateString("pt-BR"));
+
+  y += 5;
+  doc.setFont("helvetica", "bold");
+  linha("MATERIAIS E SERVICOS");
+
+  doc.setFont("helvetica", "normal");
+
+  document.querySelectorAll("#itens tr").forEach((tr, i) => {
+    const descricao = tr.querySelector(".descricao").value;
+    const unidade = tr.querySelector(".unidade").value;
+    const qtd = Number(tr.querySelector(".quantidade").value) || 0;
+    const preco = Number(tr.querySelector(".preco").value) || 0;
+
+    if (descricao.trim()) {
+      linha(
+        `${i + 1}. ${descricao} | ${qtd} ${unidade} | ` +
+        `${formato(preco)} | ${formato(qtd * preco)}`
+      );
+    }
+  });
+
+  y += 5;
+  doc.setFont("helvetica", "bold");
+  linha("RESUMO FINANCEIRO");
+
+  doc.setFont("helvetica", "normal");
+  linha("Materiais: " + formato(valores.subtotal));
+  linha("Mao de obra: " + formato(valores.mao));
+  linha("Custos adicionais: " + formato(valores.extras));
+  linha("Margem adicional: " + formato(valores.valorMargem));
+
+  doc.setFont("helvetica", "bold");
+  linha("TOTAL GERAL: " + formato(valores.totalGeral), 15);
+
+  doc.setFont("helvetica", "normal");
+  linha("Observacoes: " +
+    document.getElementById("observacoes").value);
+
+  y += 12;
+  linha("Orcamento elaborado para fins didaticos ou comerciais.");
+  linha("Verificar os projetos, normas tecnicas e condicoes reais da obra.");
+
+  doc.save("orcamento-missao-eletrica.pdf");
+}
+
+// Itens iniciais para demonstração
+adicionarItem("Cabo flexível 2,5 mm²", "m", 100, 2.50);
+adicionarItem("Tomada 2P+T", "un", 10, 15);
+adicionarItem("Disjuntor monopolar", "un", 4, 25);
+adicionarItem("Eletroduto PVC 20 mm", "m", 30, 3.50);
+</script>
+
+</body>
+</html>

@@ -14,6 +14,8 @@
 		<link rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/styleOrcamento.css" />
+		
 		<link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
 	</head>
 
@@ -292,7 +294,7 @@
 													<br><a class="btn btn-outline-info" tabindex="-1"
 														role="button" aria-disabled="true" href="#"
 														data-bs-toggle="dropdown"
-														aria-expanded="false">&nbsp;&nbsp;Relacionamento&Vendas&nbsp;&nbsp;
+														aria-expanded="false">&nbsp;&nbsp;Relacionamento&nbsp;&nbsp;
 													</a>
 													<br>
 													<ul class="dropdown-menu">
@@ -319,7 +321,7 @@
 													<br><a class="btn btn-outline-warning" tabindex="-1"
 														role="button" aria-disabled="true" href="#"
 														data-bs-toggle="dropdown"
-														aria-expanded="false">&nbsp;&nbsp;Validação de
+														aria-expanded="false">&nbsp;&nbsp;
 														Certificados&nbsp;&nbsp; </a>
 													<br>
 													<ul class="dropdown-menu">
@@ -328,7 +330,22 @@
 													</ul>
 												</li>
 											</ul>
+&nbsp;&nbsp;<!--Outros-->
+											<ul class="navbar-nav">
+												<li class="nav-item dropdown">
+													<br><a class="btn btn-outline-info" tabindex="-1"
+														role="button" aria-disabled="true" href="#"
+														data-bs-toggle="dropdown"
+														aria-expanded="false">&nbsp;&nbsp;Orçamento&nbsp;&nbsp; </a>
+													<br>
+													<ul class="dropdown-menu">
+														
+														<li><a class="dropdown-item" onclick="requisicao('../other/orcamento2.html', 'conteudo')"><strong>Orçamento</strong></a></li>
+													</ul>
+												</li>
+											</ul>
 
+<!--href="../other/orcamento2.html"-->
 											&nbsp;&nbsp;<!--fale conosco-->
 											<ul class="navbar-nav">
 
@@ -363,7 +380,12 @@
 					rel="JS"></script>
 				<script src="../../js/capoeiraJogos.js" type="text/javascript"
 					rel="JS"></script>
-				<footer>
+				<script src="../../js/orcamento.js" type="text/javascript" rel="JS"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+
+
+				
+					<footer>
 					<br>
 					<div id="rodape">
 						<h6 id="rodape">V7 -2024 - by Oliveira Junior, P.E.</h6>
